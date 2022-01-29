@@ -11,8 +11,12 @@
 		7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
 		725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
 		725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
-		725B5DF527A44BE900459EE3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* PlayerView.swift */; };
-		725B5DF627A44BE900459EE3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* PlayerView.swift */; };
+		725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
+		725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
+		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
+		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
+		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
+		72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
 		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
@@ -33,7 +37,9 @@
 		7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableArtworkPlaceholderView.swift; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Lace--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lace--iOS--Info.plist"; sourceTree = "<group>"; };
 		725B5DF127A4436300459EE3 /* PlayerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCore.swift; sourceTree = "<group>"; };
-		725B5DF427A44BE900459EE3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* LaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaceApp.swift; sourceTree = "<group>"; };
@@ -75,12 +81,20 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		725B5DF027A4435000459EE3 /* Playback */ = {
+		725B5DF027A4435000459EE3 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				725B5DF127A4436300459EE3 /* PlayerCore.swift */,
+				725B5DF427A44BE900459EE3 /* DetailView.swift */,
 			);
-			path = Playback;
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		72A6B3DF27A5F420002AF923 /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				72A6B3E027A5F42A002AF923 /* DonationView.swift */,
+			);
+			path = Donation;
 			sourceTree = "<group>";
 		};
 		72D5928627A5986200D3CE52 /* Main */ = {
@@ -96,7 +110,7 @@
 		72D5929127A5B4C500D3CE52 /* Playback */ = {
 			isa = PBXGroup;
 			children = (
-				725B5DF427A44BE900459EE3 /* PlayerView.swift */,
+				725B5DF127A4436300459EE3 /* PlayerCore.swift */,
 				7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */,
 			);
 			path = Playback;
@@ -117,8 +131,9 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72A6B3DF27A5F420002AF923 /* Donation */,
 				72D5928627A5986200D3CE52 /* Main */,
-				725B5DF027A4435000459EE3 /* Playback */,
+				725B5DF027A4435000459EE3 /* Detail */,
 				72E1795427A3AC3C009A20ED /* Utility */,
 				72E1792C27A2E48C009A20ED /* LaceApp.swift */,
 				72E1792E27A2E48D009A20ED /* Assets.xcassets */,
@@ -154,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */,
+				72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -270,9 +286,11 @@
 				72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
-				725B5DF527A44BE900459EE3 /* PlayerView.swift in Sources */,
+				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
+				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */,
+				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,9 +302,11 @@
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
-				725B5DF627A44BE900459EE3 /* PlayerView.swift in Sources */,
+				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
+				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
 				72D5929027A5B2E700D3CE52 /* AppCore.swift in Sources */,
 				725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */,
+				72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */,
 				72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

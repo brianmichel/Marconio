@@ -36,9 +36,7 @@ struct AppView: View {
             List {
                 Section("Live") {
                     ForEach(viewStore.channels) { channel in
-                        NavigationLink(destination: PlayerView(
-                            playable: MediaPlayable(channel: channel),
-                            store: store.scope(state: \.playback, action: AppAction.playback))
+                        NavigationLink(destination: destination(for: MediaPlayable(channel: channel))
                         ) {
                             Label("Channel \(channel.channelName)", systemImage: "radio")
                         }
@@ -47,10 +45,7 @@ struct AppView: View {
 
                 Section("Infinite Mixtapes") {
                     ForEach(viewStore.mixtapes) { mixtape in
-                        NavigationLink(destination: PlayerView(
-                            playable: MediaPlayable(mixtape: mixtape),
-                            store: store.scope(state: \.playback, action: AppAction.playback))
-                        ) {
+                        NavigationLink(destination: destination(for: MediaPlayable(mixtape: mixtape))) {
                             Label("\(mixtape.title)", systemImage: mixtape.systemIcon)
                         }
                     }
@@ -58,7 +53,7 @@ struct AppView: View {
             }
             .listStyle(.sidebar)
             .navigationTitle("Channels")
-#if os(macOS)
+        #if os(macOS)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: toggleSidebar, label: {
@@ -71,8 +66,8 @@ struct AppView: View {
                     }).keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
                 }
             }
-#endif
-            Text("Now Playing").font(.largeTitle)
+        #endif
+            DonationView().padding()
         }.onAppear {
             viewStore.send(.loadInitialData)
         }
@@ -82,9 +77,18 @@ struct AppView: View {
         self.viewStore.send(.loadInitialData)
     }
 
+    private func destination(for playable: MediaPlayable) -> some View {
+        return ScrollView {
+            VStack {
+                DetailView(playable: playable, store: store.scope(state: \.playback, action: AppAction.playback))
+                    .padding()
+                Spacer()
+            }
+        }
+    }
+
     private func toggleSidebar() { // 2
-#if os(iOS)
-#else
+#if os(macOS)
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 #endif
     }
