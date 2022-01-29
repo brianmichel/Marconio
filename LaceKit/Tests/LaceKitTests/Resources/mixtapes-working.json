@@ -1,0 +1,2473 @@
+{
+  "metadata": {
+    "subtitle": "Music-only themed radio streams, made from NTS resident and guest shows",
+    "credits": "Residents and guests whose radio shows feature in these mixtapes:",
+    "mq_host": "",
+    "animation_large_portrait": "https://media2.ntslive.co.uk/static/nts_cube_video-1080x1920-40fps-57dcafe2db72de8d038d3159494edbda.mp4"
+  },
+  "results": [
+    {
+      "mixtape_alias": "poolside",
+      "title": "Poolside",
+      "subtitle": "Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos.",
+      "description": "Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres.",
+      "description_html": "<p>Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape4",
+      "credits": [
+        {
+          "name": "All Styles All Smiles",
+          "path": "/shows/all-styles-all-smiles"
+        },
+        {
+          "name": "Altered Soul Experiment w/ Amila",
+          "path": "/shows/amila"
+        },
+        {
+          "name": "Benedek",
+          "path": "/shows/benedek"
+        },
+        {
+          "name": "Braindead",
+          "path": "/shows/braindead"
+        },
+        {
+          "name": "Bullion",
+          "path": "/shows/bullion"
+        },
+        {
+          "name": "Bumpin' on Sunset",
+          "path": "/shows/bumpin-on-sunset"
+        },
+        {
+          "name": "Dance Music Show",
+          "path": "/shows/bell-towers"
+        },
+        {
+          "name": "Doing Time",
+          "path": "/shows/doing-time"
+        },
+        {
+          "name": "Fervent Moon",
+          "path": "/shows/fervent-moon"
+        },
+        {
+          "name": "Groove In The Heart",
+          "path": "/shows/groove-in-the-heart-w-yuka-mizuhara"
+        },
+        {
+          "name": "Getting Warmer w/ Jen Monroe",
+          "path": "/shows/jen-monroe"
+        },
+        {
+          "name": "DJ Young Kiera",
+          "path": "/shows/guests/episodes/dj-young-kiera-11th-february-2019"
+        },
+        {
+          "name": "Jonny Mons",
+          "path": "/shows/jonny-mons"
+        },
+        {
+          "name": "Kiss Cafe w/ Piper Durabo",
+          "path": "/shows/piper-durabo"
+        },
+        {
+          "name": "Let's Get Yachts",
+          "path": "/shows/guests/episodes/lets-get-yachts-22nd-december-2017"
+        },
+        {
+          "name": "Light In The Attic",
+          "path": "/shows/light-in-the-attic"
+        },
+        {
+          "name": "Michael Franks",
+          "path": "/shows/guests/episodes/eddie-fiction-michael-franks-special-16th-december-2016"
+        },
+        {
+          "name": "Nite Jewel",
+          "path": "/shows/nitejewel"
+        },
+        {
+          "name": "Noise In My Head",
+          "path": "/shows/noise-in-my-head"
+        },
+        {
+          "name": "Ohbliv",
+          "path": "/shows/ohbliv"
+        },
+        {
+          "name": "Okonkole Y Trompa",
+          "path": "/shows/okonkole-y-trompa"
+        },
+        {
+          "name": "Panorama Heaven",
+          "path": "/shows/panorama-heaven"
+        },
+        {
+          "name": "Pender Street Steppers",
+          "path": "/shows/pender-street-steppers"
+        },
+        {
+          "name": "PPU LUV U RADIO",
+          "path": "/shows/ppu-luv-radio"
+        },
+        {
+          "name": "Radio Jiro",
+          "path": "/shows/radio-jiro"
+        },
+        {
+          "name": "Rory Bowens",
+          "path": "/shows/uniqlo-tate-lates/episodes/uniqlo-tate-lates-rory-bowens-27th-october-2017"
+        },
+        {
+          "name": "Shape",
+          "path": "/shows/shape"
+        },
+        {
+          "name": "SOS Radio w/ Sofie",
+          "path": "/shows/sos-radio"
+        },
+        {
+          "name": "SUN RUNNERS 女神の恋人達",
+          "path": "/shows/guests/episodes/sun-runners-nu-shen-nolian-ren-da-20th-november-2017"
+        },
+        {
+          "name": "System Olympia",
+          "path": "/shows/system-olympia"
+        },
+        {
+          "name": "Tess Roby",
+          "path": "/shows/guests/episodes/tess-roby-1st-october-2018"
+        },
+        {
+          "name": "World In Flo Motion",
+          "path": "/shows/world-in-flo-motion"
+        },
+        {
+          "name": "Yellow Days",
+          "path": "/shows/guests/episodes/yellow-days-2nd-october-2018"
+        },
+        {
+          "name": "Yayo",
+          "path": "/shows/yayo"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/poolside-1600x900-30fps-44a3e0ae53283170fb6a8b37a8967d25.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/poolside-1080x1920-40fps-04b5e10728c9676ad7aaf0494e48162d.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/poolside-120x120-30fps-785e2238c7f7e1e52562aafb2a21ff96.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/4bd68475-5fb4-457c-9a16-0ae353962c10_1542844800.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/46efe65a-9d2d-4c59-ac9b-4f1542ec1ef5_1542844800.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/poolside",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "labyrinth",
+      "title": "Labyrinth",
+      "subtitle": "Enter the void.",
+      "description": "Lose yourself in atmospheric breaks, tripped out techno, and cerebral electronics.",
+      "description_html": "<p>Lose yourself in atmospheric breaks, tripped out techno, and cerebral electronics.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape31",
+      "credits": [
+        {
+          "name": "Bahamian Moor",
+          "path": "/shows/bahamian-moor"
+        },
+        {
+          "name": "Beatrice Dillon",
+          "path": "/shows/sonic-liberation-front"
+        },
+        {
+          "name": "CS + Kreme",
+          "path": "/shows/guests/episodes/cs-kreme-8th-may-2017"
+        },
+        {
+          "name": "Efficent Space",
+          "path": "/shows/efficient-space"
+        },
+        {
+          "name": "Beshknow",
+          "path": "/shows/gigi-fm"
+        },
+        {
+          "name": "Gost Zvuk",
+          "path": "/shows/gost-zvuk"
+        },
+        {
+          "name": "Ikura Imprint",
+          "path": "/shows/ikura-imprint"
+        },
+        {
+          "name": "James K",
+          "path": "/shows/james-k"
+        },
+        {
+          "name": "Kelman Duran",
+          "path": "/shows/kelman-duran/"
+        },
+        {
+          "name": "Moopie",
+          "path": "/shows/guests/episodes/moopie-14th-september-2018"
+        },
+        {
+          "name": "Nkisi",
+          "path": "/shows/nkisi/"
+        },
+        {
+          "name": "Pan",
+          "path": "/shows/pan/"
+        },
+        {
+          "name": "Pandoras Jukebox",
+          "path": "/shows/pandoras-jukebox"
+        },
+        {
+          "name": "Posh Isolation",
+          "path": "/shows/posh-isolation/"
+        },
+        {
+          "name": "Skyapnea",
+          "path": "/shows/skyapnea"
+        },
+        {
+          "name": "Slow Hand Clutches",
+          "path": "/shows/slow-hand-clutches"
+        },
+        {
+          "name": "Upsammy",
+          "path": "/shows/upsammy/"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media.ntslive.co.uk/static/labyrinth-visuals-option-1-10-green-1600x900-30fps-23df873a0cfeca703a0dd5ce41d40a28.mp4",
+        "animation_large_portrait": "https://media.ntslive.co.uk/static/labyrinth-visuals-option-1-10-green-1080x1920-30fps-5d271ff726c698f60a6a63da1807395b.mp4",
+        "animation_thumb": "https://media.ntslive.co.uk/static/labyrinth-visuals-option-1-10-green-120x120-30fps-ca59c05c0e0d2609e699c6ad51407de5.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/4f2070c2-e66a-4afc-8988-57933a6a33fe_1638230400.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/ec54898f-7dd2-4436-a9fd-a53513f2dff6_1638230400.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/4ce92a36-4942-4f35-9cc4-1d3e6c2be746_1638230400.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/4ce92a36-4942-4f35-9cc4-1d3e6c2be746_1638230400.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/4ce92a36-4942-4f35-9cc4-1d3e6c2be746_1638230400.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/4ce92a36-4942-4f35-9cc4-1d3e6c2be746_1638230400.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/4ce92a36-4942-4f35-9cc4-1d3e6c2be746_1638230400.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/labyrinth",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "feelings",
+      "title": "Feelings",
+      "subtitle": "Sweet soul, gospel, boogie, and beyond.",
+      "description": "Warm your soul with our anthology of emotive popular music from the 20th century, taking you from doo-wop to disco.",
+      "description_html": "<p>Warm your soul with our anthology of emotive popular music from the 20th century, taking you from doo-wop to disco.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape27",
+      "credits": [
+        {
+          "name": "ALBA Radio",
+          "path": "/shows/alba"
+        },
+        {
+          "name": "Death Is Not The End",
+          "path": "/shows/death-is-not-the-end"
+        },
+        {
+          "name": "Fervent Moon",
+          "path": "/shows/fervent-moon"
+        },
+        {
+          "name": "Heavy Love Affair w/ Emel",
+          "path": "/shows/emel"
+        },
+        {
+          "name": "High Jazz",
+          "path": "/shows/high-jazz"
+        },
+        {
+          "name": "Jenkem Magazine",
+          "path": "/shows/jenkem-magazine"
+        },
+        {
+          "name": "Kick In The Eye",
+          "path": "/shows/guests/episodes/kickintheye-23rd-november-2017"
+        },
+        {
+          "name": "La Cosecha Internacional ",
+          "path": "/shows/la-cosecha-internacional"
+        },
+        {
+          "name": "Lavender Kite Audio Research Hour",
+          "path": "/shows/lavender-kite-audio-research-hour"
+        },
+        {
+          "name": "Los Hitters",
+          "path": "/shows/los-hitters"
+        },
+        {
+          "name": "Luaka Bop",
+          "path": "/shows/guests/episodes/time-for-peace-luaka-bop-13th-september-2019"
+        },
+        {
+          "name": "Lucifer Over LA",
+          "path": "/shows/lucifer-over-london"
+        },
+        {
+          "name": "Melodies International",
+          "path": "/shows/melodies-international/episodes/melodies-international-18th-march-2019"
+        },
+        {
+          "name": "Pipe Down",
+          "path": "/shows/pipe-down"
+        },
+        {
+          "name": "Rich & Johnny's Inzane Michigan",
+          "path": "/shows/inzane-michigan"
+        },
+        {
+          "name": "Sameed",
+          "path": "/shows/sameed"
+        },
+        {
+          "name": "Sun Cut",
+          "path": "/shows/sun-cut"
+        },
+        {
+          "name": "Weekend Read",
+          "path": "/shows/jonah/episodes/weekend-read-w-jonah-rabb-15th-april-2021"
+        },
+        {
+          "name": "Whodis?",
+          "path": "/shows/56-djs"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media.ntslive.co.uk/static/soul-1600x900-30fps-bedac4f7396b6547195b5c235487d114.mp4",
+        "animation_large_portrait": "https://media.ntslive.co.uk/static/soul-1080x1920-30fps-2ce6fac26042aefa23332079fb4b07fa.mp4",
+        "animation_thumb": "https://media.ntslive.co.uk/static/soul-120x120-30fps-193dddf9b5ca06826b9eefb039963fb5.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/7669d8d3-e277-4ccd-a945-2743bf2ea358_1626134400.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/5d119a30-070d-4114-bf20-2a61ed8f7b83_1626134400.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/53026366-cf7c-4a57-af5c-c894d2375dc6_1626220800.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/53026366-cf7c-4a57-af5c-c894d2375dc6_1626220800.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/53026366-cf7c-4a57-af5c-c894d2375dc6_1626220800.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/53026366-cf7c-4a57-af5c-c894d2375dc6_1626220800.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/53026366-cf7c-4a57-af5c-c894d2375dc6_1626220800.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/feelings",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "the-tube",
+      "title": "The Tube",
+      "subtitle": "Oddball post-punk, industrial provocation, and minimal wave.",
+      "description": "Rip it up and start again as we explore the differing strains of avant-garde music that immediately followed punk.",
+      "description_html": "<p>Rip it up and start again as we explore the differing strains of avant-garde music that immediately followed punk.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape26",
+      "credits": [
+        {
+          "name": "80's Rampwalk",
+          "path": "/shows/80srampwalk"
+        },
+        {
+          "name": "Absolute Fiction",
+          "path": "/shows/absolute-fiction"
+        },
+        {
+          "name": "Axcess Amensia",
+          "path": "/shows/axcess-amnesia/episodes/axcess-amnesia-24th-january-2020"
+        },
+        {
+          "name": "Cold Storage Special",
+          "path": "/shows/the-nts-guide-to/episodes/cold-storage-an-introduction-26thmay-2020"
+        },
+        {
+          "name": "Colours",
+          "path": "/shows/colours"
+        },
+        {
+          "name": "Confusing Mix",
+          "path": "/shows/confusing-mix"
+        },
+        {
+          "name": "Crossed Wires",
+          "path": "/shows/amanda-siegel"
+        },
+        {
+          "name": "DAVE ID",
+          "path": "/shows/daveid"
+        },
+        {
+          "name": "Gabi",
+          "path": "/shows/gabi"
+        },
+        {
+          "name": "J D Twitch - Post Punk Special",
+          "path": "/shows/optimo/episodes/jdtwitchpostpunkspecial30thoctober2015"
+        },
+        {
+          "name": "Leila Samir",
+          "path": "/shows/leila-samir"
+        },
+        {
+          "name": "Okonkole Y Trompa",
+          "path": "/shows/okonkole-y-trompa"
+        },
+        {
+          "name": "Perfect Lives",
+          "path": "/shows/guests/episodes/perfect-lives-22nd-december-2020"
+        },
+        {
+          "name": "SNZ",
+          "path": "/shows/snz"
+        },
+        {
+          "name": "Sofay & Ribeka",
+          "path": "/shows/sofay-ribeka"
+        },
+        {
+          "name": "Tim Koh",
+          "path": "/shows/tim-koh"
+        },
+        {
+          "name": "World Of Echo",
+          "path": "/shows/guests/episodes/world-of-echo-1st-november-2019"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media.ntslive.co.uk/static/the-tube-1600x900-30fps-8572158b879cff550ff895f64ab30de3.mp4",
+        "animation_large_portrait": "https://media.ntslive.co.uk/static/the-tube-1080x1920-30fps-d6f64061aed6d3819736e34a31555044.mp4",
+        "animation_thumb": "https://media.ntslive.co.uk/static/the-tube-120x120-30fps-daf2be1870e11737c4b9f60fc88938e8.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/477d4fbf-d609-48ca-9155-940c8b57be70_1626134400.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/90df0ebb-d453-4083-9fb2-d0f670b95480_1626134400.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/f3657c6b-aa6b-4ad9-9c12-d9e9cbe7f68d_1626220800.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/f3657c6b-aa6b-4ad9-9c12-d9e9cbe7f68d_1626220800.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/f3657c6b-aa6b-4ad9-9c12-d9e9cbe7f68d_1626220800.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/f3657c6b-aa6b-4ad9-9c12-d9e9cbe7f68d_1626220800.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/f3657c6b-aa6b-4ad9-9c12-d9e9cbe7f68d_1626220800.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/the-tube",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "heartlands",
+      "title": "Heartlands",
+      "subtitle": "Celebrating folk and traditional music from all corners of the world.",
+      "description": "Expand your musical knowledge with an NTS archive of recorded folk and indigenous musical traditions.",
+      "description_html": "<p>Expand your musical knowledge with an NTS archive of recorded folk and indigenous musical traditions.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape32",
+      "credits": [
+        {
+          "name": "Abdullah Miniawy",
+          "path": "/shows/guests/episodes/abdullah-miniawy-11th-september-2018"
+        },
+        {
+          "name": "Albanian Iso-Polyphony w/ Dan Shutt",
+          "path": "/shows/guests/episodes/albanian-iso-polyphony-27th-april-2017"
+        },
+        {
+          "name": "British Library Sound Archive",
+          "path": "/shows/british-library-sound-archive"
+        },
+        {
+          "name": "Legends of Albanian Song",
+          "path": "/shows/guests/episodes/legends-of-albanian-song-grupi-lab-10th-october-2019"
+        },
+        {
+          "name": "Beshknow",
+          "path": "/shows/guests/episodes/beshknow-presents-sur-e-sarv-9th-may-2021"
+        },
+        {
+          "name": "Death Is Not The End",
+          "path": "/shows/death-is-not-the-end"
+        },
+        {
+          "name": "Discostan",
+          "path": "/shows/discostan"
+        },
+        {
+          "name": "EL HUMO MUNDIAL CON SONIDO MARTINES",
+          "path": "/shows/sonido-martines"
+        },
+        {
+          "name": "Fortuna Records",
+          "path": "/shows/fortuna-records"
+        },
+        {
+          "name": "Geologist",
+          "path": "/shows/geologist"
+        },
+        {
+          "name": "Ma3azef",
+          "path": "/shows/ma3azef"
+        },
+        {
+          "name": "Mike Title",
+          "path": "/shows/guests/episodes/mike-title-north-african-special-8th-february-2020"
+        },
+        {
+          "name": "Open Hand Real Flames",
+          "path": "/shows/open-hand-real-flames"
+        },
+        {
+          "name": "Paradise Bangkok",
+          "path": "/shows/paradise-bangkok"
+        },
+        {
+          "name": "Raga Vibrations",
+          "path": "/shows/raga-vibrations"
+        },
+        {
+          "name": "SUZUKI-SANJUUSANKAITEN-MASAO",
+          "path": "/shows/guests/episodes/suzuki-sanjuusankaiten-masao-14th-september-2021"
+        },
+        {
+          "name": "Subterranean Odyssey",
+          "path": "/shows/subterranean-odyssey/episodes/subterannean-odyssey27th-july-2016"
+        },
+        {
+          "name": "Japan Blues & Riyo Mountains",
+          "path": "/shows/planet-carnival/episodes/street-sound-tokyo-28th-august-2020"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media.ntslive.co.uk/static/heartlands-visuals-final-1600x900-30fps-c2e7bdc3807f15f940d4f015cf40b070.mp4",
+        "animation_large_portrait": "https://media.ntslive.co.uk/static/heartlands-visuals-final-1080x1920-30fps-8374a67f5fc5dfb8b69a016a76278fc8.mp4",
+        "animation_thumb": "https://media.ntslive.co.uk/static/heartlands-visuals-final-120x120-30fps-6cfb15644c86236794ed2e8ec92e29ae.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/f4029f28-9524-4aa9-8186-166252d84cb4_1638230400.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/3f2c56ab-e9e4-4574-88e7-c4201f688d85_1638230400.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/44b26a05-d30f-4168-b80c-4d0db3df3d74_1638230400.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/44b26a05-d30f-4168-b80c-4d0db3df3d74_1638230400.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/44b26a05-d30f-4168-b80c-4d0db3df3d74_1638230400.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/44b26a05-d30f-4168-b80c-4d0db3df3d74_1638230400.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/44b26a05-d30f-4168-b80c-4d0db3df3d74_1638230400.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/heartlands",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "expansions",
+      "title": "Expansions",
+      "subtitle": "Jazz and its many mind-expanding variations.",
+      "description": "Embark on a never-ending astral journey from Sun Ra to George Duke, via obscure Polish jazz cassettes, stacks of spiritual jazz, excursions in Ethiopiques and jazz-adjacent genres.",
+      "description_html": "<p>Embark on a never-ending astral journey from Sun Ra to George Duke, via obscure Polish jazz cassettes, stacks of spiritual jazz, excursions in Ethiopiques and jazz-adjacent genres.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape3",
+      "credits": [
+        {
+          "name": "Altered Soul Experiment w/ Amila",
+          "path": "/shows/amila"
+        },
+        {
+          "name": "Architects",
+          "path": "/shows/architects"
+        },
+        {
+          "name": "Avey Tare (Animal Collective)",
+          "path": "/shows/solid-steel/episodes/solid-steel-radio-show-2872017-hour-1-avey-tare-animal-collective"
+        },
+        {
+          "name": "Black Classical",
+          "path": "/shows/black-classical-history-of-spiritual-jazz"
+        },
+        {
+          "name": "Donna Leake",
+          "path": "/shows/donna-leake"
+        },
+        {
+          "name": "Floating Roofs",
+          "path": "/shows/floating-roofs"
+        },
+        {
+          "name": "Forest Swords",
+          "path": "/shows/forest-swords"
+        },
+        {
+          "name": "Fortuna Records",
+          "path": "/shows/fortuna-records"
+        },
+        {
+          "name": "In Focus - Don Cherry",
+          "path": "/shows/in-focus/episodes/in-focus-don-cherry-23rd-february-2018"
+        },
+        {
+          "name": "It's Nation Time",
+          "path": "/shows/its-nation-time"
+        },
+        {
+          "name": "J.A.W.",
+          "path": "/shows/family-reunion"
+        },
+        {
+          "name": "Jameszoo",
+          "path": "/shows/jameszoo"
+        },
+        {
+          "name": "Jazzman",
+          "path": "/shows/jazzman"
+        },
+        {
+          "name": "Jesse Futerman",
+          "path": "/shows/guests/episodes/jesse-futerman-8th-march-2019"
+        },
+        {
+          "name": "Lavender Kite Audio Research Hour",
+          "path": "/shows/lavender-kite-audio-research-hour"
+        },
+        {
+          "name": "Onra",
+          "path": "/shows/live-from-the-108-w-onra"
+        },
+        {
+          "name": "Louise Chen",
+          "path": "/shows/louise-chen"
+        },
+        {
+          "name": "Klein Blue",
+          "path": "/shows/klein-blue"
+        },
+        {
+          "name": "Kutiman",
+          "path": "/shows/guests/episodes/kutiman-2nd-september-2016"
+        },
+        {
+          "name": "Mark Wayward",
+          "path": "/shows/guests/episodes/mark-wayward-21st-october-2018"
+        },
+        {
+          "name": "Martyn",
+          "path": "/shows/martyn"
+        },
+        {
+          "name": "Mondegreen",
+          "path": "/shows/guests/episodes/mondegreen-10th-july-2018"
+        },
+        {
+          "name": "Mr Beatnik",
+          "path": "/shows/sun-ra/episodes/mr-beatnik-100-years-of-sun-ra-20th-may-2014"
+        },
+        {
+          "name": "Ohbliv",
+          "path": "/shows/ohbliv"
+        },
+        {
+          "name": "Organic Music Tokyo w/ Chee Shimizu",
+          "path": "/shows/organic-music"
+        },
+        {
+          "name": "Paul Camo",
+          "path": "/shows/uniqlo-tate-lates/episodes/uniqlo-tate-lates-paul-camo-25th-may-2018"
+        },
+        {
+          "name": "Polish Jazz Mixtape",
+          "path": "/shows/guests/episodes/polish-jazz-mixtapes-11th-september-2018"
+        },
+        {
+          "name": "Relativity Suite",
+          "path": "/shows/guests/episodes/relativity-suite-alice-coltrane-special-18th-december-2014"
+        },
+        {
+          "name": "Sameed - Nujabes Samples",
+          "path": "/shows/sameed/episodes/sameed-nujabes-28th-november-2018"
+        },
+        {
+          "name": "Tommasi",
+          "path": "/shows/tommasi"
+        },
+        {
+          "name": "Naima Karlsson",
+          "path": "/shows/guests/episodes/women-in-jazz-8th-march-2018"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/expansions-1600x900-30fps-0c970e45313307a15e2ada809462e499.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/expansions-1080x1920-40fps-12b265742a29ccc26e76bd05545e3796.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/expansions-120x120-30fps-394348a4713088a493c6784c0d7c840a.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/f521368c-9b2f-413f-bd70-9d77658a827b_1542844800.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/2fdf9b28-36ba-45a3-960f-f5b2bc520cda_1542844800.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/acc3ad65-05bd-495d-90cb-f5d81221464b_1542931200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/acc3ad65-05bd-495d-90cb-f5d81221464b_1542931200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/acc3ad65-05bd-495d-90cb-f5d81221464b_1542931200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/acc3ad65-05bd-495d-90cb-f5d81221464b_1542931200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/acc3ad65-05bd-495d-90cb-f5d81221464b_1542931200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/expansions",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "100-percent-hip-hop",
+      "title": "Low Key",
+      "subtitle": "Keeping it simple with lo-fi hip-hop and smooth R’n’B.",
+      "description": "Covering everything chill – whether that’s downtempo beats, Golden Age hip-hop or grown ‘n’ sexy slow jams.",
+      "description_html": "<p>Covering everything chill – whether that’s downtempo beats, Golden Age hip-hop or grown ‘n’ sexy slow jams.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape2",
+      "credits": [
+        {
+          "name": "100 Elements",
+          "path": "/shows/100-elements"
+        },
+        {
+          "name": "Access Denied",
+          "path": "/shows/access-denied"
+        },
+        {
+          "name": "AdamGoesHam",
+          "path": "/shows/guests/episodes/adam-goes-ham-10th-july-2019"
+        },
+        {
+          "name": "AJ Suede",
+          "path": "/shows/guests/episodes/aj-suede-17th-may-2019"
+        },
+        {
+          "name": "Budgie",
+          "path": "/shows/budgie"
+        },
+        {
+          "name": "Colours",
+          "path": "/shows/colours"
+        },
+        {
+          "name": "Danny Brown",
+          "path": "/shows/wxaxrxp/episodes/danny-brown-tesla-mix-21st-june-2019"
+        },
+        {
+          "name": "Dexter Dukarus",
+          "path": "/shows/dexter-dukarus"
+        },
+        {
+          "name": "DJ Spanish Fly",
+          "path": "/shows/dj-spanish-fly"
+        },
+        {
+          "name": "Drae Da Skimask",
+          "path": "/shows/drae-da-skimask"
+        },
+        {
+          "name": "Finesse The Plug Radio",
+          "path": "/shows/finesse-the-plug"
+        },
+        {
+          "name": "Grandmilly & Shozae",
+          "path": "/shows/guests/episodes/grandmilly-and-shozae-9th-october-2018"
+        },
+        {
+          "name": "Hit A Lick Radio",
+          "path": "/shows/hit-a-lick"
+        },
+        {
+          "name": "Hollow Points Radio",
+          "path": "/shows/hollow-points"
+        },
+        {
+          "name": "Houston Rap Tapes",
+          "path": "/shows/guests/episodes/houston-rap-tapes-30th-october-2018"
+        },
+        {
+          "name": "Hung, Drawn & Quartered",
+          "path": "/shows/hung-drawn-quartered"
+        },
+        {
+          "name": "Image Search",
+          "path": "/shows/image-search"
+        },
+        {
+          "name": "In Focus",
+          "path": "/shows/in-focus"
+        },
+        {
+          "name": "Jaro Sounder",
+          "path": "/shows/jaro-sounder"
+        },
+        {
+          "name": "Lil Creep Shows Crazy House",
+          "path": "/shows/sic-records"
+        },
+        {
+          "name": "Mobbs",
+          "path": "/shows/mobbs"
+        },
+        {
+          "name": "Nitetrax",
+          "path": "/shows/nitetrax"
+        },
+        {
+          "name": "Onra",
+          "path": "/shows/live-from-the-108-w-onra"
+        },
+        {
+          "name": "Pan",
+          "path": "/shows/pan"
+        },
+        {
+          "name": "Posh God",
+          "path": "/shows/posh-god"
+        },
+        {
+          "name": "PU$$YRAP - Jody Simms",
+          "path": "/shows/guests/episodes/pu-yrap-jody-simms-20th-april-2019"
+        },
+        {
+          "name": "Sleeper Cell",
+          "path": "/shows/sleeper-cell"
+        },
+        {
+          "name": "Ted Draws",
+          "path": "/shows/TED-DRAWS"
+        },
+        {
+          "name": "Teo Nio",
+          "path": "/shows/cam-girl"
+        },
+        {
+          "name": "The NCA Show",
+          "path": "/shows/brassfoot"
+        },
+        {
+          "name": "The SLAP Pack",
+          "path": "/shows/slap-hour"
+        },
+        {
+          "name": "Tuesday Trips",
+          "path": "/shows/tuesday-trips"
+        },
+        {
+          "name": "WXAXRXP",
+          "path": "/shows/wxaxrxp"
+        },
+        {
+          "name": "Wiardon",
+          "path": "/shows/guests/episodes/wiardon-september-19th-2018"
+        },
+        {
+          "name": "Yayo",
+          "path": "/shows/yayo"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media.ntslive.co.uk/static/low-key-1600x900-30fps-840c13adc71384483721f06377139c1d.mp4",
+        "animation_large_portrait": "https://media.ntslive.co.uk/static/low-key-1080x1920-30fps-1b0caf2a9132e8ce241389f69a5a0c74.mp4",
+        "animation_thumb": "https://media.ntslive.co.uk/static/low-key-120x120-30fps-fdbb65e5bd8fe8ae2e1f373f0c246770.mp4",
+        "icon_black": "https://media2.ntslive.co.uk/crop/128x128/84f68576-4bd8-40b2-a333-30a1884ef307_1626134400.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/48e32c5a-7425-4810-8faf-d6e67ed868f1_1626134400.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/b667c612-1ef6-4bfd-ae87-0cec0a19629d_1626307200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/b667c612-1ef6-4bfd-ae87-0cec0a19629d_1626307200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/b667c612-1ef6-4bfd-ae87-0cec0a19629d_1626307200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/b667c612-1ef6-4bfd-ae87-0cec0a19629d_1626307200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/b667c612-1ef6-4bfd-ae87-0cec0a19629d_1626307200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/100-percent-hip-hop",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "sweat",
+      "title": "Sweat",
+      "subtitle": "A new wave of international party music.",
+      "description": "Dress to sweat and lock in to the beat of soundsystems, block parties, and carnivals around the world.",
+      "description_html": "<p>Dress to sweat and lock in to the beat of soundsystems, block parties, and carnivals around the world.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape24",
+      "credits": [
+        {
+          "name": "SHANNEN SP",
+          "path": "/shows/idst/episodes/shannen-28th-april-2021"
+        },
+        {
+          "name": "STIFF PAP",
+          "path": "/shows/guests/episodes/stiff-pap-27th-november-2020"
+        },
+        {
+          "name": "DJ P2N",
+          "path": "/shows/guests/episodes/dj-2pn-15th-december-2020"
+        },
+        {
+          "name": "Undermx",
+          "path": "/shows/rosa-pistola"
+        },
+        {
+          "name": "Favela Worldwide",
+          "path": "/shows/favela-worldwide"
+        },
+        {
+          "name": "Felix Hall",
+          "path": "/shows/felix-hall"
+        },
+        {
+          "name": "IASMIN TURBININHA",
+          "path": "/shows/iasmin-turbininha"
+        },
+        {
+          "name": "Lukid",
+          "path": "/shows/lukid/episodes/lukid-15th-march-2021"
+        },
+        {
+          "name": "Dactylian & Palo Santo",
+          "path": "/shows/dactylian-and-palo-santo/episodes/baile-funk-29th-august-2020"
+        },
+        {
+          "name": "Muñeka",
+          "path": "/shows/guests/episodes/muneka-14th-february-2020"
+        },
+        {
+          "name": "Tomasa Del Real",
+          "path": "/shows/tomasa-del-real"
+        },
+        {
+          "name": "DJ Negro",
+          "path": "/shows/planet-carnival/episodes/dj-negro-28th-august-2020"
+        },
+        {
+          "name": "Black Obsidian Sound System",
+          "path": "/shows/planet-carnival/episodes/black-obsidian-28th-august-2020"
+        },
+        {
+          "name": "Soundsystem Batekoo",
+          "path": "/shows/planet-carnival/episodes/batakoo-28th-august-2020"
+        },
+        {
+          "name": "Hitmakerchinx",
+          "path": "/shows/planet-carnival/episodes/hitmakerchinx-28th-august-2020"
+        },
+        {
+          "name": "Autotune the World w/ DJ Cuica",
+          "path": "/shows/christopher-kirkley"
+        },
+        {
+          "name": "Queen Kong ",
+          "path": "/shows/queen-kong/episodes/queen-kong-26th-may-2017"
+        },
+        {
+          "name": "Neoperreo Radio",
+          "path": "/shows/neoperreo-radio"
+        },
+        {
+          "name": "Mixpak ",
+          "path": "/shows/mixpak/"
+        },
+        {
+          "name": "BFDM",
+          "path": "/shows/BFDM"
+        },
+        {
+          "name": "Daughter Of A Rasta",
+          "path": "/shows/freeky-reeky"
+        },
+        {
+          "name": "DJ Nigga Fox",
+          "path": "/shows/guests/episodes/dj-nigga-fox-29th-july-2016"
+        },
+        {
+          "name": "Blacksea Não Maya",
+          "path": "/shows/guests/episodes/blacksea-nao-maya-7th-september-2020"
+        },
+        {
+          "name": "Gqom Oh!",
+          "path": "/shows/gqom-oh"
+        },
+        {
+          "name": "DJ Lag",
+          "path": "/shows/guests/episodes/dj-lag-19th-october-2019"
+        },
+        {
+          "name": "Foreign hour",
+          "path": "/shows/foreign-hour"
+        },
+        {
+          "name": "San Farafina",
+          "path": "/shows/guests/episodes/san-farafina-18th-july-2020"
+        },
+        {
+          "name": "Dj Danifox",
+          "path": "/shows/guests/episodes/dj-danifox-10th-february-2020"
+        },
+        {
+          "name": "Principe 7th Birthday",
+          "path": "/shows/guests/episodes/principe-7th-birthday-takeover-21st-february-2019"
+        },
+        {
+          "name": "Nidia",
+          "path": "/shows/guests/episodes/nidia-22th-may-2018"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/sweat-1600x900-30fps-49079bdcad7e00ba81cdbcf6f550b080.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/sweat-1080x1920-30fps-5eebd7a151610851ae83d4ac85af9b17.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/sweat-120x120-30fps-906c6b97457602845082e70520ca65fc.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/5012a9b1-2f62-4a1f-ae2b-61604306de0e_1622592000.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/5e36adf2-e5eb-421e-9381-7bf44d83b3b7_1622592000.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/f0c77a19-670b-4979-ac6e-e93f6089b5bc_1622592000.png",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/f0c77a19-670b-4979-ac6e-e93f6089b5bc_1622592000.png",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/f0c77a19-670b-4979-ac6e-e93f6089b5bc_1622592000.png",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/f0c77a19-670b-4979-ac6e-e93f6089b5bc_1622592000.png",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/f0c77a19-670b-4979-ac6e-e93f6089b5bc_1622592000.png"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/sweat",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "memory-lane",
+      "title": "Memory Lane",
+      "subtitle": "Turn on, tune in, drop out.",
+      "description": "Turn back the clock and lose yourself in a world of counter-cultural folk, LSD-laced psychedelia, sweet soul and raw garage rock.",
+      "description_html": "<p>Turn back the clock and lose yourself in a world of counter-cultural folk, LSD-laced psychedelia, sweet soul and raw garage rock.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape6",
+      "credits": [
+        {
+          "name": "Acid Memories",
+          "path": "/shows/acid-memories"
+        },
+        {
+          "name": "Are You Before",
+          "path": "/shows/are-you-before"
+        },
+        {
+          "name": "Bumpin' on Sunset",
+          "path": "/shows/bumpin-on-sunset"
+        },
+        {
+          "name": "Creepzone",
+          "path": "/shows/creepzone"
+        },
+        {
+          "name": "Crossed Wires",
+          "path": "/shows/amanda-siegel"
+        },
+        {
+          "name": "Eva Puyuelo",
+          "path": "/shows/guests/episodes/eva-puyuelo-13th-november-2017"
+        },
+        {
+          "name": "Fat Possum",
+          "path": "/shows/guests/episodes/fat-possum-townes-van-zandt-special-16th-december-2017"
+        },
+        {
+          "name": "Fervent Moon",
+          "path": "/shows/fervent-moon"
+        },
+        {
+          "name": "Gardenesque w/ Aaron Angell",
+          "path": "/shows/guests/episodes/gardenesque-aaron-angell-4th-july-2019"
+        },
+        {
+          "name": "High Noon /w Dina J",
+          "path": "/shows/dina-j"
+        },
+        {
+          "name": "Hung, Drawn & Quartered",
+          "path": "/shows/hung-drawn-quartered"
+        },
+        {
+          "name": "In Focus",
+          "path": "/shows/in-focus"
+        },
+        {
+          "name": "Janie Jones",
+          "path": "/shows/janie-jones"
+        },
+        {
+          "name": "Jesús Bacalão",
+          "path": "/shows/guests/episodes/jesus-bacalao-light-entertainment-programme-xianedelica-1966-1978-29th-june-2019"
+        },
+        {
+          "name": "Kokonut Trip w/ Tim Koh",
+          "path": "/shows/tim-koh"
+        },
+        {
+          "name": "Lavender Kite Audio Research Hour",
+          "path": "/shows/lavender-kite-audio-research-hour"
+        },
+        {
+          "name": "Leaving Records",
+          "path": "/shows/leaving-records"
+        },
+        {
+          "name": "Light In The Attic",
+          "path": "/shows/guests/episodes/light-in-the-attic-tumbleweed-records-1971-1973"
+        },
+        {
+          "name": "Loose Bones",
+          "path": "/shows/loose-bones"
+        },
+        {
+          "name": "Lucifer Over LA",
+          "path": "/shows/lucifer-over-london"
+        },
+        {
+          "name": "Mikey Young",
+          "path": "/shows/mikey-young"
+        },
+        {
+          "name": "No Weapon Is Absolute",
+          "path": "/shows/no-weapon-is-absolute"
+        },
+        {
+          "name": "Organ Tapes",
+          "path": "/shows/organ-tapes"
+        },
+        {
+          "name": "Radio Jiro",
+          "path": "/shows/radio-jiro"
+        },
+        {
+          "name": "Roky Erickson: A Tribute",
+          "path": "/shows/guests/episodes/roky-erickson-tribute-4th-june-2019"
+        },
+        {
+          "name": "The Head Zone",
+          "path": "/shows/moon-duo"
+        },
+        {
+          "name": "The Uline Catalog",
+          "path": "/shows/uline-catalog"
+        },
+        {
+          "name": "Tom Furse",
+          "path": "/shows/tom-furse"
+        },
+        {
+          "name": "Windmills Of Your Mind",
+          "path": "/shows/the-windmills-of-your-mind"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/memory-lane-1600x900-30fps-b3651581c87270dccb8dc890be310965.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/memory-lane-1080x1920-30fps-819b8d633bb953773e2be31d83cededa.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/memory-lane-120x120-30fps-6ec3cd4d0dd7d245b408346c951e25d3.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/b38d4552-08bb-4ce4-b431-3c722ba740c8_1560470400.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/f0b55b39-f2db-4f01-b627-a0ed2355ddbf_1560470400.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/f889399d-6277-46e2-9be9-840bbdd25cc5_1560470400.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/f889399d-6277-46e2-9be9-840bbdd25cc5_1560470400.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/f889399d-6277-46e2-9be9-840bbdd25cc5_1560470400.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/f889399d-6277-46e2-9be9-840bbdd25cc5_1560470400.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/f889399d-6277-46e2-9be9-840bbdd25cc5_1560470400.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/memory-lane",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "island-time",
+      "title": "Island Time",
+      "subtitle": "Easy skanking - reggae, dub, and plenty more.",
+      "description": "From the Caribbean to the world. Raise a toast to the one drop rhythms of roots reggae, sweet lovers rock and vintage dub.",
+      "description_html": "<p>From the Caribbean to the world. Raise a toast to the one drop rhythms of roots reggae, sweet lovers rock and vintage dub.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape21",
+      "credits": [
+        {
+          "name": "All Fruits Ripe w/ Jack Sapsed",
+          "path": "/shows/all-fruits-ripe"
+        },
+        {
+          "name": "Architechts",
+          "path": "/shows/architects"
+        },
+        {
+          "name": "Barnaby Bennett",
+          "path": "/shows/lavender-kite-audio-research-hour"
+        },
+        {
+          "name": "Chloedees",
+          "path": "/shows/chloedees"
+        },
+        {
+          "name": "Death Is Not The End",
+          "path": "/shows/death-is-not-the-end"
+        },
+        {
+          "name": "Estelle",
+          "path": "/shows/estelle-birch"
+        },
+        {
+          "name": "Fortuna",
+          "path": "/shows/fortuna-records"
+        },
+        {
+          "name": "High Jazz",
+          "path": "/shows/high-jazz"
+        },
+        {
+          "name": "Hung Drawn & Quartered",
+          "path": "/shows/hung-drawn-quartered"
+        },
+        {
+          "name": "Kestrel Explorations",
+          "path": "/shows/kestrel-explorations"
+        },
+        {
+          "name": "Khruangbin",
+          "path": "/shows/love-international-2018"
+        },
+        {
+          "name": "Not Waving",
+          "path": "/shows/not-waving"
+        },
+        {
+          "name": "Ohbliv",
+          "path": "/shows/ohbliv"
+        },
+        {
+          "name": "Onra",
+          "path": "/shows/live-from-the-108-w-onra"
+        },
+        {
+          "name": "Scratch The Upsetter",
+          "path": "/shows/guests"
+        },
+        {
+          "name": "Strange Attractor",
+          "path": "/shows/fortuna-records"
+        },
+        {
+          "name": "Trilogy Tapes",
+          "path": "/shows/the-trilogy-tapes"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media.ntslive.co.uk/static/island-time-1600x900-30fps-8ed7d9535492b79332e519348896d756.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/island-time-1080x1920-30fps-ab278c4ba270b3ccc8aa6b0ed7ce9e43.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/island-time-120x120-30fps-154c74042b464c5bc363df5e9f1505aa.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/da1ded99-fef8-4c7e-9dfa-e8aaed4d503c_1590537600.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/b98ea96d-8f42-40d2-bbd0-91f302409e86_1590537600.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/68541b02-903c-4caf-bba2-538d0b9bfedc_1590451200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/68541b02-903c-4caf-bba2-538d0b9bfedc_1590451200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/68541b02-903c-4caf-bba2-538d0b9bfedc_1590451200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/68541b02-903c-4caf-bba2-538d0b9bfedc_1590451200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/68541b02-903c-4caf-bba2-538d0b9bfedc_1590451200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/island-time",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "slow-focus",
+      "title": "Slow Focus",
+      "subtitle": "Meditative, relaxing and beatless: ambient, drone and ragas.",
+      "description": "Tune in and zone out with NTS’ compendium of the beatless and transcendental. Calming sounds to help you focus or drift away.",
+      "description_html": "<p>Tune in and zone out with NTS’ compendium of the beatless and transcendental. Calming sounds to help you focus or drift away.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape",
+      "credits": [
+        {
+          "name": "Aboutface",
+          "path": "/shows/aboutface"
+        },
+        {
+          "name": "Are You Before",
+          "path": "/shows/are-you-before"
+        },
+        {
+          "name": "Carolina Soul",
+          "path": "/shows/carolinasoul"
+        },
+        {
+          "name": "Caterina Barbieri & Ruben Spini",
+          "path": "/shows/guests/episodes/caterina-barbieri-and-ruben-spini-22nd-march-2019"
+        },
+        {
+          "name": "Constellation Tatsu",
+          "path": "/shows/guests/episodes/constellation-tatsu-1st-march-2015"
+        },
+        {
+          "name": "Dischord Records",
+          "path": "/shows/dischord-records"
+        },
+        {
+          "name": "Empire of Signs",
+          "path": "/shows/guests/episodes/music-for-interiors-volume-3-5th-september-2017"
+        },
+        {
+          "name": "Fifth world",
+          "path": "/shows/fifth-world"
+        },
+        {
+          "name": "Getting Warmer w/ Jen Monroe",
+          "path": "/shows/jen-monroe"
+        },
+        {
+          "name": "Golden Ratio Frequencies",
+          "path": "/shows/golden-ratio-frequencies"
+        },
+        {
+          "name": "Hung, Drawn & Quartered",
+          "path": "/shows/hung-drawn-quartered"
+        },
+        {
+          "name": "In Focus",
+          "path": "/shows/in-focus"
+        },
+        {
+          "name": "Ikura Imprint",
+          "path": "/shows/ikura-imprint"
+        },
+        {
+          "name": "Jaro Sounder",
+          "path": "/shows/jaro-sounder"
+        },
+        {
+          "name": "Julien Dechery - Sebastian Gandera",
+          "path": "/shows/guests/episodes/julien-dechery-sebastian-gandera-special-18th-december-2018"
+        },
+        {
+          "name": "Kranky",
+          "path": "/shows/kranky"
+        },
+        {
+          "name": "Leaving Records",
+          "path": "/shows/leaving-records"
+        },
+        {
+          "name": "London Contemporary Orchestra",
+          "path": "/shows/lco"
+        },
+        {
+          "name": "Longform Editions",
+          "path": "/shows/guests/episodes/longform-editions-20th-february-2019"
+        },
+        {
+          "name": "Luke Mele",
+          "path": "/shows/luke-mele"
+        },
+        {
+          "name": "Microdosing",
+          "path": "/shows/microdosing"
+        },
+        {
+          "name": "Murlo",
+          "path": "/shows/murlo"
+        },
+        {
+          "name": "Nico Niquo",
+          "path": "/shows/guests/episodes/nico-niquo-12th-july-2019"
+        },
+        {
+          "name": "Perfect Sound Forever",
+          "path": "/shows/perfect-sound-forever"
+        },
+        {
+          "name": "PAN",
+          "path": "/shows/pan"
+        },
+        {
+          "name": "Posh Isolation",
+          "path": "/shows/posh-isolation"
+        },
+        {
+          "name": "Post-Geography",
+          "path": "/shows/post-geography"
+        },
+        {
+          "name": "Radio Jiro",
+          "path": "/shows/radio-jiro"
+        },
+        {
+          "name": "RVNG Intl.",
+          "path": "/shows/rvngintl"
+        },
+        {
+          "name": "Sanpo Disco",
+          "path": "/shows/sanpo-disco"
+        },
+        {
+          "name": "Sounds Of The Dawn",
+          "path": "/shows/soundsofthedawn"
+        },
+        {
+          "name": "Suso Sáiz",
+          "path": "/shows/guests/episodes/bcosof-suso-saiz-live-23rd-november-2018"
+        },
+        {
+          "name": "Tommasi",
+          "path": "/shows/tommasi"
+        },
+        {
+          "name": "Vlad Dobrovolski",
+          "path": "/shows/guests/episodes/vlad-dobrovolski-5th-february-2018"
+        },
+        {
+          "name": "youarelistening.to",
+          "path": "/shows/youarelisteningto"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/slow-focus-1600x900-30fps-ebebfcbd7d30fd707c336caf544d5ee9.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/slow-focus-1080x1920-40fps-396908b216aac7013304360093ae2232.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/slow-focus-120x120-30fps-6252a9531c684d42628da76656e0e71e.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/939bd1f4-490e-40f8-99ed-90c36bb7546e_1542844800.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/d3521643-5f59-4158-a5ee-fb41c34c8e53_1542844800.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/01f7cbe6-235f-4e33-8f2f-70152c91edf1_1542931200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/01f7cbe6-235f-4e33-8f2f-70152c91edf1_1542931200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/01f7cbe6-235f-4e33-8f2f-70152c91edf1_1542931200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/01f7cbe6-235f-4e33-8f2f-70152c91edf1_1542931200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/01f7cbe6-235f-4e33-8f2f-70152c91edf1_1542931200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/slow-focus",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "4-to-the-floor",
+      "title": "4 To The Floor",
+      "subtitle": "House and techno from past to present.",
+      "description": "The beat goes on: music to make you move, whether it’s house from Chicago, techno from Detroit or NYC disco.",
+      "description_html": "<p>The beat goes on: music to make you move, whether it’s house from Chicago, techno from Detroit or NYC disco.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape5",
+      "credits": [
+        {
+          "name": "Afrodeutsche",
+          "path": "/shows/afrodeutsche"
+        },
+        {
+          "name": "Altered Soul Experiment w/ Amila",
+          "path": "/shows/amila"
+        },
+        {
+          "name": "Andy Butler",
+          "path": "/shows/andy-butler"
+        },
+        {
+          "name": "Ashtar Lavanda",
+          "path": "/shows/guests/episodes/ashtar-lavanda-15th-january-2018"
+        },
+        {
+          "name": "Avalon Emerson",
+          "path": "/shows/guests/episodes/avalon-emerson-26th-january-2015"
+        },
+        {
+          "name": "Changsie",
+          "path": "/shows/guests/episodes/changsie-13th-may-2019"
+        },
+        {
+          "name": "Christopher Kirkley",
+          "path": "/shows/christopher-kirkley"
+        },
+        {
+          "name": "Bell Towers",
+          "path": "/shows/bell-towers"
+        },
+        {
+          "name": "Ben Ufo & Craig Richards",
+          "path": "/shows/love-international-2018/episodes/ben-ufo-craig-richard-live-from-love-international-1st-july-2018"
+        },
+        {
+          "name": "Ben Sims",
+          "path": "/shows/ben-sims"
+        },
+        {
+          "name": "Bergsonist",
+          "path": "/shows/bergsonist"
+        },
+        {
+          "name": "Bauernfeind",
+          "path": "/shows/guests/episodes/live-from-earth-klub-bauernfeind-20th-january-2019"
+        },
+        {
+          "name": "Benedek",
+          "path": "/shows/benedek"
+        },
+        {
+          "name": "Brav",
+          "path": "/shows/brav"
+        },
+        {
+          "name": "Breakwave",
+          "path": "/shows/breakwave"
+        },
+        {
+          "name": "Buried Light w/ ASHTREJINKINS ",
+          "path": "/shows/ashtrejinkins"
+        },
+        {
+          "name": "Call Super",
+          "path": "/shows/guests/episodes/call-super-9th-february-2018"
+        },
+        {
+          "name": "Debonair",
+          "path": "/shows/debonair"
+        },
+        {
+          "name": "Diamin",
+          "path": "/shows/guests/episodes/diamin-22nd-february-2019"
+        },
+        {
+          "name": "Further Research: Gerald Donald",
+          "path": "/shows/guests/episodes/further-research-gerald-donald-15th-november-2016"
+        },
+        {
+          "name": "Helena Hauff",
+          "path": "/shows/guests/episodes/helena-hauff-23rd-february-2018"
+        },
+        {
+          "name": "Henry Greenleaf",
+          "path": "/shows/guests/episodes/henry-greenleaf"
+        },
+        {
+          "name": "Inga Mauer",
+          "path": "/shows/guests/episodes/inga-mauer-15th-january-2019"
+        },
+        {
+          "name": "Jamie 3:26",
+          "path": "/shows/guests/episodes/jamie-326-nts2-19-april-2013"
+        },
+        {
+          "name": "Joey Anderson",
+          "path": "/shows/guests/episodes/joey-anderson-1st-august-2015"
+        },
+        {
+          "name": "Juan Atkins",
+          "path": "/shows/guests/episodes/juan-atkins-22nd-august-2015"
+        },
+        {
+          "name": "JMG Sessions w/ Jayda G",
+          "path": "/shows/jayda-g/episodes/jmg-sessions-w-jayda-g-16th-november-2018"
+        },
+        {
+          "name": "Karen Gwyer",
+          "path": "/shows/primavera-2018/episodes/karen-gwyer-31st-may-2018"
+        },
+        {
+          "name": "Larry Heard",
+          "path": "/shows/guests/episodes/larry-heard-6th-may-2016"
+        },
+        {
+          "name": "Livity Sound",
+          "path": "/shows/livity-sound"
+        },
+        {
+          "name": "LNS",
+          "path": "/shows/live-from-vancouver/episodes/lns-live-from-vancouver-25th-january-2016"
+        },
+        {
+          "name": "Magicwire",
+          "path": "/shows/lone"
+        },
+        {
+          "name": "Mike Servito",
+          "path": "/shows/dekmantel-2015/episodes/mike-servito-live-from-dekmantel-festival-31st-july-2015"
+        },
+        {
+          "name": "Minimal Violence",
+          "path": "/shows/guests/episodes/minimal-violence-14th-february-2017"
+        },
+        {
+          "name": "Naomi",
+          "path": "/shows/naomi"
+        },
+        {
+          "name": "Nina Kraviz",
+          "path": "/shows/unsound-2017/episodes/unsound-w-nina-kraviz-live-at-unsound-festival-12th-october-2017"
+        },
+        {
+          "name": "Nite Jewel",
+          "path": "/shows/nitejewel"
+        },
+        {
+          "name": "Nitetrax",
+          "path": "/shows/nitetrax"
+        },
+        {
+          "name": "Olivia",
+          "path": "/shows/guests/episodes/olivia-28th-january-2018"
+        },
+        {
+          "name": "Palms Trax",
+          "path": "/shows/palms-trax"
+        },
+        {
+          "name": "Powder",
+          "path": "/shows/love-international-2018/episodes/powder-live-from-love-international-4th-july-2018"
+        },
+        {
+          "name": "Prescription Records",
+          "path": "/shows/guests/episodes/prescription-w-rush-hour-22nd-february-2017"
+        },
+        {
+          "name": "Prosumer",
+          "path": "/shows/prosumer"
+        },
+        {
+          "name": "Raji Rags",
+          "path": "/shows/raji-rags"
+        },
+        {
+          "name": "Randomer",
+          "path": "/shows/guests/episodes/bloc-presents-randomer-17th-february-2015"
+        },
+        {
+          "name": "Sacred Pools",
+          "path": "/shows/sacred-pools"
+        },
+        {
+          "name": "Shanti Celeste",
+          "path": "/shows/shanticeleste"
+        },
+        {
+          "name": "Siren",
+          "path": "/shows/siren"
+        },
+        {
+          "name": "Solar",
+          "path": "/shows/primavera-2018/episodes/solar-live-from-primavera-sound-2nd-june-2018"
+        },
+        {
+          "name": "Solid Steel",
+          "path": "/shows/solid-steel"
+        },
+        {
+          "name": "System Olympia",
+          "path": "/shows/system-olympia"
+        },
+        {
+          "name": "Tevo Howard",
+          "path": "/shows/found-festival/episodes/tevo-howard-4th-april-2015"
+        },
+        {
+          "name": "Total Stasis",
+          "path": "/shows/total-stasis"
+        },
+        {
+          "name": "Umfang",
+          "path": "/shows/unsound-2017/episodes/umfang-12th-october-2017"
+        },
+        {
+          "name": "Underground & Black",
+          "path": "/shows/ash-lauryn"
+        },
+        {
+          "name": "Volvox",
+          "path": "/shows/guests/episodes/volvox-31st-march-2019"
+        },
+        {
+          "name": "VTGNIKE",
+          "path": "/shows/nts-x-carhartt-wip-radio-tour/episodes/vtgnike-carhartt-wip-radio-tour-moscow-10th-august-2017"
+        },
+        {
+          "name": "We Are Not Alone",
+          "path": "/shows/we-are-not-alone"
+        },
+        {
+          "name": "White Material",
+          "path": "/shows/white-material-live-from-texas"
+        },
+        {
+          "name": "Will Dimaggio",
+          "path": "/shows/guests/episodes/will-dimaggio-28th-april-2018"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/4-to-the-floor-1600x900-30fps-b62978e90079ecfa55de2fd5eba3fbe7.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/4-to-the-floor-1080x1920-40fps-83b05a0ef04001d2bdd573b0195c2558.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/4-to-the-floor-120x120-30fps-911883457d541b6839ce999e3fc73af2.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/4a8a020c-855d-41eb-890b-2f374a5c3179_1542844800.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/ce20abc9-0497-4fb6-84b4-be3bf8f0ad1e_1542844800.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/c3bad52d-418b-4bf6-aff5-eea3b9ff1186_1542931200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/c3bad52d-418b-4bf6-aff5-eea3b9ff1186_1542931200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/c3bad52d-418b-4bf6-aff5-eea3b9ff1186_1542931200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/c3bad52d-418b-4bf6-aff5-eea3b9ff1186_1542931200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/c3bad52d-418b-4bf6-aff5-eea3b9ff1186_1542931200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/4-to-the-floor",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "rap-house",
+      "title": "Rap House",
+      "subtitle": "808s and champagne.",
+      "description": "Non-stop rap, trap, and drill, from one side of the Atlantic to another. Experimental, emo, Soundcloud, and more - turn it up to turn up.",
+      "description_html": "<p>Non-stop rap, trap, and drill, from one side of the Atlantic to another. Experimental, emo, Soundcloud, and more - turn it up to turn up.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape22",
+      "credits": [
+        {
+          "name": "Access Denied",
+          "path": "/shows/access-denied"
+        },
+        {
+          "name": "Danny Brown",
+          "path": "/shows/wxaxrxp/episodes/danny-brown-tesla-mix-21st-june-2019"
+        },
+        {
+          "name": "Dexter Dukarus",
+          "path": "/shows/dexter-dukarus"
+        },
+        {
+          "name": "DJ Spanish Fly",
+          "path": "/shows/dj-spanish-fly"
+        },
+        {
+          "name": "Finesse The Plug",
+          "path": "/shows/finesse-the-plug"
+        },
+        {
+          "name": "Hit A Lick Radio",
+          "path": "/shows/hit-a-lick"
+        },
+        {
+          "name": "Jaro Sounder",
+          "path": "/shows/jaro-sounder"
+        },
+        {
+          "name": "Mobbs",
+          "path": "/shows/mobbs"
+        },
+        {
+          "name": "Paris Aden",
+          "path": "/shows/paris-aden"
+        },
+        {
+          "name": "Posh God",
+          "path": "/shows/posh-god"
+        },
+        {
+          "name": "Sleeper Cell",
+          "path": "/shows/sleeper-cell"
+        },
+        {
+          "name": "Teo Nio",
+          "path": "/shows/cam-girl"
+        },
+        {
+          "name": "The SLAP Pack w/ DJ Kita",
+          "path": "/shows/slap-hour"
+        },
+        {
+          "name": "Yayo",
+          "path": "/shows/yayo"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/rap-house-1600x900-30fps-66bbf7954babf0101f51b696b38a57a2.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/rap-house-1080x1920-30fps-be9ea426583274871fa578b395e915bf.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/rap-house-120x120-30fps-5e158083f35e0a4f236572fa9e3d31a4.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/63561375-b38e-4b72-908e-d494c6bf6535_1542844800.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/ff00ebc4-b8f1-4233-a600-e622416b3407_1542844800.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/916a2aa3-dcc5-4eb6-abea-b2f1914fb49a_1590451200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/916a2aa3-dcc5-4eb6-abea-b2f1914fb49a_1590451200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/916a2aa3-dcc5-4eb6-abea-b2f1914fb49a_1590451200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/916a2aa3-dcc5-4eb6-abea-b2f1914fb49a_1590451200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/916a2aa3-dcc5-4eb6-abea-b2f1914fb49a_1590451200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/rap-house",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "mixtape_alias": "field-recordings",
+      "title": "Field Recordings",
+      "subtitle": "Natural ambience from NTS listeners around the world.",
+      "description": "Our listener-submitted archive of field recordings, featuring the sounds of your homes, suburbs, cities, gardens and jungles.",
+      "description_html": "<p>Our listener-submitted archive of field recordings, featuring the sounds of your homes, suburbs, cities, gardens and jungles.</p><p><a href=\"https://www.nts.live/projects/field-recordings-submission\" target=\"_blank\" class=\"nts-app nts-text-link nts-text-link--alt\">Send us</a> your own recordings for consideration.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape23",
+      "credits": [
+        {
+          "name": "Adam J Wimbush",
+          "path": "https://www.instagram.com/ascsoms/?hl=en"
+        },
+        {
+          "name": "Adrian Carter",
+          "path": "https://adicarter.bandcamp.com"
+        },
+        {
+          "name": "Adrien Defrenet",
+          "path": ""
+        },
+        {
+          "name": "Alan Burns",
+          "path": ""
+        },
+        {
+          "name": "Alex McKie",
+          "path": "https://www.alexmckie.com"
+        },
+        {
+          "name": "Alex Reed",
+          "path": "https://alex-reed.co.uk"
+        },
+        {
+          "name": "Alexander Faingold",
+          "path": "https://www.gr8voltage.com"
+        },
+        {
+          "name": "Alexandra Genzini",
+          "path": "https://linktr.ee/alexandragenzini"
+        },
+        {
+          "name": "Aliénor G.",
+          "path": ""
+        },
+        {
+          "name": "Ally Bisshop",
+          "path": "https://www.allybisshop.com"
+        },
+        {
+          "name": "Alonso Esquinca Díaz",
+          "path": "https://www.instagram.com/doomerkebab/"
+        },
+        {
+          "name": "Amanda Brooks",
+          "path": "https://soundcloud.com/amanda-brooks-865100441"
+        },
+        {
+          "name": "Andrei Cucu",
+          "path": "https://andreicucu.com"
+        },
+        {
+          "name": "Andrej Chudy",
+          "path": ""
+        },
+        {
+          "name": "Andrey Kireev",
+          "path": "https://www.facebook.com/andrey.kireev.3"
+        },
+        {
+          "name": "ANDROMACHI VRAKATSELI",
+          "path": "https://soundcloud.com/andromachi"
+        },
+        {
+          "name": "Anna Gerlach",
+          "path": "https://agab.info/"
+        },
+        {
+          "name": "Anne Keating",
+          "path": "https://keatingstudio.com"
+        },
+        {
+          "name": "António Moura",
+          "path": ""
+        },
+        {
+          "name": "Ashley Tendekai",
+          "path": "https://flvz.bandcamp.com"
+        },
+        {
+          "name": "Barbara Keating & James McAleer",
+          "path": "https://artbeesmedia.wordpress.com/category/current/"
+        },
+        {
+          "name": "Bill Barner",
+          "path": "https://www.billbarner.com"
+        },
+        {
+          "name": "Botanica",
+          "path": "https://sayyestobotanica.bandcamp.com/"
+        },
+        {
+          "name": "BR83THE",
+          "path": "https://www.instagram.com/danny.br83the/"
+        },
+        {
+          "name": "Breakwave",
+          "path": "https://www.instagram.com/breakwave_/"
+        },
+        {
+          "name": "Brett Despotovich",
+          "path": "https://inchoate-sound.bandcamp.com/"
+        },
+        {
+          "name": "Bryan Miller",
+          "path": "https://dxdeltoid.bandcamp.com"
+        },
+        {
+          "name": "Carpet Merchant",
+          "path": "https://onlineconversations.bandcamp.com"
+        },
+        {
+          "name": "Caterina Gobbi",
+          "path": "https://www.caterinagobbi.com/"
+        },
+        {
+          "name": "Chad W. Powers",
+          "path": "https://www.sharknetfin.com"
+        },
+        {
+          "name": "Chris Daly",
+          "path": "https://www.instagram.com/l_t_hunn/?hl=en"
+        },
+        {
+          "name": "Christiaan Dageforde",
+          "path": "https://soundcloud.com/christiaan-dageforde"
+        },
+        {
+          "name": "Christopher Sciacca",
+          "path": "https://chrissciacca.com"
+        },
+        {
+          "name": "Clarry M",
+          "path": "https://soundcloud.com/clarrym"
+        },
+        {
+          "name": "Constantine Katsiris",
+          "path": "https://scantintone.com/"
+        },
+        {
+          "name": "Cosmin Sandu",
+          "path": "https://immersedinsounds.wordpress.com/"
+        },
+        {
+          "name": "CURRENTMOODGIRL",
+          "path": "https://www.instagram.com/currentmoodgirll/"
+        },
+        {
+          "name": "Dan Ross",
+          "path": "https://soundcloud.com/user-830976319"
+        },
+        {
+          "name": "Danny Vice",
+          "path": "https://www.dannyvice.com"
+        },
+        {
+          "name": "Darcy Spidle",
+          "path": "https://chikwhite.bandcamp.com"
+        },
+        {
+          "name": "Darren McClure",
+          "path": "https://darrenmcclure.bandcamp.com/"
+        },
+        {
+          "name": "David Critch",
+          "path": "https://twitter.com/dwcritch"
+        },
+        {
+          "name": "David Dearmore",
+          "path": "https://daviddearmore.bandcamp.com"
+        },
+        {
+          "name": "David Lavaysse",
+          "path": "https://lavaysse.com/"
+        },
+        {
+          "name": "David Webb",
+          "path": "https://soundcloud.com/davidrwebb"
+        },
+        {
+          "name": "Declan Costello",
+          "path": ""
+        },
+        {
+          "name": "Diffie Bosman",
+          "path": "https://soundcloud.com/diffo"
+        },
+        {
+          "name": "Dimitris Barnias",
+          "path": "http://tokeno.net/?i=1"
+        },
+        {
+          "name": "Dominic Faulkner",
+          "path": ""
+        },
+        {
+          "name": "Dominique Vaccaro",
+          "path": "https://soundcloud.com/dominique-vaccaro"
+        },
+        {
+          "name": "Dorian Vallet-Oheix",
+          "path": "https://douzemetres.bandcamp.com/album/jungle-jardin"
+        },
+        {
+          "name": "Duu Din Ka",
+          "path": "https://www.duudinka.com"
+        },
+        {
+          "name": "Ed Whitman",
+          "path": "https://soundcloud.com/k13z"
+        },
+        {
+          "name": "Egor Klochikhin",
+          "path": "https://foresteppe.bandcamp.com"
+        },
+        {
+          "name": "Emily Nam (WAHDUWAH)",
+          "path": "https://www.emilynamstudio.com"
+        },
+        {
+          "name": "Francesco Cucchi",
+          "path": "https://bluritual.bandcamp.com/album/floresta-encantada"
+        },
+        {
+          "name": "Frederic Moore",
+          "path": "https://halinaview.bandcamp.com/"
+        },
+        {
+          "name": "Frond",
+          "path": "https://soundcloud.com/frond"
+        },
+        {
+          "name": "George Cayleaf",
+          "path": "https://www.mixcloud.com/georgecayley_/"
+        },
+        {
+          "name": "George Powell",
+          "path": "https://georgepowell.online"
+        },
+        {
+          "name": "Gijs van der Meer",
+          "path": "https://www.gijsvandermeer.com"
+        },
+        {
+          "name": "Graintable",
+          "path": "https://graintable.bandcamp.com/"
+        },
+        {
+          "name": "honeyant",
+          "path": "https://repressedmemories.bandcamp.com/"
+        },
+        {
+          "name": "Ian Epps",
+          "path": "https://www.ianepps.com"
+        },
+        {
+          "name": "Igor Dyachenko",
+          "path": "https://soundcloud.com/igordyachenko"
+        },
+        {
+          "name": "Izabel Menezes",
+          "path": "https://www.instagram.com/izabelmenezes/"
+        },
+        {
+          "name": "Jake Easby-Keating",
+          "path": "https://www.instagram.com/easbykeating"
+        },
+        {
+          "name": "Jake Escobar",
+          "path": "https://jakeescobar.com"
+        },
+        {
+          "name": "Jake Muir",
+          "path": ""
+        },
+        {
+          "name": "Jan Samanek",
+          "path": "https://talkistrouble.bandcamp.com/"
+        },
+        {
+          "name": "Jannis Carbotta",
+          "path": "https://www.instagram.com/jannis.carbotta/"
+        },
+        {
+          "name": "Jason Moore",
+          "path": "https://www.instagram.com/likesitthrice/?hl=en"
+        },
+        {
+          "name": "Jerod S. Rivera",
+          "path": "https://www.instagram.com/j_srivera"
+        },
+        {
+          "name": "Jesse Kaminsky",
+          "path": "https://jessekaminsky.com"
+        },
+        {
+          "name": "Jo Montgomerie",
+          "path": "https://jomontgomerie.bandcamp.com"
+        },
+        {
+          "name": "Jonathan Ogara",
+          "path": "https://soundcloud.com/allopenelectrics"
+        },
+        {
+          "name": "Jordan Marty",
+          "path": "https://jordanmarty.com/we-live-inside/"
+        },
+        {
+          "name": "Jorg Schellekens",
+          "path": "https://www.soundcloud.com/jorgschellekens"
+        },
+        {
+          "name": "Jose Acosta",
+          "path": ""
+        },
+        {
+          "name": "Joshua Sadinsky",
+          "path": "https://joshuasadinsky.com"
+        },
+        {
+          "name": "Julie Lupac",
+          "path": "https://www.julielupac.cz"
+        },
+        {
+          "name": "JULIEN HAIRON",
+          "path": "https://lescartespostalessonores.tumblr.com/"
+        },
+        {
+          "name": "Justin Martinez",
+          "path": "https://open.spotify.com/artist/5wUrQwXgM9PsVa4j55yDtW"
+        },
+        {
+          "name": "Kaixiang Zhang",
+          "path": "https://noooodleking.bandcamp.com/"
+        },
+        {
+          "name": "Kevin Cruz",
+          "path": "https://hirekevincruz.com"
+        },
+        {
+          "name": "KOSA NAOHIRO",
+          "path": "https://soundcloud.com/kosanaohiro"
+        },
+        {
+          "name": "Kyle Lyon",
+          "path": "https://www.instagram.com/blairsounddesign/?hl=en"
+        },
+        {
+          "name": "Liam Carroll",
+          "path": "https://liamcarroll.bandcamp.com"
+        },
+        {
+          "name": "Lizzie Kane",
+          "path": ""
+        },
+        {
+          "name": "Lorenzo",
+          "path": ""
+        },
+        {
+          "name": "Lucía Meliá Maestro",
+          "path": "https://www.instagram.com/un_____made/"
+        },
+        {
+          "name": "Luigi Di Venere",
+          "path": "https://soundcloud.com/luigidivenere"
+        },
+        {
+          "name": "Luke Lund",
+          "path": "https://linktr.ee/lukelund_lotech"
+        },
+        {
+          "name": "Madelynn",
+          "path": ""
+        },
+        {
+          "name": "Malthe Bjørn Jensen",
+          "path": "https://Maltheb.dk"
+        },
+        {
+          "name": "Mansores",
+          "path": "https://soundcloud.com/s-rgio-pinho"
+        },
+        {
+          "name": "Marcus Fischer",
+          "path": "https://mapmap.ch"
+        },
+        {
+          "name": "Marina Aguerre",
+          "path": "https://www.thewitchinghours.net/"
+        },
+        {
+          "name": "Mariana Pellejero",
+          "path": "https://marianamao.bandcamp.com/"
+        },
+        {
+          "name": "Martin Gius",
+          "path": ""
+        },
+        {
+          "name": "Mathieu Bonnafous",
+          "path": ""
+        },
+        {
+          "name": "Matías",
+          "path": "https://freesound.org/people/Matias44/"
+        },
+        {
+          "name": "Matteo Stella",
+          "path": "https://matteostella.bandcamp.com/album/soundscapes-of-a-lonely-valley-ep"
+        },
+        {
+          "name": "Max Durrant",
+          "path": "https://www.instagram.com/crimechimp/?hl=en"
+        },
+        {
+          "name": "Max Mellman",
+          "path": "https://soundcloud.com/turnoffthedark69"
+        },
+        {
+          "name": "Maxim Walker / O A K M I L K",
+          "path": "https://oakmilk.bandcamp.com"
+        },
+        {
+          "name": "Michał Zygmunt",
+          "path": "https://soundcloud.com/micha-zygmunt-music"
+        },
+        {
+          "name": "Miguel Laporta",
+          "path": "https://www.instagram.com/malastierras"
+        },
+        {
+          "name": "Miguel Sodré Aguiar Costa e Moura",
+          "path": ""
+        },
+        {
+          "name": "Mikel R. Nieto",
+          "path": "https://mikelrnieto.net/en/the-garden-of-eden/"
+        },
+        {
+          "name": "Mimi Luse",
+          "path": ""
+        },
+        {
+          "name": "moltamole",
+          "path": "https://moltamole.bandcamp.com/"
+        },
+        {
+          "name": "Mr Kit",
+          "path": "https://www.instagram.com/hellomrkit/"
+        },
+        {
+          "name": "Muuma",
+          "path": "https://soundcloud.com/rhubarbizar"
+        },
+        {
+          "name": "Nick Jonas Kuhoff",
+          "path": "https://soundcloud.com/nkspirou"
+        },
+        {
+          "name": "Nick Tearle",
+          "path": "https://nicktearle.net/music-and-sound"
+        },
+        {
+          "name": "Nikki Sheth",
+          "path": "https://nikkisheth.myportfolio.com/"
+        },
+        {
+          "name": "Oleg Voronyuk",
+          "path": "https://readymag.com/volg/sound/"
+        },
+        {
+          "name": "Olivier Schreuder",
+          "path": "https://http://www.olivierschreuder.nl/"
+        },
+        {
+          "name": "Ollie Hall",
+          "path": "https://binauraldiaries.co.uk"
+        },
+        {
+          "name": "OLYN",
+          "path": "https://www.olynmusic.com"
+        },
+        {
+          "name": "Ond (Paul Roberts)",
+          "path": "https://ondnoise.bandcamp.com/releases"
+        },
+        {
+          "name": "Pablo Diserens",
+          "path": "https://pablodiserens.studio/"
+        },
+        {
+          "name": "Patrick Renehan",
+          "path": "https://www.changeisyourresponsibility.com/"
+        },
+        {
+          "name": "Paul Capewell",
+          "path": "https://paulcapewell.com"
+        },
+        {
+          "name": "Paul Sadness",
+          "path": "https://www.facebook.com/paul.sadness"
+        },
+        {
+          "name": "Phoebe McIndoe",
+          "path": "https://www.phoebemcindoe.com"
+        },
+        {
+          "name": "Pierre Costard",
+          "path": "https://www.pierrecostard.com"
+        },
+        {
+          "name": "Queerphonie",
+          "path": "https://www.soundartradio.org.uk/programmes/queerphonie"
+        },
+        {
+          "name": "R. Beuzeville",
+          "path": "https://soundcloud.com/indri-music"
+        },
+        {
+          "name": "Rafael Goncalves Diogo",
+          "path": "https://deepdivesound.bandcamp.com/releases"
+        },
+        {
+          "name": "Riccardo Benassi",
+          "path": "https://www.riccardobenassi.info"
+        },
+        {
+          "name": "rico casazza",
+          "path": "https://rico-casazza.com/"
+        },
+        {
+          "name": "Rob Godman",
+          "path": "https://www.robgodman.com"
+        },
+        {
+          "name": "Robbie Warin",
+          "path": "https://www.instagram.com/selfand.other/"
+        },
+        {
+          "name": "Ron Jost",
+          "path": "https://ronjost.bandcamp.com/"
+        },
+        {
+          "name": "Robert Cole Rizzi",
+          "path": "https://soundcloud.com/rizzi"
+        },
+        {
+          "name": "Safety in Solitude",
+          "path": "https://www.youtube.com/channel/UC0OE7kTWrfiYrvf5i7-cpJg"
+        },
+        {
+          "name": "Sam Parker",
+          "path": "https://observance.bandcamp.com/releases"
+        },
+        {
+          "name": "Santiago Quintero",
+          "path": "https://www.instagram.com/intramaar/"
+        },
+        {
+          "name": "Sasha Guryev",
+          "path": "https://www.instagram.com/sashaguryev/?hl=en"
+        },
+        {
+          "name": "Sean Murphy",
+          "path": "https://www.instagram.com/cmyk.svg/"
+        },
+        {
+          "name": "Shomu Kamahano",
+          "path": ""
+        },
+        {
+          "name": "Slowfoam aka Madelyn Byrd",
+          "path": "https://madelynbyrd.com"
+        },
+        {
+          "name": "Sol Archer",
+          "path": "https://www.solarcher.net"
+        },
+        {
+          "name": "Sunju Hargun",
+          "path": "https://sunjuhargunmusic.bandcamp.com/"
+        },
+        {
+          "name": "Tina Jander",
+          "path": "https://www.tinajander.com"
+        },
+        {
+          "name": "Valentina Ghidoni",
+          "path": "https://www.instagram.com/vale.denger/?hl=it"
+        },
+        {
+          "name": "Vitiko Schell",
+          "path": "https://vitikoschell.de"
+        },
+        {
+          "name": "Vlad Voinescu",
+          "path": ""
+        },
+        {
+          "name": "Willem Sannen",
+          "path": "https://soundcloud.com/willemsannen"
+        },
+        {
+          "name": "Yaseen El Azzouni",
+          "path": "https://instagram.com/theazzouni"
+        },
+        {
+          "name": "Zak Allum",
+          "path": "https://www.zakallumsound.com"
+        }
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/field-recordings-1600x900-30fps-f564ba0ff9ea2386b422a53961029935.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/field-recordings-1080x1920-30fps-d65e2b6ba4ada4295513d31f9ed97792.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/field-recordings-120x120-30fps-06f1be06c8fcb917d9ea44f4cf90e567.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/6790fb8c-fd67-428d-8e88-50296d89ddeb_1622592000.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/97515c31-bf9f-4f20-a9d3-14e258c5fe99_1622592000.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/807d8db6-049d-4eeb-8515-57c02b251e73_1622592000.png",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/807d8db6-049d-4eeb-8515-57c02b251e73_1622592000.png",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/807d8db6-049d-4eeb-8515-57c02b251e73_1622592000.png",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/807d8db6-049d-4eeb-8515-57c02b251e73_1622592000.png",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/807d8db6-049d-4eeb-8515-57c02b251e73_1622592000.png"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/field-recordings",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://www.nts.live/api/v2/mixtapes?include%5B%5D=external_credits",
+      "type": "application/vnd.mixtape-list+json;charset=utf-8"
+    }
+  ]
+}

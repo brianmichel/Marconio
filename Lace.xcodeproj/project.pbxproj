@@ -7,21 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
+		7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
+		725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
+		725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
+		725B5DF527A44BE900459EE3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* PlayerView.swift */; };
+		725B5DF627A44BE900459EE3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* PlayerView.swift */; };
 		72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* LaceApp.swift */; };
 		72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* LaceApp.swift */; };
-		72E1793E27A2E48D009A20ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792D27A2E48C009A20ED /* ContentView.swift */; };
-		72E1793F27A2E48D009A20ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792D27A2E48C009A20ED /* ContentView.swift */; };
+		72E1793E27A2E48D009A20ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792D27A2E48C009A20ED /* HomeView.swift */; };
+		72E1793F27A2E48D009A20ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792D27A2E48C009A20ED /* HomeView.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
+		72E1794D27A39502009A20ED /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1794C27A39502009A20ED /* HomeCore.swift */; };
+		72E1795027A3955C009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1794F27A3955C009A20ED /* LaceKit */; };
+		72E1795227A39561009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1795127A39561009A20ED /* LaceKit */; };
+		72E1795327A396F9009A20ED /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1794C27A39502009A20ED /* HomeCore.swift */; };
+		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
+		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableArtworkPlaceholderView.swift; sourceTree = "<group>"; };
+		7221DB0527A489F400183057 /* Lace--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lace--iOS--Info.plist"; sourceTree = "<group>"; };
+		725B5DF127A4436300459EE3 /* PlayerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCore.swift; sourceTree = "<group>"; };
+		725B5DF427A44BE900459EE3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* LaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaceApp.swift; sourceTree = "<group>"; };
-		72E1792D27A2E48C009A20ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72E1792D27A2E48C009A20ED /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		72E1792E27A2E48D009A20ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72E1793327A2E48D009A20ED /* Lace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793927A2E48D009A20ED /* Lace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
+		72E1794C27A39502009A20ED /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
+		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E1795027A3955C009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,26 +56,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E1795227A39561009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7221DB0627A48A0100183057 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7221DB0527A489F400183057 /* Lace--iOS--Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		725B5DF027A4435000459EE3 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				725B5DF127A4436300459EE3 /* PlayerCore.swift */,
+				725B5DF427A44BE900459EE3 /* PlayerView.swift */,
+				7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		72E1792627A2E48C009A20ED = {
 			isa = PBXGroup;
 			children = (
 				72E1792B27A2E48C009A20ED /* Shared */,
+				7221DB0627A48A0100183057 /* iOS */,
 				72E1793A27A2E48D009A20ED /* macOS */,
+				72E1794A27A37C44009A20ED /* LaceKit */,
 				72E1793427A2E48D009A20ED /* Products */,
+				72E1794E27A3955C009A20ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				725B5DF027A4435000459EE3 /* Player */,
+				72E1795427A3AC3C009A20ED /* Utility */,
+				72E1794B27A394D1009A20ED /* Home */,
 				72E1792C27A2E48C009A20ED /* LaceApp.swift */,
-				72E1792D27A2E48C009A20ED /* ContentView.swift */,
 				72E1792E27A2E48D009A20ED /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -78,6 +122,30 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		72E1794B27A394D1009A20ED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				72E1792D27A2E48C009A20ED /* HomeView.swift */,
+				72E1794C27A39502009A20ED /* HomeCore.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		72E1794E27A3955C009A20ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72E1795427A3AC3C009A20ED /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +162,9 @@
 			dependencies = (
 			);
 			name = "Lace (iOS)";
+			packageProductDependencies = (
+				72E1794F27A3955C009A20ED /* LaceKit */,
+			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Lace.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +182,9 @@
 			dependencies = (
 			);
 			name = "Lace (macOS)";
+			packageProductDependencies = (
+				72E1795127A39561009A20ED /* LaceKit */,
+			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Lace.app */;
 			productType = "com.apple.product-type.application";
@@ -176,7 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E1793E27A2E48D009A20ED /* ContentView.swift in Sources */,
+				72E1793E27A2E48D009A20ED /* HomeView.swift in Sources */,
+				72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
+				72E1794D27A39502009A20ED /* HomeCore.swift in Sources */,
+				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
+				725B5DF527A44BE900459EE3 /* PlayerView.swift in Sources */,
+				725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E1793F27A2E48D009A20ED /* ContentView.swift in Sources */,
+				72E1793F27A2E48D009A20ED /* HomeView.swift in Sources */,
+				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
+				72E1795327A396F9009A20ED /* HomeCore.swift in Sources */,
+				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
+				725B5DF627A44BE900459EE3 /* PlayerView.swift in Sources */,
+				725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */,
 				72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +398,7 @@
 				DEVELOPMENT_TEAM = YN24FFRTC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS/Lace--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +429,7 @@
 				DEVELOPMENT_TEAM = YN24FFRTC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS/Lace--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +538,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72E1794F27A3955C009A20ED /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
+		72E1795127A39561009A20ED /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72E1792727A2E48C009A20ED /* Project object */;
 }

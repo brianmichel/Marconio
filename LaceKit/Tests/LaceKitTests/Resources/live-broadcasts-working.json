@@ -1,0 +1,759 @@
+{
+  "results": [
+    {
+      "channel_name": "1",
+      "now": {
+        "broadcast_title": "Bradley Zero Presents: Rhythm Section w/ DJ JNETT ",
+        "start_timestamp": "2022-01-26T13:00:00Z",
+        "end_timestamp": "2022-01-26T15:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "pending",
+            "updated": "2022-01-26T10:53:43+00:00",
+            "name": "Bradley Zero Presents: Rhythm Section w/ DJ JNETT ",
+            "description": "Rhythm Section Radio was founded in 2009 and moved to NTS in 2012, and has since pulled out the stops breaking new music, promoting independent labels and paying homage to the greatest music from the past, through a perhaps unhealthy obsession with record digging.",
+            "description_html": "<h3>Rhythm Section Radio was founded in 2009 and moved to NTS in 2012, and has since pulled out the stops breaking new music, promoting independent labels and paying homage to the greatest music from the past, through a perhaps unhealthy obsession with record digging.</h3>",
+            "external_links": [
+              "http://wearerhythmsection.com/",
+              "https://www.facebook.com/wearerhythmsection",
+              "https://twitter.com/rhythmsectionhq"
+            ],
+            "moods": [
+              {
+                "id": "moods-music-to-dance-to",
+                "value": "MUSIC TO DANCE TO"
+              }
+            ],
+            "genres": [
+              {
+                "id": "genres-housetechno-house-deephouse",
+                "value": "Deep House"
+              },
+              {
+                "id": "genres-jazz-contemporaryjazz",
+                "value": "Contemporary Jazz"
+              },
+              {
+                "id": "genres-hiphoprandb-rnb",
+                "value": "RNB"
+              },
+              {
+                "id": "genres-housetechno-brokenbeat",
+                "value": "Broken Beat"
+              }
+            ],
+            "location_short": "LDN",
+            "location_long": "London",
+            "intensity": "60",
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/4f3cc8e2-699f-4dea-a58d-1d8672af375e_1643155200.jpeg"
+            },
+            "episode_alias": "rhythmsection-26th-january-2022",
+            "show_alias": "rhythmsection",
+            "broadcast": "2022-01-26T13:00:00+00:00",
+            "mixcloud": null,
+            "audio_sources": [],
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/rhythmsection/episodes/rhythmsection-26th-january-2022",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/rhythmsection",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/rhythmsection/episodes/rhythmsection-26th-january-2022/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/rhythmsection/episodes/rhythmsection-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next": {
+        "broadcast_title": " MOXIE: BEST OF 2021 PART 1: SLOW JAMS -  15.12.21",
+        "start_timestamp": "2022-01-26T15:00:00Z",
+        "end_timestamp": "2022-01-26T17:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "published",
+            "updated": "2022-01-08T11:33:08+00:00",
+            "name": "Moxie: Best of 2021 Part 1: Slow Jams",
+            "description": "Part of the NTS family since day dot, Moxie has held her Wednesday show since the stations first broadcasts. Inviting esteemed guests for interviews & mixes and breaking new, unreleased music, she’s got your Wednesday afternoons covered… Tune in to hear anything from soulful house and disco to rolling techno.",
+            "description_html": "<h3>Part of the NTS family since day dot, Moxie has held her Wednesday show since the stations first broadcasts. Inviting esteemed guests for interviews & mixes and breaking new, unreleased music, she’s got your Wednesday afternoons covered… Tune in to hear anything from soulful house and disco to rolling techno.</h3>",
+            "external_links": [
+              "https://www.facebook.com/moxiedj",
+              "https://twitter.com/DJMoxie",
+              "https://www.instagram.com/djmoxie/"
+            ],
+            "moods": [
+              {
+                "id": "moods-music-to-dance-to",
+                "value": "MUSIC TO DANCE TO"
+              }
+            ],
+            "genres": [
+              {
+                "id": "genres-other-leftfield-pop",
+                "value": "Leftfield Pop"
+              },
+              {
+                "id": "genres-jazz-contemporaryjazz",
+                "value": "Contemporary Jazz"
+              },
+              {
+                "id": "genres-hiphoprandb-rnb",
+                "value": "RNB"
+              }
+            ],
+            "location_short": "LDN",
+            "location_long": "London",
+            "intensity": "65",
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/dcd63350-e1dd-486f-941c-613750a6c56d_1640131200.jpeg"
+            },
+            "episode_alias": "moxie-15th-december-2021",
+            "show_alias": "moxie",
+            "broadcast": "2021-12-15T15:00:00+00:00",
+            "mixcloud": "https://www.mixcloud.com/NTSRadio/moxie-15th-december-2021/",
+            "audio_sources": [
+              {
+                "url": "https://soundcloud.com/user-637448757/moxie-151221/s-SVP7DiZpdda?si=fc319c6ee0d3478aa2986d5f8a0fcee0&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+                "source": "soundcloud"
+              }
+            ],
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/moxie/episodes/moxie-15th-december-2021",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/moxie",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/moxie/episodes/moxie-15th-december-2021/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/moxie/episodes/moxie-15th-december-2021",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next2": {
+        "broadcast_title": "Kaizen w/ Madam X",
+        "start_timestamp": "2022-01-26T17:00:00Z",
+        "end_timestamp": "2022-01-26T18:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/kaizen/episodes/kaizen-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next3": {
+        "broadcast_title": "MOTIVE",
+        "start_timestamp": "2022-01-26T18:00:00Z",
+        "end_timestamp": "2022-01-26T19:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/motive/episodes/motive-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next4": {
+        "broadcast_title": "Don Sinini",
+        "start_timestamp": "2022-01-26T19:00:00Z",
+        "end_timestamp": "2022-01-26T20:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/don-sinini/episodes/don-sinini-26th-january-2021",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next5": {
+        "broadcast_title": "Intearnet Radio w/ Lyzza",
+        "start_timestamp": "2022-01-26T20:00:00Z",
+        "end_timestamp": "2022-01-26T21:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/lyzza/episodes/lyzza-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next6": {
+        "broadcast_title": "STEVEN JULIEN PRESENTS: THE APRON SHOW",
+        "start_timestamp": "2022-01-26T21:00:00Z",
+        "end_timestamp": "2022-01-26T22:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/funkineven/episodes/funkineven-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next7": {
+        "broadcast_title": "The NCA Show w/ Brassfoot",
+        "start_timestamp": "2022-01-26T22:00:00Z",
+        "end_timestamp": "2022-01-26T23:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/brassfoot/episodes/brassfoot-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next8": {
+        "broadcast_title": "IMOGEN live at Intercell",
+        "start_timestamp": "2022-01-26T23:00:00Z",
+        "end_timestamp": "2022-01-27T00:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/imogen/episodes/imogen-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next9": {
+        "broadcast_title": "From Sun City",
+        "start_timestamp": "2022-01-27T01:00:00Z",
+        "end_timestamp": "2022-01-27T02:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/from-sun-city/episodes/from-sun-city-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next10": {
+        "broadcast_title": "Radio Super w/ Rosa Pistola",
+        "start_timestamp": "2022-01-27T02:00:00Z",
+        "end_timestamp": "2022-01-27T03:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/rosa-pistola/episodes/rosa-pistola-s-history-of-reggaeton---reggaeton-underground-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next11": {
+        "broadcast_title": "NOISE IN MY HEAD W/ JM MOSER - 31.01.18",
+        "start_timestamp": "2022-01-27T03:00:00Z",
+        "end_timestamp": "2022-01-27T05:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/noise-in-my-head/episodes/noise-in-my-head-30th-january-2018",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next12": {
+        "broadcast_title": "BO NINGEN : MONCHAN - 石もしくは岩、あるいは山 / STONES, ROCKS OR MOUNTAINS -  11.05.21",
+        "start_timestamp": "2022-01-27T05:00:00Z",
+        "end_timestamp": "2022-01-27T06:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/bo-ningen/episodes/bo-ningen-11th-may-2021",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next13": {
+        "broadcast_title": "KIT GRILL - 23.05.21",
+        "start_timestamp": "2022-01-27T06:00:00Z",
+        "end_timestamp": "2022-01-27T07:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/kit-grill/episodes/kit-grill-23rd-may-2021",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next14": {
+        "broadcast_title": "The Early Bird Show w/ Spirit Blue",
+        "start_timestamp": "2022-01-27T07:00:00Z",
+        "end_timestamp": "2022-01-27T09:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/early-bird-show-spirit-blue/episodes/early-bird-show-spirit-blue-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next15": {
+        "broadcast_title": "The NTS Breakfast Show w/ Zakia",
+        "start_timestamp": "2022-01-27T09:00:00Z",
+        "end_timestamp": "2022-01-27T11:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/the-breakfast-show-zakia/episodes/the-breakfast-show-zakia-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next16": {
+        "broadcast_title": "Soup To Nuts w/ Ross Allen",
+        "start_timestamp": "2022-01-27T11:00:00Z",
+        "end_timestamp": "2022-01-27T13:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/soup-to-nuts-ross-allen/episodes/soup-to-nuts-ross-allen-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next17": {
+        "broadcast_title": "Donna Leake",
+        "start_timestamp": "2022-01-27T13:00:00Z",
+        "end_timestamp": "2022-01-27T15:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/donna-leake/episodes/donna-leake-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      }
+    },
+    {
+      "channel_name": "2",
+      "now": {
+        "broadcast_title": "PAKISTANI GHAZAL SPECIAL",
+        "start_timestamp": "2022-01-26T14:00:00Z",
+        "end_timestamp": "2022-01-26T15:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "pending",
+            "updated": "2022-01-26T14:02:00+00:00",
+            "name": "Pakistani Ghazal Special",
+            "description": "60 minutes of ghazals from Pakistan, selected by NTS. Ghazals are a form of sung poetry originating in Arabic, now popular in many languages from the Indian subcontinent, as well as Turkey.\nMade by Chris Menist.",
+            "description_html": "<h3>60 minutes of ghazals from Pakistan, selected by NTS. Ghazals are a form of sung poetry originating in Arabic, now popular in many languages from the Indian subcontinent, as well as Turkey.</h3>\n<p>Made by Chris Menist.</p>",
+            "external_links": [],
+            "moods": [
+              {
+                "id": "moods-no-talkin",
+                "value": "No Talkin"
+              },
+              {
+                "id": "moods-audio-research",
+                "value": "AUDIO RESEARCH"
+              }
+            ],
+            "genres": [],
+            "location_short": "LDN",
+            "location_long": "London",
+            "intensity": null,
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/cfeaf497-c5b1-4e3d-bc7c-f67376638b51_1643155200.jpeg"
+            },
+            "episode_alias": "the-nts-guide-to-26th-january-2022",
+            "show_alias": "the-nts-guide-to",
+            "broadcast": "2022-01-26T13:00:00+00:00",
+            "mixcloud": null,
+            "audio_sources": [],
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/the-nts-guide-to/episodes/the-nts-guide-to-26th-january-2022",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/the-nts-guide-to",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/the-nts-guide-to/episodes/the-nts-guide-to-26th-january-2022/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/the-nts-guide-to/episodes/the-nts-guide-to-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next": {
+        "broadcast_title": "Lamin Fofana",
+        "start_timestamp": "2022-01-26T15:00:00Z",
+        "end_timestamp": "2022-01-26T16:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "pending",
+            "updated": "2022-01-20T17:57:20+00:00",
+            "name": "Lamin Fofana ",
+            "description": "Lamin Fofana is an artist and musician currently located in New York. His latest releases include Black Metamorphosis, Darkwater, and Blues (an album trilogy).",
+            "description_html": "<h3>Lamin Fofana is an artist and musician currently located in New York. His latest releases include Black Metamorphosis, Darkwater, and Blues (an album trilogy).</h3>",
+            "external_links": [
+              "https://twitter.com/laminfofana",
+              "https://laminfofana.bandcamp.com/"
+            ],
+            "moods": [],
+            "genres": [
+              {
+                "id": "genres-other-spoken-word",
+                "value": "Spoken Word"
+              },
+              {
+                "id": "genres-other-field-records",
+                "value": "Field Recordings"
+              },
+              {
+                "id": "genres-jazz-freejazz",
+                "value": "Free Jazz"
+              }
+            ],
+            "location_short": "NYC",
+            "location_long": "New York",
+            "intensity": null,
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/75a474b9-7b92-4dc5-bb4b-652f80578f9a_1643155200.jpeg"
+            },
+            "episode_alias": "lamin-fofana-26th-january-2022",
+            "show_alias": "lamin-fofana",
+            "broadcast": "2022-01-26T15:00:00+00:00",
+            "mixcloud": null,
+            "audio_sources": [],
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/lamin-fofana/episodes/lamin-fofana-26th-january-2022",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/lamin-fofana",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/lamin-fofana/episodes/lamin-fofana-26th-january-2022/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/lamin-fofana/episodes/lamin-fofana-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next2": {
+        "broadcast_title": "Moor Mother",
+        "start_timestamp": "2022-01-26T16:00:00Z",
+        "end_timestamp": "2022-01-26T17:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/moor-mother/episodes/moor-mother-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next3": {
+        "broadcast_title": "OKONKOLE Y TROMPA W/ PAM &amp; DJ F16 FALCON - VGM &amp; DANIEL MASSON SPECIAL",
+        "start_timestamp": "2022-01-26T17:00:00Z",
+        "end_timestamp": "2022-01-26T19:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/okonkole-y-trompa/episodes/okonkole-y-trompa-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next4": {
+        "broadcast_title": "United In Flames w/ Malibu",
+        "start_timestamp": "2022-01-26T19:00:00Z",
+        "end_timestamp": "2022-01-26T20:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/malibu/episodes/malibu-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next5": {
+        "broadcast_title": "Yesterday&#039;s News",
+        "start_timestamp": "2022-01-26T20:00:00Z",
+        "end_timestamp": "2022-01-26T21:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/yesterdays-news/episodes/yesterdays-news-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next6": {
+        "broadcast_title": "Steven Julien Presents: The Apron Show",
+        "start_timestamp": "2022-01-26T21:00:00Z",
+        "end_timestamp": "2022-01-26T22:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/funkineven/episodes/funkineven-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next7": {
+        "broadcast_title": "Panorama Heaven w/ Bianca Lexis",
+        "start_timestamp": "2022-01-26T22:00:00Z",
+        "end_timestamp": "2022-01-26T23:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/panorama-heaven/episodes/panorama-heaven-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next8": {
+        "broadcast_title": "Mixed Fruit w/ Eddie Jr.",
+        "start_timestamp": "2022-01-26T23:00:00Z",
+        "end_timestamp": "2022-01-27T01:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/mixed-fruit/episodes/mixed-fruit-26th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next9": {
+        "broadcast_title": "Whodis? w/ 56 DJs",
+        "start_timestamp": "2022-01-27T01:00:00Z",
+        "end_timestamp": "2022-01-27T03:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/56-djs/episodes/56-djs-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next10": {
+        "broadcast_title": "Whits &amp; Giggles",
+        "start_timestamp": "2022-01-27T03:00:00Z",
+        "end_timestamp": "2022-01-27T04:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/whits-giggles/episodes/whits-giggles-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next11": {
+        "broadcast_title": "Ganga Blues w/ Symrin",
+        "start_timestamp": "2022-01-27T04:00:00Z",
+        "end_timestamp": "2022-01-27T05:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/ganga-blues/episodes/ganga-blues-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next12": {
+        "broadcast_title": "BENEDEK - 08.03.19",
+        "start_timestamp": "2022-01-27T05:00:00Z",
+        "end_timestamp": "2022-01-27T06:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/benedek/episodes/benedek-8th-march-2019",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next13": {
+        "broadcast_title": "DOING TIME - 25.07.20",
+        "start_timestamp": "2022-01-27T06:00:00Z",
+        "end_timestamp": "2022-01-27T08:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/doing-time/episodes/doing-time-25th-july-2020",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next14": {
+        "broadcast_title": "GETTING WARMER W/ JEN MONROE - GOSPEL SPECIAL - 10.06.20",
+        "start_timestamp": "2022-01-27T08:00:00Z",
+        "end_timestamp": "2022-01-27T09:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/jen-monroe/episodes/getting-warmer-w-jen-monroe-wednesday-10th-june",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next15": {
+        "broadcast_title": "Mikey Young - 05.12.20",
+        "start_timestamp": "2022-01-27T09:00:00Z",
+        "end_timestamp": "2022-01-27T10:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/mikey-young/episodes/mikey-young-5th-december-2020",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next16": {
+        "broadcast_title": "Rough Version w/ Danielle Brathwaite-Shirley",
+        "start_timestamp": "2022-01-27T10:00:00Z",
+        "end_timestamp": "2022-01-27T11:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/rough-version/episodes/rough-version-27th-january-2022",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next17": {
+        "broadcast_title": "EQUIKNOXX",
+        "start_timestamp": "2022-01-27T13:00:00Z",
+        "end_timestamp": "2022-01-27T14:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/equiknoxx",
+            "rel": "details",
+            "type": "application/vnd.show+json;charset=utf-8"
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://www.nts.live/api/v2/live",
+      "type": "application/vnd.live-list+json;charset=utf-8"
+    }
+  ]
+}

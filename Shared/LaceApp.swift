@@ -11,7 +11,9 @@ import SwiftUI
 struct LaceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+        }.commands {
+            SidebarCommands()
         }
     }
 }
