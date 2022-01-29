@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Link: Codable {
+public struct Link: Codable, Equatable {
     let href: String
     let rel: String
     let type: String

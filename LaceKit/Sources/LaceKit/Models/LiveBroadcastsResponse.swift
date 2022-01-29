@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct Broadcast: Codable {
-    public struct Embed: Codable {
+public struct Broadcast: Codable, Equatable {
+    public struct Embed: Codable, Equatable {
         public let status: String
         public let updated: Date
         public let name: String
@@ -34,7 +34,7 @@ public struct Broadcast: Codable {
     public let embeds: [String: Embed]
 }
 
-public struct Channel: Codable {
+public struct Channel: Codable, Equatable {
     public let channelName: String
     public let now: Broadcast
     public let next: Broadcast
@@ -43,7 +43,7 @@ public struct Channel: Codable {
     public let next4: Broadcast
 }
 
-public struct LiveBroadcastsResponse: Codable {
+public struct LiveBroadcastsResponse: Codable, Equatable {
     public let results: [Channel]
     public let links: [Link]
 }

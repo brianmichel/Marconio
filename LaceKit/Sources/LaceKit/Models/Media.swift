@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Media: Codable {
+public struct Media: Codable, Equatable {
     public let backgroundLarge: URL?
     public let backgroundMediumLarge: URL?
     public let backgroundMedium: URL?
