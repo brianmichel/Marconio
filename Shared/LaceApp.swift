@@ -17,9 +17,7 @@ struct LaceApp: App {
                 store: Store(
                     initialState: AppState(
                         channels: [],
-                        mixtapes: [],
-                        currentlyPlayingMixtape: nil,
-                        currentlyPlayingChannel: nil
+                        mixtapes: []
                     ),
                     reducer: appReducer,
                     environment: AppEnvironment(
