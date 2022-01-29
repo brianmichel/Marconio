@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-public enum RunnerError: Error {
-    case network(error: Error)
-    case decoder(error: Error)
+public enum RunnerError: Error, Equatable {
+    case network(error: String)
+    case decoder(error: String)
 }
 
 public final class Runner {
@@ -19,7 +19,7 @@ public final class Runner {
     public func requestPublisher<T: Codable>(for request: URLRequest) -> AnyPublisher<T, RunnerError> {
         session.dataTaskPublisher(for: request)
             .mapError({ error in
-                .network(error: error)
+            .network(error: error.localizedDescription)
             })
             .flatMap({ response in
                 self.requestDecoder(for: response.data)
@@ -39,7 +39,7 @@ extension Runner {
                 try decoder.decode(T.self, from: decodable)
             })
             .mapError({ error in
-                .decoder(error: error)
+            .decoder(error: error.localizedDescription)
             })
             .eraseToAnyPublisher()
     }

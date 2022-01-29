@@ -6,12 +6,29 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+import LaceKit
 
 @main
 struct LaceApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            AppView(
+                store: Store(
+                    initialState: AppState(
+                        channels: [],
+                        mixtapes: [],
+                        currentlyPlayingMixtape: nil,
+                        currentlyPlayingChannel: nil
+                    ),
+                    reducer: appReducer,
+                    environment: AppEnvironment(
+                        mainQueue: .main,
+                        uuid: UUID.init,
+                        api: LiveAPI()
+                    )
+                )
+            )
         }.commands {
             SidebarCommands()
         }

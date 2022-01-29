@@ -13,16 +13,16 @@
 		725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
 		725B5DF527A44BE900459EE3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* PlayerView.swift */; };
 		725B5DF627A44BE900459EE3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* PlayerView.swift */; };
+		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
+		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
+		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
+		72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
 		72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* LaceApp.swift */; };
 		72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* LaceApp.swift */; };
-		72E1793E27A2E48D009A20ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792D27A2E48C009A20ED /* HomeView.swift */; };
-		72E1793F27A2E48D009A20ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792D27A2E48C009A20ED /* HomeView.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
-		72E1794D27A39502009A20ED /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1794C27A39502009A20ED /* HomeCore.swift */; };
 		72E1795027A3955C009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1794F27A3955C009A20ED /* LaceKit */; };
 		72E1795227A39561009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1795127A39561009A20ED /* LaceKit */; };
-		72E1795327A396F9009A20ED /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1794C27A39502009A20ED /* HomeCore.swift */; };
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 /* End PBXBuildFile section */
@@ -32,14 +32,13 @@
 		7221DB0527A489F400183057 /* Lace--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lace--iOS--Info.plist"; sourceTree = "<group>"; };
 		725B5DF127A4436300459EE3 /* PlayerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCore.swift; sourceTree = "<group>"; };
 		725B5DF427A44BE900459EE3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* LaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaceApp.swift; sourceTree = "<group>"; };
-		72E1792D27A2E48C009A20ED /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		72E1792E27A2E48D009A20ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72E1793327A2E48D009A20ED /* Lace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793927A2E48D009A20ED /* Lace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
-		72E1794C27A39502009A20ED /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
 				72E1795027A3955C009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
 				72E1795227A39561009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +82,22 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		72D5928627A5986200D3CE52 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				72D5928727A5986F00D3CE52 /* Loading */,
+				72D5928B27A5A21E00D3CE52 /* AppView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		72D5928727A5986F00D3CE52 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		72E1792627A2E48C009A20ED = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +113,9 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72D5928627A5986200D3CE52 /* Main */,
 				725B5DF027A4435000459EE3 /* Player */,
 				72E1795427A3AC3C009A20ED /* Utility */,
-				72E1794B27A394D1009A20ED /* Home */,
 				72E1792C27A2E48C009A20ED /* LaceApp.swift */,
 				72E1792E27A2E48D009A20ED /* Assets.xcassets */,
 			);
@@ -120,15 +137,6 @@
 				72E1793B27A2E48D009A20ED /* macOS.entitlements */,
 			);
 			path = macOS;
-			sourceTree = "<group>";
-		};
-		72E1794B27A394D1009A20ED /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				72E1792D27A2E48C009A20ED /* HomeView.swift */,
-				72E1794C27A39502009A20ED /* HomeCore.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		72E1794E27A3955C009A20ED /* Frameworks */ = {
@@ -164,6 +172,7 @@
 			name = "Lace (iOS)";
 			packageProductDependencies = (
 				72E1794F27A3955C009A20ED /* LaceKit */,
+				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Lace.app */;
@@ -184,6 +193,7 @@
 			name = "Lace (macOS)";
 			packageProductDependencies = (
 				72E1795127A39561009A20ED /* LaceKit */,
+				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Lace.app */;
@@ -216,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 72E1792627A2E48C009A20ED;
+			packageReferences = (
+				72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 72E1793427A2E48D009A20ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,9 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E1793E27A2E48D009A20ED /* HomeView.swift in Sources */,
 				72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
-				72E1794D27A39502009A20ED /* HomeCore.swift in Sources */,
+				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* PlayerView.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */,
@@ -264,9 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E1793F27A2E48D009A20ED /* HomeView.swift in Sources */,
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
-				72E1795327A396F9009A20ED /* HomeCore.swift in Sources */,
+				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* PlayerView.swift in Sources */,
 				725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */,
@@ -539,7 +550,28 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		72D5927F27A5918A00D3CE52 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		72D5928127A591A100D3CE52 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		72E1794F27A3955C009A20ED /* LaceKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LaceKit;

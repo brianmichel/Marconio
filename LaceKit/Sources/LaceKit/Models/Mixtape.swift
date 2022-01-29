@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Mixtape: Codable {
+public struct Mixtape: Codable, Equatable {
     public var mixtapeAlias: String
     public var title: String
     public var subtitle: String
@@ -19,7 +19,7 @@ public struct Mixtape: Codable {
     public var links: [Link]
 }
 
-public struct MixtapesResponse: Codable {
+public struct MixtapesResponse: Codable, Equatable {
     public let results: [Mixtape]
     public let links: [Link]
 }
