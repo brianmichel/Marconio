@@ -24,6 +24,10 @@
 		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
 		72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
 		72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */; };
+		72B56A1427A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
+		72B56A1527A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
+		72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
+		72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
 		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
@@ -53,6 +57,8 @@
 		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
+		72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCommandsClient.swift; sourceTree = "<group>"; };
+		72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayable.swift; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* MarconioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioApp.swift; sourceTree = "<group>"; };
@@ -128,6 +134,22 @@
 			path = "Now Playing";
 			sourceTree = "<group>";
 		};
+		72B56A1227A70EE400C8FC8B /* External Commands */ = {
+			isa = PBXGroup;
+			children = (
+				72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */,
+			);
+			path = "External Commands";
+			sourceTree = "<group>";
+		};
+		72B56A1627A715A400C8FC8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +185,8 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72B56A1627A715A400C8FC8B /* Models */,
+				72B56A1227A70EE400C8FC8B /* External Commands */,
 				727AD85827A6DC5F00F224CF /* Channels */,
 				72A6B3DF27A5F420002AF923 /* Donation */,
 				72D5928627A5986200D3CE52 /* Main */,
@@ -322,7 +346,9 @@
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
+				72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
+				72B56A1427A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
@@ -338,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B56A1527A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */,
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
 				727AD85627A6D86700F224CF /* MarconioAppDelegate.swift in Sources */,
 				727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */,
@@ -345,6 +372,7 @@
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				72E5845327A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
+				72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,
 				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,

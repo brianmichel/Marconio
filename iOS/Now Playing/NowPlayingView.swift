@@ -40,6 +40,7 @@ struct NowPlayingView: View {
                         .font(Font.system(size: C.iconSize, weight: .bold, design: .default))
                 }
                 .buttonStyle(.plain)
+                .keyboardShortcut(.space, modifiers: [])
 
             }.padding(.horizontal)
             Spacer()

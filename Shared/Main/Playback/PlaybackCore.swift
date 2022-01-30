@@ -29,15 +29,21 @@ enum PlaybackAction: Equatable {
     case togglePlayback
     case updateNowPlaying
     case startMonitoringRemoteCommands
-    case remotePausePlayback
-    case remoteResumePlayback
+    case externalCommand(Result<ExternalCommandsClient.Action, Never>)
 }
 
 struct PlaybackEnvironment {
     // An intersting side effect of using TCA seems like you need to have these kind of persistent resources static
     // Maybe I'm just using it wrong?
-    static var player: AVPlayer = AVPlayer()
+    static var player: AVPlayer = {
+        let player = AVPlayer()
+        player.allowsExternalPlayback = true
+
+        return player
+    }()
+    var mainQueue: DispatchQueue = .main
     var infoCenter = MPNowPlayingInfoCenter.default()
+    var externalCommandsClient: ExternalCommandsClient = .live
 }
 
 let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
@@ -56,12 +62,12 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
                 Effect(value: .updateNowPlaying),
                 Effect(value: .startMonitoringRemoteCommands)
             )
-        case .pausePlayback, .remotePausePlayback:
+        case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
             PlaybackEnvironment.player.pause()
             state.playerState = .paused
             environment.infoCenter.playbackState = .paused
             return .none
-        case .resumePlayback, .remoteResumePlayback:
+        case .resumePlayback, .externalCommand(.success(.externalResumeTap)):
             PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
@@ -98,70 +104,11 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             environment.infoCenter.nowPlayingInfo = updateInformation
             return .none
         case .startMonitoringRemoteCommands:
-            return Effect.run { subscriber in
-                MPRemoteCommandCenter.shared().playCommand.addTarget { event in
-                    subscriber.send(.remoteResumePlayback)
-                    return .success
-                }
-
-                MPRemoteCommandCenter.shared().pauseCommand.addTarget { event in
-                    subscriber.send(.remotePausePlayback)
-                    return .success
-                }
-
-                return AnyCancellable {
-                    // Do nothing, I think...
-                }
-            }
+            return environment.externalCommandsClient
+                .startMonitoringCommands()
+                .catchToEffect(PlaybackAction.externalCommand)
+        case .externalCommand:
+            return .none
         }
     }
 )
-
-struct MediaPlayable: Identifiable, Equatable {
-    var id: String
-    var title: String
-    var subtitle: String?
-    var description: String
-    var artwork: URL
-    var streamURL: URL
-}
-
-extension MediaPlayable {
-    init(mixtape: Mixtape) {
-        id = mixtape.id
-        title = mixtape.title
-        subtitle = mixtape.subtitle
-        description = mixtape.description
-        artwork = mixtape.media.pictureLarge
-        streamURL = mixtape.audioStreamEndpoint
-    }
-
-    init(channel: Channel) {
-        id = channel.id
-        title = "Channel \(channel.channelName)"
-        description = "Description not provided by NTS or broadcaster."
-
-        if let programDescription = channel.now.details?.description, !programDescription.isEmpty {
-            description = programDescription
-        }
-
-        subtitle = channel.now.broadcastTitle
-
-        artwork = channel.now.details?.media.backgroundLarge ?? URL(fileURLWithPath: "file://")
-
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "stream-relay-geo.ntslive.net"
-
-        switch channel.channelName {
-        case "1":
-            components.path = "/stream"
-        case "2":
-            components.path = "/stream2"
-        default:
-            print("Unknown stream channel has been provided, returning a stream URL that will not stream")
-        }
-
-        streamURL = components.url!
-    }
-}
