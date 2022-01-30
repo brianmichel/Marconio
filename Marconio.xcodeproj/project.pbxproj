@@ -24,8 +24,8 @@
 		72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
 		72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928E27A5B2E700D3CE52 /* AppCore.swift */; };
 		72D5929027A5B2E700D3CE52 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928E27A5B2E700D3CE52 /* AppCore.swift */; };
-		72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* LaceApp.swift */; };
-		72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* LaceApp.swift */; };
+		72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
+		72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1795027A3955C009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1794F27A3955C009A20ED /* LaceKit */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableArtworkPlaceholderView.swift; sourceTree = "<group>"; };
-		7221DB0527A489F400183057 /* Lace--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lace--iOS--Info.plist"; sourceTree = "<group>"; };
+		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		725B5DF127A4436300459EE3 /* PlaybackCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackCore.swift; sourceTree = "<group>"; };
 		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
@@ -44,10 +44,10 @@
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
-		72E1792C27A2E48C009A20ED /* LaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaceApp.swift; sourceTree = "<group>"; };
+		72E1792C27A2E48C009A20ED /* MarconioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioApp.swift; sourceTree = "<group>"; };
 		72E1792E27A2E48D009A20ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		72E1793327A2E48D009A20ED /* Lace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		72E1793927A2E48D009A20ED /* Lace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E1793327A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E1793927A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				72A6B3E627A5FECE002AF923 /* Now Playing */,
-				7221DB0527A489F400183057 /* Lace--iOS--Info.plist */,
+				7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 				72D5928627A5986200D3CE52 /* Main */,
 				725B5DF027A4435000459EE3 /* Detail */,
 				72E1795427A3AC3C009A20ED /* Utility */,
-				72E1792C27A2E48C009A20ED /* LaceApp.swift */,
+				72E1792C27A2E48C009A20ED /* MarconioApp.swift */,
 				72E1792E27A2E48D009A20ED /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -155,8 +155,8 @@
 		72E1793427A2E48D009A20ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72E1793327A2E48D009A20ED /* Lace.app */,
-				72E1793927A2E48D009A20ED /* Lace.app */,
+				72E1793327A2E48D009A20ED /* Marconio.app */,
+				72E1793927A2E48D009A20ED /* Marconio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72E1793227A2E48D009A20ED /* Lace (iOS) */ = {
+		72E1793227A2E48D009A20ED /* Marconio (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72E1794427A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Lace (iOS)" */;
+			buildConfigurationList = 72E1794427A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Marconio (iOS)" */;
 			buildPhases = (
 				72E1792F27A2E48D009A20ED /* Sources */,
 				72E1793027A2E48D009A20ED /* Frameworks */,
@@ -200,18 +200,18 @@
 			);
 			dependencies = (
 			);
-			name = "Lace (iOS)";
+			name = "Marconio (iOS)";
 			packageProductDependencies = (
 				72E1794F27A3955C009A20ED /* LaceKit */,
 				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
 			);
 			productName = "Lace (iOS)";
-			productReference = 72E1793327A2E48D009A20ED /* Lace.app */;
+			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
 			productType = "com.apple.product-type.application";
 		};
-		72E1793827A2E48D009A20ED /* Lace (macOS) */ = {
+		72E1793827A2E48D009A20ED /* Marconio (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72E1794727A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Lace (macOS)" */;
+			buildConfigurationList = 72E1794727A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Marconio (macOS)" */;
 			buildPhases = (
 				72E1793527A2E48D009A20ED /* Sources */,
 				72E1793627A2E48D009A20ED /* Frameworks */,
@@ -221,13 +221,13 @@
 			);
 			dependencies = (
 			);
-			name = "Lace (macOS)";
+			name = "Marconio (macOS)";
 			packageProductDependencies = (
 				72E1795127A39561009A20ED /* LaceKit */,
 				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 			);
 			productName = "Lace (macOS)";
-			productReference = 72E1793927A2E48D009A20ED /* Lace.app */;
+			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 72E1792A27A2E48C009A20ED /* Build configuration list for PBXProject "Lace" */;
+			buildConfigurationList = 72E1792A27A2E48C009A20ED /* Build configuration list for PBXProject "Marconio" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -264,8 +264,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72E1793227A2E48D009A20ED /* Lace (iOS) */,
-				72E1793827A2E48D009A20ED /* Lace (macOS) */,
+				72E1793227A2E48D009A20ED /* Marconio (iOS) */,
+				72E1793827A2E48D009A20ED /* Marconio (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -303,7 +303,7 @@
 				72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
-				72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */,
+				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +319,7 @@
 				72D5929027A5B2E700D3CE52 /* AppCore.swift in Sources */,
 				725B5DF327A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */,
-				72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */,
+				72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +447,7 @@
 				DEVELOPMENT_TEAM = YN24FFRTC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS/Lace--iOS--Info.plist";
+				INFOPLIST_FILE = "iOS/Marconio--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,7 +461,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.foureyes.Lace;
-				PRODUCT_NAME = Lace;
+				PRODUCT_NAME = Marconio;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -479,7 +479,7 @@
 				DEVELOPMENT_TEAM = YN24FFRTC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS/Lace--iOS--Info.plist";
+				INFOPLIST_FILE = "iOS/Marconio--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,7 +493,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.foureyes.Lace;
-				PRODUCT_NAME = Lace;
+				PRODUCT_NAME = Marconio;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -508,7 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -525,7 +525,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.foureyes.Lace;
-				PRODUCT_NAME = Lace;
+				PRODUCT_NAME = Marconio;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -538,7 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -555,7 +556,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.foureyes.Lace;
-				PRODUCT_NAME = Lace;
+				PRODUCT_NAME = Marconio;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -565,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		72E1792A27A2E48C009A20ED /* Build configuration list for PBXProject "Lace" */ = {
+		72E1792A27A2E48C009A20ED /* Build configuration list for PBXProject "Marconio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72E1794227A2E48D009A20ED /* Debug */,
@@ -574,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72E1794427A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Lace (iOS)" */ = {
+		72E1794427A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Marconio (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72E1794527A2E48D009A20ED /* Debug */,
@@ -583,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72E1794727A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Lace (macOS)" */ = {
+		72E1794727A2E48D009A20ED /* Build configuration list for PBXNativeTarget "Marconio (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72E1794827A2E48D009A20ED /* Debug */,

@@ -1,5 +1,5 @@
 //
-//  LaceApp.swift
+//  MarconioApp.swift
 //  Shared
 //
 //  Created by Brian Michel on 1/27/22.
@@ -10,7 +10,7 @@ import ComposableArchitecture
 import LaceKit
 
 @main
-struct LaceApp: App {
+struct MarconioApp: App {
     var body: some Scene {
         WindowGroup {
             AppView(

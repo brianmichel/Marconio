@@ -58,7 +58,7 @@ struct AppView: View {
                 .frame(maxHeight: .infinity)
                 .listStyle(.sidebar)
                 .navigationTitle("Channels")
-#if os(macOS)
+                #if os(macOS)
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button(action: toggleSidebar, label: {
@@ -71,7 +71,7 @@ struct AppView: View {
                         }).keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
                     }
                 }
-#endif
+                #endif
                 if isPlayingBack {
                     withAnimation(.easeInOut) {
                         nowPlayingView()
@@ -122,9 +122,9 @@ struct AppView: View {
     }
 
     private func toggleSidebar() { // 2
-#if os(macOS)
+        #if os(macOS)
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-#endif
+        #endif
     }
 }
 
