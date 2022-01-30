@@ -20,23 +20,24 @@ public enum APIError: Error {
 public final class LiveAPI: NTSAPI {
     private let runner = Runner()
 
-
     public init() {}
 
     public func live() throws -> AnyPublisher<LiveBroadcastsResponse, RunnerError> {
-        guard let url = url(for: "live") else {
+        do {
+            let request = try request(for: "live")
+            return runner.requestPublisher(for: request)
+        } catch {
             throw APIError.badPath
         }
-
-        return runner.requestPublisher(for: URLRequest(url: url))
     }
 
     public func mixtapes() throws -> AnyPublisher<MixtapesResponse, RunnerError> {
-        guard let url = url(for: "mixtapes") else {
+        do {
+            let request = try request(for: "mixtapes")
+            return runner.requestPublisher(for: request)
+        } catch {
             throw APIError.badPath
         }
-
-        return runner.requestPublisher(for: URLRequest(url: url))
     }
 
     private func url(for path: String) -> URL? {
@@ -46,5 +47,16 @@ public final class LiveAPI: NTSAPI {
         components.path = "/api/v2/\(path)"
 
         return components.url
+    }
+
+    private func request(for path: String) throws -> URLRequest {
+        guard let url = url(for: path) else {
+            throw APIError.badPath
+        }
+
+        var request = URLRequest(url: url)
+        request.cachePolicy = .useProtocolCachePolicy
+
+        return request
     }
 }
