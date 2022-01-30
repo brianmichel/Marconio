@@ -1,5 +1,5 @@
 //
-//  PlayerCore.swift
+//  PlaybackCore.swift
 //  Lace
 //
 //  Created by Brian Michel on 1/28/22.
@@ -26,6 +26,7 @@ enum PlaybackAction: Equatable {
     case pausePlayback
     case resumePlayback
     case stopPlayback
+    case togglePlayback
 }
 
 struct PlaybackEnvironment {
@@ -60,6 +61,15 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.pause()
             PlaybackEnvironment.player.replaceCurrentItem(with: nil)
             return .none
+        case .togglePlayback:
+            switch state.playerState {
+            case .paused:
+                return Effect(value: .resumePlayback)
+            case .playing:
+                return Effect(value: .pausePlayback)
+            case .stopped:
+                return .none
+            }
         }
     }
 )
@@ -77,7 +87,7 @@ extension MediaPlayable {
     init(mixtape: Mixtape) {
         id = mixtape.id
         title = mixtape.title
-        subtitle = nil
+        subtitle = mixtape.subtitle
         description = mixtape.description
         artwork = mixtape.media.pictureLarge
         streamURL = mixtape.audioStreamEndpoint

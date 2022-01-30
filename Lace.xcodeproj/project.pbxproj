@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
 		7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
-		725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
-		725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlayerCore.swift */; };
+		725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlaybackCore.swift */; };
+		725B5DF327A4436300459EE3 /* PlaybackCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlaybackCore.swift */; };
 		725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
 		72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
+		72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */; };
 		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
@@ -36,10 +37,11 @@
 /* Begin PBXFileReference section */
 		7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableArtworkPlaceholderView.swift; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Lace--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lace--iOS--Info.plist"; sourceTree = "<group>"; };
-		725B5DF127A4436300459EE3 /* PlayerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCore.swift; sourceTree = "<group>"; };
+		725B5DF127A4436300459EE3 /* PlaybackCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackCore.swift; sourceTree = "<group>"; };
 		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
+		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* LaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaceApp.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		7221DB0627A48A0100183057 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				72A6B3E627A5FECE002AF923 /* Now Playing */,
 				7221DB0527A489F400183057 /* Lace--iOS--Info.plist */,
 			);
 			path = iOS;
@@ -97,6 +100,14 @@
 			path = Donation;
 			sourceTree = "<group>";
 		};
+		72A6B3E627A5FECE002AF923 /* Now Playing */ = {
+			isa = PBXGroup;
+			children = (
+				72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */,
+			);
+			path = "Now Playing";
+			sourceTree = "<group>";
+		};
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +121,7 @@
 		72D5929127A5B4C500D3CE52 /* Playback */ = {
 			isa = PBXGroup;
 			children = (
-				725B5DF127A4436300459EE3 /* PlayerCore.swift */,
+				725B5DF127A4436300459EE3 /* PlaybackCore.swift */,
 				7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */,
 			);
 			path = Playback;
@@ -287,9 +298,10 @@
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
+				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */,
-				725B5DF227A4436300459EE3 /* PlayerCore.swift in Sources */,
+				725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* LaceApp.swift in Sources */,
 			);
@@ -305,7 +317,7 @@
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
 				72D5929027A5B2E700D3CE52 /* AppCore.swift in Sources */,
-				725B5DF327A4436300459EE3 /* PlayerCore.swift in Sources */,
+				725B5DF327A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */,
 				72E1793D27A2E48D009A20ED /* LaceApp.swift in Sources */,
 			);
@@ -439,8 +451,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,7 +465,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,8 +483,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,7 +497,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -501,6 +515,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,6 +544,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

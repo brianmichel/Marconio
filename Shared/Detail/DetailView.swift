@@ -45,8 +45,7 @@ struct DetailView: View {
                                 if !isPlayingBackCurrentPlayable {
                                     viewStore.send(.loadPlayable(playable))
                                 } else {
-                                    let action = appIsPlaying ? PlaybackAction.pausePlayback : PlaybackAction.resumePlayback
-                                    viewStore.send(action)
+                                    viewStore.send(.togglePlayback)
                                 }
                             } label: {
                                 Image(systemName: playOrPauseIconImage).resizable().frame(width: 35, height: 35)
@@ -72,10 +71,6 @@ struct DetailView: View {
 #endif
     }
 
-    var appIsPlaying: Bool {
-        return viewStore.playerState == .playing
-    }
-
     var isPlayingBackCurrentPlayable: Bool {
         return viewStore.currentlyPlaying == playable
     }
@@ -83,7 +78,7 @@ struct DetailView: View {
     var playOrPauseIconImage: String {
         if !isPlayingBackCurrentPlayable {
             return "play.circle.fill"
-        } else if appIsPlaying {
+        } else if viewStore.playerState == .playing {
             return "pause.circle.fill"
         } else {
             return "play.circle.fill"

@@ -16,7 +16,7 @@ struct DonationView: View {
                     Image(systemName: "hand.raised")
                         .font(Font.system(size: 50, weight: .light, design: .default))
                         .foregroundColor(.accentColor)
-                    Text("Please Support NTS").font(.title).bold()
+                    Text("Please Support NTS").font(.title).bold().allowsTightening(true)
                 }
                 Spacer()
             }
@@ -28,7 +28,6 @@ struct DonationView: View {
                 Text("Become a Supporter").bold().frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle)
             .controlSize(.large)
 
         }

@@ -4,10 +4,14 @@
 //
 //  Created by Brian Michel on 1/29/22.
 //
+#if os(iOS)
+import AVFoundation
+#endif
 
 import ComposableArchitecture
 import Foundation
 import LaceKit
+
 
 struct AppState: Equatable {
     var channels: [Channel] = []
@@ -28,6 +32,15 @@ struct AppEnvironment {
     var mainQueue: AnySchedulerOf<DispatchQueue>
     var uuid: () -> UUID
     var api: NTSAPI
+
+    init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI) {
+        self.mainQueue = mainQueue
+        self.uuid = uuid
+        self.api = api
+#if os(iOS)
+        try? AVAudioSession.sharedInstance().setCategory(.playback)
+#endif
+    }
 }
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(

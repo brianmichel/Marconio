@@ -18,7 +18,7 @@ extension URL {
         #if os(macOS)
         NSWorkspace.shared.open(self)
         #elseif os(iOS)
-        UIApplication.shared.openURL(self)
+        UIApplication.shared.open(self, options: [:], completionHandler: nil)
         #endif
     }
 }

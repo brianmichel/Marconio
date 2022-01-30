@@ -33,44 +33,65 @@ struct AppView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                Section("Live") {
-                    ForEach(viewStore.channels) { channel in
-                        NavigationLink(destination: destination(for: MediaPlayable(channel: channel))
-                        ) {
-                            Label("Channel \(channel.channelName)", systemImage: "radio")
+            VStack(spacing: 0) {
+                List {
+                    #if os(iOS)
+                    DonationView()
+                    #endif
+                    Section("Live") {
+                        ForEach(viewStore.channels) { channel in
+                            NavigationLink(destination: destination(for: MediaPlayable(channel: channel))
+                            ) {
+                                Label("Channel \(channel.channelName)", systemImage: "radio")
+                            }
                         }
                     }
-                }
 
-                Section("Infinite Mixtapes") {
-                    ForEach(viewStore.mixtapes) { mixtape in
-                        NavigationLink(destination: destination(for: MediaPlayable(mixtape: mixtape))) {
-                            Label("\(mixtape.title)", systemImage: mixtape.systemIcon)
+                    Section("Infinite Mixtapes") {
+                        ForEach(viewStore.mixtapes) { mixtape in
+                            NavigationLink(destination: destination(for: MediaPlayable(mixtape: mixtape))) {
+                                Label("\(mixtape.title)", systemImage: mixtape.systemIcon)
+                            }
                         }
                     }
                 }
-            }
-            .listStyle(.sidebar)
-            .navigationTitle("Channels")
-        #if os(macOS)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: toggleSidebar, label: {
-                        Image(systemName: "sidebar.leading")
-                    })
+                .frame(maxHeight: .infinity)
+                .listStyle(.sidebar)
+                .navigationTitle("Channels")
+#if os(macOS)
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(action: toggleSidebar, label: {
+                            Image(systemName: "sidebar.leading")
+                        })
+                    }
+                    ToolbarItem(placement: .automatic) {
+                        Button(action: refresh, label: {
+                            Image(systemName: "arrow.clockwise")
+                        }).keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+                    }
                 }
-                ToolbarItem(placement: .automatic) {
-                    Button(action: refresh, label: {
-                        Image(systemName: "arrow.clockwise")
-                    }).keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
+#endif
+                if isPlayingBack {
+                    withAnimation(.easeInOut) {
+                        nowPlayingView()
+                    }
                 }
             }
-        #endif
+
             DonationView().padding()
         }.onAppear {
             viewStore.send(.loadInitialData)
         }
+    }
+
+    var isPlayingBack: Bool {
+        return viewStore.playback.playerState != .stopped
+    }
+
+    private func footerView() -> some View {
+        let height: Double = isPlayingBack ? 60 : 0
+        return Text("").frame(height: height)
     }
 
     private func refresh() {
@@ -87,6 +108,19 @@ struct AppView: View {
         }
     }
 
+    private func nowPlayingView() -> some View {
+        #if os(iOS)
+        return NowPlayingView(
+            store: store.scope(
+                state: \.playback,
+                action: AppAction.playback
+            )
+        )
+        #else
+        return EmptyView()
+        #endif
+    }
+
     private func toggleSidebar() { // 2
 #if os(macOS)
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
@@ -100,7 +134,8 @@ struct AppView_Previews: PreviewProvider {
             store: Store(
                 initialState: AppState(
                     channels: [],
-                    mixtapes: []
+                    mixtapes: [],
+                    playback: PlaybackState(currentlyPlaying: nil, playerState: .playing)
                 ),
                 reducer: appReducer,
                 environment: AppEnvironment(
