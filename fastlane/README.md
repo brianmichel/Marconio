@@ -13,6 +13,17 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
+### update_version_file
+
+```sh
+[bundle exec] fastlane update_version_file
+```
+
+
+
+----
+
+
 ## iOS
 
 ### ios beta
@@ -35,14 +46,6 @@ Create iOS Beta Release
 ```
 
 Create Mac Beta Release
-
-### mac update_version_file
-
-```sh
-[bundle exec] fastlane mac update_version_file
-```
-
-
 
 ----
 

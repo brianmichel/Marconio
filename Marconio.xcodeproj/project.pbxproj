@@ -32,6 +32,8 @@
 		72E1795227A39561009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1795127A39561009A20ED /* LaceKit */; };
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
+		72E5845227A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5845127A64D4C00BC9C69 /* MarconioVersionInformation.swift */; };
+		72E5845327A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5845127A64D4C00BC9C69 /* MarconioVersionInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,7 @@
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
+		72E5845127A64D4C00BC9C69 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,7 @@
 		72E1795427A3AC3C009A20ED /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				72E5845127A64D4C00BC9C69 /* MarconioVersionInformation.swift */,
 				72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */,
 				72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */,
 			);
@@ -301,6 +305,7 @@
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */,
+				72E5845227A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
@@ -313,6 +318,7 @@
 			files = (
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
+				72E5845327A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
