@@ -39,7 +39,7 @@ platform :mac do
     output_directory = "fastlane/output/#{BUILD_NUMBER}"
 
     build_mac_app(
-      scheme: 'Marconio (macOS)',
+      scheme: "Marconio (macOS)",
       output_directory: output_directory,
       export_options: {
         method: 'developer-id'
@@ -54,7 +54,7 @@ platform :mac do
 
     release_description = <<-eos
 A new version of Marconio has been published...
-* Marconio Version: #{get_version_number(target: 'Marconio (macOS)')}
+* Marconio Version: #{get_version_number(target: "Marconio (macOS)")}
 * Marconio Build: #{BUILD_NUMBER}
 
 ## Description
