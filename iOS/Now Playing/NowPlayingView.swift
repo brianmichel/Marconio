@@ -33,7 +33,7 @@ struct NowPlayingView: View {
                 } label: {
                     Image(systemName: playOrPauseIconImage)
                         .font(Font.system(size: 25, weight: .bold, design: .default))
-                }
+                }.buttonStyle(.borderless)
 
             }.padding(.horizontal)
             Spacer()

@@ -16,6 +16,9 @@
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85627A6D86700F224CF /* MarconioAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioAppDelegate.swift */; };
+		727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */; };
+		727AD85D27A6DC8700F224CF /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85C27A6DC8700F224CF /* ChannelsView.swift */; };
+		727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85C27A6DC8700F224CF /* ChannelsView.swift */; };
 		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
@@ -46,6 +49,7 @@
 		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioAppDelegate.swift; sourceTree = "<group>"; };
+		727AD85C27A6DC8700F224CF /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
 		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		727AD85827A6DC5F00F224CF /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				727AD85C27A6DC8700F224CF /* ChannelsView.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
 		72A6B3DF27A5F420002AF923 /* Donation */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +163,7 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				727AD85827A6DC5F00F224CF /* Channels */,
 				72A6B3DF27A5F420002AF923 /* Donation */,
 				72D5928627A5986200D3CE52 /* Main */,
 				725B5DF027A4435000459EE3 /* Detail */,
@@ -315,6 +328,7 @@
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				72E5845227A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */,
+				727AD85D27A6DC8700F224CF /* ChannelsView.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);
@@ -324,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
 				727AD85627A6D86700F224CF /* MarconioAppDelegate.swift in Sources */,
 				727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
@@ -331,6 +346,7 @@
 				72E5845327A64D4C00BC9C69 /* MarconioVersionInformation.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
+				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,
 				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
 				72D5929027A5B2E700D3CE52 /* AppCore.swift in Sources */,
 				725B5DF327A4436300459EE3 /* PlaybackCore.swift in Sources */,
