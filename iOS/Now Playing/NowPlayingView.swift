@@ -10,6 +10,11 @@ import ComposableArchitecture
 import LaceKit
 
 struct NowPlayingView: View {
+    private enum C {
+        static let nowPlayingNaturalHeight = 64.0
+        static let playPauseTapAreaExpansion = -200.0
+        static let iconSize = 25.0
+    }
     @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
 
     init(store: Store<PlaybackState, PlaybackAction>) {
@@ -32,13 +37,14 @@ struct NowPlayingView: View {
                     togglePlayback()
                 } label: {
                     Image(systemName: playOrPauseIconImage)
-                        .font(Font.system(size: 25, weight: .bold, design: .default))
-                }.buttonStyle(.borderless)
+                        .font(Font.system(size: C.iconSize, weight: .bold, design: .default))
+                }
+                .buttonStyle(.plain)
 
             }.padding(.horizontal)
             Spacer()
         }
-        .frame(height: 64)
+        .frame(height: C.nowPlayingNaturalHeight)
         .background(.thickMaterial)
     }
 
