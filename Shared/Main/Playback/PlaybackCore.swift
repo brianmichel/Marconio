@@ -10,7 +10,7 @@ import Foundation
 import LaceKit
 import MediaPlayer
 import ComposableArchitecture
-
+import Combine
 
 struct PlaybackState: Equatable {
     enum PlayerState: Equatable {
@@ -27,12 +27,17 @@ enum PlaybackAction: Equatable {
     case resumePlayback
     case stopPlayback
     case togglePlayback
+    case updateNowPlaying
+    case startMonitoringRemoteCommands
+    case remotePausePlayback
+    case remoteResumePlayback
 }
 
 struct PlaybackEnvironment {
     // An intersting side effect of using TCA seems like you need to have these kind of persistent resources static
     // Maybe I'm just using it wrong?
     static var player: AVPlayer = AVPlayer()
+    var infoCenter = MPNowPlayingInfoCenter.default()
 }
 
 let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
@@ -44,23 +49,30 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.replaceCurrentItem(with: item)
             PlaybackEnvironment.player.play()
             state.playerState = .playing
+            environment.infoCenter.playbackState = .playing
 
             state.currentlyPlaying = playable
-            return .none
-        case .pausePlayback:
+            return .merge(
+                Effect(value: .updateNowPlaying),
+                Effect(value: .startMonitoringRemoteCommands)
+            )
+        case .pausePlayback, .remotePausePlayback:
             PlaybackEnvironment.player.pause()
             state.playerState = .paused
+            environment.infoCenter.playbackState = .paused
             return .none
-        case .resumePlayback:
+        case .resumePlayback, .remoteResumePlayback:
             PlaybackEnvironment.player.play()
             state.playerState = .playing
+            environment.infoCenter.playbackState = .playing
             return .none
         case .stopPlayback:
             state.playerState = .stopped
+            environment.infoCenter.playbackState = .stopped
             state.currentlyPlaying = nil
             PlaybackEnvironment.player.pause()
             PlaybackEnvironment.player.replaceCurrentItem(with: nil)
-            return .none
+            return Effect(value: .updateNowPlaying)
         case .togglePlayback:
             switch state.playerState {
             case .paused:
@@ -69,6 +81,37 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
                 return Effect(value: .pausePlayback)
             case .stopped:
                 return .none
+            }
+        case .updateNowPlaying:
+            guard let nowPlaying = state.currentlyPlaying else {
+                return .none
+            }
+            let updateInformation = [
+                MPMediaItemPropertyTitle: nowPlaying.title,
+                MPMediaItemPropertyArtist: "NTS",
+                MPMediaItemPropertyComposer: nowPlaying.subtitle ?? "",
+                MPNowPlayingInfoPropertyIsLiveStream: NSNumber(booleanLiteral: true),
+                MPNowPlayingInfoPropertyAssetURL: nowPlaying.streamURL
+
+            ] as [String : Any]
+
+            environment.infoCenter.nowPlayingInfo = updateInformation
+            return .none
+        case .startMonitoringRemoteCommands:
+            return Effect.run { subscriber in
+                MPRemoteCommandCenter.shared().playCommand.addTarget { event in
+                    subscriber.send(.remoteResumePlayback)
+                    return .success
+                }
+
+                MPRemoteCommandCenter.shared().pauseCommand.addTarget { event in
+                    subscriber.send(.remotePausePlayback)
+                    return .success
+                }
+
+                return AnyCancellable {
+                    // Do nothing, I think...
+                }
             }
         }
     }
