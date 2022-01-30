@@ -34,7 +34,7 @@ platform :mac do
     # add actions here: https://docs.fastlane.tools/actions
     ensure_git_status_clean
 
-    increment_build_number(build_number: BUILD_NUMBER, xcodeproj: 'qrky.xcodeproj')
+    increment_build_number(build_number: BUILD_NUMBER, xcodeproj: 'Marconio.xcodeproj')
 
     output_directory = "fastlane/output/#{BUILD_NUMBER}"
 
