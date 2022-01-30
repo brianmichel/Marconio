@@ -7,5 +7,5 @@
 app_identifier("me.foureyes.Lace") # The bundle identifier of your app
 apple_id("brian.michel@gmail.com") # Your Apple email address
 
-itc_team_id("BrianMichel48008456") # App Store Connect Team ID
-team_id("YN24FFRTC8") # Developer Portal Team ID
+# itc_team_id("1448504") # App Store Connect Team ID
+itc_team_id("YN24FFRTC8") # Developer Portal Team ID
