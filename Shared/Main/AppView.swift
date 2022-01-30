@@ -62,13 +62,8 @@ struct AppView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button(action: toggleSidebar, label: {
-                            Image(systemName: "sidebar.leading")
+                            Label("Sidebar", systemImage: "sidebar.leading")
                         })
-                    }
-                    ToolbarItem(placement: .automatic) {
-                        Button(action: refresh, label: {
-                            Image(systemName: "arrow.clockwise")
-                        }).keyboardShortcut(KeyEquivalent("r"), modifiers: [.command])
                     }
                 }
                 #endif

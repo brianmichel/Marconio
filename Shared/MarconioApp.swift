@@ -11,6 +11,11 @@ import LaceKit
 
 @main
 struct MarconioApp: App {
+
+    #if os(macOS)
+    @NSApplicationDelegateAdaptor(MarconioAppDelegate.self) var appDelegate
+    #endif
+
     var body: some Scene {
         WindowGroup {
             AppView(
@@ -28,7 +33,7 @@ struct MarconioApp: App {
                 )
             )
         }.commands {
-            SidebarCommands()
+            MarconioCommands()
         }
     }
 }
