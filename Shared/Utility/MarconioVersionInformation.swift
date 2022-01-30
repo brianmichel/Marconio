@@ -8,7 +8,7 @@ static let macVersionNumber: String = "1.0"
 /// The version number of the iOS application
 static let iOSVersionNumber: String = "1.0"
 /// The build number that would be set, a concatenation of the date and time.
-static let buildNumber: String = "2022.01.30043530"
+static let buildNumber: String = "2022.01.30203109"
 /// The git revision that is being built.
-static let gitRevision: String = "cda50c9"
+static let gitRevision: String = "28f0dc4"
 }
