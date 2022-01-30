@@ -79,7 +79,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.pause()
             PlaybackEnvironment.player.replaceCurrentItem(with: nil)
             return Effect(value: .updateNowPlaying)
-        case .togglePlayback:
+        case .togglePlayback, .externalCommand(.success(.externalToggleTap)):
             switch state.playerState {
             case .paused:
                 return Effect(value: .resumePlayback)

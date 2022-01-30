@@ -52,7 +52,6 @@ struct DetailView: View {
                             }
                             .foregroundColor(.accentColor)
                             .buttonStyle(.plain)
-                            .keyboardShortcut(.space)
                         }
                         Text(playable.description).font(.body)
                             .lineLimit(nil)

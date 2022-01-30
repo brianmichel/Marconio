@@ -16,6 +16,7 @@ struct ExternalCommandsClient {
     enum Action: Equatable {
         case externalResumeTap
         case externalPauseTap
+        case externalToggleTap
     }
 }
 
@@ -36,9 +37,15 @@ extension ExternalCommandsClient {
                         return .success
                     }
 
+                    let toggle = commandCenter.togglePlayPauseCommand.addTarget { event in
+                        subscriber.send(.externalToggleTap)
+                        return .success
+                    }
+
                     return AnyCancellable {
                         commandCenter.playCommand.removeTarget(play)
                         commandCenter.pauseCommand.removeTarget(pause)
+                        commandCenter.togglePlayPauseCommand.removeTarget(toggle)
                     }
                 }
         })
