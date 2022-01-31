@@ -9,10 +9,37 @@ import SwiftUI
 import ComposableArchitecture
 import LaceKit
 
+#if os(macOS)
+import Preferences
+#endif
+
 @main
 struct MarconioApp: App {
 
     #if os(macOS)
+    let GeneralPreferenceViewController: () -> PreferencePane = {
+        let paneView = Preferences.Pane(
+            identifier: .general,
+            title: "General",
+            toolbarIcon: NSImage(systemSymbolName: "gearshape", accessibilityDescription: "General preferences")!
+        ) {
+            GeneralSettingsView()
+        }
+
+        return Preferences.PaneHostingController(pane: paneView)
+    }
+    let AboutPreferenceViewController: () -> PreferencePane = {
+        let paneView = Preferences.Pane(
+            identifier: .about,
+            title: "About",
+            toolbarIcon: NSImage(systemSymbolName: "books.vertical.fill", accessibilityDescription: "About this app")!
+        ) {
+            AboutSettingsView()
+        }
+
+        return Preferences.PaneHostingController(pane: paneView)
+    }
+
     @NSApplicationDelegateAdaptor(MarconioAppDelegate.self) var appDelegate
     #endif
 
@@ -34,6 +61,18 @@ struct MarconioApp: App {
             )
         }.commands {
             MarconioCommands()
+            #if os(macOS)
+            CommandGroup(replacing: CommandGroupPlacement.appSettings) {
+                Button("Preferences...") {
+                    PreferencesWindowController(
+                        preferencePanes: [GeneralPreferenceViewController(), AboutPreferenceViewController()],
+                        style: .toolbarItems,
+                        animated: true,
+                        hidesToolbarForSingleItem: true
+                    ).show()
+                }.keyboardShortcut(KeyEquivalent(","), modifiers: .command)
+            }
+            #endif
         }
     }
 }
