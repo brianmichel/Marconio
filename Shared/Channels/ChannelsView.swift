@@ -43,17 +43,25 @@ struct ChannelsView: View {
 #endif
                 Section("Live") {
                     ForEach(viewStore.channels) { channel in
-                        NavigationLink(destination: destination(for: MediaPlayable(channel: channel))
+                        let playable = MediaPlayable(channel: channel)
+                        NavigationLink(destination: destination(for: playable)
                         ) {
                             Label("Channel \(channel.channelName)", systemImage: "radio")
+                        }
+                        .contextMenu {
+                            contextButton(for: playable)
                         }
                     }
                 }
 
                 Section("Infinite Mixtapes") {
                     ForEach(viewStore.mixtapes) { mixtape in
-                        NavigationLink(destination: destination(for: MediaPlayable(mixtape: mixtape))) {
+                        let playable = MediaPlayable(mixtape: mixtape)
+                        NavigationLink(destination: destination(for: playable)) {
                             Label("\(mixtape.title)", systemImage: mixtape.systemIcon)
+                        }
+                        .contextMenu {
+                            contextButton(for: playable)
                         }
                     }
                 }
@@ -108,6 +116,20 @@ struct ChannelsView: View {
                 Spacer()
             }
         }
+    }
+
+    private func contextButton(for playable: MediaPlayable) -> some View {
+        let isPlayingPlayable = viewStore.playback.currentlyPlaying == playable
+        let iconName = isPlayingPlayable ? "pause.fill" : "play.fill"
+        let action = isPlayingPlayable ? PlaybackAction.pausePlayback : PlaybackAction.loadPlayable(playable)
+        let buttonTitle = isPlayingPlayable ? "Pause" : "Play"
+
+        return Button {
+            viewStore.send(AppAction.playback(action))
+        } label: {
+            Label(buttonTitle, systemImage: iconName)
+        }
+
     }
 }
 
