@@ -44,6 +44,7 @@ struct PlaybackEnvironment {
     var mainQueue: DispatchQueue = .main
     var infoCenter = MPNowPlayingInfoCenter.default()
     var externalCommandsClient: ExternalCommandsClient = .live
+    var appTileClient: AppTileClient = .live
 }
 
 let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
@@ -56,6 +57,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
+            environment.appTileClient.updateDockTile(playable)
 
             state.currentlyPlaying = playable
             return .merge(
