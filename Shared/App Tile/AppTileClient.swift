@@ -13,21 +13,19 @@ import AppKit
 import UIKit
 #endif
 
-import SwiftUI
-
-
 struct AppTileClient {
-    var updateDockTile: (MediaPlayable) -> Void
+    var updateAppTile: (MediaPlayable) -> Void
 }
 
 extension AppTileClient {
     static var live: Self {
         // TODO: This doesn't feel right to pull in the stateful call of the dock menu
         // What's the better way to accomplish this?
+        #if os(macOS)
         let menu = NSApp.delegate?.applicationDockMenu?(NSApp)
 
         return Self(
-            updateDockTile: { playable in
+            updateAppTile: { playable in
                 menu?.removeAllItems()
                 let heading = NSMenuItem(title: "Now Playing", action: nil, keyEquivalent: "")
                 let playable = NSMenuItem(title: "NTS - \(playable.title)", action: nil, keyEquivalent: "")
@@ -35,5 +33,10 @@ extension AppTileClient {
                 menu?.addItem(playable)
             }
         )
+        #else
+        return Self(
+            updateAppTile: { _ in }
+        )
+        #endif
     }
 }

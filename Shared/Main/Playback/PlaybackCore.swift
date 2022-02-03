@@ -57,7 +57,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
-            environment.appTileClient.updateDockTile(playable)
+            environment.appTileClient.updateAppTile(playable)
 
             state.currentlyPlaying = playable
             return .merge(

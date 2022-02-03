@@ -45,6 +45,7 @@
 		72E1795227A39561009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1795127A39561009A20ED /* LaceKit */; };
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
+		72FD675027AC972000611387 /* AppTileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728797F727A978BD00FE38B3 /* AppTileClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -365,6 +366,7 @@
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				727AD85D27A6DC8700F224CF /* ChannelsView.swift in Sources */,
+				72FD675027AC972000611387 /* AppTileClient.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
