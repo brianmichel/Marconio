@@ -97,7 +97,7 @@ A new version of Marconio has been published...
     push_to_git_remote
 
     set_github_release(
-      repository_name: 'brianmichel/lace',
+      repository_name: 'brianmichel/marconio',
       api_token: ENV['GITHUB_TOKEN'],
       description: release_description,
       name: "#{BUILD_NUMBER}",
