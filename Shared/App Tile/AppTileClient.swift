@@ -22,6 +22,8 @@ struct AppTileClient {
 
 extension AppTileClient {
     static var live: Self {
+        // TODO: This doesn't feel right to pull in the stateful call of the dock menu
+        // What's the better way to accomplish this?
         let menu = NSApp.delegate?.applicationDockMenu?(NSApp)
 
         return Self(
@@ -33,18 +35,5 @@ extension AppTileClient {
                 menu?.addItem(playable)
             }
         )
-    }
-}
-
-struct DockTileView: View {
-    var playable: MediaPlayable
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(playable.title).bold()
-            if let subtitle = playable.subtitle {
-                Text(subtitle).font(.subheadline)
-            }
-        }
     }
 }
