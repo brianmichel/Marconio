@@ -4,5 +4,7 @@
 <dict>
 	<key>SUPublicEDKey</key>
 	<string>4wm527bHzKqitFv7rxPfZ584ImtSzV0b4rK6OsI2bVk=</string>
+	<key>SUFeedURL</key>
+	<string>https://brianmichel.github.com/marconio/appcast.xml</string>
 </dict>
 </plist>
