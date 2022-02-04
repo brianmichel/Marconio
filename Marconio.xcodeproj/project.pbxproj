@@ -164,7 +164,6 @@
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				72D5929127A5B4C500D3CE52 /* Playback */,
 				72D5928B27A5A21E00D3CE52 /* AppView.swift */,
 				72D5928E27A5B2E700D3CE52 /* AppCore.swift */,
 				727AD85027A6D75100F224CF /* MarconioCommands.swift */,
@@ -196,6 +195,7 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72D5929127A5B4C500D3CE52 /* Playback */,
 				728797F627A978A400FE38B3 /* App Tile */,
 				72B56A1627A715A400C8FC8B /* Models */,
 				72B56A1227A70EE400C8FC8B /* External Commands */,
