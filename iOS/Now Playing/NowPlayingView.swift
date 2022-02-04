@@ -10,6 +10,7 @@ import ComposableArchitecture
 import LaceKit
 
 import AVFoundation
+import MediaPlayer
 
 struct NowPlayingView: View {
     private enum C {
@@ -39,9 +40,24 @@ struct NowPlayingView: View {
                 .keyboardShortcut(.space, modifiers: [])
                 Spacer().frame(width: 10)
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(viewStore.currentlyPlaying?.title ?? "Nothing Playing").bold()
+                    let text = viewStore.currentlyPlaying?.title ?? "Nothing Playing"
+                    MarqueeText(
+                        text: text,
+                        font: MFont.boldSystemFont(ofSize: 15),
+                        leftFade: 10,
+                        rightFade: 10,
+                        startDelay: 10,
+                        alignment: .leading
+                    )
                     if let subtitle = viewStore.currentlyPlaying?.subtitle {
-                        Text(subtitle).font(.subheadline).foregroundColor(.secondary)
+                        MarqueeText(
+                            text: subtitle,
+                            font: MFont.systemFont(ofSize: 12, weight: .light),
+                            leftFade: 10,
+                            rightFade: 10,
+                            startDelay: 10,
+                            alignment: .leading
+                        )
                     }
                 }
                 Spacer()
