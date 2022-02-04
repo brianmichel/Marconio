@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 import ComposableArchitecture
 import LaceKit
+import AVFoundation
 
 struct AppView: View {
     let store: Store<AppState, AppAction>
@@ -34,7 +35,8 @@ struct AppView: View {
     var body: some View {
         NavigationView {
             ChannelsView(store: store)
-            DonationView().padding()
+            DonationView()
+                .padding()
         }.onAppear {
             viewStore.send(.loadInitialData)
         }

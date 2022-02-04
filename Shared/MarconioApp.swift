@@ -16,10 +16,6 @@ struct MarconioApp: App {
     @NSApplicationDelegateAdaptor(MarconioAppDelegate.self) var appDelegate
     #endif
 
-    init() {
-        print("does this get logged?")
-    }
-
     var body: some Scene {
         WindowGroup {
             AppView(

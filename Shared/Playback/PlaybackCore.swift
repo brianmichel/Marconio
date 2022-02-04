@@ -19,6 +19,7 @@ struct PlaybackState: Equatable {
 
     var currentlyPlaying: MediaPlayable?
     var playerState: PlayerState = .stopped
+    var routePickerView: RoutePickerView?
 }
 
 enum PlaybackAction: Equatable {
@@ -37,7 +38,7 @@ struct PlaybackEnvironment {
     // Maybe I'm just using it wrong?
     static var player: AVPlayer = {
         let player = AVPlayer()
-        player.allowsExternalPlayback = true
+        player.allowsExternalPlayback = false
 
         return player
     }()
@@ -58,6 +59,14 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
             environment.appTileClient.updateAppTile(playable)
+
+            #if os(macOS)
+            state.routePickerView = RoutePickerView(routePickerButtonBordered: false, player: PlaybackEnvironment.player)
+            #endif
+
+            #if os(iOS)
+            state.routePickerView = RoutePickerView(player: PlaybackEnvironment.player)
+            #endif
 
             state.currentlyPlaying = playable
             return .merge(
