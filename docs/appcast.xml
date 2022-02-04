@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>Marconio Change Log</title>
     <link>https://brianmichel.github.io/Marconio/appcast.xml</link>
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
-      <title>Version 2022.02.03231334</title>
+      <title>Version 1, Build 2022.02.03231334</title>
       <link>https://brianmichel.github.io/Marconio</link>
       <sparkle:version>2022.02.03231334</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>12.1</sparkle:minimumSystemVersion>
       <description>
         <![CDATA[
             <ul>
@@ -18,8 +19,8 @@
             </ul>
           ]]>
       </description>
-      <pubDate>Fri, 04 Jan 2022 15:09:00 +0000</pubDate>
-      <enclosure url="https://github.com/brianmichel/Marconio/releases/download/builds/mac/beta-2022.02.03231334/Marconio-Beta-2022.02.03231334.dmg" length="107758" type="application/octet-stream" sparkle:edSignature="4wm527bHzKqitFv7rxPfZ584ImtSzV0b4rK6OsI2bVk=" />
+      <pubDate>Thu, 03 Feb 2022 18:13:53 -0500</pubDate>
+      <enclosure url="https://github.com/brianmichel/Marconio/releases/download/builds/mac/beta-2022.02.03231334/Marconio-Beta-2022.02.03231334.dmg" length="10328249" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
