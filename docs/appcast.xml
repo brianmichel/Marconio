@@ -2,13 +2,14 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Marconio Change Log</title>
-    <link>https://brianmichel.github.io/marconio/appcast.xml</link>
+    <link>https://brianmichel.github.io/Marconio/appcast.xml</link>
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
       <title>Version 2022.02.03231334</title>
-      <link>https://brianmichel.github.io/marconio</link>
-      <sparkle:version>2.0</sparkle:version>
+      <link>https://brianmichel.github.io/Marconio</link>
+      <sparkle:version>2022.02.03231334</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <description>
         <![CDATA[
             <ul>
