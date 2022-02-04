@@ -46,6 +46,8 @@
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72FD675027AC972000611387 /* AppTileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728797F727A978BD00FE38B3 /* AppTileClient.swift */; };
+		72FD675227ACBCDA00611387 /* RoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD675127ACBCDA00611387 /* RoutePickerView.swift */; };
+		72FD675327ACBCDA00611387 /* RoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FD675127ACBCDA00611387 /* RoutePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,7 @@
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
+		72FD675127ACBCDA00611387 /* RoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +167,6 @@
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				72D5929127A5B4C500D3CE52 /* Playback */,
 				72D5928B27A5A21E00D3CE52 /* AppView.swift */,
 				72D5928E27A5B2E700D3CE52 /* AppCore.swift */,
 				727AD85027A6D75100F224CF /* MarconioCommands.swift */,
@@ -196,6 +198,7 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72D5929127A5B4C500D3CE52 /* Playback */,
 				728797F627A978A400FE38B3 /* App Tile */,
 				72B56A1627A715A400C8FC8B /* Models */,
 				72B56A1227A70EE400C8FC8B /* External Commands */,
@@ -241,6 +244,7 @@
 				727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */,
 				72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */,
 				72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */,
+				72FD675127ACBCDA00611387 /* RoutePickerView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -363,6 +367,7 @@
 				72B56A1427A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				72D5928F27A5B2E700D3CE52 /* AppCore.swift in Sources */,
+				72FD675227ACBCDA00611387 /* RoutePickerView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */,
 				727AD85D27A6DC8700F224CF /* ChannelsView.swift in Sources */,
@@ -385,6 +390,7 @@
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
+				72FD675327ACBCDA00611387 /* RoutePickerView.swift in Sources */,
 				72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,

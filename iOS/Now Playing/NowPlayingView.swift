@@ -9,11 +9,14 @@ import SwiftUI
 import ComposableArchitecture
 import LaceKit
 
+import AVFoundation
+
 struct NowPlayingView: View {
     private enum C {
         static let nowPlayingNaturalHeight = 64.0
         static let playPauseTapAreaExpansion = -200.0
         static let iconSize = 25.0
+        static let routeViewWidth = 40.0
     }
     @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
 
@@ -26,13 +29,6 @@ struct NowPlayingView: View {
             Divider()
             Spacer()
             HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(viewStore.currentlyPlaying?.title ?? "Nothing Playing").bold()
-                    if let subtitle = viewStore.currentlyPlaying?.subtitle {
-                        Text(subtitle).font(.subheadline).foregroundColor(.secondary)
-                    }
-                }
-                Spacer()
                 Button {
                     togglePlayback()
                 } label: {
@@ -41,7 +37,17 @@ struct NowPlayingView: View {
                 }
                 .buttonStyle(.plain)
                 .keyboardShortcut(.space, modifiers: [])
-
+                Spacer().frame(width: 10)
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(viewStore.currentlyPlaying?.title ?? "Nothing Playing").bold()
+                    if let subtitle = viewStore.currentlyPlaying?.subtitle {
+                        Text(subtitle).font(.subheadline).foregroundColor(.secondary)
+                    }
+                }
+                Spacer()
+                if let picker = viewStore.routePickerView {
+                    picker.frame(width: C.routeViewWidth)
+                }
             }.padding(.horizontal)
             Spacer()
         }
@@ -66,6 +72,12 @@ struct NowPlayingView: View {
 }
 
 struct NowPlayingView_Previews: PreviewProvider {
+    #if os(macOS)
+    static var routePicker = RoutePickerView(routePickerButtonBordered: false, player: AVPlayer())
+    #else
+    static var routePicker = RoutePickerView(player: AVPlayer())
+    #endif
+
     static var previews: some View {
         Group {
             NowPlayingView(
@@ -74,18 +86,22 @@ struct NowPlayingView_Previews: PreviewProvider {
                     reducer: playbackReducer,
                     environment: PlaybackEnvironment()
                 )
-            ).preferredColorScheme(.dark)
+            )
+                .preferredColorScheme(.dark)
 
             NowPlayingView(
                 store: Store(
                     initialState: PlaybackState(
                         currentlyPlaying: MediaPlayable(mixtape: .placeholder),
-                        playerState: .playing
+                        playerState: .playing,
+                        routePickerView: routePicker
                     ),
                     reducer: playbackReducer,
                     environment: PlaybackEnvironment()
                 )
-            ).preferredColorScheme(.light)
+            )
+                .frame(width: 200)
+                .preferredColorScheme(.light)
         }
     }
 }
