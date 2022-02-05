@@ -38,7 +38,7 @@ struct MarconioApp: App {
 
         #if os(macOS)
         Settings {
-            SettingsView().frame(width: 450)
+            SettingsView()
         }
         #endif
     }

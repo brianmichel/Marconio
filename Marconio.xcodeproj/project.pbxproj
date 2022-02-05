@@ -35,6 +35,8 @@
 		72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
 		72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06927AE1E7F00E85491 /* SettingsView.swift */; };
 		72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */; };
+		72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */; };
+		72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */; };
 		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
@@ -73,6 +75,8 @@
 		72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayable.swift; sourceTree = "<group>"; };
 		72C4D06927AE1E7F00E85491 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGridView.swift; sourceTree = "<group>"; };
+		72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingsView.swift; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* MarconioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioApp.swift; sourceTree = "<group>"; };
@@ -177,10 +181,28 @@
 		72C4D06827AE1E5600E85491 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				72C4D07127AEC7BC00E85491 /* About */,
+				72C4D06E27AEC53A00E85491 /* General */,
 				72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */,
 				72C4D06927AE1E7F00E85491 /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		72C4D06E27AEC53A00E85491 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		72C4D07127AEC7BC00E85491 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		72D5928627A5986200D3CE52 /* Main */ = {
@@ -411,12 +433,14 @@
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
 				727AD85627A6D86700F224CF /* MarconioAppDelegate.swift in Sources */,
 				728797F927A978BD00FE38B3 /* AppTileClient.swift in Sources */,
+				72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */,
 				727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */,
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				72FD675327ACBCDA00611387 /* RoutePickerView.swift in Sources */,
+				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
 				72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
