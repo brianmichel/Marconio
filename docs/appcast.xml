@@ -6,6 +6,23 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
+      <title>Version 1, Build 2022.02.05151426</title>
+      <pubDate>Sat, 05 Feb 2022 10:14:50 -0500</pubDate>
+      <sparkle:version>2022.02.05151426</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <description>
+        <![CDATA[
+            <ul>
+              <li><b>[macOS]</b> Sparkle has been added so future updates can be automatically downloaded (or downloaded by clicking a button in the app)</li>
+              <li><b>[macOS]</b> A small preferences screen has been added to manage whether or not you'd like to automatically download updates in the future.</li>
+              <li><b>[macOS, iOS]</b> Added AirPlay button to the now playing view so you can change the AirPlay settings of just this application.</li>
+            </ul>
+          ]]>
+      </description>
+      <sparkle:minimumSystemVersion>12.1</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/brianmichel/Marconio/releases/download/builds/mac/beta-2022.02.05151426/Marconio-Beta-2022.02.05151426.dmg" length="15320472" type="application/octet-stream" sparkle:edSignature="UQP9aWV+kyb8JpjN4FZHktR90C76w/qPb5ioKC2wyunhRK+dMJILDX0LoKmugRLDobdem+3BLgxnOCR7oZcXBA==" />
+    </item>
+    <item>
       <title>Version 1, Build 2022.02.03231334</title>
       <link>https://brianmichel.github.io/Marconio</link>
       <sparkle:version>2022.02.03231334</sparkle:version>
