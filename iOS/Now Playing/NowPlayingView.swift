@@ -11,6 +11,7 @@ import LaceKit
 
 import AVFoundation
 import MediaPlayer
+import Models
 
 struct NowPlayingView: View {
     private enum C {

@@ -12,6 +12,7 @@ import MediaPlayer
 import ComposableArchitecture
 import Combine
 import UserActivityClient
+import Models
 
 struct PlaybackState: Equatable {
     enum PlayerState: Equatable {
@@ -95,7 +96,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             return .merge(
                 Effect(value: .updateNowPlaying),
                 Effect(value: .startMonitoringRemoteCommands),
-                environment.userActivityClient.becomeCurrent().catchToEffect(PlaybackAction.userActivity)
+                environment.userActivityClient.becomeCurrent(playable).catchToEffect(PlaybackAction.userActivity)
             )
         case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
             PlaybackEnvironment.player.pause()
@@ -145,8 +146,16 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
                 .catchToEffect(PlaybackAction.externalCommand)
         case .externalCommand:
             return .none
-        case let .userActivity(activity):
-            print("Got action: \(activity)")
+        case let .userActivity(.success(.becomeCurrentActivity(activity))):
+            state.currentActivity = activity
+            return .none
+        case .userActivity(.success(.resignCurrentActivity)):
+            state.currentActivity?.resignCurrent()
+            state.currentActivity = nil
+            return .none
+        case .userActivity(.success(.willHandleActivity(_))):
+            return .none
+        case .userActivity(.success(.willNotHandleActivity(_))):
             return .none
         }
     }

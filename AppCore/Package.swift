@@ -16,7 +16,10 @@ let package = Package(
             targets: ["LaceKit"]),
         .library(
             name: "UserActivityClient",
-            targets: ["UserActivityClient"])
+            targets: ["UserActivityClient"]),
+        .library(
+            name: "Models",
+            targets: ["Models"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -29,17 +32,21 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "LaceKit",
+            dependencies: ["Models"]),
+        .target(
+            name: "Models",
             dependencies: []),
         .testTarget(
-            name: "LaceKitTests",
-            dependencies: ["LaceKit"],
+            name: "ModelsTests",
+            dependencies: ["Models"],
             resources: [
                 .process("Resources")
             ]
         ),
         .target(name: "UserActivityClient",
                 dependencies: [
-                    .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+                    .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                    "Models"
                 ]
         )
     ]

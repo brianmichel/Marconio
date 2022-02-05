@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721A6E1627AF2FF8006FF195 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1527AF2FF8006FF195 /* LaceKit */; };
+		721A6E1827AF2FF8006FF195 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1727AF2FF8006FF195 /* Models */; };
+		721A6E1A27AF2FF8006FF195 /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1927AF2FF8006FF195 /* UserActivityClient */; };
+		721A6E1C27AF2FFF006FF195 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1B27AF2FFF006FF195 /* LaceKit */; };
+		721A6E1E27AF2FFF006FF195 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1D27AF2FFF006FF195 /* Models */; };
+		721A6E2027AF2FFF006FF195 /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1F27AF2FFF006FF195 /* UserActivityClient */; };
 		7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
 		7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
 		725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlaybackCore.swift */; };
@@ -22,8 +28,6 @@
 		727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		728797F927A978BD00FE38B3 /* AppTileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728797F727A978BD00FE38B3 /* AppTileClient.swift */; };
-		72974A6027AF066F00B33ED8 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72974A5F27AF066F00B33ED8 /* LaceKit */; };
-		72974A6227AF067B00B33ED8 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72974A6127AF067B00B33ED8 /* LaceKit */; };
 		72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */; };
 		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
@@ -34,10 +38,6 @@
 		72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B2A3E227ACDEB300B539CE /* Marquee.swift */; };
 		72B56A1427A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
 		72B56A1527A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
-		72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
-		72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
-		72BCC19B27AF198500618EEB /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 72BCC19A27AF198500618EEB /* UserActivityClient */; };
-		72BCC19D27AF198900618EEB /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 72BCC19C27AF198900618EEB /* UserActivityClient */; };
 		72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06927AE1E7F00E85491 /* SettingsView.swift */; };
 		72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */; };
 		72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */; };
@@ -79,7 +79,6 @@
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		72B2A3E227ACDEB300B539CE /* Marquee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marquee.swift; sourceTree = "<group>"; };
 		72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCommandsClient.swift; sourceTree = "<group>"; };
-		72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayable.swift; sourceTree = "<group>"; };
 		72C4D06927AE1E7F00E85491 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGridView.swift; sourceTree = "<group>"; };
 		72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
@@ -102,9 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72974A6227AF067B00B33ED8 /* LaceKit in Frameworks */,
+				721A6E1827AF2FF8006FF195 /* Models in Frameworks */,
+				721A6E1A27AF2FF8006FF195 /* UserActivityClient in Frameworks */,
+				721A6E1627AF2FF8006FF195 /* LaceKit in Frameworks */,
 				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
-				72BCC19B27AF198500618EEB /* UserActivityClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,9 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72974A6027AF066F00B33ED8 /* LaceKit in Frameworks */,
-				72BCC19D27AF198900618EEB /* UserActivityClient in Frameworks */,
+				721A6E1C27AF2FFF006FF195 /* LaceKit in Frameworks */,
 				72EB165F27ADB97100B7952B /* Sparkle in Frameworks */,
+				721A6E1E27AF2FFF006FF195 /* Models in Frameworks */,
+				721A6E2027AF2FFF006FF195 /* UserActivityClient in Frameworks */,
 				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,14 +179,6 @@
 				72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */,
 			);
 			path = "External Commands";
-			sourceTree = "<group>";
-		};
-		72B56A1627A715A400C8FC8B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		72C4D06827AE1E5600E85491 /* Settings */ = {
@@ -260,7 +253,6 @@
 				72C99E9227AF119800DACE4A /* App Delegate */,
 				72D5929127A5B4C500D3CE52 /* Playback */,
 				728797F627A978A400FE38B3 /* App Tile */,
-				72B56A1627A715A400C8FC8B /* Models */,
 				72B56A1227A70EE400C8FC8B /* External Commands */,
 				727AD85827A6DC5F00F224CF /* Channels */,
 				72A6B3DF27A5F420002AF923 /* Donation */,
@@ -330,8 +322,9 @@
 			name = "Marconio (iOS)";
 			packageProductDependencies = (
 				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
-				72974A6127AF067B00B33ED8 /* LaceKit */,
-				72BCC19A27AF198500618EEB /* UserActivityClient */,
+				721A6E1527AF2FF8006FF195 /* LaceKit */,
+				721A6E1727AF2FF8006FF195 /* Models */,
+				721A6E1927AF2FF8006FF195 /* UserActivityClient */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
@@ -353,8 +346,9 @@
 			packageProductDependencies = (
 				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 				72EB165E27ADB97100B7952B /* Sparkle */,
-				72974A5F27AF066F00B33ED8 /* LaceKit */,
-				72BCC19C27AF198900618EEB /* UserActivityClient */,
+				721A6E1B27AF2FFF006FF195 /* LaceKit */,
+				721A6E1D27AF2FFF006FF195 /* Models */,
+				721A6E1F27AF2FFF006FF195 /* UserActivityClient */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
@@ -429,7 +423,6 @@
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
-				72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
@@ -465,7 +458,6 @@
 				72FD675327ACBCDA00611387 /* RoutePickerView.swift in Sources */,
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
-				72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				72C99E9527AF11EE00DACE4A /* Client.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
@@ -760,7 +752,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
+				minimumVersion = 0.33.1;
 			};
 		};
 		72EB165D27ADB97100B7952B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -774,19 +766,27 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		72974A5F27AF066F00B33ED8 /* LaceKit */ = {
+		721A6E1527AF2FF8006FF195 /* LaceKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LaceKit;
 		};
-		72974A6127AF067B00B33ED8 /* LaceKit */ = {
+		721A6E1727AF2FF8006FF195 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = LaceKit;
+			productName = Models;
 		};
-		72BCC19A27AF198500618EEB /* UserActivityClient */ = {
+		721A6E1927AF2FF8006FF195 /* UserActivityClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserActivityClient;
 		};
-		72BCC19C27AF198900618EEB /* UserActivityClient */ = {
+		721A6E1B27AF2FFF006FF195 /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
+		721A6E1D27AF2FFF006FF195 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		721A6E1F27AF2FFF006FF195 /* UserActivityClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UserActivityClient;
 		};

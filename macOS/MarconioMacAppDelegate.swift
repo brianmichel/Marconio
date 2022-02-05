@@ -51,4 +51,13 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
     func applicationDockMenu(_ sender: NSApplication) -> NSMenu? {
         return dockMenu
     }
+
+    func application(_ application: NSApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
+        return true
+    }
+
+    func application(_ application: NSApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([NSUserActivityRestoring]) -> Void) -> Bool {
+        viewStore.send(.appDelegate(.continueActivity(userActivity)))
+        return true
+    }
 }

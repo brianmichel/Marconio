@@ -8,6 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 import LaceKit
+import Models
 
 struct ChannelsView: View {
     let store: Store<AppState, AppAction>

@@ -10,6 +10,7 @@ import SwiftUI
 import ComposableArchitecture
 import LaceKit
 import AVFoundation
+import Models
 
 struct AppView: View {
     let store: Store<AppState, AppAction>

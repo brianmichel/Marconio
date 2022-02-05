@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import ComposableArchitecture
+import Models
 
 extension String {
     static var playbackActiveIdentifier = "me.foureyes.Marconio.playback"
@@ -16,12 +17,12 @@ extension String {
 public extension UserActivityClient {
     static var live: Self {
         return Self(
-            becomeCurrent: {
+            becomeCurrent: { playable in
                 Effect.run { subscriber in
                     let activity = NSUserActivity(activityType: .playbackActiveIdentifier)
-                    activity.title = "Playing Music"
-
-                    activity.becomeCurrent()
+                    activity.title = playable.title
+                    activity.webpageURL = playable.streamURL
+                    activity.isEligibleForHandoff = true
 
                     subscriber.send(.becomeCurrentActivity(activity))
 

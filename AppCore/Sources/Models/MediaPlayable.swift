@@ -6,18 +6,17 @@
 //
 
 import Foundation
-import LaceKit
 
-struct MediaPlayable: Identifiable, Equatable {
-    var id: String
-    var title: String
-    var subtitle: String?
-    var description: String
-    var artwork: URL
-    var streamURL: URL
+public struct MediaPlayable: Identifiable, Equatable {
+    public var id: String
+    public var title: String
+    public var subtitle: String?
+    public var description: String
+    public var artwork: URL
+    public var streamURL: URL
 }
 
-extension MediaPlayable {
+public extension MediaPlayable {
     init(mixtape: Mixtape) {
         id = mixtape.id
         title = mixtape.title

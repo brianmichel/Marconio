@@ -7,6 +7,7 @@
 import ComposableArchitecture
 import Foundation
 import LaceKit
+import Models
 
 
 struct AppState: Equatable {

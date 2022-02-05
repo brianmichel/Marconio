@@ -7,9 +7,10 @@
 
 import ComposableArchitecture
 import Foundation
+import Models
 
 public struct UserActivityClient {
-    public var becomeCurrent: () -> Effect<Action, Never>
+    public var becomeCurrent: (MediaPlayable) -> Effect<Action, Never>
     public var resignCurrent: () -> Effect<Action, Never>
     public var handleActivity: (NSUserActivity) -> Effect<Action, Never>
 
