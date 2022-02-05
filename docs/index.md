@@ -8,6 +8,12 @@ If you lke this app, you should support NTS as they are providing an excellent s
 
 **[Support NTS](https://www.nts.live/supporters)**
 
+## Download
+
+If you'd like to download Marconio, head on over to the [latest release page](https://github.com/brianmichel/Marconio/releases/latest) and download the `.dmg` attached to the release.
+
+This app uses Sparkle to keep itself up to date. After you've installed one version of Marconio from the releases page you can continue to update to later versions from within the app.
+
 ## Screenshots
 
 ![](images/home.png)
