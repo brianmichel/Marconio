@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## About
 
-You can use the [editor on GitHub](https://github.com/brianmichel/Marconio/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Marconio is a basic app that lets you stream the wonderful live channels and mixtapes from [NTS](https://nts.live).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+It integrates with the macOS level command center now playing widget, as well as the standard play/pause keyboard hot keys and shortcuts. It should feel very similar to any other audio playback app that you've used in the past, just focused to the content on NTS.
 
-### Markdown
+If you lke this app, you should support NTS as they are providing an excellent service for free.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**[Support NTS](https://www.nts.live/supporters)**
 
-```markdown
-Syntax highlighted code block
+## Screenshots
 
-# Header 1
-## Header 2
-### Header 3
+![](images/home.png)
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/brianmichel/Marconio/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+![](images/airplay.png)
