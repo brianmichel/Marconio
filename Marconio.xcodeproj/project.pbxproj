@@ -22,6 +22,8 @@
 		727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		728797F927A978BD00FE38B3 /* AppTileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728797F727A978BD00FE38B3 /* AppTileClient.swift */; };
+		72974A6027AF066F00B33ED8 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72974A5F27AF066F00B33ED8 /* LaceKit */; };
+		72974A6227AF067B00B33ED8 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72974A6127AF067B00B33ED8 /* LaceKit */; };
 		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
@@ -47,8 +49,6 @@
 		72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
-		72E1795027A3955C009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1794F27A3955C009A20ED /* LaceKit */; };
-		72E1795227A39561009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1795127A39561009A20ED /* LaceKit */; };
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72EB165F27ADB97100B7952B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 72EB165E27ADB97100B7952B /* Sparkle */; };
@@ -67,6 +67,7 @@
 		727AD85C27A6DC8700F224CF /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
 		728797F727A978BD00FE38B3 /* AppTileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTileClient.swift; sourceTree = "<group>"; };
+		72974A5E27AF064B00B33ED8 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppCore; sourceTree = "<group>"; };
 		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		72E1793327A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793927A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
 		72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--macOS--Info.plist"; sourceTree = "<group>"; };
 		72FD675127ACBCDA00611387 /* RoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerView.swift; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72974A6227AF067B00B33ED8 /* LaceKit in Frameworks */,
 				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
-				72E1795027A3955C009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,9 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72974A6027AF066F00B33ED8 /* LaceKit in Frameworks */,
 				72EB165F27ADB97100B7952B /* Sparkle in Frameworks */,
 				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
-				72E1795227A39561009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +227,10 @@
 		72E1792627A2E48C009A20ED = {
 			isa = PBXGroup;
 			children = (
+				72974A5E27AF064B00B33ED8 /* AppCore */,
 				72E1792B27A2E48C009A20ED /* Shared */,
 				7221DB0627A48A0100183057 /* iOS */,
 				72E1793A27A2E48D009A20ED /* macOS */,
-				72E1794A27A37C44009A20ED /* LaceKit */,
 				72E1793427A2E48D009A20ED /* Products */,
 				72E1794E27A3955C009A20ED /* Frameworks */,
 			);
@@ -310,8 +310,8 @@
 			);
 			name = "Marconio (iOS)";
 			packageProductDependencies = (
-				72E1794F27A3955C009A20ED /* LaceKit */,
 				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
+				72974A6127AF067B00B33ED8 /* LaceKit */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
@@ -331,9 +331,9 @@
 			);
 			name = "Marconio (macOS)";
 			packageProductDependencies = (
-				72E1795127A39561009A20ED /* LaceKit */,
 				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 				72EB165E27ADB97100B7952B /* Sparkle */,
+				72974A5F27AF066F00B33ED8 /* LaceKit */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
@@ -750,6 +750,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		72974A5F27AF066F00B33ED8 /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
+		72974A6127AF067B00B33ED8 /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
 		72D5927F27A5918A00D3CE52 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
@@ -759,14 +767,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		72E1794F27A3955C009A20ED /* LaceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LaceKit;
-		};
-		72E1795127A39561009A20ED /* LaceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LaceKit;
 		};
 		72EB165E27ADB97100B7952B /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
