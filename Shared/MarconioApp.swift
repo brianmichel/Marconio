@@ -35,5 +35,11 @@ struct MarconioApp: App {
         }.commands {
             MarconioCommands()
         }
+
+        #if os(macOS)
+        Settings {
+            SettingsView().frame(width: 450)
+        }
+        #endif
     }
 }
