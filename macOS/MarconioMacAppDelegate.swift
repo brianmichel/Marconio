@@ -1,5 +1,5 @@
 //
-//  MarconioAppDelegate.swift
+//  MarconioMacAppDelegate.swift
 //  Marconio
 //
 //  Created by Brian Michel on 1/30/22.
@@ -9,10 +9,29 @@ import Foundation
 import AppKit
 import Sparkle
 import SwiftUI
+import ComposableArchitecture
+import LaceKit
 
 /// Create an AppDelegate to terminate the application when the last window is closed.
 /// This is a hack around SwiftUI for the time being...
-class MarconioAppDelegate: NSObject, NSApplicationDelegate {
+final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
+    let store = Store(
+        initialState: AppState(
+            channels: [],
+            mixtapes: []
+        ),
+        reducer: appReducer,
+        environment: AppEnvironment(
+            mainQueue: .main,
+            uuid: UUID.init,
+            api: LiveAPI()
+        )
+    )
+
+    lazy var viewStore = ViewStore(
+        self.store.scope(state: { _ in () }),
+        removeDuplicates: ==
+    )
     private let dockMenu = NSMenu()
     @AppStorage("ShouldAutoupdate") private var shouldAutoupdate = true
 

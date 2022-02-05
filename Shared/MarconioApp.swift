@@ -13,24 +13,15 @@ import LaceKit
 struct MarconioApp: App {
 
     #if os(macOS)
-    @NSApplicationDelegateAdaptor(MarconioAppDelegate.self) var appDelegate
+    @NSApplicationDelegateAdaptor(MarconioMacAppDelegate.self) var appDelegate
+    #else
+    @UIApplicationDelegateAdaptor(MarconioiOSAppDelegate.self) var appDelegate
     #endif
 
     var body: some Scene {
         WindowGroup {
             AppView(
-                store: Store(
-                    initialState: AppState(
-                        channels: [],
-                        mixtapes: []
-                    ),
-                    reducer: appReducer,
-                    environment: AppEnvironment(
-                        mainQueue: .main,
-                        uuid: UUID.init,
-                        api: LiveAPI()
-                    )
-                )
+                store: appDelegate.store
             )
         }.commands {
             MarconioCommands()
