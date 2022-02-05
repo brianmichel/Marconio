@@ -8,12 +8,12 @@
 import ComposableArchitecture
 import Foundation
 
-struct UserActivityClient {
-    var becomeCurrent: () -> Effect<Action, Never>
-    var resignCurrent: () -> Effect<Action, Never>
-    var handleActivity: (NSUserActivity) -> Effect<Action, Never>
+public struct UserActivityClient {
+    public var becomeCurrent: () -> Effect<Action, Never>
+    public var resignCurrent: () -> Effect<Action, Never>
+    public var handleActivity: (NSUserActivity) -> Effect<Action, Never>
 
-    enum Action: Equatable {
+    public enum Action: Equatable {
         case willHandleActivity(NSUserActivity)
         case willNotHandleActivity(NSUserActivity)
         case becomeCurrentActivity(NSUserActivity)

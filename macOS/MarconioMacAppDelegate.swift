@@ -18,13 +18,15 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
     let store = Store(
         initialState: AppState(
             channels: [],
-            mixtapes: []
+            mixtapes: [],
+            appDelegateState: .init()
         ),
         reducer: appReducer,
         environment: AppEnvironment(
             mainQueue: .main,
             uuid: UUID.init,
-            api: LiveAPI()
+            api: LiveAPI(),
+            appDelegate: .init()
         )
     )
 
@@ -33,19 +35,13 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
         removeDuplicates: ==
     )
     private let dockMenu = NSMenu()
-    @AppStorage("ShouldAutoupdate") private var shouldAutoupdate = true
-
-    private let updater = SPUStandardUpdaterController(updaterDelegate: nil,
-                                                       userDriverDelegate: nil)
     
     func applicationWillFinishLaunching(_ notification: Notification) {
-        NSWindow.allowsAutomaticWindowTabbing = false
+        viewStore.send(.appDelegate(.willFinishLaunching))
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        if shouldAutoupdate {
-            updater.startUpdater()
-        }
+        viewStore.send(.appDelegate(.didFinishLaunching))
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

@@ -36,10 +36,14 @@
 		72B56A1527A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
 		72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
 		72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
+		72BCC19B27AF198500618EEB /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 72BCC19A27AF198500618EEB /* UserActivityClient */; };
+		72BCC19D27AF198900618EEB /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 72BCC19C27AF198900618EEB /* UserActivityClient */; };
 		72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06927AE1E7F00E85491 /* SettingsView.swift */; };
 		72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */; };
 		72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */; };
 		72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */; };
+		72C99E9427AF11EE00DACE4A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C99E9327AF11EE00DACE4A /* Client.swift */; };
+		72C99E9527AF11EE00DACE4A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C99E9327AF11EE00DACE4A /* Client.swift */; };
 		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
@@ -80,6 +84,7 @@
 		72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGridView.swift; sourceTree = "<group>"; };
 		72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingsView.swift; sourceTree = "<group>"; };
+		72C99E9327AF11EE00DACE4A /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* MarconioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioApp.swift; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 			files = (
 				72974A6227AF067B00B33ED8 /* LaceKit in Frameworks */,
 				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
+				72BCC19B27AF198500618EEB /* UserActivityClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72974A6027AF066F00B33ED8 /* LaceKit in Frameworks */,
+				72BCC19D27AF198900618EEB /* UserActivityClient in Frameworks */,
 				72EB165F27ADB97100B7952B /* Sparkle in Frameworks */,
 				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
 			);
@@ -208,6 +215,14 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		72C99E9227AF119800DACE4A /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				72C99E9327AF11EE00DACE4A /* Client.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +257,7 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72C99E9227AF119800DACE4A /* App Delegate */,
 				72D5929127A5B4C500D3CE52 /* Playback */,
 				728797F627A978A400FE38B3 /* App Tile */,
 				72B56A1627A715A400C8FC8B /* Models */,
@@ -315,6 +331,7 @@
 			packageProductDependencies = (
 				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
 				72974A6127AF067B00B33ED8 /* LaceKit */,
+				72BCC19A27AF198500618EEB /* UserActivityClient */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
@@ -337,6 +354,7 @@
 				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 				72EB165E27ADB97100B7952B /* Sparkle */,
 				72974A5F27AF066F00B33ED8 /* LaceKit */,
+				72BCC19C27AF198900618EEB /* UserActivityClient */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
@@ -425,6 +443,7 @@
 				72FD675027AC972000611387 /* AppTileClient.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
+				72C99E9427AF11EE00DACE4A /* Client.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +466,7 @@
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
 				72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
+				72C99E9527AF11EE00DACE4A /* Client.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,
@@ -761,6 +781,14 @@
 		72974A6127AF067B00B33ED8 /* LaceKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LaceKit;
+		};
+		72BCC19A27AF198500618EEB /* UserActivityClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserActivityClient;
+		};
+		72BCC19C27AF198900618EEB /* UserActivityClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserActivityClient;
 		};
 		72D5927F27A5918A00D3CE52 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

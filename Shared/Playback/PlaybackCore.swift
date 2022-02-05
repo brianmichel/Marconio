@@ -11,6 +11,7 @@ import LaceKit
 import MediaPlayer
 import ComposableArchitecture
 import Combine
+import UserActivityClient
 
 struct PlaybackState: Equatable {
     enum PlayerState: Equatable {
@@ -19,6 +20,7 @@ struct PlaybackState: Equatable {
 
     var currentlyPlaying: MediaPlayable?
     var playerState: PlayerState = .stopped
+    var currentActivity: NSUserActivity?
     var routePickerView: RoutePickerView?
 }
 
@@ -31,6 +33,7 @@ enum PlaybackAction: Equatable {
     case updateNowPlaying
     case startMonitoringRemoteCommands
     case externalCommand(Result<ExternalCommandsClient.Action, Never>)
+    case userActivity(Result<UserActivityClient.Action, Never>)
 }
 
 struct PlaybackEnvironment {
@@ -46,7 +49,27 @@ struct PlaybackEnvironment {
     var infoCenter = MPNowPlayingInfoCenter.default()
     var externalCommandsClient: ExternalCommandsClient = .live
     var appTileClient: AppTileClient = .live
+    var userActivityClient: UserActivityClient = .live
 }
+
+let userActivityReducer = Reducer<PlaybackState, UserActivityClient.Action, PlaybackEnvironment>.combine(
+    Reducer { state, action, enviornment in
+        switch action {
+        case let .willHandleActivity(activity):
+            return .none
+        case let .willNotHandleActivity(activity):
+            return .none
+        case let .becomeCurrentActivity(activity):
+            activity.becomeCurrent()
+            state.currentActivity = activity
+            return .none
+        case .resignCurrentActivity:
+            state.currentActivity?.resignCurrent()
+            state.currentActivity = nil
+            return .none
+        }
+    }
+)
 
 let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
     Reducer { state, action, environment in
@@ -71,7 +94,8 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             state.currentlyPlaying = playable
             return .merge(
                 Effect(value: .updateNowPlaying),
-                Effect(value: .startMonitoringRemoteCommands)
+                Effect(value: .startMonitoringRemoteCommands),
+                environment.userActivityClient.becomeCurrent().catchToEffect(PlaybackAction.userActivity)
             )
         case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
             PlaybackEnvironment.player.pause()
@@ -82,6 +106,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
+
             return .none
         case .stopPlayback:
             state.playerState = .stopped
@@ -119,6 +144,9 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
                 .startMonitoringCommands()
                 .catchToEffect(PlaybackAction.externalCommand)
         case .externalCommand:
+            return .none
+        case let .userActivity(activity):
+            print("Got action: \(activity)")
             return .none
         }
     }

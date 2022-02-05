@@ -13,13 +13,15 @@ extension String {
     static var playbackActiveIdentifier = "me.foureyes.Marconio.playback"
 }
 
-extension UserActivityClient {
+public extension UserActivityClient {
     static var live: Self {
         return Self(
             becomeCurrent: {
                 Effect.run { subscriber in
                     let activity = NSUserActivity(activityType: .playbackActiveIdentifier)
                     activity.title = "Playing Music"
+
+                    activity.becomeCurrent()
 
                     subscriber.send(.becomeCurrentActivity(activity))
 

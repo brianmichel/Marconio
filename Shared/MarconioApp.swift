@@ -11,7 +11,6 @@ import LaceKit
 
 @main
 struct MarconioApp: App {
-
     #if os(macOS)
     @NSApplicationDelegateAdaptor(MarconioMacAppDelegate.self) var appDelegate
     #else
