@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>SUFeedURL</key>
-	<string>https://brianmichel.github.com/Marconio/appcast.xml</string>
+	<string>https://brianmichel.github.io/Marconio/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>4wm527bHzKqitFv7rxPfZ584ImtSzV0b4rK6OsI2bVk=</string>
 </dict>
