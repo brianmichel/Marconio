@@ -21,9 +21,9 @@ public extension UserActivityClient {
                     activity.isEligibleForHandoff = true
 
                     activity.userInfo = [
-                        Keys.title: playable.title,
-                        Keys.description: playable.description,
-                        Keys.streamURL: playable.streamURL
+                        Keys.title.rawValue: playable.title,
+                        Keys.description.rawValue: playable.description,
+                        Keys.streamURL.rawValue: playable.streamURL
                     ]
 
                     subscriber.send(.becomeCurrentActivity(activity))
