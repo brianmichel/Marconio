@@ -7,6 +7,23 @@
 
 import Foundation
 
+/**
+ A common abstraction to represent anything that can be playable within the application.
+
+ You can create a ``MediaPlayable`` from a ``Mixtape`` or a ``Channel`` using the initializers below,
+ or you can populate your own using the public initializer that's been provided for mocking and
+ other needs.
+
+ ```
+ // From a channel
+ let channel = ...
+ let playable = MediaPlayble(channel: channel)
+
+ // From a mixtape
+ let mixtape = ...
+ let playable = MediaPlayable(mixtape: mixtape)
+ ```
+ */
 public struct MediaPlayable: Identifiable, Equatable {
     public var id: String
     public var title: String

@@ -7,20 +7,34 @@
 
 import Foundation
 
+/// An infinite mixtape that has been curated by the folks at https://nts.live. It will play forever (I think).
 public struct Mixtape: Codable, Equatable {
+    /// The slug for a given mixtape.
     public var mixtapeAlias: String
+    /// The renderable name of a given mixtape.
     public var title: String
+    /// The short tet describing a mixtape.
     public var subtitle: String
+    /// The longer text describing the content of a mixtape.
     public var description: String
+    /// The longer text describing the content of a mixtape, annotated in HTML.
     public var descriptionHtml: String
+    /// The URL of where to stream the mixtape.
     public var audioStreamEndpoint: URL
+    /// A set of images to be used when showing information about the embedded media.
+    /// This is **not** the streamable media itself.
     public var media: Media
+    /// No idea what this is actually for!
     public var nowPlayingTopic: String
+    /// A set of API links.
     public var links: [Link]
 }
 
+/// The top level representation of the response from the `/mixtapes` API endpoint.
 public struct MixtapesResponse: Codable, Equatable {
+    /// The list of mixtapes that are available to stream.
     public let results: [Mixtape]
+    /// A set of API links.
     public let links: [Link]
 }
 
@@ -31,6 +45,7 @@ extension Mixtape: Identifiable {
 }
 
 extension Mixtape {
+    /// A sample Mixtape to be used in mocks and previews.
    public static var placeholder: Self {
         return Mixtape(mixtapeAlias: "place-holder",
                        title: "Placeholder",
