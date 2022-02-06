@@ -14,6 +14,12 @@ public struct UserActivityClient {
         case playbackActiveIdentifier = "me.foureyes.marconio.activity.playback"
     }
 
+    public enum Keys: String {
+        case title
+        case description
+        case streamURL
+    }
+
     public var becomeCurrent: (MediaPlayable) -> Effect<Action, Never>
     public var resignCurrent: () -> Effect<Action, Never>
     public var handleActivity: (NSUserActivity) -> Effect<Action, Never>

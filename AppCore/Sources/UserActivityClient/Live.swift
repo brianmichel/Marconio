@@ -15,10 +15,16 @@ public extension UserActivityClient {
         return Self(
             becomeCurrent: { playable in
                 Effect.run { subscriber in
-                    let activity = NSUserActivity(activityType: UserActivityClient.Identifiers.playbackActiveIdentifier.rawValue)
+                    let activity = NSUserActivity(activityType: Identifiers.playbackActiveIdentifier.rawValue)
                     activity.title = playable.title
                     activity.webpageURL = playable.streamURL
                     activity.isEligibleForHandoff = true
+
+                    activity.userInfo = [
+                        Keys.title: playable.title,
+                        Keys.description: playable.description,
+                        Keys.streamURL: playable.streamURL
+                    ]
 
                     subscriber.send(.becomeCurrentActivity(activity))
 
