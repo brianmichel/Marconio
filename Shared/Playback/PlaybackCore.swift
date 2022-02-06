@@ -126,6 +126,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             return .none
         case let .userActivity(.success(.becomeCurrentActivity(activity))):
             state.currentActivity = activity
+            state.currentActivity?.becomeCurrent()
             return .none
         case .userActivity(.success(.resignCurrentActivity)):
             state.currentActivity?.resignCurrent()

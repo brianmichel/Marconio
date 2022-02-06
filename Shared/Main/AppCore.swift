@@ -81,6 +81,11 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             return .none
         case .playback:
             return .none
+        case let .appDelegate(.continueActivity(activity)):
+            if let mediaPlayable = activity.playable() {
+                return Effect(value: .playback(.loadPlayable(mediaPlayable)))
+            }
+            return .none
         case .appDelegate:
             return .none
         }

@@ -14,6 +14,15 @@ public struct MediaPlayable: Identifiable, Equatable {
     public var description: String
     public var artwork: URL
     public var streamURL: URL
+
+    public init(id: String, title: String, subtitle: String? = nil, description: String, artwork: URL, streamURL: URL) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.description = description
+        self.artwork = artwork
+        self.streamURL = streamURL
+    }
 }
 
 public extension MediaPlayable {
