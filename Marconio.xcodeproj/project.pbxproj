@@ -127,7 +127,6 @@
 		7221DB0627A48A0100183057 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				72A6B3E627A5FECE002AF923 /* Now Playing */,
 				721A6E2127AF3613006FF195 /* iOS.entitlements */,
 				7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */,
 				72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */,
@@ -252,6 +251,7 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72A6B3E627A5FECE002AF923 /* Now Playing */,
 				72C99E9227AF119800DACE4A /* App Delegate */,
 				72D5929127A5B4C500D3CE52 /* Playback */,
 				728797F627A978A400FE38B3 /* App Tile */,
