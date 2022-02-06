@@ -4,19 +4,17 @@
 //
 //  Created by Brian Michel on 1/29/22.
 //
-#if os(iOS)
-import AVFoundation
-#endif
-
 import ComposableArchitecture
 import Foundation
 import LaceKit
+import Models
 
 
 struct AppState: Equatable {
     var channels: [Channel] = []
     var mixtapes: [Mixtape] = []
     var playback: PlaybackState = PlaybackState()
+    var appDelegateState: AppDelegateState
 }
 
 enum AppAction: Equatable {
@@ -26,24 +24,22 @@ enum AppAction: Equatable {
     case loadMixtapes
     case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
     case playback(PlaybackAction)
+    case appDelegate(AppDelegateAction)
 }
 
 struct AppEnvironment {
     var mainQueue: AnySchedulerOf<DispatchQueue>
     var uuid: () -> UUID
     var api: NTSAPI
-
-    init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI) {
-        self.mainQueue = mainQueue
-        self.uuid = uuid
-        self.api = api
-#if os(iOS)
-        try? AVAudioSession.sharedInstance().setCategory(.playback)
-#endif
-    }
+    var appDelegate: AppDelegateEnvironment
 }
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
+    appDelegateReducer.pullback(
+        state: \.appDelegateState,
+        action: /AppAction.appDelegate,
+        environment: \.appDelegate
+    ),
     playbackReducer.pullback(
         state: \.playback,
         action: /AppAction.playback,
@@ -84,6 +80,13 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             print("unable to load mixtapes: \(error)")
             return .none
         case .playback:
+            return .none
+        case let .appDelegate(.continueActivity(activity)):
+            if let mediaPlayable = activity.playable() {
+                return Effect(value: .playback(.loadPlayable(mediaPlayable)))
+            }
+            return .none
+        case .appDelegate:
             return .none
         }
     }

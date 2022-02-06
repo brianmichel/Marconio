@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Models
 
 public protocol NTSAPI {
     func live() throws -> AnyPublisher<LiveBroadcastsResponse, RunnerError>

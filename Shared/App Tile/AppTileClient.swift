@@ -13,6 +13,8 @@ import AppKit
 import UIKit
 #endif
 
+import Models
+
 struct AppTileClient {
     var updateAppTile: (MediaPlayable) -> Void
 }

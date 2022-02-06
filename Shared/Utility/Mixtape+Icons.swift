@@ -7,6 +7,7 @@
 
 import Foundation
 import LaceKit
+import Models
 
 extension Mixtape {
     var systemIcon: String {

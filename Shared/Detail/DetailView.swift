@@ -8,6 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 import LaceKit
+import Models
 
 struct DetailView: View {
     @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>

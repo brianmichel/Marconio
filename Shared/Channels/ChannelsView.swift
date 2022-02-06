@@ -8,6 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 import LaceKit
+import Models
 
 struct ChannelsView: View {
     let store: Store<AppState, AppAction>
@@ -140,13 +141,15 @@ struct ChannelsView_Previews: PreviewProvider {
                 initialState: AppState(
                     channels: [],
                     mixtapes: [],
-                    playback: PlaybackState(currentlyPlaying: nil, playerState: .playing)
+                    playback: PlaybackState(currentlyPlaying: nil, playerState: .playing),
+                    appDelegateState: .init()
                 ),
                 reducer: appReducer,
                 environment: AppEnvironment(
                     mainQueue: .main,
                     uuid: UUID.init,
-                    api: LiveAPI()
+                    api: LiveAPI(),
+                    appDelegate: .init()
                 )
             )
         )

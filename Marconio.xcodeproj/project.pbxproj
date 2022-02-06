@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721A6E1627AF2FF8006FF195 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1527AF2FF8006FF195 /* LaceKit */; };
+		721A6E1827AF2FF8006FF195 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1727AF2FF8006FF195 /* Models */; };
+		721A6E1A27AF2FF8006FF195 /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1927AF2FF8006FF195 /* UserActivityClient */; };
+		721A6E1C27AF2FFF006FF195 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1B27AF2FFF006FF195 /* LaceKit */; };
+		721A6E1E27AF2FFF006FF195 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1D27AF2FFF006FF195 /* Models */; };
+		721A6E2027AF2FFF006FF195 /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1F27AF2FFF006FF195 /* UserActivityClient */; };
 		7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
 		7221DB0427A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */; };
 		725B5DF227A4436300459EE3 /* PlaybackCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF127A4436300459EE3 /* PlaybackCore.swift */; };
@@ -15,13 +21,14 @@
 		725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
-		727AD85627A6D86700F224CF /* MarconioAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioAppDelegate.swift */; };
+		727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */; };
 		727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */; };
 		727AD85D27A6DC8700F224CF /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85C27A6DC8700F224CF /* ChannelsView.swift */; };
 		727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85C27A6DC8700F224CF /* ChannelsView.swift */; };
 		727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		728797F927A978BD00FE38B3 /* AppTileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728797F727A978BD00FE38B3 /* AppTileClient.swift */; };
+		72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */; };
 		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
 		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
@@ -31,12 +38,12 @@
 		72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B2A3E227ACDEB300B539CE /* Marquee.swift */; };
 		72B56A1427A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
 		72B56A1527A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */; };
-		72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
-		72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */; };
 		72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06927AE1E7F00E85491 /* SettingsView.swift */; };
 		72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */; };
 		72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */; };
 		72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */; };
+		72C99E9427AF11EE00DACE4A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C99E9327AF11EE00DACE4A /* Client.swift */; };
+		72C99E9527AF11EE00DACE4A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C99E9327AF11EE00DACE4A /* Client.swift */; };
 		72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5927F27A5918A00D3CE52 /* ComposableArchitecture */; };
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
@@ -47,8 +54,6 @@
 		72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
-		72E1795027A3955C009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1794F27A3955C009A20ED /* LaceKit */; };
-		72E1795227A39561009A20ED /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72E1795127A39561009A20ED /* LaceKit */; };
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72EB165F27ADB97100B7952B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 72EB165E27ADB97100B7952B /* Sparkle */; };
@@ -58,25 +63,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableArtworkPlaceholderView.swift; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		725B5DF127A4436300459EE3 /* PlaybackCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackCore.swift; sourceTree = "<group>"; };
 		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
-		727AD85327A6D85F00F224CF /* MarconioAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioAppDelegate.swift; sourceTree = "<group>"; };
+		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
 		727AD85C27A6DC8700F224CF /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
 		728797F727A978BD00FE38B3 /* AppTileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTileClient.swift; sourceTree = "<group>"; };
+		72974A5E27AF064B00B33ED8 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppCore; sourceTree = "<group>"; };
+		72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioiOSAppDelegate.swift; sourceTree = "<group>"; };
 		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		72B2A3E227ACDEB300B539CE /* Marquee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marquee.swift; sourceTree = "<group>"; };
 		72B56A1327A70EF000C8FC8B /* ExternalCommandsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCommandsClient.swift; sourceTree = "<group>"; };
-		72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayable.swift; sourceTree = "<group>"; };
 		72C4D06927AE1E7F00E85491 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		72C4D06C27AE1E9C00E85491 /* SettingsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGridView.swift; sourceTree = "<group>"; };
 		72C4D06F27AEC54A00E85491 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		72C4D07227AEC7C800E85491 /* AboutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingsView.swift; sourceTree = "<group>"; };
+		72C99E9327AF11EE00DACE4A /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		72D5928B27A5A21E00D3CE52 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		72D5928E27A5B2E700D3CE52 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		72E1792C27A2E48C009A20ED /* MarconioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioApp.swift; sourceTree = "<group>"; };
@@ -84,7 +92,6 @@
 		72E1793327A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793927A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		72E1794A27A37C44009A20ED /* LaceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaceKit; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
 		72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--macOS--Info.plist"; sourceTree = "<group>"; };
 		72FD675127ACBCDA00611387 /* RoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerView.swift; sourceTree = "<group>"; };
@@ -95,8 +102,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A6E1827AF2FF8006FF195 /* Models in Frameworks */,
+				721A6E1A27AF2FF8006FF195 /* UserActivityClient in Frameworks */,
+				721A6E1627AF2FF8006FF195 /* LaceKit in Frameworks */,
 				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
-				72E1795027A3955C009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,9 +113,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721A6E1C27AF2FFF006FF195 /* LaceKit in Frameworks */,
 				72EB165F27ADB97100B7952B /* Sparkle in Frameworks */,
+				721A6E1E27AF2FFF006FF195 /* Models in Frameworks */,
+				721A6E2027AF2FFF006FF195 /* UserActivityClient in Frameworks */,
 				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
-				72E1795227A39561009A20ED /* LaceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				72A6B3E627A5FECE002AF923 /* Now Playing */,
+				721A6E2127AF3613006FF195 /* iOS.entitlements */,
 				7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */,
+				72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -170,14 +183,6 @@
 			path = "External Commands";
 			sourceTree = "<group>";
 		};
-		72B56A1627A715A400C8FC8B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				72B56A1727A715AF00C8FC8B /* MediaPlayable.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		72C4D06827AE1E5600E85491 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +210,14 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		72C99E9227AF119800DACE4A /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				72C99E9327AF11EE00DACE4A /* Client.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,10 +240,10 @@
 		72E1792627A2E48C009A20ED = {
 			isa = PBXGroup;
 			children = (
+				72974A5E27AF064B00B33ED8 /* AppCore */,
 				72E1792B27A2E48C009A20ED /* Shared */,
 				7221DB0627A48A0100183057 /* iOS */,
 				72E1793A27A2E48D009A20ED /* macOS */,
-				72E1794A27A37C44009A20ED /* LaceKit */,
 				72E1793427A2E48D009A20ED /* Products */,
 				72E1794E27A3955C009A20ED /* Frameworks */,
 			);
@@ -239,9 +252,9 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72C99E9227AF119800DACE4A /* App Delegate */,
 				72D5929127A5B4C500D3CE52 /* Playback */,
 				728797F627A978A400FE38B3 /* App Tile */,
-				72B56A1627A715A400C8FC8B /* Models */,
 				72B56A1227A70EE400C8FC8B /* External Commands */,
 				727AD85827A6DC5F00F224CF /* Channels */,
 				72A6B3DF27A5F420002AF923 /* Donation */,
@@ -269,7 +282,7 @@
 				72C4D06827AE1E5600E85491 /* Settings */,
 				72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */,
 				72E1793B27A2E48D009A20ED /* macOS.entitlements */,
-				727AD85327A6D85F00F224CF /* MarconioAppDelegate.swift */,
+				727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -310,8 +323,10 @@
 			);
 			name = "Marconio (iOS)";
 			packageProductDependencies = (
-				72E1794F27A3955C009A20ED /* LaceKit */,
 				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
+				721A6E1527AF2FF8006FF195 /* LaceKit */,
+				721A6E1727AF2FF8006FF195 /* Models */,
+				721A6E1927AF2FF8006FF195 /* UserActivityClient */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
@@ -331,9 +346,11 @@
 			);
 			name = "Marconio (macOS)";
 			packageProductDependencies = (
-				72E1795127A39561009A20ED /* LaceKit */,
 				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 				72EB165E27ADB97100B7952B /* Sparkle */,
+				721A6E1B27AF2FFF006FF195 /* LaceKit */,
+				721A6E1D27AF2FFF006FF195 /* Models */,
+				721A6E1F27AF2FFF006FF195 /* UserActivityClient */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
@@ -408,8 +425,8 @@
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7221DB0327A47D7C00183057 /* PlayableArtworkPlaceholderView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
-				72B56A1827A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
+				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
 				72B56A1427A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
@@ -421,6 +438,7 @@
 				72FD675027AC972000611387 /* AppTileClient.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
+				72C99E9427AF11EE00DACE4A /* Client.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +449,7 @@
 			files = (
 				72B56A1527A70EF000C8FC8B /* ExternalCommandsClient.swift in Sources */,
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
-				727AD85627A6D86700F224CF /* MarconioAppDelegate.swift in Sources */,
+				727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */,
 				728797F927A978BD00FE38B3 /* AppTileClient.swift in Sources */,
 				72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */,
 				727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */,
@@ -442,7 +460,7 @@
 				72FD675327ACBCDA00611387 /* RoutePickerView.swift in Sources */,
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
-				72B56A1927A715AF00C8FC8B /* MediaPlayable.swift in Sources */,
+				72C99E9527AF11EE00DACE4A /* Client.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,
@@ -574,6 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2022.02.05151426;
 				DEVELOPMENT_TEAM = YN24FFRTC8;
@@ -606,6 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2022.02.05151426;
 				DEVELOPMENT_TEAM = YN24FFRTC8;
@@ -736,7 +756,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
+				minimumVersion = 0.33.1;
 			};
 		};
 		72EB165D27ADB97100B7952B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -750,6 +770,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		721A6E1527AF2FF8006FF195 /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
+		721A6E1727AF2FF8006FF195 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		721A6E1927AF2FF8006FF195 /* UserActivityClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserActivityClient;
+		};
+		721A6E1B27AF2FFF006FF195 /* LaceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaceKit;
+		};
+		721A6E1D27AF2FFF006FF195 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		721A6E1F27AF2FFF006FF195 /* UserActivityClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserActivityClient;
+		};
 		72D5927F27A5918A00D3CE52 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
@@ -759,14 +803,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 72D5927E27A5918A00D3CE52 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		72E1794F27A3955C009A20ED /* LaceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LaceKit;
-		};
-		72E1795127A39561009A20ED /* LaceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LaceKit;
 		};
 		72EB165E27ADB97100B7952B /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,8 +10,8 @@ import SwiftUI
 
 struct MarconioCommands: Commands {
     var body: some Commands {
-        CommandGroup(replacing: CommandGroupPlacement.newItem, addition: {})
-        CommandGroup(replacing: CommandGroupPlacement.undoRedo, addition: {})
+        CommandGroup(replacing: .newItem, addition: {})
+        CommandGroup(replacing: .undoRedo, addition: {})
         SidebarCommands()
     }
 }
