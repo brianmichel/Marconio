@@ -65,7 +65,8 @@ platform :mac do
       output_directory: output_directory,
       export_options: {
         method: 'developer-id'
-      }
+      },
+      xcargs: "-allowProvisioningUpdates"
     )
 
     description = '_No Description Specified..._'
