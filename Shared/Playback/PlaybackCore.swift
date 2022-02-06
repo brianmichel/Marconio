@@ -23,6 +23,7 @@ struct PlaybackState: Equatable {
     var playerState: PlayerState = .stopped
     var currentActivity: NSUserActivity?
     var routePickerView: RoutePickerView?
+    var monitoringRemoteCommands = false
 }
 
 enum PlaybackAction: Equatable {
@@ -119,6 +120,12 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             environment.infoCenter.nowPlayingInfo = updateInformation
             return .none
         case .startMonitoringRemoteCommands:
+            guard !state.monitoringRemoteCommands else {
+                return .none
+            }
+
+            state.monitoringRemoteCommands = true
+
             return environment.externalCommandsClient
                 .startMonitoringCommands()
                 .catchToEffect(PlaybackAction.externalCommand)
