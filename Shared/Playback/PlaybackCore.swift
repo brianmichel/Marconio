@@ -53,25 +53,6 @@ struct PlaybackEnvironment {
     var userActivityClient: UserActivityClient = .live
 }
 
-let userActivityReducer = Reducer<PlaybackState, UserActivityClient.Action, PlaybackEnvironment>.combine(
-    Reducer { state, action, enviornment in
-        switch action {
-        case let .willHandleActivity(activity):
-            return .none
-        case let .willNotHandleActivity(activity):
-            return .none
-        case let .becomeCurrentActivity(activity):
-            activity.becomeCurrent()
-            state.currentActivity = activity
-            return .none
-        case .resignCurrentActivity:
-            state.currentActivity?.resignCurrent()
-            state.currentActivity = nil
-            return .none
-        }
-    }
-)
-
 let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
     Reducer { state, action, environment in
         switch action {
@@ -86,9 +67,7 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
 
             #if os(macOS)
             state.routePickerView = RoutePickerView(routePickerButtonBordered: false, player: PlaybackEnvironment.player)
-            #endif
-
-            #if os(iOS)
+            #else
             state.routePickerView = RoutePickerView(player: PlaybackEnvironment.player)
             #endif
 
@@ -107,7 +86,6 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
-
             return .none
         case .stopPlayback:
             state.playerState = .stopped
@@ -154,8 +132,6 @@ let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment
             state.currentActivity = nil
             return .none
         case .userActivity(.success(.willHandleActivity(_))):
-            return .none
-        case .userActivity(.success(.willNotHandleActivity(_))):
             return .none
         }
     }

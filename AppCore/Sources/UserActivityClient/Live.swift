@@ -10,16 +10,12 @@ import Foundation
 import ComposableArchitecture
 import Models
 
-extension String {
-    static var playbackActiveIdentifier = "me.foureyes.Marconio.playback"
-}
-
 public extension UserActivityClient {
     static var live: Self {
         return Self(
             becomeCurrent: { playable in
                 Effect.run { subscriber in
-                    let activity = NSUserActivity(activityType: .playbackActiveIdentifier)
+                    let activity = NSUserActivity(activityType: UserActivityClient.Identifiers.playbackActiveIdentifier.rawValue)
                     activity.title = playable.title
                     activity.webpageURL = playable.streamURL
                     activity.isEligibleForHandoff = true

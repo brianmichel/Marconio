@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import LaceKit
+import Models
 
 class ParsingTests: XCTestCase {
 

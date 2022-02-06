@@ -4,7 +4,7 @@
 <dict>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>me.foureyes.Marconio.playback</string>
+		<string>me.foureyes.marconio.activity.playback</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

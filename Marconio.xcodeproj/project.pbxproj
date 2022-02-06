@@ -63,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		7221DB0227A47D7C00183057 /* PlayableArtworkPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableArtworkPlaceholderView.swift; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		725B5DF127A4436300459EE3 /* PlaybackCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackCore.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				72A6B3E627A5FECE002AF923 /* Now Playing */,
+				721A6E2127AF3613006FF195 /* iOS.entitlements */,
 				7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */,
 				72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */,
 			);
@@ -590,6 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2022.02.05151426;
 				DEVELOPMENT_TEAM = YN24FFRTC8;
@@ -622,6 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2022.02.05151426;
 				DEVELOPMENT_TEAM = YN24FFRTC8;
