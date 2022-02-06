@@ -11,6 +11,7 @@ import ComposableArchitecture
 import Models
 
 public extension UserActivityClient {
+    /// A live implementation of the `UserActivityClient` which can be used to create and handle activity items.
     static var live: Self {
         return Self(
             becomeCurrent: { playable in
@@ -23,13 +24,6 @@ public extension UserActivityClient {
                     activity.userInfo = playable.handoffUserInfo()
 
                     subscriber.send(.becomeCurrentActivity(activity))
-
-                    return AnyCancellable {}
-                }
-            },
-            resignCurrent: {
-                Effect.run { subscriber in
-                    subscriber.send(.resignCurrentActivity)
 
                     return AnyCancellable {}
                 }

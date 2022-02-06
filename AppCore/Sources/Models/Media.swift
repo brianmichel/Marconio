@@ -6,7 +6,18 @@
 //
 
 import Foundation
+/**
+ A set of media typically representing a show, broadcast, channel, etc.
 
+ This is not the streamable media used to listen to NTS, but rather they are
+ visual media that is used as a static representation of the streamable media.
+
+ Anything prefixed with `background` tend to be optional and only show up as
+ populated for a ``Broadcast``.
+
+ Anything prefixed with `picture` _should_ show up as populated with any streamable
+ media.
+ */
 public struct Media: Codable, Equatable {
     public let backgroundLarge: URL?
     public let backgroundMediumLarge: URL?
@@ -21,6 +32,7 @@ public struct Media: Codable, Equatable {
 }
 
 extension Media {
+    /// A placeholder of media to be used in mocking or previews.
     public static var placeholder: Self {
         return Media(backgroundLarge: nil,
                      backgroundMediumLarge: nil,

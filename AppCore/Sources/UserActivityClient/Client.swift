@@ -9,11 +9,27 @@ import ComposableArchitecture
 import Foundation
 import Models
 
+/**
+ A client that can handle creating and responding to NSUserActivity needs in a structured fashion.
+
+ From within a reducer you can use the various function to return effects and then map them to
+ specific handling instructions as follows:
+
+ ```
+ ...
+ case let .actionToCreateActivityFor(playable):
+    return client.becomeCurrent(playable)
+ ...
+ ```
+ */
 public struct UserActivityClient {
+    /// Identifiers used to set up new `NSUserActivity` types.
     public enum Identifiers: String {
+        /// An identifier to be used when handing off playback between iOS and macOS
         case playbackActiveIdentifier = "me.foureyes.marconio.activity.playback"
     }
 
+    /// Keys used for the `userInfo` property on `NSUserAcivity`
     public enum Keys: String {
         case id
         case title
@@ -23,18 +39,28 @@ public struct UserActivityClient {
         case streamURL
     }
 
+    /// A function to be called when a given `MediaPlayable` is loaded.
+    ///
+    /// - Parameters:
+    ///     - MediaPlayable: this should be the playable that has been loaded by the playback system.
     public var becomeCurrent: (MediaPlayable) -> Effect<Action, Never>
-    public var resignCurrent: () -> Effect<Action, Never>
+    /// A function to be called for handling a given activity
+    ///
+    /// - Parameters:
+    ///     - NSUserActivity: an activity that was handed to the application by the system.
     public var handleActivity: (NSUserActivity) -> Effect<Action, Never>
 
+    /// A set of actions that the client can issue.
     public enum Action: Equatable {
+        /// Indication that the client will handle the activity in question.
         case willHandleActivity(NSUserActivity)
+        /// The client asking the system to make the passed activity the current activity.
         case becomeCurrentActivity(NSUserActivity)
-        case resignCurrentActivity
     }
 }
 
 public extension NSUserActivity {
+    /// A helper for turning an `NSUserActivity` into a `MediaPlayable` or nil if the required keys can't be found.
     func playable() -> MediaPlayable? {
         guard
             let id = userInfo?[UserActivityClient.Keys.id.rawValue] as? String,
@@ -58,6 +84,7 @@ public extension NSUserActivity {
 }
 
 public extension MediaPlayable {
+    /// A helper for turning a `MediaPlayable` into a dictionary to be used by a `NSUserActivity`
     func handoffUserInfo() -> [AnyHashable: Any] {
         var userInfo: [AnyHashable: Any] = [
             UserActivityClient.Keys.id.rawValue: id,
