@@ -8,7 +8,7 @@ import ComposableArchitecture
 import Foundation
 import LaceKit
 import Models
-
+import DatabaseClient
 
 struct AppState: Equatable {
     var channels: [Channel] = []
@@ -32,6 +32,7 @@ struct AppEnvironment {
     var uuid: () -> UUID
     var api: NTSAPI
     var appDelegate: AppDelegateEnvironment
+    var dbClient: DatabaseClient
 }
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
@@ -63,6 +64,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.channelsResponse)
         case let .channelsResponse(.success(channels)):
             state.channels = channels.results
+            try? environment.dbClient.writeChannels(channels.results)
             return .none
         case let .channelsResponse(.failure(error)):
             // Do something with the error here
@@ -74,6 +76,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.mixtapesResponse)
         case let .mixtapesResponse(.success(mixtapes)):
             state.mixtapes = mixtapes.results
+            try? environment.dbClient.writeMixtapes(mixtapes.results)
             return .none
         case let .mixtapesResponse(.failure(error)):
             // Do something with the error here

@@ -20,12 +20,16 @@ let package = Package(
         .library(
             name: "Models",
             targets: ["Models"]),
+        .library(
+            name: "DatabaseClient",
+            targets: ["DatabaseClient"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.2.1"),
+        .package(url: "https://github.com/groue/GRDB.swift.git", from: "5.21.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -48,6 +52,12 @@ let package = Package(
                     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                     "Models"
                 ]
-        )
+        ),
+        .target(name: "DatabaseClient",
+                dependencies: [
+                    .product(name: "GRDB", package: "GRDB.swift"),
+                    "Models"
+                ]
+               )
     ]
 )
