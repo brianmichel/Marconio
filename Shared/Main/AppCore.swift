@@ -8,7 +8,7 @@ import ComposableArchitecture
 import Foundation
 import LaceKit
 import Models
-
+import DatabaseClient
 
 struct AppState: Equatable {
     var channels: [Channel] = []
@@ -25,6 +25,7 @@ enum AppAction: Equatable {
     case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
     case playback(PlaybackAction)
     case appDelegate(AppDelegateAction)
+    case dbWrite(Result<DatabaseClient.Action, DatabaseClient.Error>)
 }
 
 struct AppEnvironment {
@@ -32,6 +33,7 @@ struct AppEnvironment {
     var uuid: () -> UUID
     var api: NTSAPI
     var appDelegate: AppDelegateEnvironment
+    var dbClient: DatabaseClient
 }
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
@@ -49,21 +51,29 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         switch action {
         case .loadInitialData:
             return .merge(
-                try! environment.api.live()
+                environment
+                    .dbClient
+                    .startRealtimeUpdates()
                     .receive(on: environment.mainQueue)
-                    .catchToEffect(AppAction.channelsResponse),
+                    .catchToEffect(AppAction.dbWrite),
 
-                try! environment.api.mixtapes()
-                    .receive(on: environment.mainQueue)
-                    .catchToEffect(AppAction.mixtapesResponse)
+                .merge(
+                    try! environment.api.live()
+                        .receive(on: environment.mainQueue)
+                        .catchToEffect(AppAction.channelsResponse),
+                    try! environment.api.mixtapes()
+                        .receive(on: environment.mainQueue)
+                        .catchToEffect(AppAction.mixtapesResponse)
+                )
             )
         case .loadChannels:
             return try! environment.api.live()
                 .receive(on: environment.mainQueue)
                 .catchToEffect(AppAction.channelsResponse)
         case let .channelsResponse(.success(channels)):
-            state.channels = channels.results
-            return .none
+            return .concatenate(
+                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite)
+            )
         case let .channelsResponse(.failure(error)):
             // Do something with the error here
             print("unable to load channels: \(error)")
@@ -73,8 +83,9 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .receive(on: environment.mainQueue)
                 .catchToEffect(AppAction.mixtapesResponse)
         case let .mixtapesResponse(.success(mixtapes)):
-            state.mixtapes = mixtapes.results
-            return .none
+            return .concatenate(
+                environment.dbClient.writeMixtapes(mixtapes.results).catchToEffect(AppAction.dbWrite)
+            )
         case let .mixtapesResponse(.failure(error)):
             // Do something with the error here
             print("unable to load mixtapes: \(error)")
@@ -87,6 +98,16 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             }
             return .none
         case .appDelegate:
+            return .none
+        case let .dbWrite(.failure(error)):
+            return .none
+        case let .dbWrite(.success(.realTimeUpdate(channels, mixtapes))):
+            state.channels = channels
+            state.mixtapes = mixtapes
+            return .none
+        case .dbWrite(.success(.didFetchAllMixtapes(_))):
+            return .none
+        case .dbWrite(.success(.didFetchAllChannels(_))):
             return .none
         }
     }

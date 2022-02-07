@@ -149,7 +149,8 @@ struct ChannelsView_Previews: PreviewProvider {
                     mainQueue: .main,
                     uuid: UUID.init,
                     api: LiveAPI(),
-                    appDelegate: .init()
+                    appDelegate: .init(),
+                    dbClient: .live
                 )
             )
         )

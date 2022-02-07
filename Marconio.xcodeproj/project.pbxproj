@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72135D0327B0B04700ADF1D3 /* DatabaseClient in Frameworks */ = {isa = PBXBuildFile; productRef = 72135D0227B0B04700ADF1D3 /* DatabaseClient */; };
+		72135D0527B0B04D00ADF1D3 /* DatabaseClient in Frameworks */ = {isa = PBXBuildFile; productRef = 72135D0427B0B04D00ADF1D3 /* DatabaseClient */; };
 		721A6E1627AF2FF8006FF195 /* LaceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1527AF2FF8006FF195 /* LaceKit */; };
 		721A6E1827AF2FF8006FF195 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1727AF2FF8006FF195 /* Models */; };
 		721A6E1A27AF2FF8006FF195 /* UserActivityClient in Frameworks */ = {isa = PBXBuildFile; productRef = 721A6E1927AF2FF8006FF195 /* UserActivityClient */; };
@@ -105,6 +107,7 @@
 				721A6E1827AF2FF8006FF195 /* Models in Frameworks */,
 				721A6E1A27AF2FF8006FF195 /* UserActivityClient in Frameworks */,
 				721A6E1627AF2FF8006FF195 /* LaceKit in Frameworks */,
+				72135D0527B0B04D00ADF1D3 /* DatabaseClient in Frameworks */,
 				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +118,7 @@
 			files = (
 				721A6E1C27AF2FFF006FF195 /* LaceKit in Frameworks */,
 				72EB165F27ADB97100B7952B /* Sparkle in Frameworks */,
+				72135D0327B0B04700ADF1D3 /* DatabaseClient in Frameworks */,
 				721A6E1E27AF2FFF006FF195 /* Models in Frameworks */,
 				721A6E2027AF2FFF006FF195 /* UserActivityClient in Frameworks */,
 				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
@@ -327,6 +331,7 @@
 				721A6E1527AF2FF8006FF195 /* LaceKit */,
 				721A6E1727AF2FF8006FF195 /* Models */,
 				721A6E1927AF2FF8006FF195 /* UserActivityClient */,
+				72135D0427B0B04D00ADF1D3 /* DatabaseClient */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
@@ -351,6 +356,7 @@
 				721A6E1B27AF2FFF006FF195 /* LaceKit */,
 				721A6E1D27AF2FFF006FF195 /* Models */,
 				721A6E1F27AF2FFF006FF195 /* UserActivityClient */,
+				72135D0227B0B04700ADF1D3 /* DatabaseClient */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
@@ -770,6 +776,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		72135D0227B0B04700ADF1D3 /* DatabaseClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DatabaseClient;
+		};
+		72135D0427B0B04D00ADF1D3 /* DatabaseClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DatabaseClient;
+		};
 		721A6E1527AF2FF8006FF195 /* LaceKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LaceKit;

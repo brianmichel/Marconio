@@ -26,7 +26,8 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
             mainQueue: .main,
             uuid: UUID.init,
             api: LiveAPI(),
-            appDelegate: .init()
+            appDelegate: .init(),
+            dbClient: .live
         )
     )
 
