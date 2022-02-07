@@ -24,20 +24,24 @@ public extension DatabaseClient {
             let dbURL = folderURL.appendingPathComponent("db.sqlite")
             let writer = try DatabasePool(path: dbURL.path)
 
-            let allMixtapes = ValueObservation.tracking { db in
-                try Mixtape
-                    .order(Column("title").asc)
-                    .fetchAll(db)
-                }
-                .publisher(in: writer, scheduling: .immediate)
-                .eraseToAnyPublisher()
-            let allChannels = ValueObservation.tracking { db in
-                try Channel
-                    .order(Column("channelName").asc)
-                    .fetchAll(db)
-                }
-                .publisher(in: writer, scheduling: .immediate)
-                .eraseToAnyPublisher()
+            struct RealTimeUpdatesId: Hashable {}
+            func realTimePublishers() -> Publishers.Zip<
+                AnyPublisher<[Channel], DatabasePublishers.Value<[Channel]>.Failure>,
+                AnyPublisher<[Mixtape], DatabasePublishers.Value<[Mixtape]>.Failure>
+            > {
+                let allMixtapes = ValueObservation.tracking { db in
+                    try Mixtape.order(Column("title").asc).fetchAll(db)
+                }.publisher(in: writer, scheduling: .immediate)
+                    .eraseToAnyPublisher()
+                let allChannels = ValueObservation.tracking { db in
+                    try Channel.order(Column("channelName").asc).fetchAll(db)
+                }.publisher(in: writer, scheduling: .immediate)
+                    .eraseToAnyPublisher()
+
+                let publishers = Publishers.Zip(allChannels, allMixtapes)
+
+                return publishers
+            }
 
             return Self(
                 dbWriter: writer,
@@ -137,12 +141,15 @@ public extension DatabaseClient {
                 },
                 startRealtimeUpdates: {
                     .run { subscriber in
-                        return Publishers.Zip(allChannels, allMixtapes).sink(receiveCompletion: { completion in
+                        return realTimePublishers().sink(receiveCompletion: { completion in
                             // Do Nothing
                         }) { (channels, mixtapes) in
                             subscriber.send(.realTimeUpdate(channels, mixtapes))
                         }
-                    }
+                    }.cancellable(id: RealTimeUpdatesId())
+                },
+                stopRealtimeUpdates: {
+                    .cancel(id: RealTimeUpdatesId())
                 }
             )
         } catch {

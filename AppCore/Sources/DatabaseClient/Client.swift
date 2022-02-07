@@ -20,6 +20,7 @@ public struct DatabaseClient {
     public var fetchAllChannels: () -> Effect<Action, DatabaseClient.Error>
     public var fetchAllMixtapes: () -> Effect<Action, DatabaseClient.Error>
     public var startRealtimeUpdates: () -> Effect<Action, DatabaseClient.Error>
+    public var stopRealtimeUpdates: () -> Effect<Void, DatabaseClient.Error>
 
     public enum Action: Equatable {
         case didFetchAllMixtapes([Mixtape])
@@ -65,7 +66,7 @@ public struct DatabaseClient {
         return migrator
     }
 
-    init(dbWriter: DatabaseWriter, writeChannel: @escaping (Channel) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeChannels: @escaping ([Channel]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtape: @escaping (Mixtape) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtapes: @escaping ([Mixtape]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllChannels: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllMixtapes: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, startRealtimeUpdates: @escaping () -> Effect<Action, DatabaseClient.Error>) {
+    init(dbWriter: DatabaseWriter, writeChannel: @escaping (Channel) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeChannels: @escaping ([Channel]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtape: @escaping (Mixtape) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtapes: @escaping ([Mixtape]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllChannels: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllMixtapes: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, startRealtimeUpdates: @escaping () -> Effect<Action, DatabaseClient.Error>, stopRealtimeUpdates: @escaping () -> Effect<Void, DatabaseClient.Error>) {
         self.dbWriter = dbWriter
         self.writeChannel = writeChannel
         self.writeChannels = writeChannels
@@ -74,6 +75,7 @@ public struct DatabaseClient {
         self.fetchAllChannels = fetchAllChannels
         self.fetchAllMixtapes = fetchAllMixtapes
         self.startRealtimeUpdates = startRealtimeUpdates
+        self.stopRealtimeUpdates = stopRealtimeUpdates
 
         try? migrator.migrate(dbWriter)
     }
