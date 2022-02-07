@@ -51,13 +51,20 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         switch action {
         case .loadInitialData:
             return .merge(
-                try! environment.api.live()
+                environment
+                    .dbClient
+                    .startRealtimeUpdates()
                     .receive(on: environment.mainQueue)
-                    .catchToEffect(AppAction.channelsResponse),
+                    .catchToEffect(AppAction.dbWrite),
 
-                try! environment.api.mixtapes()
-                    .receive(on: environment.mainQueue)
-                    .catchToEffect(AppAction.mixtapesResponse)
+                .merge(
+                    try! environment.api.live()
+                        .receive(on: environment.mainQueue)
+                        .catchToEffect(AppAction.channelsResponse),
+                    try! environment.api.mixtapes()
+                        .receive(on: environment.mainQueue)
+                        .catchToEffect(AppAction.mixtapesResponse)
+                )
             )
         case .loadChannels:
             return try! environment.api.live()
@@ -65,8 +72,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.channelsResponse)
         case let .channelsResponse(.success(channels)):
             return .concatenate(
-                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite),
-                environment.dbClient.fetchAllChannels().catchToEffect(AppAction.dbWrite)
+                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite)
             )
         case let .channelsResponse(.failure(error)):
             // Do something with the error here
@@ -78,8 +84,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.mixtapesResponse)
         case let .mixtapesResponse(.success(mixtapes)):
             return .concatenate(
-                environment.dbClient.writeMixtapes(mixtapes.results).catchToEffect(AppAction.dbWrite),
-                environment.dbClient.fetchAllMixtapes().catchToEffect(AppAction.dbWrite)
+                environment.dbClient.writeMixtapes(mixtapes.results).catchToEffect(AppAction.dbWrite)
             )
         case let .mixtapesResponse(.failure(error)):
             // Do something with the error here
@@ -96,11 +101,13 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             return .none
         case let .dbWrite(.failure(error)):
             return .none
-        case let .dbWrite(.success(.didFetchAllMixtapes(mixtapes))):
+        case let .dbWrite(.success(.realTimeUpdate(channels, mixtapes))):
+            state.channels = channels
             state.mixtapes = mixtapes
             return .none
-        case let .dbWrite(.success(.didFetchAllChannels(channels))):
-            state.channels = channels
+        case .dbWrite(.success(.didFetchAllMixtapes(_))):
+            return .none
+        case .dbWrite(.success(.didFetchAllChannels(_))):
             return .none
         }
     }

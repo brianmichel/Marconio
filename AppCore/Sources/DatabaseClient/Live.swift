@@ -24,6 +24,21 @@ public extension DatabaseClient {
             let dbURL = folderURL.appendingPathComponent("db.sqlite")
             let writer = try DatabasePool(path: dbURL.path)
 
+            let allMixtapes = ValueObservation.tracking { db in
+                try Mixtape
+                    .order(Column("title").asc)
+                    .fetchAll(db)
+                }
+                .publisher(in: writer, scheduling: .immediate)
+                .eraseToAnyPublisher()
+            let allChannels = ValueObservation.tracking { db in
+                try Channel
+                    .order(Column("channelName").asc)
+                    .fetchAll(db)
+                }
+                .publisher(in: writer, scheduling: .immediate)
+                .eraseToAnyPublisher()
+
             return Self(
                 dbWriter: writer,
                 writeChannel: { channel in
@@ -118,6 +133,15 @@ public extension DatabaseClient {
                         }
 
                         return AnyCancellable {}
+                    }
+                },
+                startRealtimeUpdates: {
+                    .run { subscriber in
+                        return Publishers.Zip(allChannels, allMixtapes).sink(receiveCompletion: { completion in
+                            // Do Nothing
+                        }) { (channels, mixtapes) in
+                            subscriber.send(.realTimeUpdate(channels, mixtapes))
+                        }
                     }
                 }
             )
