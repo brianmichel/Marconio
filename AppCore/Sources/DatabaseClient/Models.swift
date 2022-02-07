@@ -10,5 +10,4 @@ import Models
 import GRDB
 
 extension Mixtape: PersistableRecord, FetchableRecord {}
-
 extension Channel: PersistableRecord, FetchableRecord {}

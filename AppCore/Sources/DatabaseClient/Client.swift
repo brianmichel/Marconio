@@ -5,12 +5,30 @@
 //  Created by Brian Michel on 2/6/22.
 //
 
+import ComposableArchitecture
 import Foundation
 import GRDB
 import Models
 
 public struct DatabaseClient {
-    private let dbWriter: DatabaseWriter
+    let dbWriter: DatabaseWriter
+
+    public var writeChannel: (Channel) -> Effect<Action, DatabaseClient.Error>
+    public var writeChannels: ([Channel]) -> Effect<Action, DatabaseClient.Error>
+    public var writeMixtape: (Mixtape) -> Effect<Action, DatabaseClient.Error>
+    public var writeMixtapes: ([Mixtape]) -> Effect<Action, DatabaseClient.Error>
+    public var fetchAllChannels: () -> Effect<Action, DatabaseClient.Error>
+    public var fetchAllMixtapes: () -> Effect<Action, DatabaseClient.Error>
+
+    public enum Action: Equatable {
+        case didFetchAllMixtapes([Mixtape])
+        case didFetchAllChannels([Channel])
+    }
+
+    public enum Error: Swift.Error, Equatable {
+        case unableToWriteData(String)
+        case unableToReadData(String)
+    }
 
     private var migrator: DatabaseMigrator {
         var migrator = DatabaseMigrator()
@@ -45,38 +63,15 @@ public struct DatabaseClient {
         return migrator
     }
 
-    init(_ dbWriter: DatabaseWriter) throws {
+    init(dbWriter: DatabaseWriter, writeChannel: @escaping (Channel) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeChannels: @escaping ([Channel]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtape: @escaping (Mixtape) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtapes: @escaping ([Mixtape]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllChannels: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllMixtapes: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>) {
         self.dbWriter = dbWriter
-        try migrator.migrate(dbWriter)
-    }
-}
+        self.writeChannel = writeChannel
+        self.writeChannels = writeChannels
+        self.writeMixtape = writeMixtape
+        self.writeMixtapes = writeMixtapes
+        self.fetchAllChannels = fetchAllChannels
+        self.fetchAllMixtapes = fetchAllMixtapes
 
-public extension DatabaseClient {
-    func writeChannels(_ channels: [Channel]) throws {
-        try dbWriter.write { db in
-            try channels.forEach { channel in
-                try channel.save(db)
-            }
-        }
-    }
-
-    func writeChannel(_ channel: Channel) throws {
-        try dbWriter.write { db in
-            try channel.save(db)
-        }
-    }
-
-    func writeMixtapes(_ mixtapes: [Mixtape]) throws {
-        try dbWriter.write { db in
-            try mixtapes.forEach { mixtape in
-                try mixtape.save(db)
-            }
-        }
-    }
-
-    func writeMixtape(_ mixtape: Mixtape) throws {
-        try dbWriter.write { db in
-            try mixtape.save(db)
-        }
+        try? migrator.migrate(dbWriter)
     }
 }

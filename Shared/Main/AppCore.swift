@@ -25,6 +25,7 @@ enum AppAction: Equatable {
     case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
     case playback(PlaybackAction)
     case appDelegate(AppDelegateAction)
+    case dbWrite(Result<DatabaseClient.Action, DatabaseClient.Error>)
 }
 
 struct AppEnvironment {
@@ -63,9 +64,10 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .receive(on: environment.mainQueue)
                 .catchToEffect(AppAction.channelsResponse)
         case let .channelsResponse(.success(channels)):
-            state.channels = channels.results
-            try? environment.dbClient.writeChannels(channels.results)
-            return .none
+            return .concatenate(
+                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite),
+                environment.dbClient.fetchAllChannels().catchToEffect(AppAction.dbWrite)
+            )
         case let .channelsResponse(.failure(error)):
             // Do something with the error here
             print("unable to load channels: \(error)")
@@ -75,9 +77,10 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .receive(on: environment.mainQueue)
                 .catchToEffect(AppAction.mixtapesResponse)
         case let .mixtapesResponse(.success(mixtapes)):
-            state.mixtapes = mixtapes.results
-            try? environment.dbClient.writeMixtapes(mixtapes.results)
-            return .none
+            return .concatenate(
+                environment.dbClient.writeMixtapes(mixtapes.results).catchToEffect(AppAction.dbWrite),
+                environment.dbClient.fetchAllMixtapes().catchToEffect(AppAction.dbWrite)
+            )
         case let .mixtapesResponse(.failure(error)):
             // Do something with the error here
             print("unable to load mixtapes: \(error)")
@@ -90,6 +93,14 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             }
             return .none
         case .appDelegate:
+            return .none
+        case let .dbWrite(.failure(error)):
+            return .none
+        case let .dbWrite(.success(.didFetchAllMixtapes(mixtapes))):
+            state.mixtapes = mixtapes
+            return .none
+        case let .dbWrite(.success(.didFetchAllChannels(channels))):
+            state.channels = channels
             return .none
         }
     }

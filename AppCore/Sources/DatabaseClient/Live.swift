@@ -6,11 +6,10 @@
 //
 
 import Foundation
+import Combine
+import ComposableArchitecture
 import GRDB
-
-public enum DatabaseClientError: Error {
-    case unableToCreateContainerURL
-}
+import Models
 
 public extension DatabaseClient {
     static var live: Self {
@@ -23,13 +22,107 @@ public extension DatabaseClient {
             try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true, attributes: nil)
 
             let dbURL = folderURL.appendingPathComponent("db.sqlite")
-            let dbPool = try DatabasePool(path: dbURL.path)
+            let writer = try DatabasePool(path: dbURL.path)
 
-            let client = try DatabaseClient(dbPool)
+            return Self(
+                dbWriter: writer,
+                writeChannel: { channel in
+                        .run { subscriber in
+                            do {
+                                try writer.write { db in
+                                    try channel.save(db)
+                                }
+                                subscriber.send(completion: .finished)
+                            } catch {
+                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
+                            }
 
-            return client
+                            return AnyCancellable {}
+                        }
+                },
+                writeChannels: { channels in
+                        .run { subscriber in
+                            do {
+                                try writer.write { db in
+                                    try channels.forEach { channel in
+                                        try channel.save(db)
+                                    }
+                                }
+                                subscriber.send(completion: .finished)
+                            } catch {
+                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
+                            }
+
+                            return AnyCancellable {}
+                        }
+                },
+                writeMixtape: { mixtape in
+                        .run { subscriber in
+                            do {
+                                try writer.write { db in
+                                    try mixtape.save(db)
+                                }
+                                subscriber.send(completion: .finished)
+                            } catch {
+                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
+                            }
+
+                            return AnyCancellable {}
+                        }
+                },
+                writeMixtapes: { mixtapes in
+                        .run { subscriber in
+                            do {
+                                try writer.write { db in
+                                    try mixtapes.forEach { mixtape in
+                                        try mixtape.save(db)
+                                    }
+                                }
+                                subscriber.send(completion: .finished)
+                            } catch {
+                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
+                            }
+
+                            return AnyCancellable {}
+                        }
+                },
+                fetchAllChannels: {
+                    .run { subscriber in
+                        do {
+                            try writer.write { db in
+                                let channels = try Channel
+                                    .order(Column("channelName").asc)
+                                    .fetchAll(db)
+
+                                subscriber.send(.didFetchAllChannels(channels))
+                            }
+                        } catch {
+                            subscriber.send(completion: .failure(.unableToReadData(error.localizedDescription)))
+                        }
+
+                        return AnyCancellable {}
+                    }
+                },
+                fetchAllMixtapes: {
+                    .run { subscriber in
+                        do {
+                            try writer.write { db in
+                                let mixtapes = try Mixtape
+                                    .order(Column("mixtapeAlias").asc)
+                                    .fetchAll(db)
+
+                                subscriber.send(.didFetchAllMixtapes(mixtapes))
+                            }
+                        } catch {
+                            subscriber.send(completion: .failure(.unableToReadData(error.localizedDescription)))
+                        }
+
+                        return AnyCancellable {}
+                    }
+                }
+            )
         } catch {
-            fatalError("Unable to setup database client due to error: \(error)")
+            fatalError("Unable to create .live DatabaseClient due to error: \(error)")
         }
     }
 }
