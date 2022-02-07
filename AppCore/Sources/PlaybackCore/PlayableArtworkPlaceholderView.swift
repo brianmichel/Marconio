@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-struct PlayableArtworkPlaceholderView: View {
-    var body: some View {
+@available(iOS 15, macOS 12, *)
+public struct PlayableArtworkPlaceholderView: View {
+    public init() {}
+    
+    public var body: some View {
         ZStack {
             Color.secondary
             Image(systemName: "music.note.list")
@@ -19,8 +22,9 @@ struct PlayableArtworkPlaceholderView: View {
     }
 }
 
-struct PlayableArtworkPlaceholderView_Previews: PreviewProvider {
-    static var previews: some View {
+@available(iOS 15, macOS 12, *)
+public struct PlayableArtworkPlaceholderView_Previews: PreviewProvider {
+    public static var previews: some View {
         Group {
             PlayableArtworkPlaceholderView()
                 .frame(width: 300, height: 300)

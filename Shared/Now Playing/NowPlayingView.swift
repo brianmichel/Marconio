@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 import LaceKit
-
+import PlaybackCore
 import AVFoundation
 import MediaPlayer
 import Models
