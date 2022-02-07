@@ -30,11 +30,11 @@ public extension DatabaseClient {
                 AnyPublisher<[Mixtape], DatabasePublishers.Value<[Mixtape]>.Failure>
             > {
                 let allMixtapes = ValueObservation.tracking { db in
-                    try Mixtape.order(Column("title").asc).fetchAll(db)
+                    try Mixtape.allMixtapes(db: db)
                 }.publisher(in: writer, scheduling: .immediate)
                     .eraseToAnyPublisher()
                 let allChannels = ValueObservation.tracking { db in
-                    try Channel.order(Column("channelName").asc).fetchAll(db)
+                    try Channel.allChannels(db: db)
                 }.publisher(in: writer, scheduling: .immediate)
                     .eraseToAnyPublisher()
 
@@ -109,9 +109,7 @@ public extension DatabaseClient {
                     .run { subscriber in
                         do {
                             try writer.write { db in
-                                let channels = try Channel
-                                    .order(Column("channelName").asc)
-                                    .fetchAll(db)
+                                let channels = try Channel.allChannels(db: db)
 
                                 subscriber.send(.didFetchAllChannels(channels))
                             }
@@ -126,9 +124,7 @@ public extension DatabaseClient {
                     .run { subscriber in
                         do {
                             try writer.write { db in
-                                let mixtapes = try Mixtape
-                                    .order(Column("mixtapeAlias").asc)
-                                    .fetchAll(db)
+                                let mixtapes = try Mixtape.allMixtapes(db: db)
 
                                 subscriber.send(.didFetchAllMixtapes(mixtapes))
                             }
