@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-var package = Package(
+let package = Package(
     name: "AppCore",
     platforms: [
         .macOS(.v10_15),
@@ -18,6 +18,8 @@ var package = Package(
         .library(name: "AppCore", targets: ["AppCore"]),
         .library(name: "PlaybackCore", targets: ["PlaybackCore"]),
         .library(name: "AppDelegate", targets: ["AppDelegate"]),
+        .library(name: "AppDelegate_iOS", targets: ["AppDelegate_iOS"]),
+        .library(name: "AppDelegate_macOS", targets: ["AppDelegate_macOS"]),
         .library(name: "AppTileClient", targets: ["AppTileClient"])
     ],
     dependencies: [
@@ -26,6 +28,7 @@ var package = Package(
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.2.1"),
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "5.21.0"),
+        .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -48,6 +51,7 @@ var package = Package(
                 ]
         ),
         .target(name: "AppTileClient", dependencies: [
+            "Models",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         ]),
         .target(name:"PlaybackCore", dependencies: [
@@ -64,23 +68,15 @@ var package = Package(
             "AppDelegate",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
         ]),
+        .target(name: "AppDelegate_iOS", dependencies: [
+            "AppDelegate"
+        ]),
+        .target(name: "AppDelegate_macOS", dependencies: [
+            "AppDelegate",
+            .product(name: "Sparkle", package: "Sparkle")
+        ]),
+        .target(name: "AppDelegate", dependencies: [
+            .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+        ])
     ]
 )
-
-#if os(macOS)
-package.dependencies.append(
-    .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0")
-)
-package.targets.append(
-    .target(name: "AppDelegate", dependencies: [
-        .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-        .product(name: "Sparkle", package: "Sparkle")
-    ])
-)
-#else
-package.targets.append(
-    .target(name: "AppDelegate", dependencies: [
-        .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-    ])
-)
-#endif

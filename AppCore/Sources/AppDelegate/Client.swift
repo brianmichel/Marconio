@@ -9,6 +9,7 @@ import Foundation
 import ComposableArchitecture
 #if os(macOS)
 import Sparkle
+#else
 #endif
 import SwiftUI
 

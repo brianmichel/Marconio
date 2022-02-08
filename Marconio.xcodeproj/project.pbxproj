@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7252EE6527B1682500B8FB83 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7252EE6427B1682500B8FB83 /* AppCore */; };
 		7252EE6727B1682F00B8FB83 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7252EE6627B1682F00B8FB83 /* AppCore */; };
+		725443A827B2A4E900939567 /* AppDelegate_macOS in Frameworks */ = {isa = PBXBuildFile; productRef = 725443A727B2A4E900939567 /* AppDelegate_macOS */; };
+		725443AA27B2A4EF00939567 /* AppDelegate_iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 725443A927B2A4EF00939567 /* AppDelegate_iOS */; };
 		725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
@@ -78,6 +80,7 @@
 			files = (
 				72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */,
 				7252EE6527B1682500B8FB83 /* AppCore in Frameworks */,
+				725443AA27B2A4EF00939567 /* AppDelegate_iOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725443A827B2A4E900939567 /* AppDelegate_macOS in Frameworks */,
 				72D5928027A5918A00D3CE52 /* ComposableArchitecture in Frameworks */,
 				7252EE6727B1682F00B8FB83 /* AppCore in Frameworks */,
 			);
@@ -263,6 +267,7 @@
 			packageProductDependencies = (
 				72D5928127A591A100D3CE52 /* ComposableArchitecture */,
 				7252EE6427B1682500B8FB83 /* AppCore */,
+				725443A927B2A4EF00939567 /* AppDelegate_iOS */,
 			);
 			productName = "Lace (iOS)";
 			productReference = 72E1793327A2E48D009A20ED /* Marconio.app */;
@@ -284,6 +289,7 @@
 			packageProductDependencies = (
 				72D5927F27A5918A00D3CE52 /* ComposableArchitecture */,
 				7252EE6627B1682F00B8FB83 /* AppCore */,
+				725443A727B2A4E900939567 /* AppDelegate_macOS */,
 			);
 			productName = "Lace (macOS)";
 			productReference = 72E1793927A2E48D009A20ED /* Marconio.app */;
@@ -696,6 +702,14 @@
 		7252EE6627B1682F00B8FB83 /* AppCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppCore;
+		};
+		725443A727B2A4E900939567 /* AppDelegate_macOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppDelegate_macOS;
+		};
+		725443A927B2A4EF00939567 /* AppDelegate_iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppDelegate_iOS;
 		};
 		72D5927F27A5918A00D3CE52 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

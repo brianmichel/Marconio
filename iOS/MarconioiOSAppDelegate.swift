@@ -10,6 +10,9 @@ import Foundation
 import ComposableArchitecture
 import LaceKit
 import UIKit
+import AppCore
+import AppDelegate
+import AppDelegate_iOS
 
 final class MarconioiOSAppDelegate: NSObject, UIApplicationDelegate {
     let store = Store(
@@ -23,7 +26,8 @@ final class MarconioiOSAppDelegate: NSObject, UIApplicationDelegate {
             mainQueue: .main,
             uuid: UUID.init,
             api: LiveAPI(),
-            appDelegate: .init()
+            appDelegate: AppDelegateEnvironment(),
+            dbClient: .live
         )
     )
 

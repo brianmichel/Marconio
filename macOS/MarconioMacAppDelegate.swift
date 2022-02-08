@@ -13,6 +13,7 @@ import ComposableArchitecture
 import LaceKit
 import AppCore
 import AppDelegate
+import AppDelegate_macOS
 
 /// Create an AppDelegate to terminate the application when the last window is closed.
 /// This is a hack around SwiftUI for the time being...
