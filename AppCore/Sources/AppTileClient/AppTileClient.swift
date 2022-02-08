@@ -15,11 +15,11 @@ import UIKit
 
 import Models
 
-struct AppTileClient {
-    var updateAppTile: (MediaPlayable) -> Void
+public struct AppTileClient {
+    public var updateAppTile: (MediaPlayable) -> Void
 }
 
-extension AppTileClient {
+public extension AppTileClient {
     static var live: Self {
         // TODO: This doesn't feel right to pull in the stateful call of the dock menu
         // What's the better way to accomplish this?

@@ -5,6 +5,7 @@
 //  Created by Brian Michel on 1/28/22.
 //
 
+import AppTileClient
 import AVFoundation
 import MediaPlayer
 import ComposableArchitecture
@@ -12,19 +13,31 @@ import Combine
 import UserActivityClient
 import Models
 
-struct PlaybackState: Equatable {
-    enum PlayerState: Equatable {
+public struct PlaybackState: Equatable {
+    public enum PlayerState: Equatable {
         case playing, paused, stopped
     }
 
-    var currentlyPlaying: MediaPlayable?
-    var playerState: PlayerState = .stopped
-    var currentActivity: NSUserActivity?
-    var routePickerView: RoutePickerView?
-    var monitoringRemoteCommands = false
+    public var currentlyPlaying: MediaPlayable? = nil
+    public var playerState: PlayerState = .stopped
+    public var currentActivity: NSUserActivity? = nil
+    public var routePickerView: RoutePickerView? = nil
+    public var monitoringRemoteCommands = false
+
+    public init(currentlyPlaying: MediaPlayable? = nil,
+         playerState: PlayerState = .stopped,
+         currentActivity: NSUserActivity? = nil,
+         routePickerView: RoutePickerView? = nil,
+         monitoringRemoteCommands: Bool = false) {
+        self.currentlyPlaying = currentlyPlaying
+        self.playerState = playerState
+        self.currentActivity = currentActivity
+        self.routePickerView = routePickerView
+        self.monitoringRemoteCommands = monitoringRemoteCommands
+    }
 }
 
-enum PlaybackAction: Equatable {
+public enum PlaybackAction: Equatable {
     case loadPlayable(MediaPlayable)
     case pausePlayback
     case resumePlayback
@@ -36,23 +49,35 @@ enum PlaybackAction: Equatable {
     case userActivity(Result<UserActivityClient.Action, Never>)
 }
 
-struct PlaybackEnvironment {
+public struct PlaybackEnvironment {
     // An intersting side effect of using TCA seems like you need to have these kind of persistent resources static
     // Maybe I'm just using it wrong?
-    static var player: AVPlayer = {
+    public static var player: AVPlayer = {
         let player = AVPlayer()
         player.allowsExternalPlayback = false
 
         return player
     }()
-    var mainQueue: DispatchQueue = .main
-    var infoCenter = MPNowPlayingInfoCenter.default()
-    var externalCommandsClient: ExternalCommandsClient = .live
-    var appTileClient: AppTileClient = .live
-    var userActivityClient: UserActivityClient = .live
+    public var mainQueue: DispatchQueue = .main
+    public var infoCenter = MPNowPlayingInfoCenter.default()
+    public var externalCommandsClient: ExternalCommandsClient = .live
+    public var appTileClient: AppTileClient = .live
+    public var userActivityClient: UserActivityClient = .live
+
+    public init(mainQueue: DispatchQueue = .main,
+                infoCenter: MPNowPlayingInfoCenter = MPNowPlayingInfoCenter.default(),
+                externalCommandsClient: ExternalCommandsClient = .live,
+                appTileClient: AppTileClient = .live,
+                userActivityClient: UserActivityClient = .live) {
+        self.mainQueue = mainQueue
+        self.infoCenter = infoCenter
+        self.externalCommandsClient = externalCommandsClient
+        self.appTileClient = appTileClient
+        self.userActivityClient = userActivityClient
+    }
 }
 
-let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
+public let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvironment>.combine(
     Reducer { state, action, environment in
         switch action {
         case let .loadPlayable(playable):

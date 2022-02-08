@@ -10,17 +10,17 @@ import Foundation
 import ComposableArchitecture
 import MediaPlayer
 
-struct ExternalCommandsClient {
+public struct ExternalCommandsClient {
     var startMonitoringCommands: () -> Effect<Action, Never>
 
-    enum Action: Equatable {
+    public enum Action: Equatable {
         case externalResumeTap
         case externalPauseTap
         case externalToggleTap
     }
 }
 
-extension ExternalCommandsClient {
+public extension ExternalCommandsClient {
     static var live: Self {
         let commandCenter = MPRemoteCommandCenter.shared()
 

@@ -9,6 +9,8 @@ import SwiftUI
 import ComposableArchitecture
 import LaceKit
 import Models
+import AppCore
+import PlaybackCore
 
 struct ChannelsView: View {
     let store: Store<AppState, AppAction>

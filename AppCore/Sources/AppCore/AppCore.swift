@@ -4,20 +4,30 @@
 //
 //  Created by Brian Michel on 1/29/22.
 //
+import AppDelegate
 import ComposableArchitecture
 import Foundation
 import LaceKit
 import Models
 import DatabaseClient
+import PlaybackCore
 
-struct AppState: Equatable {
-    var channels: [Channel] = []
-    var mixtapes: [Mixtape] = []
-    var playback: PlaybackState = PlaybackState()
-    var appDelegateState: AppDelegateState
+public struct AppState: Equatable {
+    public var channels: [Channel] = []
+    public var mixtapes: [Mixtape] = []
+    public var playback: PlaybackState = .init()
+    public var appDelegateState: AppDelegateState
+
+    public init(channels: [Channel] = [], mixtapes: [Mixtape] = [], playback: PlaybackState = .init(), appDelegateState: AppDelegateState) {
+        self.channels = channels
+        self.mixtapes = mixtapes
+        self.playback = playback
+        self.appDelegateState = appDelegateState
+    }
+
 }
 
-enum AppAction: Equatable {
+public enum AppAction: Equatable {
     case loadInitialData
     case loadChannels
     case channelsResponse(Result<LiveBroadcastsResponse, RunnerError>)
@@ -28,15 +38,23 @@ enum AppAction: Equatable {
     case dbWrite(Result<DatabaseClient.Action, DatabaseClient.Error>)
 }
 
-struct AppEnvironment {
-    var mainQueue: AnySchedulerOf<DispatchQueue>
-    var uuid: () -> UUID
-    var api: NTSAPI
-    var appDelegate: AppDelegateEnvironment
-    var dbClient: DatabaseClient
+public struct AppEnvironment {
+    public var mainQueue: AnySchedulerOf<DispatchQueue>
+    public var uuid: () -> UUID
+    public var api: NTSAPI
+    public var appDelegate: AppDelegateEnvironment
+    public var dbClient: DatabaseClient
+
+    public init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI, appDelegate: AppDelegateEnvironment, dbClient: DatabaseClient) {
+        self.mainQueue = mainQueue
+        self.uuid = uuid
+        self.api = api
+        self.appDelegate = appDelegate
+        self.dbClient = dbClient
+    }
 }
 
-let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
+public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
     appDelegateReducer.pullback(
         state: \.appDelegateState,
         action: /AppAction.appDelegate,

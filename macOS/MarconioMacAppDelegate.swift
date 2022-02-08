@@ -11,6 +11,9 @@ import Sparkle
 import SwiftUI
 import ComposableArchitecture
 import LaceKit
+import AppCore
+import AppDelegate
+import AppDelegate_macOS
 
 /// Create an AppDelegate to terminate the application when the last window is closed.
 /// This is a hack around SwiftUI for the time being...
@@ -19,14 +22,14 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
         initialState: AppState(
             channels: [],
             mixtapes: [],
-            appDelegateState: .init()
+            appDelegateState: AppDelegateState()
         ),
         reducer: appReducer,
         environment: AppEnvironment(
             mainQueue: .main,
             uuid: UUID.init,
             api: LiveAPI(),
-            appDelegate: .init(),
+            appDelegate: AppDelegateEnvironment(),
             dbClient: .live
         )
     )

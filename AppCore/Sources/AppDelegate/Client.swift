@@ -9,6 +9,7 @@ import Foundation
 import ComposableArchitecture
 #if os(macOS)
 import Sparkle
+#else
 #endif
 import SwiftUI
 
@@ -19,19 +20,26 @@ public enum AppDelegateAction: Equatable {
 
 }
 
-struct AppDelegateState: Equatable {
-    var shouldAutoupdate = true
-    var shouldHandleUserActivity = true
+public struct AppDelegateState: Equatable {
+    public var shouldAutoupdate = true
+    public var shouldHandleUserActivity = true
+
+    public init(shouldAutoupdate: Bool = true, shouldHandleUserActivity: Bool = true) {
+        self.shouldAutoupdate = shouldAutoupdate
+        self.shouldHandleUserActivity = shouldHandleUserActivity
+    }
 }
 
-struct AppDelegateEnvironment: Equatable {
+public struct AppDelegateEnvironment: Equatable {
     #if os(macOS)
-    var updater = SPUStandardUpdaterController(updaterDelegate: nil,
-                                               userDriverDelegate: nil)
+    public var updater = SPUStandardUpdaterController(updaterDelegate: nil,
+                                                           userDriverDelegate: nil)
     #endif
+
+    public init() {}
 }
 
-let appDelegateReducer = Reducer<AppDelegateState, AppDelegateAction, AppDelegateEnvironment>  { state, action, environment in
+public let appDelegateReducer = Reducer<AppDelegateState, AppDelegateAction, AppDelegateEnvironment>  { state, action, environment in
     switch action {
     case .willFinishLaunching:
         #if os(macOS)
