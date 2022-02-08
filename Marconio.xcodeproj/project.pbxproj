@@ -166,13 +166,6 @@
 			path = About;
 			sourceTree = "<group>";
 		};
-		72C99E9227AF119800DACE4A /* App Delegate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "App Delegate";
-			sourceTree = "<group>";
-		};
 		72D5928627A5986200D3CE52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				72A6B3E627A5FECE002AF923 /* Now Playing */,
-				72C99E9227AF119800DACE4A /* App Delegate */,
 				727AD85827A6DC5F00F224CF /* Channels */,
 				72A6B3DF27A5F420002AF923 /* Donation */,
 				72D5928627A5986200D3CE52 /* Main */,

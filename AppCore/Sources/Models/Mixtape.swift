@@ -36,6 +36,11 @@ public struct MixtapesResponse: Codable, Equatable {
     public let results: [Mixtape]
     /// A set of API links.
     public let links: [Link]
+
+    public init(results: [Mixtape], links: [Link]) {
+        self.results = results
+        self.links = links
+    }
 }
 
 extension Mixtape: Identifiable {

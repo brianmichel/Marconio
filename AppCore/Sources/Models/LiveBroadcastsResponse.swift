@@ -101,6 +101,11 @@ public struct LiveBroadcastsResponse: Codable, Equatable {
     public let results: [Channel]
     /// A set of API links.
     public let links: [Link]
+
+    public init(results: [Channel], links: [Link]) {
+        self.results = results
+        self.links = links
+    }
 }
 
 extension Channel: Identifiable {
