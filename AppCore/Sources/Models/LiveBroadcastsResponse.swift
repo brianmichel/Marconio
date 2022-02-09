@@ -106,6 +106,16 @@ public struct LiveBroadcastsResponse: Codable, Equatable {
         self.results = results
         self.links = links
     }
+
+    // In Seconds
+    public var nextUpdateInterval: TimeInterval {
+        // Select the update time that's coming up the soonest and return that.
+        let items = results.flatMap({ [$0.now.endTimestamp, $0.next.endTimestamp] }).sorted()
+        let futureUpdate = items.first ?? Date()
+        let now = Date()
+        let timeUntilUpdate = futureUpdate.timeIntervalSince(now)
+        return timeUntilUpdate
+    }
 }
 
 extension Channel: Identifiable {

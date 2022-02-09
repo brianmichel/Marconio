@@ -54,6 +54,8 @@ public struct AppEnvironment {
     }
 }
 
+struct AutoUpdatingChannelsId {}
+
 public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
     appDelegateReducer.pullback(
         state: \.appDelegateState,
@@ -90,7 +92,9 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.channelsResponse)
         case let .channelsResponse(.success(channels)):
             return .concatenate(
-                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite)
+                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite),
+                Effect(value: .loadChannels)
+                    .deferred(for: .seconds(channels.nextUpdateInterval), scheduler: environment.mainQueue, options: nil)
             )
         case let .channelsResponse(.failure(error)):
             // Do something with the error here
