@@ -15,6 +15,7 @@ struct DetailView: View {
     @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
 
     var playable: MediaPlayable
+    @State private var shareSheetPresented = false
 
     init(playable: MediaPlayable, store: Store<PlaybackState, PlaybackAction>) {
         self.playable = playable
@@ -63,13 +64,30 @@ struct DetailView: View {
                 }
                 Spacer()
             }
-#if os(iOS)
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
-#endif
+            #endif
         }
-#if os(macOS)
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                #if os(macOS)
+                    SharingMenu(items: [playable.streamURL])
+                #else
+                    Button(action: { shareSheetPresented.toggle() }) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                #endif
+            }
+        }
+        #if os(iOS)
+        .sheet(isPresented: $shareSheetPresented, onDismiss: nil) {
+            ShareSheet(items: [playable.streamURL])
+        }
+        #endif
+
+        #if os(macOS)
         .frame(width: 350, height: 410)
-#endif
+        #endif
     }
 
     var isPlayingBackCurrentPlayable: Bool {

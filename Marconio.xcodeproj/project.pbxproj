@@ -43,6 +43,8 @@
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
+		72F521C227B37960001E8239 /* SharingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C127B37960001E8239 /* SharingMenu.swift */; };
+		72F521C527B381CD001E8239 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C427B381CD001E8239 /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mixtape+Icons.swift"; sourceTree = "<group>"; };
 		72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--macOS--Info.plist"; sourceTree = "<group>"; };
+		72F521C127B37960001E8239 /* SharingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingMenu.swift; sourceTree = "<group>"; };
+		72F521C427B381CD001E8239 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		7221DB0627A48A0100183057 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				72F521C327B381BC001E8239 /* Sharing */,
 				721A6E2127AF3613006FF195 /* iOS.entitlements */,
 				7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */,
 				72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */,
@@ -214,6 +219,7 @@
 		72E1793A27A2E48D009A20ED /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				72F521C027B3794B001E8239 /* Sharing */,
 				72C4D06827AE1E5600E85491 /* Settings */,
 				72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */,
 				72E1793B27A2E48D009A20ED /* macOS.entitlements */,
@@ -238,6 +244,22 @@
 				72B2A3E227ACDEB300B539CE /* Marquee.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		72F521C027B3794B001E8239 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				72F521C127B37960001E8239 /* SharingMenu.swift */,
+			);
+			path = Sharing;
+			sourceTree = "<group>";
+		};
+		72F521C327B381BC001E8239 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				72F521C427B381CD001E8239 /* ShareSheet.swift */,
+			);
+			path = Sharing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +379,7 @@
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
+				72F521C527B381CD001E8239 /* ShareSheet.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
@@ -377,6 +400,7 @@
 				727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */,
 				72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
+				72F521C227B37960001E8239 /* SharingMenu.swift in Sources */,
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
