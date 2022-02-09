@@ -69,7 +69,7 @@ struct DetailView: View {
             #endif
         }
         .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
+            ToolbarItem {
                 #if os(macOS)
                     SharingMenu(items: [playable.streamURL])
                 #else
