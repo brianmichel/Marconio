@@ -49,7 +49,7 @@ struct ChannelsView: View {
                         let playable = MediaPlayable(channel: channel)
                         NavigationLink(destination: destination(for: playable)
                         ) {
-                            Label("Channel \(channel.channelName)", systemImage: "radio")
+                            ChannelRow(channel: channel)
                         }
                         .contextMenu {
                             contextButton(for: playable)
