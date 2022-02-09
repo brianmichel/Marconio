@@ -36,6 +36,7 @@ public struct UserActivityClient {
         case subtitle
         case description
         case artwork
+        case url
         case streamURL
     }
 
@@ -67,6 +68,7 @@ public extension NSUserActivity {
             let title = userInfo?[UserActivityClient.Keys.title.rawValue] as? String,
             let description = userInfo?[UserActivityClient.Keys.description.rawValue] as? String,
             let artwork = userInfo?[UserActivityClient.Keys.artwork.rawValue] as? URL,
+            let url = userInfo?[UserActivityClient.Keys.url.rawValue] as? URL,
             let streamURL = userInfo?[UserActivityClient.Keys.streamURL.rawValue] as? URL else {
                 return nil
             }
@@ -78,6 +80,7 @@ public extension NSUserActivity {
                              subtitle: subtitle,
                              description: description,
                              artwork: artwork,
+                             url: url,
                              streamURL: streamURL)
 
     }

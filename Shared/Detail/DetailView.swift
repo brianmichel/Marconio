@@ -71,7 +71,7 @@ struct DetailView: View {
         .toolbar {
             ToolbarItem {
                 #if os(macOS)
-                    SharingMenu(items: [playable.streamURL])
+                    SharingMenu(items: [playable.url])
                 #else
                     Button(action: { shareSheetPresented.toggle() }) {
                         Image(systemName: "square.and.arrow.up")
@@ -81,7 +81,7 @@ struct DetailView: View {
         }
         #if os(iOS)
         .sheet(isPresented: $shareSheetPresented, onDismiss: nil) {
-            ShareSheet(items: [playable.streamURL])
+            ShareSheet(items: [playable.url])
         }
         #endif
 

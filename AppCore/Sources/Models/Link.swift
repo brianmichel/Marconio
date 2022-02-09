@@ -23,4 +23,27 @@ public struct Link: Codable, Equatable {
     let rel: String
     /// The content type of the resource in question.
     let type: String
+
+    var hrefWithAPIRemoved: URL? {
+        guard var components = URLComponents(string: href) else {
+            return nil
+        }
+
+        let path = components.path
+        let pathComponents = path.components(separatedBy: "/").filter({ !$0.isEmpty })
+
+        guard pathComponents.count > 2 else {
+            return nil
+        }
+
+        let droppable = Set(["api", "v2"])
+
+        let newPath = pathComponents.drop { pathComponent in
+            return droppable.contains(pathComponent)
+        }.joined(separator: "/")
+
+        components.path = "/\(newPath)"
+
+        return components.url
+    }
 }
