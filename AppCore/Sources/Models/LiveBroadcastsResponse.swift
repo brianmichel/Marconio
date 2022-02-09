@@ -119,3 +119,13 @@ extension Broadcast {
         return embeds["details"]
     }
 }
+
+extension Broadcast.Embed {
+    var url: URL? {
+        var path = "https://nts.live/shows/\(showAlias)/"
+        if let episode = episodeAlias {
+            path.append(contentsOf: "episodes/\(episode)/")
+        }
+        return URL(string: path)
+    }
+}

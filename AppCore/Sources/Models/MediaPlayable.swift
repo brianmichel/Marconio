@@ -30,14 +30,16 @@ public struct MediaPlayable: Identifiable, Equatable {
     public var subtitle: String?
     public var description: String
     public var artwork: URL
+    public var url: URL
     public var streamURL: URL
 
-    public init(id: String, title: String, subtitle: String? = nil, description: String, artwork: URL, streamURL: URL) {
+    public init(id: String, title: String, subtitle: String? = nil, description: String, artwork: URL, url: URL, streamURL: URL) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
         self.description = description
         self.artwork = artwork
+        self.url = url
         self.streamURL = streamURL
     }
 }
@@ -49,6 +51,7 @@ public extension MediaPlayable {
         subtitle = mixtape.subtitle
         description = mixtape.description
         artwork = mixtape.media.pictureLarge
+        url = mixtape.url ?? URL(string: "https://nts.live")!
         streamURL = mixtape.audioStreamEndpoint
     }
 
@@ -78,6 +81,7 @@ public extension MediaPlayable {
             print("Unknown stream channel has been provided, returning a stream URL that will not stream")
         }
 
+        url = channel.now.details?.url ?? URL(string: "https://nts.live")!
         streamURL = components.url!
     }
 }

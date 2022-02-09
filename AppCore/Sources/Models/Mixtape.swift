@@ -50,6 +50,12 @@ extension Mixtape: Identifiable {
 }
 
 extension Mixtape {
+    var url: URL? {
+        return URL(string: "https://nts.live/infinite-mixtapes/\(mixtapeAlias)")
+    }
+}
+
+extension Mixtape {
     /// A sample Mixtape to be used in mocks and previews.
    public static var placeholder: Self {
         return Mixtape(mixtapeAlias: "place-holder",
@@ -61,5 +67,15 @@ extension Mixtape {
                        media: .placeholder,
                        nowPlayingTopic: "now-playing",
                        links: [])
+    }
+}
+
+extension Array where Element == Link {
+    var selfLink: Link? {
+        return first(where: { $0.rel == "self" })
+    }
+
+    var detailsLink: Link? {
+        return first(where: { $0.rel == "details" })
     }
 }
