@@ -97,11 +97,6 @@ struct ChannelsView: View {
         return viewStore.playback.playerState != .stopped
     }
 
-    private func footerView() -> some View {
-        let height: Double = isPlayingBack ? 60 : 0
-        return Text("").frame(height: height)
-    }
-
     private func nowPlayingView() -> some View {
         return NowPlayingView(
             store: store.scope(
