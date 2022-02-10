@@ -35,7 +35,7 @@ public enum AppAction: Equatable {
     case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
     case playback(PlaybackAction)
     case appDelegate(AppDelegateAction)
-    case dbWrite(Result<DatabaseClient.Action, DatabaseClient.Error>)
+    case db(Result<DatabaseClient.Action, DatabaseClient.Error>)
 }
 
 public struct AppEnvironment {
@@ -75,7 +75,7 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                     .dbClient
                     .startRealtimeUpdates()
                     .receive(on: environment.mainQueue)
-                    .catchToEffect(AppAction.dbWrite),
+                    .catchToEffect(AppAction.db),
 
                 .merge(
                     try! environment.api.live()
@@ -92,7 +92,7 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.channelsResponse)
         case let .channelsResponse(.success(channels)):
             return .concatenate(
-                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.dbWrite),
+                environment.dbClient.writeChannels(channels.results).catchToEffect(AppAction.db),
                 Effect(value: .loadChannels)
                     .deferred(for: .seconds(channels.nextUpdateInterval), scheduler: environment.mainQueue, options: nil)
             )
@@ -106,7 +106,7 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                 .catchToEffect(AppAction.mixtapesResponse)
         case let .mixtapesResponse(.success(mixtapes)):
             return .concatenate(
-                environment.dbClient.writeMixtapes(mixtapes.results).catchToEffect(AppAction.dbWrite)
+                environment.dbClient.writeMixtapes(mixtapes.results).catchToEffect(AppAction.db)
             )
         case let .mixtapesResponse(.failure(error)):
             // Do something with the error here
@@ -121,15 +121,15 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
             return .none
         case .appDelegate:
             return .none
-        case let .dbWrite(.failure(error)):
+        case let .db(.failure(error)):
             return .none
-        case let .dbWrite(.success(.realTimeUpdate(channels, mixtapes))):
+        case let .db(.success(.realTimeUpdate(channels, mixtapes))):
             state.channels = channels
             state.mixtapes = mixtapes
             return .none
-        case .dbWrite(.success(.didFetchAllMixtapes(_))):
+        case .db(.success(.didFetchAllMixtapes(_))):
             return .none
-        case .dbWrite(.success(.didFetchAllChannels(_))):
+        case .db(.success(.didFetchAllChannels(_))):
             return .none
         }
     }

@@ -31,11 +31,11 @@ public extension DatabaseClient {
             > {
                 let allMixtapes = ValueObservation.tracking { db in
                     try Mixtape.allMixtapes(db: db)
-                }.publisher(in: writer, scheduling: .immediate)
+                }.publisher(in: writer, scheduling: .immediate).print("[MVO]")
                     .eraseToAnyPublisher()
                 let allChannels = ValueObservation.tracking { db in
                     try Channel.allChannels(db: db)
-                }.publisher(in: writer, scheduling: .immediate)
+                }.publisher(in: writer, scheduling: .immediate).print("[CVO]")
                     .eraseToAnyPublisher()
 
                 let publishers = Publishers.Zip(allChannels, allMixtapes)
@@ -137,8 +137,9 @@ public extension DatabaseClient {
                 },
                 startRealtimeUpdates: {
                     .run { subscriber in
-                        return realTimePublishers().sink(receiveCompletion: { completion in
+                        realTimePublishers().print("[PVO]").sink(receiveCompletion: { completion in
                             // Do Nothing
+                            print("Got completion, dying now...")
                         }) { (channels, mixtapes) in
                             subscriber.send(.realTimeUpdate(channels, mixtapes))
                         }
