@@ -12,18 +12,15 @@ struct ChannelRow: View {
     let channel: Channel
     
     var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Image(systemName: "radio")
-            #if os(iOS)
-                .font(.system(size: 23))
-            #endif
-                .foregroundColor(.accentColor)
+        Label {
             VStack(alignment: .leading) {
                 Text("Channel \(channel.channelName)")
                 Text("\(channel.now.broadcastTitle)")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
+        } icon: {
+            Image(systemName: "radio")
         }
     }
 }
