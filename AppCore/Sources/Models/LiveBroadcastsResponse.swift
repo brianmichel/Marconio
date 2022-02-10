@@ -126,7 +126,7 @@ public struct LiveBroadcastsResponse: Codable, Equatable {
         let futureUpdate = items.first ?? Date()
         let now = Date()
         let timeUntilUpdate = futureUpdate.timeIntervalSince(now)
-        return 5
+        return timeUntilUpdate
     }
 }
 

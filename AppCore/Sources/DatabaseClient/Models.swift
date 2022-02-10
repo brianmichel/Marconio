@@ -22,5 +22,4 @@ extension Channel: PersistableRecord, FetchableRecord {
             .order(Column("channelName").asc)
             .fetchAll(db)
     }
-
 }

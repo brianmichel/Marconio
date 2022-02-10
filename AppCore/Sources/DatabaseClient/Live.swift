@@ -43,6 +43,8 @@ public extension DatabaseClient {
                 return publishers
             }
 
+            var storage = Set<AnyCancellable>()
+
             return Self(
                 dbWriter: writer,
                 writeChannel: { channel in
@@ -137,11 +139,22 @@ public extension DatabaseClient {
                 },
                 startRealtimeUpdates: {
                     .run { subscriber in
-                        realTimePublishers().print("[PVO]").sink(receiveCompletion: { completion in
-                            // Do Nothing
-                            print("Got completion, dying now...")
-                        }) { (channels, mixtapes) in
+                        let channelsPublisher = ValueObservation.tracking { db in
+                            try Channel.allChannels(db: db)
+                        }.publisher(in: writer, scheduling: .immediate)
+
+                        let mixtapesPublisher = ValueObservation.tracking { db in
+                            try Mixtape.allMixtapes(db: db)
+                        }.publisher(in: writer, scheduling: .immediate)
+
+                        Publishers.CombineLatest(channelsPublisher, mixtapesPublisher).sink { failure in
+                            print("Got failure: \(failure)")
+                        } receiveValue: { (channels, mixtapes) in
                             subscriber.send(.realTimeUpdate(channels, mixtapes))
+                        }.store(in: &storage)
+
+                        return AnyCancellable {
+                            storage = Set<AnyCancellable>()
                         }
                     }.cancellable(id: RealTimeUpdatesId())
                 },

@@ -77,7 +77,7 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                     .receive(on: environment.mainQueue)
                     .catchToEffect(AppAction.db),
 
-                .merge(
+                .concatenate(
                     try! environment.api.live()
                         .receive(on: environment.mainQueue)
                         .catchToEffect(AppAction.channelsResponse),
