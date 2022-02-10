@@ -45,6 +45,8 @@
 		72E1795727A3AC50009A20ED /* Mixtape+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */; };
 		72F521C227B37960001E8239 /* SharingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C127B37960001E8239 /* SharingMenu.swift */; };
 		72F521C527B381CD001E8239 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C427B381CD001E8239 /* ShareSheet.swift */; };
+		72F521C727B47BB7001E8239 /* ChannelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C627B47BB7001E8239 /* ChannelRow.swift */; };
+		72F521C827B47BB7001E8239 /* ChannelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C627B47BB7001E8239 /* ChannelRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,7 @@
 		72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--macOS--Info.plist"; sourceTree = "<group>"; };
 		72F521C127B37960001E8239 /* SharingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingMenu.swift; sourceTree = "<group>"; };
 		72F521C427B381CD001E8239 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		72F521C627B47BB7001E8239 /* ChannelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				727AD85C27A6DC8700F224CF /* ChannelsView.swift */,
+				72F521C627B47BB7001E8239 /* ChannelRow.swift */,
 			);
 			path = Channels;
 			sourceTree = "<group>";
@@ -374,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F521C727B47BB7001E8239 /* ChannelRow.swift in Sources */,
 				72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
@@ -408,6 +413,7 @@
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,
 				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
+				72F521C827B47BB7001E8239 /* ChannelRow.swift in Sources */,
 				72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */,
 				727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */,

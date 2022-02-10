@@ -73,6 +73,18 @@ public struct Broadcast: Codable, Equatable {
     public let links: [Link]
     /// A set of embedded information related to the broadcast.
     public let embeds: [String: Embed]
+
+    public init(broadcastTitle: String,
+                startTimestamp: Date,
+                endTimestamp: Date,
+                links: [Link],
+                embeds: [String : Broadcast.Embed]) {
+        self.broadcastTitle = broadcastTitle
+        self.startTimestamp = startTimestamp
+        self.endTimestamp = endTimestamp
+        self.links = links
+        self.embeds = embeds
+    }
 }
 
 /**
@@ -106,6 +118,16 @@ public struct LiveBroadcastsResponse: Codable, Equatable {
         self.results = results
         self.links = links
     }
+
+    // In Seconds
+    public var nextUpdateInterval: TimeInterval {
+        // Select the update time that's coming up the soonest and return that.
+        let items = results.flatMap({ [$0.now.endTimestamp, $0.next.endTimestamp] }).sorted()
+        let futureUpdate = items.first ?? Date()
+        let now = Date()
+        let timeUntilUpdate = futureUpdate.timeIntervalSince(now)
+        return timeUntilUpdate
+    }
 }
 
 extension Channel: Identifiable {
@@ -127,5 +149,13 @@ extension Broadcast.Embed {
             path.append(contentsOf: "episodes/\(episode)/")
         }
         return URL(string: path)
+    }
+}
+
+public extension Channel {
+    static var mock: Channel {
+        let now = Broadcast(broadcastTitle: "Testing 1", startTimestamp: Date(), endTimestamp: Date(timeInterval: 500, since: Date()), links: [], embeds: [:])
+        let next = Broadcast(broadcastTitle: "Testing 2", startTimestamp: Date(), endTimestamp: Date(timeInterval: 500, since: Date()), links: [], embeds: [:])
+        return Channel(channelName: "Channel Test", now: now, next: next)
     }
 }
