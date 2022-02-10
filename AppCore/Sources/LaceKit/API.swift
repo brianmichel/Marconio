@@ -72,7 +72,7 @@ public final class LiveAPI: NTSAPI {
         }
 
         var request = URLRequest(url: url)
-        request.cachePolicy = .useProtocolCachePolicy
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
 
         return request
     }
