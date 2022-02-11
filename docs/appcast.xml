@@ -6,6 +6,24 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
+      <title>Version 1, Build 2202.02.11012748</title>
+      <pubDate>Thu, 10 Feb 2022 20:28:29 -0500</pubDate>
+      <sparkle:version>2022.02.11012748</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <description>
+        <![CDATA[
+            <ul>
+              <li><b>[Fixed]</b> Keyboard play/pause button works correctly again (sorry!).</li>
+              <li><b>[Fixed]</b> Auto update logic should be more stable and less chatty than previously.</li>
+              <li><b>[Added]</b> The app will now persist the channels and mixtapes that get downloaded (not a huge deal now, but sets the stage to add widgets).</li>
+              <li><b>[Added]</b> You can now share the URL of whatever is loaded into the detail view.</li>
+            </ul>
+          ]]>
+      </description>
+      <sparkle:minimumSystemVersion>12.1</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/brianmichel/Marconio/releases/download/builds/mac/beta-2022.02.11012748/Marconio-Beta-2022.02.11012748.dmg" length="25855932" type="application/octet-stream" sparkle:edSignature="1i6O+thuN0cQOG5qzNCcuWYudkbPJdyE8CkoMEcAkd13bu/iSXBKM9IIKEsQaMJmq1NkXhpS6/sL9IbNKbQzDg==" />
+    </item>
+    <item>
       <title>Version 1, Build 2022.02.06183355</title>
       <pubDate>Sun, 06 Feb 2022 13:34:16 -0500</pubDate>
       <sparkle:version>2022.02.06183355</sparkle:version>
