@@ -25,25 +25,6 @@ public extension DatabaseClient {
             let writer = try DatabasePool(path: dbURL.path)
 
             struct RealTimeUpdatesId: Hashable {}
-            func realTimePublishers() -> Publishers.Zip<
-                AnyPublisher<[Channel], DatabasePublishers.Value<[Channel]>.Failure>,
-                AnyPublisher<[Mixtape], DatabasePublishers.Value<[Mixtape]>.Failure>
-            > {
-                let allMixtapes = ValueObservation.tracking { db in
-                    try Mixtape.allMixtapes(db: db)
-                }.publisher(in: writer, scheduling: .immediate)
-                    .eraseToAnyPublisher()
-                let allChannels = ValueObservation.tracking { db in
-                    try Channel.allChannels(db: db)
-                }.publisher(in: writer, scheduling: .immediate)
-                    .eraseToAnyPublisher()
-
-                let publishers = Publishers.Zip(allChannels, allMixtapes)
-
-                return publishers
-            }
-
-            var storage = Set<AnyCancellable>()
 
             return Self(
                 dbWriter: writer,
@@ -139,22 +120,20 @@ public extension DatabaseClient {
                 },
                 startRealtimeUpdates: {
                     .run { subscriber in
-                        let channelsPublisher = ValueObservation.tracking { db in
-                            try Channel.allChannels(db: db)
-                        }.publisher(in: writer, scheduling: .immediate)
+                        let channelsPublisher = ValueObservation.tracking(Channel.allChannels)
+                            .publisher(in: writer, scheduling: .immediate)
 
-                        let mixtapesPublisher = ValueObservation.tracking { db in
-                            try Mixtape.allMixtapes(db: db)
-                        }.publisher(in: writer, scheduling: .immediate)
+                        let mixtapesPublisher = ValueObservation.tracking(Mixtape.allMixtapes)
+                            .publisher(in: writer, scheduling: .immediate)
 
-                        Publishers.CombineLatest(channelsPublisher, mixtapesPublisher).sink { failure in
+                        let latest = Publishers.CombineLatest(channelsPublisher, mixtapesPublisher).sink { failure in
                             print("RealTimeUpdate failure: \(failure)")
                         } receiveValue: { (channels, mixtapes) in
                             subscriber.send(.realTimeUpdate(channels, mixtapes))
-                        }.store(in: &storage)
+                        }
 
                         return AnyCancellable {
-                            storage = Set<AnyCancellable>()
+                            _ = (channelsPublisher, mixtapesPublisher, latest)
                         }
                     }.cancellable(id: RealTimeUpdatesId())
                 },
