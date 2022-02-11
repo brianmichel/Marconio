@@ -71,7 +71,8 @@ struct DetailView: View {
         .toolbar {
             ToolbarItem {
                 #if os(macOS)
-                    SharingMenu(items: [playable.url])
+                // Share a string here since macOS is finicky about the specific types of copied items.
+                SharingMenu(items: [playable.url.absoluteString])
                 #else
                     Button(action: { shareSheetPresented.toggle() }) {
                         Image(systemName: "square.and.arrow.up")
