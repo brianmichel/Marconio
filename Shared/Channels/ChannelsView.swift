@@ -88,6 +88,7 @@ struct ChannelsView: View {
     }
 
     private func toggleSidebar() {
+        viewStore.send(.groupActivity(.startAdvertising))
 #if os(macOS)
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 #endif
@@ -139,7 +140,8 @@ struct ChannelsView_Previews: PreviewProvider {
                     channels: [],
                     mixtapes: [],
                     playback: PlaybackState(currentlyPlaying: nil, playerState: .playing),
-                    appDelegateState: .init()
+                    appDelegateState: .init(),
+                    groupActivityState: .init()
                 ),
                 reducer: appReducer,
                 environment: AppEnvironment(
@@ -147,6 +149,7 @@ struct ChannelsView_Previews: PreviewProvider {
                     uuid: UUID.init,
                     api: LiveAPI(),
                     appDelegate: .init(),
+                    groupActivity: .init(client: .live),
                     dbClient: .live
                 )
             )

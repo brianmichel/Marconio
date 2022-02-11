@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "AppCore",
     platforms: [
-        .macOS(.v10_15),
+        .macOS(.v12),
         .iOS(.v15)
     ],
     products: [
@@ -19,7 +19,8 @@ let package = Package(
         .library(name: "AppDelegate", targets: ["AppDelegate"]),
         .library(name: "AppDelegate_iOS", targets: ["AppDelegate_iOS"]),
         .library(name: "AppDelegate_macOS", targets: ["AppDelegate_macOS"]),
-        .library(name: "AppTileClient", targets: ["AppTileClient"])
+        .library(name: "AppTileClient", targets: ["AppTileClient"]),
+        .library(name: "GroupActivityClient", targets: ["GroupActivityClient"])
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
@@ -63,6 +64,7 @@ let package = Package(
             "DatabaseClient",
             "PlaybackCore",
             "AppDelegate",
+            "GroupActivityClient",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
         ]),
         .target(name: "AppDelegate_iOS", dependencies: [
@@ -73,6 +75,9 @@ let package = Package(
             .product(name: "Sparkle", package: "Sparkle")
         ]),
         .target(name: "AppDelegate", dependencies: [
+            .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+        ]),
+        .target(name: "GroupActivityClient", dependencies: [
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         ])
     ]

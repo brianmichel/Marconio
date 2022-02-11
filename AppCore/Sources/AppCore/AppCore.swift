@@ -11,18 +11,21 @@ import LaceKit
 import Models
 import DatabaseClient
 import PlaybackCore
+import GroupActivityClient
 
 public struct AppState: Equatable {
     public var channels: [Channel] = []
     public var mixtapes: [Mixtape] = []
     public var playback: PlaybackState = .init()
-    public var appDelegateState: AppDelegateState
+    public var appDelegateState: AppDelegateState = AppDelegateState()
+    public var groupActivityState: GroupActivityState = GroupActivityState()
 
-    public init(channels: [Channel] = [], mixtapes: [Mixtape] = [], playback: PlaybackState = .init(), appDelegateState: AppDelegateState) {
+    public init(channels: [Channel] = [], mixtapes: [Mixtape] = [], playback: PlaybackState = .init(), appDelegateState: AppDelegateState, groupActivityState: GroupActivityState) {
         self.channels = channels
         self.mixtapes = mixtapes
         self.playback = playback
         self.appDelegateState = appDelegateState
+        self.groupActivityState = groupActivityState
     }
 
 }
@@ -35,6 +38,7 @@ public enum AppAction: Equatable {
     case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
     case playback(PlaybackAction)
     case appDelegate(AppDelegateAction)
+    case groupActivity(GroupActivityAction)
     case db(Result<DatabaseClient.Action, DatabaseClient.Error>)
 }
 
@@ -43,13 +47,15 @@ public struct AppEnvironment {
     public var uuid: () -> UUID
     public var api: NTSAPI
     public var appDelegate: AppDelegateEnvironment
+    public var groupActivity: GroupActivityEnvironment
     public var dbClient: DatabaseClient
 
-    public init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI, appDelegate: AppDelegateEnvironment, dbClient: DatabaseClient) {
+    public init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI, appDelegate: AppDelegateEnvironment, groupActivity: GroupActivityEnvironment, dbClient: DatabaseClient) {
         self.mainQueue = mainQueue
         self.uuid = uuid
         self.api = api
         self.appDelegate = appDelegate
+        self.groupActivity = groupActivity
         self.dbClient = dbClient
     }
 }
@@ -57,6 +63,11 @@ public struct AppEnvironment {
 struct AutoUpdatingChannelsId {}
 
 public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
+    groupActivityReducer.pullback(
+        state: \.groupActivityState,
+        action: /AppAction.groupActivity,
+        environment: \.groupActivity
+    ),
     appDelegateReducer.pullback(
         state: \.appDelegateState,
         action: /AppAction.appDelegate,
@@ -76,7 +87,6 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
                     .startRealtimeUpdates()
                     .receive(on: environment.mainQueue)
                     .catchToEffect(AppAction.db),
-
                 .concatenate(
                     try! environment.api.live()
                         .receive(on: environment.mainQueue)
@@ -130,6 +140,8 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         case .db(.success(.didFetchAllMixtapes(_))):
             return .none
         case .db(.success(.didFetchAllChannels(_))):
+            return .none
+        case .groupActivity(_):
             return .none
         }
     }

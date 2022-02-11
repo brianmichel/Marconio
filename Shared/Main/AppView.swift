@@ -43,6 +43,7 @@ struct AppView: View {
                 .padding()
         }.onAppear {
             viewStore.send(.loadInitialData)
+            viewStore.send(.groupActivity(.startSharedListening))
         }
     }
 }
@@ -55,7 +56,8 @@ struct AppView_Previews: PreviewProvider {
                     channels: [],
                     mixtapes: [],
                     playback: PlaybackState(currentlyPlaying: nil, playerState: .playing),
-                    appDelegateState: .init()
+                    appDelegateState: .init(),
+                    groupActivityState: .init()
                 ),
                 reducer: appReducer,
                 environment: AppEnvironment(
@@ -63,6 +65,7 @@ struct AppView_Previews: PreviewProvider {
                     uuid: UUID.init,
                     api: LiveAPI(),
                     appDelegate: .init(),
+                    groupActivity: .init(client: .live),
                     dbClient: .live
                 )
             )
