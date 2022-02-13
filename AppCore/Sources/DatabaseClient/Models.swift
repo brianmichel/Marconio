@@ -12,7 +12,7 @@ import GRDB
 extension Mixtape: PersistableRecord, FetchableRecord {
     static func allMixtapes(db: Database) throws -> [Mixtape] {
         return try Mixtape
-            .order(Column("mixtapeAlias").asc)
+            .order(Column("title").asc)
             .fetchAll(db)
     }
 }
