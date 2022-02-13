@@ -27,7 +27,11 @@ struct MarconioApp: App {
                     appDelegate.viewStore.send(.appDelegate(.continueActivity(activity)))
                 }
         }.commands {
-            MarconioCommands()
+            MarconioCommands(
+                reloadChannels: {
+                    appDelegate.viewStore.send(.loadChannels)
+                }
+            )
         }
         // This is required to end up triggering the macOS app delegate, as onContinueUserActivity does
         // not seem to handle macOS for some reason. Not having this will result in new `AppView`'s being

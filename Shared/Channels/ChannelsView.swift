@@ -69,6 +69,9 @@ struct ChannelsView: View {
                     }
                 }
             }
+            .refreshable {
+                viewStore.send(.loadChannels)
+            }
             .frame(maxHeight: .infinity)
             .listStyle(.sidebar)
             .navigationTitle("Channels")
