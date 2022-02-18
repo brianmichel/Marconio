@@ -17,6 +17,7 @@ public struct AppState: Equatable {
     public var mixtapes: [Mixtape] = []
     public var playback: PlaybackState = .init()
     public var appDelegateState: AppDelegateState
+    public var selectedPlayable: MediaPlayable?
 
     public init(channels: [Channel] = [], mixtapes: [Mixtape] = [], playback: PlaybackState = .init(), appDelegateState: AppDelegateState) {
         self.channels = channels
@@ -33,6 +34,7 @@ public enum AppAction: Equatable {
     case channelsResponse(Result<LiveBroadcastsResponse, RunnerError>)
     case loadMixtapes
     case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
+    case selectPlayable(MediaPlayable?)
     case playback(PlaybackAction)
     case appDelegate(AppDelegateAction)
     case db(Result<DatabaseClient.Action, DatabaseClient.Error>)
@@ -130,6 +132,9 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         case .db(.success(.didFetchAllMixtapes(_))):
             return .none
         case .db(.success(.didFetchAllChannels(_))):
+            return .none
+        case let .selectPlayable(playable):
+            state.selectedPlayable = playable
             return .none
         }
     }

@@ -37,14 +37,18 @@ struct AppView: View {
     }
 
     var body: some View {
-        NavigationView {
-            ChannelsView(store: store)
-            DonationView()
-                .padding()
+        FloatingPlayerOverlayView(store: store) {
+            NavigationView {
+                ChannelsView(store: store)
+                DonationView()
+                    .padding()
+            }
         }.onAppear {
             viewStore.send(.loadInitialData)
         }
     }
+
+
 }
 
 struct AppView_Previews: PreviewProvider {

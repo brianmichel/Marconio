@@ -29,8 +29,19 @@ struct DonationView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+        }.background(
+            GeometryReader { proxy in
+                background(for: proxy)
+            }
+        )
+#if os(macOS)
+        .frame(width: 350, height: 410)
+#endif
+    }
 
-        }
+    private func background(for proxy: GeometryProxy) -> some View {
+        return Color.clear
+            .preference(key: DetailWidthPreferenceKey.self, value: proxy.size.width)
     }
 
     private func openDonationLink() {

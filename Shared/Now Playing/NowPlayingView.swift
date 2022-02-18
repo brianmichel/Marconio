@@ -28,7 +28,6 @@ struct NowPlayingView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Divider()
             Spacer()
             HStack {
                 Button {
@@ -44,7 +43,7 @@ struct NowPlayingView: View {
                     let text = viewStore.currentlyPlaying?.title ?? "Nothing Playing"
                     MarqueeText(
                         text: text,
-                        font: MFont.boldSystemFont(ofSize: 15),
+                        font: MFont.boldSystemFont(ofSize: 16),
                         leftFade: 10,
                         rightFade: 10,
                         startDelay: 10,
@@ -53,7 +52,7 @@ struct NowPlayingView: View {
                     if let subtitle = viewStore.currentlyPlaying?.subtitle {
                         MarqueeText(
                             text: subtitle,
-                            font: MFont.systemFont(ofSize: 12, weight: .light),
+                            font: MFont.systemFont(ofSize: 13, weight: .light),
                             leftFade: 10,
                             rightFade: 10,
                             startDelay: 10,
@@ -65,11 +64,10 @@ struct NowPlayingView: View {
                 if let picker = viewStore.routePickerView {
                     picker.frame(width: C.routeViewWidth)
                 }
-            }.padding(.horizontal)
+            }
             Spacer()
         }
         .frame(height: C.nowPlayingNaturalHeight)
-        .background(.thickMaterial)
     }
 
     var playOrPauseIconImage: String {
