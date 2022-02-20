@@ -37,14 +37,29 @@ struct AppView: View {
     }
 
     var body: some View {
-        NavigationView {
-            ChannelsView(store: store)
-            DonationView()
-                .padding()
-        }.onAppear {
+        FloatingPlayerOverlayView(store: store) {
+            NavigationView {
+                ChannelsView(store: store).background(
+                    // Read the width of the channels view that can be used to inset the
+                    // floating mini player by knowning how wide the sidebar is.
+                    GeometryReader { proxy in
+                        Color.clear
+                            .preference(key: SidebarWidthPreferenceKey.self, value: proxy.size.width)
+                    }
+                )
+                DonationView()
+                    .padding()
+            }.toolbar {
+                // HACK: Without this the toolbar will switch between two different types which is very ugly.
+                Spacer()
+            }
+        }
+        .onAppear {
             viewStore.send(.loadInitialData)
         }
     }
+
+
 }
 
 struct AppView_Previews: PreviewProvider {

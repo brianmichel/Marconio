@@ -33,7 +33,7 @@ struct SharingMenu: View {
                 }
             }
         } label: {
-            Image(systemName: "square.and.arrow.up")
+            Label("Share", systemImage: "square.and.arrow.up")
         }
         .menuIndicator(.hidden)
         .onAppear {

@@ -32,8 +32,9 @@ public struct MediaPlayable: Identifiable, Equatable {
     public var artwork: URL
     public var url: URL
     public var streamURL: URL
+    public var source: Either<Channel, Mixtape>?
 
-    public init(id: String, title: String, subtitle: String? = nil, description: String, artwork: URL, url: URL, streamURL: URL) {
+    public init(id: String, title: String, subtitle: String? = nil, description: String, artwork: URL, url: URL, streamURL: URL, source: Either<Channel, Mixtape>?) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
@@ -41,6 +42,7 @@ public struct MediaPlayable: Identifiable, Equatable {
         self.artwork = artwork
         self.url = url
         self.streamURL = streamURL
+        self.source = source
     }
 }
 
@@ -53,6 +55,7 @@ public extension MediaPlayable {
         artwork = mixtape.media.pictureLarge
         url = mixtape.url ?? URL(string: "https://nts.live")!
         streamURL = mixtape.audioStreamEndpoint
+        source = .right(mixtape)
     }
 
     init(channel: Channel) {
@@ -83,5 +86,7 @@ public extension MediaPlayable {
 
         url = channel.now.details?.url ?? URL(string: "https://nts.live")!
         streamURL = components.url!
+
+        source = .left(channel)
     }
 }

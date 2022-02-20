@@ -81,7 +81,8 @@ public extension NSUserActivity {
                              description: description,
                              artwork: artwork,
                              url: url,
-                             streamURL: streamURL)
+                             streamURL: streamURL,
+                             source: nil)
 
     }
 }

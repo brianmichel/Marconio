@@ -46,6 +46,12 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         viewStore.send(.appDelegate(.didFinishLaunching))
+
+        // HACK: Disable resizing of the split since that's our desired design.
+        NSApp.windows.first?.contentView?.disableSplitViewCollapsingIfPossible()
+
+        // HACK: Disable the zoom button so you can't expand the app to fill the screen.
+        NSApp.windows.first?.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isEnabled = false
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

@@ -29,8 +29,10 @@ struct DonationView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
-
         }
+#if os(macOS)
+        .frame(width: 350, height: 410)
+#endif
     }
 
     private func openDonationLink() {

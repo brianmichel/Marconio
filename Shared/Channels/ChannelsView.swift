@@ -35,84 +35,57 @@ struct ChannelsView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            List {
+        List {
 #if os(iOS)
-                // We have to remove the inset set by the List's stlye
-                // otherwise we will have more padding on the left than the right.
-                DonationView()
-                    .listRowInsets(EdgeInsets())
-                    .padding()
+            // We have to remove the inset set by the List's stlye
+            // otherwise we will have more padding on the left than the right.
+            DonationView()
+                .listRowInsets(EdgeInsets())
+                .padding()
 #endif
-                Section("Live") {
-                    ForEach(viewStore.channels) { channel in
-                        let playable = MediaPlayable(channel: channel)
-                        NavigationLink(destination: destination(for: playable)
-                        ) {
-                            ChannelRow(channel: channel)
-                        }
-                        .contextMenu {
-                            contextButton(for: playable)
-                        }
+            Section("Live") {
+                ForEach(viewStore.channels) { channel in
+                    let playable = MediaPlayable(channel: channel)
+                    NavigationLink(destination: destination(for: playable)
+                    ) {
+                        ChannelRow(channel: channel)
+                    }
+                    .contextMenu {
+                        contextButton(for: playable)
                     }
                 }
+            }
 
-                Section("Infinite Mixtapes") {
-                    ForEach(viewStore.mixtapes) { mixtape in
-                        let playable = MediaPlayable(mixtape: mixtape)
-                        NavigationLink(destination: destination(for: playable)) {
-                            Label("\(mixtape.title)", systemImage: mixtape.systemIcon)
-                        }
-                        .contextMenu {
-                            contextButton(for: playable)
-                        }
+            Section("Infinite Mixtapes") {
+                ForEach(viewStore.mixtapes) { mixtape in
+                    let playable = MediaPlayable(mixtape: mixtape)
+                    NavigationLink(destination: destination(for: playable)) {
+                        Label("\(mixtape.title)", systemImage: mixtape.systemIcon)
+                    }
+                    .contextMenu {
+                        contextButton(for: playable)
                     }
                 }
-            }
-            .refreshable {
-                viewStore.send(.loadChannels)
-            }
-            .frame(maxHeight: .infinity)
-            .listStyle(.sidebar)
-            .navigationTitle("Channels")
-#if os(macOS)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: toggleSidebar, label: {
-                        Label("Sidebar", systemImage: "sidebar.leading")
-                    })
-                }
-            }
-#endif
-            if isPlayingBack {
-                nowPlayingView()
             }
         }
-    }
-
-    private func toggleSidebar() {
-#if os(macOS)
-        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-#endif
+        .refreshable {
+            viewStore.send(.loadChannels)
+        }
+        .frame(maxHeight: .infinity)
+        .listStyle(.sidebar)
+        .navigationTitle("Channels")
     }
 
     var isPlayingBack: Bool {
         return viewStore.playback.playerState != .stopped
     }
 
-    private func nowPlayingView() -> some View {
-        return NowPlayingView(
-            store: store.scope(
-                state: \.playback,
-                action: AppAction.playback
-            )
-        )
-    }
-
     private func destination(for playable: MediaPlayable) -> some View {
+        let scopedStore = store.scope(state: \.playback, action: AppAction.playback)
+
         return ScrollView {
             VStack {
-                DetailView(playable: playable, store: store.scope(state: \.playback, action: AppAction.playback))
+                DetailView(playable: playable, store: scopedStore)
                     .padding()
                 Spacer()
             }

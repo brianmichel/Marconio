@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72276FC927B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
+		72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		7252EE6527B1682500B8FB83 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7252EE6427B1682500B8FB83 /* AppCore */; };
 		7252EE6727B1682F00B8FB83 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7252EE6627B1682F00B8FB83 /* AppCore */; };
 		725443A827B2A4E900939567 /* AppDelegate_macOS in Frameworks */ = {isa = PBXBuildFile; productRef = 725443A727B2A4E900939567 /* AppDelegate_macOS */; };
 		725443AA27B2A4EF00939567 /* AppDelegate_iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 725443A927B2A4EF00939567 /* AppDelegate_iOS */; };
+		7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */; };
+		7259A9B227BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */; };
+		7259A9B427C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */; };
+		7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */; };
+		7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */; };
 		725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
@@ -52,6 +59,10 @@
 /* Begin PBXFileReference section */
 		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
+		72276FC827B965E800AD4062 /* FloatingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerView.swift; sourceTree = "<group>"; };
+		7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerOverlayView.swift; sourceTree = "<group>"; };
+		7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingDetailView.swift; sourceTree = "<group>"; };
+		7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+SplitViewFinder.swift"; sourceTree = "<group>"; };
 		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */,
+				72276FC827B965E800AD4062 /* FloatingPlayerView.swift */,
+				7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */,
+				7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */,
 			);
 			path = "Now Playing";
 			sourceTree = "<group>";
@@ -246,6 +260,7 @@
 				72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */,
 				72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */,
 				72B2A3E227ACDEB300B539CE /* Marquee.swift */,
+				7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -379,12 +394,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F521C727B47BB7001E8239 /* ChannelRow.swift in Sources */,
+				72276FC927B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
 				72E1795627A3AC50009A20ED /* Mixtape+Icons.swift in Sources */,
+				7259A9B427C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
 				72F521C527B381CD001E8239 /* ShareSheet.swift in Sources */,
+				7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
 				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
@@ -399,6 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7259A9B227BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
+				7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */,
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
 				727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */,
 				72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */,
@@ -409,10 +429,12 @@
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
+				72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
 				725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */,
 				727AD85E27A6DC8700F224CF /* ChannelsView.swift in Sources */,
 				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
+				7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
 				72F521C827B47BB7001E8239 /* ChannelRow.swift in Sources */,
 				72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */,
 				727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,

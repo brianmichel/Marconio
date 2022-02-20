@@ -19,6 +19,5 @@ struct MarconioCommands: Commands {
                 Text("Reload channels…")
             }.keyboardShortcut(.init("r", modifiers: .command))
         }
-        SidebarCommands()
     }
 }
