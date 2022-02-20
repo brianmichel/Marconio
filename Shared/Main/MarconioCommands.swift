@@ -14,6 +14,7 @@ struct MarconioCommands: Commands {
     var body: some Commands {
         CommandGroup(replacing: .newItem, addition: {})
         CommandGroup(replacing: .undoRedo, addition: {})
+        CommandGroup(replacing: .sidebar, addition: {})
         CommandGroup(before: .newItem) {
             Button(action: reloadChannels) {
                 Text("Reload channels…")
