@@ -74,21 +74,6 @@ struct ChannelsView: View {
         .frame(maxHeight: .infinity)
         .listStyle(.sidebar)
         .navigationTitle("Channels")
-#if os(macOS)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: toggleSidebar, label: {
-                    Label("Sidebar", systemImage: "sidebar.leading")
-                })
-            }
-        }
-#endif
-    }
-
-    private func toggleSidebar() {
-#if os(macOS)
-        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-#endif
     }
 
     var isPlayingBack: Bool {

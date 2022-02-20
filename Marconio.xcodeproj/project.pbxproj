@@ -17,6 +17,7 @@
 		7259A9B227BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */; };
 		7259A9B427C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */; };
 		7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */; };
+		7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */; };
 		725B5DF527A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		725B5DF627A44BE900459EE3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B5DF427A44BE900459EE3 /* DetailView.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
@@ -61,6 +62,7 @@
 		72276FC827B965E800AD4062 /* FloatingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerView.swift; sourceTree = "<group>"; };
 		7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerOverlayView.swift; sourceTree = "<group>"; };
 		7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingDetailView.swift; sourceTree = "<group>"; };
+		7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+SplitViewFinder.swift"; sourceTree = "<group>"; };
 		725B5DF427A44BE900459EE3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				72E1795527A3AC50009A20ED /* Mixtape+Icons.swift */,
 				72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */,
 				72B2A3E227ACDEB300B539CE /* Marquee.swift */,
+				7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7259A9B227BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
+				7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */,
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
 				727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */,
 				72C4D07027AEC54A00E85491 /* GeneralSettingsView.swift in Sources */,

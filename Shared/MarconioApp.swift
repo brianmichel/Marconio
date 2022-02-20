@@ -26,7 +26,8 @@ struct MarconioApp: App {
                 .onContinueUserActivity(UserActivityClient.Identifiers.playbackActiveIdentifier.rawValue) { activity in
                     appDelegate.viewStore.send(.appDelegate(.continueActivity(activity)))
                 }
-        }.commands {
+        }
+        .commands {
             MarconioCommands(
                 reloadChannels: {
                     appDelegate.viewStore.send(.loadChannels)

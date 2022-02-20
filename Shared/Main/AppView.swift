@@ -49,8 +49,12 @@ struct AppView: View {
                 )
                 DonationView()
                     .padding()
+            }.toolbar {
+                // HACK: Without this the toolbar will switch between two different types which is very ugly.
+                Spacer()
             }
-        }.onAppear {
+        }
+        .onAppear {
             viewStore.send(.loadInitialData)
         }
     }
