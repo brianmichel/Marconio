@@ -15,6 +15,7 @@ struct FloatingPlayerView: View {
     @ObservedObject private var viewStore: ViewStore<PlaybackState, PlaybackAction>
 
     @State var expanded = false
+    @State var showing = false
 
     var canExpand: Bool {
         return viewStore.currentlyPlaying != nil
@@ -47,6 +48,11 @@ struct FloatingPlayerView: View {
                         expanded.toggle()
                     }
                 }
+            }
+            .offset(x: 0, y: showing ? 0 : 500 )
+        }.onChange(of: canExpand) { newValue in
+            withAnimation(.linear(duration: 0.3)) {
+                showing = newValue
             }
         }
     }
