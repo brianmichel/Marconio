@@ -41,6 +41,7 @@ struct FloatingPlayerView: View {
             }
             .background(.thinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(Color.secondary.opacity(0.2), lineWidth: 1))
             .padding()
             .onTapGesture {
                 if canExpand {
@@ -54,51 +55,6 @@ struct FloatingPlayerView: View {
             withAnimation(.linear(duration: 0.3)) {
                 showing = newValue
             }
-        }
-    }
-}
-
-struct NowPlayingDetailView: View {
-    private let store: Store<PlaybackState, PlaybackAction>
-    @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
-
-    init(store: Store<PlaybackState, PlaybackAction>) {
-        self.store = store
-        viewStore = ViewStore(store)
-    }
-
-    var title: String {
-        guard let playable = viewStore.currentlyPlaying else {
-            return "Unknown Sounds"
-        }
-
-        switch playable.source {
-        case .left(_):
-            return "live"
-        case .right(_):
-            return "infinite mixtape"
-        case .none:
-            return "Unknown Sounds"
-        }
-    }
-
-    var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(title.uppercased()).font(.system(.subheadline, design: .rounded)).foregroundColor(.secondary)
-                        Spacer().frame(height: 7)
-                        Button(action: {}) {
-                            Image(systemName: "ellipsis.circle").font(.system(size: 18))
-                        }
-                        .buttonStyle(.borderless)
-                    }
-                    Spacer().frame(height: 10)
-                    Text(viewStore.currentlyPlaying?.description ?? "Description")
-                }
-            }
-            Divider()
         }
     }
 }

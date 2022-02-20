@@ -29,7 +29,7 @@ struct FloatingPlayerOverlayView<Content: View>: View {
                 HStack(spacing: 0) {
                     Spacer().frame(width: sidebarWidth)
                     nowPlayingView()
-                        .shadow(color: .black.opacity(0.2), radius: 7, x: 0, y: 0)
+                        .shadow(color: .secondary.opacity(0.1), radius: 7, x: 0, y: 0)
                 }
             }
         }
