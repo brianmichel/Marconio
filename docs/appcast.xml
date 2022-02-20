@@ -6,6 +6,24 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
+      <title>Version 1, Build 2022.02.20213127</title>
+      <pubDate>Sun, 20 Feb 2022 16:32:11 -0500</pubDate>
+      <sparkle:version>2022.02.20213127</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <description>
+        <![CDATA[
+            <ul>
+              <li><b>[Fixed]</b> Copying the URL sometimes didn’t work on macOS due to a finicky sharing API, you should now be able to share any URLs copied in the app without issue.</li>
+              <li><b>[Fixed]</b> Sorting of channels and mixtapes should now be alphabetical based on what you see in the UI, not the underlying name of the items.</li>
+              <li><b>[Added]</b> You can now manually refresh the list using ⌘R on macOS.</li>
+              <li><b>[Added]</b> There’s a new floating mini player that is persistent across all views. It will show more information about what is currently playing, as well as give you actions to perform on the item that is playing. This provides a place to put future buttons for things like SharePlay.</li>
+            </ul>
+          ]]>
+      </description>
+      <sparkle:minimumSystemVersion>12.1</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/brianmichel/Marconio/releases/download/builds/mac/beta-2022.02.20213127/Marconio-Beta-2022.02.20213127.dmg" length="25984388" type="application/octet-stream" sparkle:edSignature="Uu4Y92MKhXo8HYMwNAnZ7PvSQyjusc6QjJ6od4dnJ6cm55awNX28+rWDWdkutLkbqHtN2C9hVhgFP53/NZriDg==" />
+    </item>
+    <item>
       <title>Version 1, Build 2202.02.11012748</title>
       <pubDate>Thu, 10 Feb 2022 20:28:29 -0500</pubDate>
       <sparkle:version>2022.02.11012748</sparkle:version>
