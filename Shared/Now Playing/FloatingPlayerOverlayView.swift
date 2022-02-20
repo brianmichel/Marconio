@@ -35,7 +35,6 @@ struct FloatingPlayerOverlayView<Content: View>: View {
         }
         #if os(macOS)
         .onPreferenceChange(SidebarWidthPreferenceKey.self) { preferences in
-            print("width is: \(preferences)")
             self.sidebarWidth = preferences
         }
         #endif
