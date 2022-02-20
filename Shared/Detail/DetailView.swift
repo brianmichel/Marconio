@@ -35,6 +35,7 @@ struct DetailView: View {
                     }
                     .frame(width: detailWidth(proxy: reader), height: detailWidth(proxy: reader))
                     .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous).stroke(Color.primary.opacity(0.2), lineWidth: 1))
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             VStack(alignment: .leading) {
@@ -124,7 +125,9 @@ struct DetailView_Previews: PreviewProvider {
                     reducer: playbackReducer,
                     environment: PlaybackEnvironment()
                 )
-            ).preferredColorScheme(.dark)
+            )
+                .padding()
+                .preferredColorScheme(.dark)
 
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
@@ -133,7 +136,9 @@ struct DetailView_Previews: PreviewProvider {
                     reducer: playbackReducer,
                     environment: PlaybackEnvironment()
                 )
-            ).preferredColorScheme(.light)
+            )
+                .padding()
+                .preferredColorScheme(.light)
         }
     }
 }
