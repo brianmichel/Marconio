@@ -14,6 +14,8 @@ struct NowPlayingDetailView: View {
     private let store: Store<PlaybackState, PlaybackAction>
     @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
 
+    @State private var shareSheetPresented = false
+
     init(store: Store<PlaybackState, PlaybackAction>) {
         self.store = store
         viewStore = ViewStore(store)
@@ -50,7 +52,14 @@ struct NowPlayingDetailView: View {
                         if let playable = viewStore.currentlyPlaying {
                             Menu {
                                 Section {
+#if os(macOS)
+                                    // Share a string here since macOS is finicky about the specific types of copied items.
                                     SharingMenu(items: [playable.url.absoluteString])
+#else
+                                    Button(action: { shareSheetPresented.toggle() }) {
+                                        Label("Share", systemImage: "square.and.arrow.up")
+                                    }
+#endif
                                     Button(action: {
                                         playable.url.openExternally()
                                     }) {
@@ -63,6 +72,11 @@ struct NowPlayingDetailView: View {
                             .menuStyle(.borderlessButton)
                             .menuIndicator(.hidden)
                             .fixedSize()
+#if os(iOS)
+                            .sheet(isPresented: $shareSheetPresented, onDismiss: nil) {
+                                ShareSheet(items: [playable.url])
+                            }
+#endif
                         }
                     }
                     Spacer().frame(height: 10)
