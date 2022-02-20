@@ -11,7 +11,7 @@ import AppCore
 import LaceKit
 
 struct FloatingPlayerOverlayView<Content: View>: View {
-    @State var detailWidth: CGFloat = 0
+    @State var sidebarWidth: CGFloat = 0
 
     let store: Store<AppState, AppAction>
     let content: Content
@@ -27,16 +27,18 @@ struct FloatingPlayerOverlayView<Content: View>: View {
             VStack {
                 Spacer()
                 HStack(spacing: 0) {
-                    Spacer()
+                    Spacer().frame(width: sidebarWidth)
                     nowPlayingView()
-                        .frame(width: detailWidth)
                         .shadow(color: .black.opacity(0.2), radius: 7, x: 0, y: 0)
-                    Spacer()
                 }
             }
-        }.onPreferenceChange(DetailWidthPreferenceKey.self) { preferences in
-            self.detailWidth = preferences
         }
+        #if os(macOS)
+        .onPreferenceChange(SidebarWidthPreferenceKey.self) { preferences in
+            print("width is: \(preferences)")
+            self.sidebarWidth = preferences
+        }
+        #endif
     }
 
     private func nowPlayingView() -> some View {
@@ -49,7 +51,7 @@ struct FloatingPlayerOverlayView<Content: View>: View {
     }
 }
 
-struct DetailWidthPreferenceKey: PreferenceKey {
+struct SidebarWidthPreferenceKey: PreferenceKey {
     typealias Value = CGFloat
     static var defaultValue: Value = 0
 

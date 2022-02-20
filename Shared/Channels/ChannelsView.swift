@@ -104,12 +104,7 @@ struct ChannelsView: View {
                     .padding()
                 Spacer()
             }
-        }.background(
-            GeometryReader { proxy in
-                Color.clear
-                    .preference(key: DetailWidthPreferenceKey.self, value: proxy.size.width)
-            }
-        )
+        }
     }
 
     private func contextButton(for playable: MediaPlayable) -> some View {
