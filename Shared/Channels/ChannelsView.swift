@@ -71,6 +71,12 @@ struct ChannelsView: View {
         .refreshable {
             viewStore.send(.loadChannels)
         }
+        #if os(macOS)
+        .toolbar {
+            // HACK: Without this the toolbar will switch between two different types which is very ugly.
+            Spacer()
+        }
+        #endif
         .frame(maxHeight: .infinity)
         .listStyle(.sidebar)
         .navigationTitle("Channels")
