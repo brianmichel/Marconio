@@ -16,6 +16,10 @@ This app uses Sparkle to keep itself up to date. After you've installed one vers
 
 ## Screenshots
 
-![](images/home.png)
+![](images/donation.png)
+
+![](images/playing.png)
+
+![](images/playing_expanded.png)
 
 ![](images/airplay.png)
