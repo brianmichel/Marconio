@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DonationView: View {
+    @State private var waving = false
+
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
@@ -16,6 +18,7 @@ struct DonationView: View {
                     Image(systemName: "hand.raised")
                         .font(Font.system(size: 50, weight: .light, design: .default))
                         .foregroundColor(.accentColor)
+                        .rotationEffect(waving ? .degrees(30) : .degrees(-30), anchor: UnitPoint(x: 0.5, y: 0.8))
                     Text("Please Support NTS").font(.title).bold().allowsTightening(true)
                 }
                 Spacer()
@@ -33,6 +36,11 @@ struct DonationView: View {
 #if os(macOS)
         .frame(width: 350, height: 410)
 #endif
+        .onAppear {
+            withAnimation(.timingCurve(0.7, 0.6, 0.3, 0.8, duration: 1.0).repeatForever().delay(0.4)) {
+                waving = true
+            }
+        }
     }
 
     private func openDonationLink() {
