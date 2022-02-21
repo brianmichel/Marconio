@@ -16,6 +16,7 @@ struct DetailView: View {
 
     var playable: MediaPlayable
     @State private var shareSheetPresented = false
+    @State private var popoverPresented = false
 
     init(playable: MediaPlayable, store: Store<PlaybackState, PlaybackAction>) {
         self.playable = playable
@@ -70,6 +71,16 @@ struct DetailView: View {
             #endif
         }
         .toolbar {
+            ToolbarItem(placement: .principal) {
+                if case let .left(channel) = playable.source {
+                    LiveUntilButton(channel: channel)
+                } else {
+                    EmptyView()
+                }
+            }
+            ToolbarItem {
+                Spacer()
+            }
             ToolbarItem {
                 #if os(macOS)
                 // Share a string here since macOS is finicky about the specific types of copied items.
