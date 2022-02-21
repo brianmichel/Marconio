@@ -4,9 +4,9 @@ A simple macOS (and maybe iOS) application to listen to [NTS](https://nts.live) 
 
 ![](docs/images/playing_expanded.png)
 
-NTS is listener supported, please consider donating to them as it's a fantastic service. You can donate with the button below!
+NTS is listener supported, please consider support them as it's a fantastic service. You can support them with the button below!
 
-[Donate!](https://www.nts.live/supporters)
+[Become a Supporter!](https://www.nts.live/supporters)
 
 # What is Marconio?
 
