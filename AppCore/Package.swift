@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "AppCore",
     platforms: [
-        .macOS(.v10_15),
+        .macOS(.v12),
         .iOS(.v15)
     ],
     products: [
@@ -19,7 +19,8 @@ let package = Package(
         .library(name: "AppDelegate", targets: ["AppDelegate"]),
         .library(name: "AppDelegate_iOS", targets: ["AppDelegate_iOS"]),
         .library(name: "AppDelegate_macOS", targets: ["AppDelegate_macOS"]),
-        .library(name: "AppTileClient", targets: ["AppTileClient"])
+        .library(name: "AppTileClient", targets: ["AppTileClient"]),
+        .library(name: "AudioPlayerClient", targets: ["AudioPlayerClient"])
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
@@ -51,10 +52,15 @@ let package = Package(
             "Models",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         ]),
-        .target(name:"PlaybackCore", dependencies: [
+        .target(name: "PlaybackCore", dependencies: [
             "AppTileClient",
             "Models",
             "UserActivityClient",
+            "AudioPlayerClient",
+            .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+        ]),
+        .target(name: "AudioPlayerClient", dependencies: [
+            "Models",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
         ]),
         .target(name: "AppCore", dependencies: [
