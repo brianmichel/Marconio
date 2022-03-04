@@ -27,7 +27,7 @@ struct LiveView: View {
                 }
             }
         }.onAppear {
-            withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: true)) {
+            withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                 animating.toggle()
             }
         }
