@@ -21,20 +21,21 @@ struct NowPlayingDetailView: View {
         viewStore = ViewStore(store)
     }
 
-    var title: String {
+    var title: some View {
         guard let playable = viewStore.currentlyPlaying else {
-            return "Unknown Sounds"
+            return Text("Unknown Sounds".uppercased()).toAnyView()
         }
 
         switch playable.source {
         case .left(_):
-            return "live"
+            return LiveView().frame(height: 20).toAnyView()
         case .right(_):
-            return "infinite mixtape"
+            return Text("infinite mixtape".uppercased()).toAnyView()
         case .none:
-            return "unknown sounds"
+            return Text("unknown sounds".uppercased()).toAnyView()
         }
     }
+
 
     var description: String {
         return viewStore.currentlyPlaying?.description ?? "A description has not been provided."
@@ -45,7 +46,7 @@ struct NowPlayingDetailView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(title.uppercased())
+                        title
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         Spacer()
