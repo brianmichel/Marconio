@@ -36,7 +36,7 @@ struct LiveUntilButton: View {
                 Text(channel.next.details?.description ?? "No description provided.")
             }
             .padding()
-            .frame(width: 200)
+            .frame(width: 270)
         }
     }
 }
