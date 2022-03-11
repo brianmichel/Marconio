@@ -6,6 +6,23 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
+      <title>Version 1, Build 2022.03.11133004</title>
+      <pubDate>Fri, 11 Mar 2022 08:30:45 -0500</pubDate>
+      <sparkle:version>2022.03.11133004</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <description>
+        <![CDATA[
+            <ul>
+              <li><b>[Added]</b> [Added] Animating the hand on the donation page to waves to you.</li>
+              <li><b>[Added]</b> [Added] A fun little blinking live indicator for live streams.</li>
+              <li><b>[Added]</b> [Added] You can now see when a live program is on until and what’s up next</li>
+            </ul>
+          ]]>
+      </description>
+      <sparkle:minimumSystemVersion>12.1</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/brianmichel/Marconio/releases/download/builds/mac/beta-2022.03.11133004/Marconio-Beta-2022.03.11133004.dmg" length="25996125" type="application/octet-stream" sparkle:edSignature="gngd9qHag5WzS1B47NeGlhRopiQCiJiIyL4EDFh22uSPNRhVgL3I7wHCeiOFFcXDyNiBkJwFP9tK5OOgU3/LCw==" />
+    </item>
+    <item>
       <title>Version 1, Build 2022.02.20213127</title>
       <pubDate>Sun, 20 Feb 2022 16:32:11 -0500</pubDate>
       <sparkle:version>2022.02.20213127</sparkle:version>
