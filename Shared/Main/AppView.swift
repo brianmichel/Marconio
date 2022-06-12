@@ -71,7 +71,7 @@ struct AppView_Previews: PreviewProvider {
                     appDelegateState: .init()
                 ),
                 reducer: appReducer,
-                environment: .stub
+                environment: .noop
             )
         )
     }

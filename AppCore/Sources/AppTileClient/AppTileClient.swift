@@ -24,10 +24,9 @@ public extension AppTileClient {
         // TODO: This doesn't feel right to pull in the stateful call of the dock menu
         // What's the better way to accomplish this?
         #if os(macOS)
-        let menu = NSApp.delegate?.applicationDockMenu?(NSApp)
-
         return Self(
             updateAppTile: { playable in
+                let menu = NSApp.delegate?.applicationDockMenu?(NSApp)
                 menu?.removeAllItems()
                 let heading = NSMenuItem(title: "Now Playing", action: nil, keyEquivalent: "")
                 let playable = NSMenuItem(title: "NTS - \(playable.title)", action: nil, keyEquivalent: "")
@@ -40,5 +39,11 @@ public extension AppTileClient {
             updateAppTile: { _ in }
         )
         #endif
+    }
+
+    static var noop: Self {
+        return .init(updateAppTile: { _ in
+                // Do Nothing
+        })
     }
 }

@@ -66,7 +66,8 @@ struct FloatingPlayerOverlayView_Previews: PreviewProvider {
                                                                             uuid: UUID.init,
                                                                             api: LiveAPI(),
                                                                             appDelegate: .init(),
-                                                                            dbClient: .noop))
+                                                                            dbClient: .noop,
+                                                                            playback: .noop))
     static var previews: some View {
         FloatingPlayerOverlayView(store: store) {
             VStack {

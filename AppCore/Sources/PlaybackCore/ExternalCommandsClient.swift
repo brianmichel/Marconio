@@ -50,4 +50,10 @@ public extension ExternalCommandsClient {
                 }
         })
     }
+
+    static var noop: Self {
+        return .init(startMonitoringCommands: {
+            .none
+        })
+    }
 }

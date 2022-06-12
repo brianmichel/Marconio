@@ -44,13 +44,15 @@ public struct AppEnvironment {
     public var api: NTSAPI
     public var appDelegate: AppDelegateEnvironment
     public var dbClient: DatabaseClient
+    public var playback: PlaybackEnvironment
 
-    public init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI, appDelegate: AppDelegateEnvironment, dbClient: DatabaseClient) {
+    public init(mainQueue: AnySchedulerOf<DispatchQueue>, uuid: @escaping () -> UUID, api: NTSAPI, appDelegate: AppDelegateEnvironment, dbClient: DatabaseClient, playback: PlaybackEnvironment) {
         self.mainQueue = mainQueue
         self.uuid = uuid
         self.api = api
         self.appDelegate = appDelegate
         self.dbClient = dbClient
+        self.playback = playback
     }
 }
 
@@ -65,7 +67,7 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
     playbackReducer.pullback(
         state: \.playback,
         action: /AppAction.playback,
-        environment: { _ in PlaybackEnvironment() }
+        environment: \.playback
     ),
     Reducer { state, action, environment in
         switch action {
@@ -142,16 +144,19 @@ public extension AppEnvironment {
             uuid: UUID.init,
             api: LiveAPI(),
             appDelegate: .init(),
-            dbClient: .live
+            dbClient: .live,
+            playback: .live
         )
     }
 
-    static var stub: Self {
+    static var noop: Self {
         return .init(
             mainQueue: .main,
             uuid: UUID.init,
             api: NoopAPI(),
             appDelegate: .init(),
-            dbClient: .noop)
+            dbClient: .noop,
+            playback: .noop
+        )
     }
 }

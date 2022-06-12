@@ -54,7 +54,7 @@ public struct PlaybackEnvironment {
     // Maybe I'm just using it wrong?
     public static var player: AVPlayer = {
         let player = AVPlayer()
-        player.allowsExternalPlayback = false
+        player.allowsExternalPlayback = true
 
         return player
     }()
@@ -163,3 +163,21 @@ public let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvi
         }
     }
 )
+
+public extension PlaybackEnvironment {
+    static var live: Self {
+        return .init(mainQueue: .main,
+                     infoCenter: .default(),
+                     externalCommandsClient: .live,
+                     appTileClient: .live,
+                     userActivityClient: .live)
+    }
+
+    static var noop: Self {
+        return .init(mainQueue: .main,
+                     infoCenter: .default(),
+                     externalCommandsClient: .noop,
+                     appTileClient: .noop,
+                     userActivityClient: .noop)
+    }
+}
