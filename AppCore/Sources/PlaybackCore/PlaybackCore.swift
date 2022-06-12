@@ -47,28 +47,33 @@ public enum PlaybackAction: Equatable {
     case startMonitoringRemoteCommands
     case externalCommand(Result<ExternalCommandsClient.Action, Never>)
     case userActivity(Result<UserActivityClient.Action, Never>)
+    case playbackClient(Result<PlaybackClient.Action, Never>)
 }
 
 public struct PlaybackEnvironment {
-    // An intersting side effect of using TCA seems like you need to have these kind of persistent resources static
-    // Maybe I'm just using it wrong?
-    public static var player: AVPlayer = {
-        let player = AVPlayer()
-        player.allowsExternalPlayback = true
+//    // An intersting side effect of using TCA seems like you need to have these kind of persistent resources static
+//    // Maybe I'm just using it wrong?
+//    public static var player: AVPlayer = {
+//        let player = AVPlayer()
+//        player.allowsExternalPlayback = false
+//
+//        return player
+//    }()
 
-        return player
-    }()
+    public var player: PlaybackClient = .live
     public var mainQueue: DispatchQueue = .main
     public var infoCenter = MPNowPlayingInfoCenter.default()
     public var externalCommandsClient: ExternalCommandsClient = .live
     public var appTileClient: AppTileClient = .live
     public var userActivityClient: UserActivityClient = .live
 
-    public init(mainQueue: DispatchQueue = .main,
+    public init(player: PlaybackClient = .live,
+                mainQueue: DispatchQueue = .main,
                 infoCenter: MPNowPlayingInfoCenter = MPNowPlayingInfoCenter.default(),
                 externalCommandsClient: ExternalCommandsClient = .live,
                 appTileClient: AppTileClient = .live,
                 userActivityClient: UserActivityClient = .live) {
+        self.player = player
         self.mainQueue = mainQueue
         self.infoCenter = infoCenter
         self.externalCommandsClient = externalCommandsClient
@@ -82,42 +87,34 @@ public let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvi
         switch action {
         case let .loadPlayable(playable):
             let item = AVPlayerItem(url: playable.streamURL)
-            PlaybackEnvironment.player.pause()
-            PlaybackEnvironment.player.replaceCurrentItem(with: item)
-            PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
             environment.appTileClient.updateAppTile(playable)
-
-            #if os(macOS)
-            state.routePickerView = RoutePickerView(routePickerButtonBordered: false, player: PlaybackEnvironment.player)
-            #else
-            state.routePickerView = RoutePickerView(player: PlaybackEnvironment.player)
-            #endif
 
             state.currentlyPlaying = playable
             return .merge(
                 Effect(value: .updateNowPlaying),
                 Effect(value: .startMonitoringRemoteCommands),
-                environment.userActivityClient.becomeCurrent(playable).catchToEffect(PlaybackAction.userActivity)
+                environment.userActivityClient.becomeCurrent(playable).catchToEffect(PlaybackAction.userActivity),
+                environment.player.play(playable.streamURL).catchToEffect(PlaybackAction.playbackClient),
+                environment.player.retreiveRoutes().catchToEffect(PlaybackAction.playbackClient)
             )
         case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
-            PlaybackEnvironment.player.pause()
             state.playerState = .paused
             environment.infoCenter.playbackState = .paused
-            return .none
+            return environment.player.pause().fireAndForget()
         case .resumePlayback, .externalCommand(.success(.externalResumeTap)):
-            PlaybackEnvironment.player.play()
             state.playerState = .playing
             environment.infoCenter.playbackState = .playing
-            return .none
+            return environment.player.resume().fireAndForget()
         case .stopPlayback:
             state.playerState = .stopped
             environment.infoCenter.playbackState = .stopped
             state.currentlyPlaying = nil
-            PlaybackEnvironment.player.pause()
-            PlaybackEnvironment.player.replaceCurrentItem(with: nil)
-            return Effect(value: .updateNowPlaying)
+            return .merge(
+                environment.player.stop().fireAndForget(),
+                Effect(value: .updateNowPlaying)
+            )
         case .togglePlayback, .externalCommand(.success(.externalToggleTap)):
             switch state.playerState {
             case .paused:
@@ -160,13 +157,17 @@ public let playbackReducer = Reducer<PlaybackState, PlaybackAction, PlaybackEnvi
             return .none
         case .userActivity(.success(.willHandleActivity(_))):
             return .none
+        case let .playbackClient(.success(.receivedRoutes(routeView))):
+            state.routePickerView = routeView
+            return .none
         }
     }
 )
 
 public extension PlaybackEnvironment {
     static var live: Self {
-        return .init(mainQueue: .main,
+        return .init(player: .live,
+                     mainQueue: .main,
                      infoCenter: .default(),
                      externalCommandsClient: .live,
                      appTileClient: .live,
