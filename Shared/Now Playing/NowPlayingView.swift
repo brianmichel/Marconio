@@ -99,7 +99,7 @@ struct NowPlayingView_Previews: PreviewProvider {
                 store: Store(
                     initialState: PlaybackState(),
                     reducer: playbackReducer,
-                    environment: PlaybackEnvironment()
+                    environment: .noop
                 )
             )
                 .preferredColorScheme(.dark)
@@ -112,7 +112,7 @@ struct NowPlayingView_Previews: PreviewProvider {
                         routePickerView: routePicker
                     ),
                     reducer: playbackReducer,
-                    environment: PlaybackEnvironment()
+                    environment: .noop
                 )
             )
                 .frame(width: 200)
