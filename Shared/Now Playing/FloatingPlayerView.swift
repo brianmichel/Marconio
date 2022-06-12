@@ -65,13 +65,13 @@ struct FloatingPlayerView_Previews: PreviewProvider {
             FloatingPlayerView(store: Store(
                 initialState: PlaybackState(),
                 reducer: playbackReducer,
-                environment: PlaybackEnvironment()
+                environment: .noop
             ))
 
             FloatingPlayerView(store: Store(
                 initialState: PlaybackState(currentlyPlaying: MediaPlayable(mixtape: .placeholder), playerState: .playing, currentActivity: nil, routePickerView: nil, monitoringRemoteCommands: false),
                 reducer: playbackReducer,
-                environment: PlaybackEnvironment()
+                environment: .noop
             ),
                                expanded: true).preferredColorScheme(.light)
         }

@@ -134,7 +134,7 @@ struct DetailView_Previews: PreviewProvider {
                 store: Store(
                     initialState: PlaybackState(),
                     reducer: playbackReducer,
-                    environment: PlaybackEnvironment()
+                    environment: .noop
                 )
             )
                 .padding()
@@ -145,7 +145,7 @@ struct DetailView_Previews: PreviewProvider {
                 store: Store(
                     initialState: PlaybackState(),
                     reducer: playbackReducer,
-                    environment: PlaybackEnvironment()
+                    environment: .noop
                 )
             )
                 .padding()

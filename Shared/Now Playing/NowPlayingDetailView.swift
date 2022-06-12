@@ -96,7 +96,7 @@ struct NowPlayingDetailView_Previews: PreviewProvider {
             NowPlayingDetailView(store: Store(
                 initialState: PlaybackState(currentlyPlaying: MediaPlayable(mixtape: .placeholder)),
                 reducer: playbackReducer,
-                environment: PlaybackEnvironment()
+                environment: .noop
             ))
                 .frame(width: 400)
                 .preferredColorScheme(.light)
@@ -104,7 +104,7 @@ struct NowPlayingDetailView_Previews: PreviewProvider {
             NowPlayingDetailView(store: Store(
                 initialState: PlaybackState(),
                 reducer: playbackReducer,
-                environment: PlaybackEnvironment()
+                environment: .noop
             ))
                 .frame(width: 400)
                 .preferredColorScheme(.dark)

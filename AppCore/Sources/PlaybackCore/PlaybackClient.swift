@@ -59,6 +59,14 @@ public extension PlaybackClient {
             }
         )
     }
+
+    static var noop: Self {
+        return .init(play: { _ in .none },
+                     resume: { .none },
+                     pause: { .none },
+                     stop: { .none },
+                     retreiveRoutes: { .none })
+    }
 }
 
 private var playerItemContext = 0

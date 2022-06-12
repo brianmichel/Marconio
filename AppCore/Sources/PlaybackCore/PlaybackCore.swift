@@ -51,28 +51,20 @@ public enum PlaybackAction: Equatable {
 }
 
 public struct PlaybackEnvironment {
-//    // An intersting side effect of using TCA seems like you need to have these kind of persistent resources static
-//    // Maybe I'm just using it wrong?
-//    public static var player: AVPlayer = {
-//        let player = AVPlayer()
-//        player.allowsExternalPlayback = false
-//
-//        return player
-//    }()
 
-    public var player: PlaybackClient = .live
-    public var mainQueue: DispatchQueue = .main
-    public var infoCenter = MPNowPlayingInfoCenter.default()
-    public var externalCommandsClient: ExternalCommandsClient = .live
-    public var appTileClient: AppTileClient = .live
-    public var userActivityClient: UserActivityClient = .live
+    public var player: PlaybackClient
+    public var mainQueue: DispatchQueue
+    public var infoCenter: MPNowPlayingInfoCenter
+    public var externalCommandsClient: ExternalCommandsClient
+    public var appTileClient: AppTileClient
+    public var userActivityClient: UserActivityClient
 
-    public init(player: PlaybackClient = .live,
-                mainQueue: DispatchQueue = .main,
-                infoCenter: MPNowPlayingInfoCenter = MPNowPlayingInfoCenter.default(),
-                externalCommandsClient: ExternalCommandsClient = .live,
-                appTileClient: AppTileClient = .live,
-                userActivityClient: UserActivityClient = .live) {
+    public init(player: PlaybackClient,
+                mainQueue: DispatchQueue,
+                infoCenter: MPNowPlayingInfoCenter,
+                externalCommandsClient: ExternalCommandsClient,
+                appTileClient: AppTileClient,
+                userActivityClient: UserActivityClient) {
         self.player = player
         self.mainQueue = mainQueue
         self.infoCenter = infoCenter
@@ -175,7 +167,8 @@ public extension PlaybackEnvironment {
     }
 
     static var noop: Self {
-        return .init(mainQueue: .main,
+        return .init(player: .noop,
+                     mainQueue: .main,
                      infoCenter: .default(),
                      externalCommandsClient: .noop,
                      appTileClient: .noop,
