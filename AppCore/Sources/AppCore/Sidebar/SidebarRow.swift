@@ -1,5 +1,5 @@
 //
-//  ChannelRow.swift
+//  SidebarRow.swift
 //  Marconio
 //
 //  Created by Brian Michel on 2/9/22.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Models
 
-struct ChannelRow: View {
+struct SidebarRow: View {
     let channel: Channel
     
     var body: some View {
@@ -25,11 +25,11 @@ struct ChannelRow: View {
     }
 }
 
-struct ChannelRow_Previews: PreviewProvider {
+struct SidebarRow_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            ChannelRow(channel: .mock)
+            SidebarRow(channel: .mock)
         }
     }
 }

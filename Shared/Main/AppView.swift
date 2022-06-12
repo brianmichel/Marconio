@@ -40,7 +40,7 @@ struct AppView: View {
     var body: some View {
         FloatingPlayerOverlayView(store: store) {
             NavigationView {
-                ChannelsView(store: store).background(
+                SidebarView(store: store).background(
                     // Read the width of the channels view that can be used to inset the
                     // floating mini player by knowning how wide the sidebar is.
                     GeometryReader { proxy in

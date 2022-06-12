@@ -1,5 +1,5 @@
 //
-//  ChannelsView.swift
+//  SidebarView.swift
 //  Marconio
 //
 //  Created by Brian Michel on 1/30/22.
@@ -23,7 +23,7 @@ struct SidebarState: Equatable {
     var playback: PlaybackState
 }
 
-public struct ChannelsView: View {
+public struct SidebarView: View {
     let store: Store<AppState, AppAction>
 
     private let viewStore: ViewStore<SidebarState, AppAction>
@@ -47,7 +47,7 @@ public struct ChannelsView: View {
                     let playable = MediaPlayable(channel: channel)
                     NavigationLink(destination: destination(for: playable)
                     ) {
-                        ChannelRow(channel: channel)
+                        SidebarRow(channel: channel)
                     }
                     .contextMenu {
                         contextButton(for: playable)
@@ -112,9 +112,9 @@ public struct ChannelsView: View {
     }
 }
 
-struct ChannelsView_Previews: PreviewProvider {
+struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        ChannelsView(
+        SidebarView(
             store: Store(
                 initialState: AppState(
                     channels: [],

@@ -80,6 +80,7 @@
 		72E1793927A2E48D009A20ED /* Marconio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marconio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--macOS--Info.plist"; sourceTree = "<group>"; };
+		72ED676B28564FC8002D6D77 /* macOS-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macOS-Debug.entitlements"; sourceTree = "<group>"; };
 		72F521C427B381CD001E8239 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +212,7 @@
 		72E1793A27A2E48D009A20ED /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				72ED676B28564FC8002D6D77 /* macOS-Debug.entitlements */,
 				72C4D06827AE1E5600E85491 /* Settings */,
 				72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */,
 				72E1793B27A2E48D009A20ED /* macOS.entitlements */,
@@ -278,6 +280,7 @@
 				72E1793527A2E48D009A20ED /* Sources */,
 				72E1793627A2E48D009A20ED /* Frameworks */,
 				72E1793727A2E48D009A20ED /* Resources */,
+				72ED676A28564F53002D6D77 /* Re-sign For Injection */,
 			);
 			buildRules = (
 			);
@@ -352,6 +355,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72ED676A28564F53002D6D77 /* Re-sign For Injection */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Re-sign For Injection";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Type a script or drag a script file from your workspace to insert its path.\nexport CODESIGN_ALLOCATE\\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate\nINJECTION_APP_RESOURCES=/Applications/InjectionIII.app/Contents/Resources\n/usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY  $INJECTION_APP_RESOURCES/maciOSInjection.bundle/maciOSInjection\n/usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY  $INJECTION_APP_RESOURCES/maciOSSwiftUISupport.bundle/maciOSSwiftUISupport\n/usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $INJECTION_APP_RESOURCES/maciOSInjection.bundle/Frameworks/SwiftTrace.framework/SwiftTrace\ndefaults write com.johnholdsworth.InjectionIII \"$PROJECT_FILE_PATH\" $EXPANDED_CODE_SIGN_IDENTITY\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72E1792F27A2E48D009A20ED /* Sources */ = {
@@ -597,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "macOS/macOS-Debug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
