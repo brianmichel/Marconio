@@ -8,12 +8,16 @@
 import SwiftUI
 import AppKit
 
-struct SharingMenu: View {
+public struct SharingMenu: View {
     var items: [Any]
 
     @State private var services: [NSSharingService] = []
 
-    var body: some View {
+    public init(items: [Any]) {
+        self.items = items
+    }
+
+    public var body: some View {
         Menu {
             Button(action: {
                 if let pasteboardItems = items as? [NSPasteboardWriting] {

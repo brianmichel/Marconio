@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "AppCore",
     platforms: [
-        .macOS(.v10_15),
+        .macOS(.v12),
         .iOS(.v15)
     ],
     products: [
@@ -25,7 +25,12 @@ let package = Package(
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.2.1"),
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "5.21.0"),
-        .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0")
+        .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0"),
+        .package(
+            name: "Inject",
+            url: "https://github.com/krzysztofzablocki/Inject.git",
+            from: "1.1.1"
+        )
     ],
     targets: [
         // MARK: Testing Targets
@@ -63,7 +68,8 @@ let package = Package(
             "DatabaseClient",
             "PlaybackCore",
             "AppDelegate",
-            .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+            .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            "Inject",
         ]),
         .target(name: "AppDelegate_iOS", dependencies: [
             "AppDelegate"

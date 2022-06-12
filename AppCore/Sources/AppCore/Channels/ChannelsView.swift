@@ -5,36 +5,35 @@
 //  Created by Brian Michel on 1/30/22.
 //
 
-import SwiftUI
 import ComposableArchitecture
 import LaceKit
 import Models
-import AppCore
 import PlaybackCore
+import SwiftUI
 
-struct ChannelsView: View {
+extension AppState {
+    var sidebarState: SidebarState {
+        return .init(channels: channels, mixtapes: mixtapes, playback: playback)
+    }
+}
+
+struct SidebarState: Equatable {
+    var channels: [Channel]
+    var mixtapes: [Mixtape]
+    var playback: PlaybackState
+}
+
+public struct ChannelsView: View {
     let store: Store<AppState, AppAction>
 
-    @ObservedObject var viewStore: ViewStore<ViewState, AppAction>
+    private let viewStore: ViewStore<SidebarState, AppAction>
 
-    init(store: Store<AppState, AppAction>) {
+    public init(store: Store<AppState, AppAction>) {
         self.store = store
-        self.viewStore = ViewStore(self.store.scope(state: ViewState.init(state:)))
+        self.viewStore = ViewStore(store.scope(state: { $0.sidebarState }))
     }
 
-    struct ViewState: Equatable {
-        var channels: [Channel]
-        var mixtapes: [Mixtape]
-        var playback: PlaybackState
-
-        init(state: AppState) {
-            channels = state.channels
-            mixtapes = state.mixtapes
-            playback = state.playback
-        }
-    }
-
-    var body: some View {
+    public var body: some View {
         List {
 #if os(iOS)
             // We have to remove the inset set by the List's stlye

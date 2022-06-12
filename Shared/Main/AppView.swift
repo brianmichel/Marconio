@@ -5,6 +5,7 @@
 //  Created by Brian Michel on 1/29/22.
 //
 
+import AppCore
 import Combine
 import SwiftUI
 import ComposableArchitecture
