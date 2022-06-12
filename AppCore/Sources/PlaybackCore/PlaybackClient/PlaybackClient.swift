@@ -134,8 +134,4 @@ private final class PlaybackClientDelegate: NSObject {
             }
             .store(in: &storage)
     }
-
-    deinit {
-        print("DEINIT!")
-    }
 }
