@@ -22,13 +22,7 @@ final class MarconioiOSAppDelegate: NSObject, UIApplicationDelegate {
             appDelegateState: .init()
         ),
         reducer: appReducer,
-        environment: AppEnvironment(
-            mainQueue: .main,
-            uuid: UUID.init,
-            api: LiveAPI(),
-            appDelegate: AppDelegateEnvironment(),
-            dbClient: .live
-        )
+        environment: .live
     )
 
     lazy var viewStore = ViewStore(

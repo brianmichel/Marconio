@@ -25,13 +25,7 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
             appDelegateState: AppDelegateState()
         ),
         reducer: appReducer,
-        environment: AppEnvironment(
-            mainQueue: .main,
-            uuid: UUID.init,
-            api: LiveAPI(),
-            appDelegate: AppDelegateEnvironment(),
-            dbClient: .live
-        )
+        environment: .live
     )
 
     lazy var viewStore = ViewStore(

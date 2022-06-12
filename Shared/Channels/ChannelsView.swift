@@ -124,13 +124,7 @@ struct ChannelsView_Previews: PreviewProvider {
                     appDelegateState: .init()
                 ),
                 reducer: appReducer,
-                environment: AppEnvironment(
-                    mainQueue: .main,
-                    uuid: UUID.init,
-                    api: LiveAPI(),
-                    appDelegate: .init(),
-                    dbClient: .live
-                )
+                environment: .stub
             )
         )
     }

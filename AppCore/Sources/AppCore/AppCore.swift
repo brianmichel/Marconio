@@ -134,3 +134,24 @@ public let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         }
     }
 )
+
+public extension AppEnvironment {
+    static var live: Self {
+        return .init(
+            mainQueue: .main,
+            uuid: UUID.init,
+            api: LiveAPI(),
+            appDelegate: .init(),
+            dbClient: .live
+        )
+    }
+
+    static var stub: Self {
+        return .init(
+            mainQueue: .main,
+            uuid: UUID.init,
+            api: NoopAPI(),
+            appDelegate: .init(),
+            dbClient: .noop)
+    }
+}
