@@ -135,3 +135,18 @@ private final class PlaybackClientDelegate: NSObject {
             .store(in: &storage)
     }
 }
+
+extension PlaybackClient: DependencyKey {
+    public static var liveValue: PlaybackClient = .live
+}
+
+extension DependencyValues {
+    var player: PlaybackClient {
+        get { self[PlaybackClient.self] }
+        set { self[PlaybackClient.self] = newValue }
+    }
+}
+
+
+
+

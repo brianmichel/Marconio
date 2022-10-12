@@ -39,3 +39,8 @@ public extension DatabaseClient {
                     stopRealtimeUpdates: { .none })
     }
 }
+
+extension DatabaseClient: TestDependencyKey {
+    public static var testValue: DatabaseClient = .failing
+    public static var previewValue: DatabaseClient = .noop
+}

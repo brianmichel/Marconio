@@ -7,14 +7,12 @@
 
 import ComposableArchitecture
 
-public extension UserActivityClient {
-    #if DEBUG
-    static let failing = Self (
+extension UserActivityClient: TestDependencyKey {
+    public static var testValue: UserActivityClient = Self (
         becomeCurrent: { _ in .failing("\(Self.self).becomeCurrent is unimplemented")},
         handleActivity: { _ in .failing("\(Self.self).handleActivity is unimplemented")}
     )
-    #endif
-    static let noop = Self(
+    public static var previewValue: UserActivityClient = Self(
         becomeCurrent: { _ in .none },
         handleActivity: { _ in .none }
     )

@@ -22,7 +22,7 @@ let package = Package(
         .library(name: "AppTileClient", targets: ["AppTileClient"])
     ],
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.33.1"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.41.2"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.2.1"),
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "5.21.0"),
         .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0"),

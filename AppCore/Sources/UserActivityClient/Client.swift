@@ -105,3 +105,14 @@ public extension MediaPlayable {
         return userInfo
     }
 }
+
+extension UserActivityClient: DependencyKey {
+    public static var liveValue: UserActivityClient = .live
+}
+
+public extension DependencyValues {
+    var userActivityClient: UserActivityClient {
+        get { self[UserActivityClient.self] }
+        set { self[UserActivityClient.self] = newValue }
+    }
+}

@@ -12,13 +12,13 @@ import Models
 import PlaybackCore
 
 struct DetailView: View {
-    @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
+    @ObservedObject var viewStore: ViewStore<PlaybackReducer.State, PlaybackReducer.Action>
 
     var playable: MediaPlayable
     @State private var shareSheetPresented = false
     @State private var popoverPresented = false
 
-    init(playable: MediaPlayable, store: Store<PlaybackState, PlaybackAction>) {
+    init(playable: MediaPlayable, store: StoreOf<PlaybackReducer>) {
         self.playable = playable
         viewStore = ViewStore(store)
     }
@@ -132,9 +132,8 @@ struct DetailView_Previews: PreviewProvider {
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
                 store: Store(
-                    initialState: PlaybackState(),
-                    reducer: playbackReducer,
-                    environment: .noop
+                    initialState: PlaybackReducer.State(),
+                    reducer: PlaybackReducer()
                 )
             )
                 .padding()
@@ -143,9 +142,8 @@ struct DetailView_Previews: PreviewProvider {
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
                 store: Store(
-                    initialState: PlaybackState(),
-                    reducer: playbackReducer,
-                    environment: .noop
+                    initialState: PlaybackReducer.State(),
+                    reducer: PlaybackReducer()
                 )
             )
                 .padding()

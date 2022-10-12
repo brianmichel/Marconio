@@ -146,3 +146,7 @@ public extension DatabaseClient {
         }
     }
 }
+
+extension DatabaseClient: DependencyKey {
+    public static var liveValue: DatabaseClient = .live
+}
