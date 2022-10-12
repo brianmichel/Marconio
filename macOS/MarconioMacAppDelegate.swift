@@ -19,13 +19,8 @@ import AppDelegate_macOS
 /// This is a hack around SwiftUI for the time being...
 final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
     let store = Store(
-        initialState: AppState(
-            channels: [],
-            mixtapes: [],
-            appDelegateState: AppDelegateState()
-        ),
-        reducer: appReducer,
-        environment: .live
+        initialState: .init(),
+        reducer: AppReducer(api: LiveAPI())
     )
 
     lazy var viewStore = ViewStore(

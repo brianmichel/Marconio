@@ -13,10 +13,10 @@ import LaceKit
 struct FloatingPlayerOverlayView<Content: View>: View {
     @State var sidebarWidth: CGFloat = 0
 
-    let store: Store<AppState, AppAction>
+    let store: StoreOf<AppReducer>
     let content: Content
 
-    init(store: Store<AppState, AppAction>, @ViewBuilder content: () -> Content) {
+    init(store: StoreOf<AppReducer>, @ViewBuilder content: () -> Content) {
         self.store = store
         self.content = content()
     }
@@ -44,7 +44,7 @@ struct FloatingPlayerOverlayView<Content: View>: View {
         return FloatingPlayerView(
             store: store.scope(
                 state: \.playback,
-                action: AppAction.playback
+                action: AppReducer.Action.playback
             )
         )
     }
@@ -60,14 +60,8 @@ struct SidebarWidthPreferenceKey: PreferenceKey {
 }
 
 struct FloatingPlayerOverlayView_Previews: PreviewProvider {
-    static let store: Store<AppState, AppAction> = .init(initialState: .init(appDelegateState: .init()),
-                                                         reducer: appReducer,
-                                                         environment: .init(mainQueue: .main,
-                                                                            uuid: UUID.init,
-                                                                            api: LiveAPI(),
-                                                                            appDelegate: .init(),
-                                                                            dbClient: .noop,
-                                                                            playback: .noop))
+    static let store: StoreOf<AppReducer> = .init(initialState: .init(appDelegate: .init()),
+                                                  reducer: AppReducer(api: NoopAPI()))
     static var previews: some View {
         FloatingPlayerOverlayView(store: store) {
             VStack {

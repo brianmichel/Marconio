@@ -36,17 +36,17 @@ public struct AppReducer: ReducerProtocol {
     public struct State: Equatable {
         public var channels: [Channel] = []
         public var mixtapes: [Mixtape] = []
-        public var playback: PlaybackReducer.State = .init()
-        public var appDelegateState: AppDelegateReducer.State?
+        public var playback: PlaybackReducer.State
+        public var appDelegate: AppDelegateReducer.State
 
         public init(channels: [Channel] = [],
                     mixtapes: [Mixtape] = [],
                     playback: PlaybackReducer.State = .init(),
-                    appDelegateState: AppDelegateReducer.State) {
+                    appDelegate: AppDelegateReducer.State = .init()) {
             self.channels = channels
             self.mixtapes = mixtapes
             self.playback = playback
-            self.appDelegateState = appDelegateState
+            self.appDelegate = appDelegate
         }
     }
 
@@ -57,7 +57,7 @@ public struct AppReducer: ReducerProtocol {
     // TODO: Convert this to an actual client so it can be used as a dependency.
     var api: NTSAPI
 
-    init(api: NTSAPI = LiveAPI()) {
+    public init(api: NTSAPI = LiveAPI()) {
         self.api = api
     }
 
@@ -129,12 +129,12 @@ public struct AppReducer: ReducerProtocol {
                 return .none
             }
         }
-        .ifLet(\.appDelegateState, action: /Action.appDelegate) {
+        Scope(state: \.appDelegate, action: /Action.appDelegate, {
             AppDelegateReducer()
-        }
-        .ifLet(\.playback, action: /Action.playback) {
+        })
+        Scope(state: \.playback, action: /Action.playback, {
             PlaybackReducer()
-        }
+        })
     }
 }
 

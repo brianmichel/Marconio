@@ -120,7 +120,7 @@ struct SidebarView_Previews: PreviewProvider {
                     channels: [],
                     mixtapes: [],
                     playback: PlaybackReducer.State(currentlyPlaying: nil, playerState: .playing),
-                    appDelegateState: .init()
+                    appDelegate: .init()
                 ),
                 reducer: AppReducer()
             )

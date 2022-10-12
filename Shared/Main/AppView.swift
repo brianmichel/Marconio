@@ -17,10 +17,10 @@ import LaceKit
 
 
 struct AppView: View {
-    let store: Store<AppState, AppAction>
-    @ObservedObject var viewStore: ViewStore<ViewState, AppAction>
+    let store: StoreOf<AppReducer>
+    @ObservedObject var viewStore: ViewStore<ViewState, AppReducer.Action>
 
-    init(store: Store<AppState, AppAction>) {
+    init(store: StoreOf<AppReducer>) {
         self.store = store
         self.viewStore = ViewStore(self.store.scope(state: ViewState.init(state:)))
     }
@@ -28,9 +28,9 @@ struct AppView: View {
     struct ViewState: Equatable {
         var channels: [Channel]
         var mixtapes: [Mixtape]
-        var playback: PlaybackState
+        var playback: PlaybackReducer.State
 
-        init(state: AppState) {
+        init(state: AppReducer.State) {
             channels = state.channels
             mixtapes = state.mixtapes
             playback = state.playback
@@ -56,22 +56,19 @@ struct AppView: View {
             viewStore.send(.loadInitialData)
         }
     }
-
-
 }
 
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView(
             store: Store(
-                initialState: AppState(
+                initialState: .init(
                     channels: [],
                     mixtapes: [],
-                    playback: PlaybackState(currentlyPlaying: nil, playerState: .playing),
-                    appDelegateState: .init()
+                    playback: .init(currentlyPlaying: nil, playerState: .playing),
+                    appDelegate: .init()
                 ),
-                reducer: appReducer,
-                environment: .noop
+                reducer: AppReducer(api: NoopAPI())
             )
         )
     }
