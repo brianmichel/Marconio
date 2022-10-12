@@ -64,7 +64,6 @@ public struct PlaybackReducer: ReducerProtocol {
         Reduce { state, action in
             switch action {
             case let .loadPlayable(playable):
-                let item = AVPlayerItem(url: playable.streamURL)
                 state.playerState = .playing
                 infoCenter.playbackState = .playing
                 appTileClient.updateAppTile(playable)

@@ -117,7 +117,7 @@ public struct AppReducer: ReducerProtocol {
                 return .none
             case .appDelegate:
                 return .none
-            case let .db(.failure(error)):
+            case .db(.failure(_)):
                 return .none
             case let .db(.success(.realTimeUpdate(channels, mixtapes))):
                 state.channels = channels
