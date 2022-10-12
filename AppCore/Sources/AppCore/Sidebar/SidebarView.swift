@@ -11,7 +11,7 @@ import Models
 import PlaybackCore
 import SwiftUI
 
-extension AppState {
+extension AppReducer.State {
     var sidebarState: SidebarState {
         return .init(channels: channels, mixtapes: mixtapes, playback: playback)
     }
@@ -20,15 +20,15 @@ extension AppState {
 struct SidebarState: Equatable {
     var channels: [Channel]
     var mixtapes: [Mixtape]
-    var playback: PlaybackState
+    var playback: PlaybackReducer.State
 }
 
 public struct SidebarView: View {
-    let store: Store<AppState, AppAction>
+    let store: StoreOf<AppReducer>
 
-    private let viewStore: ViewStore<SidebarState, AppAction>
+    private let viewStore: ViewStore<SidebarState, AppReducer.Action>
 
-    public init(store: Store<AppState, AppAction>) {
+    public init(store: StoreOf<AppReducer>) {
         self.store = store
         self.viewStore = ViewStore(store.scope(state: { $0.sidebarState }))
     }
@@ -86,7 +86,7 @@ public struct SidebarView: View {
     }
 
     private func destination(for playable: MediaPlayable) -> some View {
-        let scopedStore = store.scope(state: \.playback, action: AppAction.playback)
+        let scopedStore = store.scope(state: \.playback, action: AppReducer.Action.playback)
 
         return ScrollView {
             VStack {
@@ -100,11 +100,11 @@ public struct SidebarView: View {
     private func contextButton(for playable: MediaPlayable) -> some View {
         let isPlayingPlayable = viewStore.playback.currentlyPlaying == playable
         let iconName = isPlayingPlayable ? "pause.fill" : "play.fill"
-        let action = isPlayingPlayable ? PlaybackAction.pausePlayback : PlaybackAction.loadPlayable(playable)
+        let action: PlaybackReducer.Action = isPlayingPlayable ? .pausePlayback : .loadPlayable(playable)
         let buttonTitle = isPlayingPlayable ? "Pause" : "Play"
 
         return Button {
-            viewStore.send(AppAction.playback(action))
+            viewStore.send(.playback(action))
         } label: {
             Label(buttonTitle, systemImage: iconName)
         }
@@ -116,14 +116,13 @@ struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
         SidebarView(
             store: Store(
-                initialState: AppState(
+                initialState: AppReducer.State(
                     channels: [],
                     mixtapes: [],
-                    playback: PlaybackState(currentlyPlaying: nil, playerState: .playing),
-                    appDelegateState: .init()
+                    playback: PlaybackReducer.State(currentlyPlaying: nil, playerState: .playing),
+                    appDelegate: .init()
                 ),
-                reducer: appReducer,
-                environment: .noop
+                reducer: AppReducer()
             )
         )
     }

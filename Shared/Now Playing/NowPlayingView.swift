@@ -20,9 +20,9 @@ struct NowPlayingView: View {
         static let iconSize = 25.0
         static let routeViewWidth = 40.0
     }
-    @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
+    @ObservedObject var viewStore: ViewStoreOf<PlaybackReducer>
 
-    init(store: Store<PlaybackState, PlaybackAction>) {
+    init(store: StoreOf<PlaybackReducer>) {
         viewStore = ViewStore(store)
     }
 
@@ -97,22 +97,20 @@ struct NowPlayingView_Previews: PreviewProvider {
         Group {
             NowPlayingView(
                 store: Store(
-                    initialState: PlaybackState(),
-                    reducer: playbackReducer,
-                    environment: .noop
+                    initialState: .init(),
+                    reducer: PlaybackReducer()
                 )
             )
                 .preferredColorScheme(.dark)
 
             NowPlayingView(
                 store: Store(
-                    initialState: PlaybackState(
+                    initialState: .init(
                         currentlyPlaying: MediaPlayable(mixtape: .placeholder),
                         playerState: .playing,
                         routePickerView: routePicker
                     ),
-                    reducer: playbackReducer,
-                    environment: .noop
+                    reducer: PlaybackReducer()
                 )
             )
                 .frame(width: 200)

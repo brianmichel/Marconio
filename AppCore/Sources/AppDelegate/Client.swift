@@ -9,52 +9,65 @@ import Foundation
 import ComposableArchitecture
 #if os(macOS)
 import Sparkle
-#else
 #endif
 import SwiftUI
 
-public enum AppDelegateAction: Equatable {
-    case willFinishLaunching
-    case didFinishLaunching
-    case continueActivity(NSUserActivity)
-
+#if os(macOS)
+extension SPUStandardUpdaterController: DependencyKey {
+    public static var liveValue = SPUStandardUpdaterController(updaterDelegate: nil,
+                                                               userDriverDelegate: nil)
 }
 
-public struct AppDelegateState: Equatable {
-    public var shouldAutoupdate = true
-    public var shouldHandleUserActivity = true
-
-    public init(shouldAutoupdate: Bool = true, shouldHandleUserActivity: Bool = true) {
-        self.shouldAutoupdate = shouldAutoupdate
-        self.shouldHandleUserActivity = shouldHandleUserActivity
+public extension DependencyValues {
+    var sparkleUpdater: SPUStandardUpdaterController {
+        get { self[SPUStandardUpdaterController.self] }
+        set { self[SPUStandardUpdaterController.self] = newValue }
     }
 }
+#endif
 
-public struct AppDelegateEnvironment: Equatable {
+public struct AppDelegateReducer: ReducerProtocol {
+    public enum Action: Equatable {
+        case willFinishLaunching
+        case didFinishLaunching
+        case continueActivity(NSUserActivity)
+    }
+
     #if os(macOS)
-    public var updater = SPUStandardUpdaterController(updaterDelegate: nil,
-                                                           userDriverDelegate: nil)
+    @Dependency(\.sparkleUpdater) var updater
     #endif
 
     public init() {}
-}
 
-public let appDelegateReducer = Reducer<AppDelegateState, AppDelegateAction, AppDelegateEnvironment>  { state, action, environment in
-    switch action {
-    case .willFinishLaunching:
-        #if os(macOS)
-        NSWindow.allowsAutomaticWindowTabbing = false
-        #endif
-        return .none
-    case .didFinishLaunching:
-        #if os(macOS)
-        if state.shouldAutoupdate {
-            environment.updater.startUpdater()
+    public struct State: Equatable {
+        public var shouldAutoupdate = true
+        public var shouldHandleUserActivity = true
+
+        public init(shouldAutoupdate: Bool = true, shouldHandleUserActivity: Bool = true) {
+            self.shouldAutoupdate = shouldAutoupdate
+            self.shouldHandleUserActivity = shouldHandleUserActivity
         }
-        #endif
-        return .none
-    case let .continueActivity(activity):
-        print("did handle activity \(activity)")
-        return .none
+    }
+
+    public var body: some ReducerProtocol<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .willFinishLaunching:
+#if os(macOS)
+                NSWindow.allowsAutomaticWindowTabbing = false
+#endif
+                return .none
+            case .didFinishLaunching:
+#if os(macOS)
+                if state.shouldAutoupdate {
+                    updater.startUpdater()
+                }
+#endif
+                return .none
+            case let .continueActivity(activity):
+                print("did handle activity \(activity)")
+                return .none
+            }
+        }
     }
 }

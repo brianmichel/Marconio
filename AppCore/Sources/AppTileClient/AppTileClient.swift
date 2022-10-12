@@ -47,3 +47,14 @@ public extension AppTileClient {
         })
     }
 }
+
+extension AppTileClient: DependencyKey {
+    public static var liveValue: AppTileClient = .live
+}
+
+public extension DependencyValues {
+    var appTileClient: AppTileClient {
+        get { self[AppTileClient.self] }
+        set { self[AppTileClient.self] = newValue }
+    }
+}

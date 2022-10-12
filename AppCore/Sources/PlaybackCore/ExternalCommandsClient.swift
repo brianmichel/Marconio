@@ -57,3 +57,14 @@ public extension ExternalCommandsClient {
         })
     }
 }
+
+extension ExternalCommandsClient: DependencyKey {
+    public static var liveValue: ExternalCommandsClient = .live
+}
+
+extension DependencyValues {
+    var externalCommandsClient: ExternalCommandsClient {
+        get { self[ExternalCommandsClient.self] }
+        set { self[ExternalCommandsClient.self] = newValue }
+    }
+}

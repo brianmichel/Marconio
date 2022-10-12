@@ -123,7 +123,7 @@ private final class PlaybackClientDelegate: NSObject {
             .sink { [weak self] status in
                 switch status {
                 case .failed:
-                    print("Failed: \(self?.player?.error)")
+                    print("Failed: \(String(describing: self?.player?.error))")
                 case .readyToPlay:
                     print("ready to play!")
                 case .unknown:
@@ -133,5 +133,20 @@ private final class PlaybackClientDelegate: NSObject {
                 }
             }
             .store(in: &storage)
+    }
+
+    deinit {
+        stop()
+    }
+}
+
+extension PlaybackClient: DependencyKey {
+    public static var liveValue: PlaybackClient = .live
+}
+
+extension DependencyValues {
+    var player: PlaybackClient {
+        get { self[PlaybackClient.self] }
+        set { self[PlaybackClient.self] = newValue }
     }
 }

@@ -12,12 +12,12 @@ import Models
 import SwiftUI
 
 struct NowPlayingDetailView: View {
-    private let store: Store<PlaybackState, PlaybackAction>
-    @ObservedObject var viewStore: ViewStore<PlaybackState, PlaybackAction>
+    private let store: StoreOf<PlaybackReducer>
+    @ObservedObject var viewStore: ViewStoreOf<PlaybackReducer>
 
     @State private var shareSheetPresented = false
 
-    init(store: Store<PlaybackState, PlaybackAction>) {
+    init(store: StoreOf<PlaybackReducer>) {
         self.store = store
         viewStore = ViewStore(store)
     }
@@ -94,17 +94,15 @@ struct NowPlayingDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NowPlayingDetailView(store: Store(
-                initialState: PlaybackState(currentlyPlaying: MediaPlayable(mixtape: .placeholder)),
-                reducer: playbackReducer,
-                environment: .noop
+                initialState: .init(currentlyPlaying: MediaPlayable(mixtape: .placeholder)),
+                reducer: PlaybackReducer()
             ))
                 .frame(width: 400)
                 .preferredColorScheme(.light)
 
             NowPlayingDetailView(store: Store(
-                initialState: PlaybackState(),
-                reducer: playbackReducer,
-                environment: .noop
+                initialState: .init(),
+                reducer: PlaybackReducer()
             ))
                 .frame(width: 400)
                 .preferredColorScheme(.dark)

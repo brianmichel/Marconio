@@ -11,8 +11,8 @@ import PlaybackCore
 import Models
 
 struct FloatingPlayerView: View {
-    private let store: Store<PlaybackState, PlaybackAction>
-    @ObservedObject private var viewStore: ViewStore<PlaybackState, PlaybackAction>
+    private let store: StoreOf<PlaybackReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<PlaybackReducer>
 
     @State var expanded = false
     @State var showing = false
@@ -21,7 +21,7 @@ struct FloatingPlayerView: View {
         return viewStore.currentlyPlaying != nil
     }
 
-    init(store: Store<PlaybackState, PlaybackAction>, expanded: Bool = false) {
+    init(store: StoreOf<PlaybackReducer>, expanded: Bool = false) {
         self.store = store
         self.expanded = expanded
         viewStore = ViewStore(store)
@@ -63,15 +63,17 @@ struct FloatingPlayerView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             FloatingPlayerView(store: Store(
-                initialState: PlaybackState(),
-                reducer: playbackReducer,
-                environment: .noop
+                initialState: .init(),
+                reducer: PlaybackReducer()
             ))
 
             FloatingPlayerView(store: Store(
-                initialState: PlaybackState(currentlyPlaying: MediaPlayable(mixtape: .placeholder), playerState: .playing, currentActivity: nil, routePickerView: nil, monitoringRemoteCommands: false),
-                reducer: playbackReducer,
-                environment: .noop
+                initialState: .init(currentlyPlaying: MediaPlayable(mixtape: .placeholder),
+                                    playerState: .playing,
+                                    currentActivity: nil,
+                                    routePickerView: nil,
+                                    monitoringRemoteCommands: false),
+                reducer: PlaybackReducer()
             ),
                                expanded: true).preferredColorScheme(.light)
         }

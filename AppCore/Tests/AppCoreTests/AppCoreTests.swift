@@ -13,20 +13,13 @@ import XCTest
 
 class AppCoreTests: XCTestCase {
     func testIntegration() {
-        let state = AppState(channels: [],
+        let state = AppReducer.State(channels: [],
                              mixtapes: [],
                              playback: .init(),
                              appDelegateState: .init())
 
-        let environment = AppEnvironment(mainQueue: .immediate,
-                                         uuid: UUID.init,
-                                         api: NoopAPI(),
-                                         appDelegate: AppDelegateEnvironment(),
-                                         dbClient: .noop)
-
         let store = TestStore(initialState: state,
-                              reducer: appReducer,
-                              environment: environment)
+                              reducer: AppReducer())
 
         store.send(.loadInitialData)
 
