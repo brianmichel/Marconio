@@ -9,7 +9,6 @@ import Foundation
 import ComposableArchitecture
 #if os(macOS)
 import Sparkle
-#else
 #endif
 import SwiftUI
 
@@ -26,7 +25,6 @@ public extension DependencyValues {
     }
 }
 #endif
-
 
 public struct AppDelegateReducer: ReducerProtocol {
     public enum Action: Equatable {
