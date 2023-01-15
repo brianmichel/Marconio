@@ -16,13 +16,8 @@ import AppDelegate_iOS
 
 final class MarconioiOSAppDelegate: NSObject, UIApplicationDelegate {
     let store = Store(
-        initialState: AppState(
-            channels: [],
-            mixtapes: [],
-            appDelegateState: .init()
-        ),
-        reducer: appReducer,
-        environment: .live
+        initialState: .init(),
+        reducer: AppReducer(api: LiveAPI())
     )
 
     lazy var viewStore = ViewStore(

@@ -14,7 +14,7 @@ import UIKit
 #endif
 
 extension URL {
-    func openExternally() {
+    public func openExternally() {
         #if os(macOS)
         NSWorkspace.shared.open(self)
         #elseif os(iOS)

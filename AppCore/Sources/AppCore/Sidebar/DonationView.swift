@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import Utilities
 
-struct DonationView: View {
+public struct DonationView: View {
     @State private var waving = false
 
-    var body: some View {
+    public init(waving: Bool = false) {
+        self.waving = waving
+    }
+
+    public var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Spacer()

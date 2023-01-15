@@ -5,15 +5,20 @@
 //  Created by Brian Michel on 2/8/22.
 //
 
+#if canImport(UIKit)
 import SwiftUI
 
-struct ShareSheet: UIViewControllerRepresentable {
+public struct ShareSheet: UIViewControllerRepresentable {
     var items: [Any]
 
-    typealias UIViewControllerType = UIActivityViewController
+    public init(items: [Any]) {
+        self.items = items
+    }
+
+    public typealias UIViewControllerType = UIActivityViewController
     @Environment(\.presentationMode) var presentationMode
 
-    func makeUIViewController(context: Context) -> UIActivityViewController {
+    public func makeUIViewController(context: Context) -> UIActivityViewController {
         let activity = UIActivityViewController(activityItems: items, applicationActivities: nil)
         activity.completionWithItemsHandler = { type, completed, returned, error in
             presentationMode.wrappedValue.dismiss()
@@ -22,7 +27,6 @@ struct ShareSheet: UIViewControllerRepresentable {
         return activity
     }
 
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
-
-
+    public func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
+#endif

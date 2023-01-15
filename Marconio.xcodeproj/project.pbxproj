@@ -29,10 +29,6 @@
 		727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */; };
 		72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */; };
-		72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
-		72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E027A5F42A002AF923 /* DonationView.swift */; };
-		72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
-		72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */; };
 		72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */; };
 		72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B2A3E227ACDEB300B539CE /* Marquee.swift */; };
 		72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B2A3E227ACDEB300B539CE /* Marquee.swift */; };
@@ -48,7 +44,6 @@
 		72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
-		72F521C527B381CD001E8239 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F521C427B381CD001E8239 /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +60,6 @@
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
 		72974A5E27AF064B00B33ED8 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppCore; sourceTree = "<group>"; };
 		72974A6327AF102A00B33ED8 /* MarconioiOSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioiOSAppDelegate.swift; sourceTree = "<group>"; };
-		72A6B3E027A5F42A002AF923 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
-		72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Opener.swift"; sourceTree = "<group>"; };
 		72A6B3E727A5FEDE002AF923 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
 		72B2A3E227ACDEB300B539CE /* Marquee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marquee.swift; sourceTree = "<group>"; };
 		72C4D06927AE1E7F00E85491 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -81,7 +74,6 @@
 		72E1793B27A2E48D009A20ED /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--macOS--Info.plist"; sourceTree = "<group>"; };
 		72ED676B28564FC8002D6D77 /* macOS-Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macOS-Debug.entitlements"; sourceTree = "<group>"; };
-		72F521C427B381CD001E8239 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +114,6 @@
 		72A6B3DF27A5F420002AF923 /* Donation */ = {
 			isa = PBXGroup;
 			children = (
-				72A6B3E027A5F42A002AF923 /* DonationView.swift */,
 			);
 			path = Donation;
 			sourceTree = "<group>";
@@ -232,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */,
-				72A6B3E327A5FCD2002AF923 /* URL+Opener.swift */,
 				72B2A3E227ACDEB300B539CE /* Marquee.swift */,
 				7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */,
 				7247B64427D254E800D4D3D7 /* View+Helpers.swift */,
@@ -243,7 +233,6 @@
 		72F521C327B381BC001E8239 /* Sharing */ = {
 			isa = PBXGroup;
 			children = (
-				72F521C427B381CD001E8239 /* ShareSheet.swift */,
 			);
 			path = Sharing;
 			sourceTree = "<group>";
@@ -366,13 +355,10 @@
 				7247B64527D254E800D4D3D7 /* View+Helpers.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
-				72F521C527B381CD001E8239 /* ShareSheet.swift in Sources */,
 				7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
-				72A6B3E127A5F42A002AF923 /* DonationView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
-				72A6B3E427A5FCD2002AF923 /* URL+Opener.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 				7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */,
 			);
@@ -396,9 +382,7 @@
 				7247B64327D2513800D4D3D7 /* LiveView.swift in Sources */,
 				72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
-				72A6B3E227A5F42D002AF923 /* DonationView.swift in Sources */,
 				7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
-				72A6B3E527A5FD90002AF923 /* URL+Opener.swift in Sources */,
 				727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);

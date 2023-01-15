@@ -5,6 +5,7 @@
 //  Created by Brian Michel on 2/8/22.
 //
 
+#if canImport(AppKit)
 import SwiftUI
 import AppKit
 
@@ -53,3 +54,4 @@ struct SharingMenu_Previews: PreviewProvider {
 }
 
 extension NSSharingService: Identifiable {}
+#endif

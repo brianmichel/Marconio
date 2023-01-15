@@ -70,6 +70,7 @@ let package = Package(
             "AppDelegate",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             "Inject",
+            "Utilities"
         ]),
         .target(name: "AppDelegate_iOS", dependencies: [
             "AppDelegate"
@@ -80,6 +81,7 @@ let package = Package(
         ]),
         .target(name: "AppDelegate", dependencies: [
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-        ])
+        ]),
+        .target(name: "Utilities", dependencies: []),
     ]
 )
