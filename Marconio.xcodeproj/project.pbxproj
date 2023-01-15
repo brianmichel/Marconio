@@ -700,7 +700,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.41.2;
+				minimumVersion = 0.49.2;
 			};
 		};
 		72EB165D27ADB97100B7952B /* XCRemoteSwiftPackageReference "Sparkle" */ = {

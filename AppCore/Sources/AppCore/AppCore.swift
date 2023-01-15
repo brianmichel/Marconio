@@ -62,73 +62,7 @@ public struct AppReducer: ReducerProtocol {
     }
 
     public var body: some ReducerProtocol<State, Action> {
-        Reduce { state, action in
-            switch action {
-            case .loadInitialData:
-                return .merge(
-                    dbClient
-                        .startRealtimeUpdates()
-                        .receive(on: mainQueue)
-                        .catchToEffect(Action.db),
-
-                        .concatenate(
-                            try! api.live()
-                                .receive(on: mainQueue)
-                                .catchToEffect(Action.channelsResponse),
-                            try! api.mixtapes()
-                                .receive(on: mainQueue)
-                                .catchToEffect(Action.mixtapesResponse)
-                        )
-                )
-            case .loadChannels:
-                return try! api.live()
-                    .receive(on: mainQueue)
-                    .catchToEffect(Action.channelsResponse)
-            case let .channelsResponse(.success(channels)):
-                return .concatenate(
-                    dbClient.writeChannels(channels.results).catchToEffect(Action.db),
-                    .init(value: .loadChannels)
-                    .deferred(for: .seconds(channels.nextUpdateInterval),
-                              scheduler: mainQueue,
-                              options: nil)
-                )
-            case let .channelsResponse(.failure(error)):
-                // Do something with the error here
-                print("unable to load channels: \(error)")
-                return .none
-            case .loadMixtapes:
-                return try! api.mixtapes()
-                    .receive(on: mainQueue)
-                    .catchToEffect(Action.mixtapesResponse)
-            case let .mixtapesResponse(.success(mixtapes)):
-                return .concatenate(
-                    dbClient.writeMixtapes(mixtapes.results).catchToEffect(Action.db)
-                )
-            case let .mixtapesResponse(.failure(error)):
-                // Do something with the error here
-                print("unable to load mixtapes: \(error)")
-                return .none
-            case .playback:
-                return .none
-            case let .appDelegate(.continueActivity(activity)):
-                if let mediaPlayable = activity.playable() {
-                    return Effect(value: .playback(.loadPlayable(mediaPlayable)))
-                }
-                return .none
-            case .appDelegate:
-                return .none
-            case .db(.failure(_)):
-                return .none
-            case let .db(.success(.realTimeUpdate(channels, mixtapes))):
-                state.channels = channels
-                state.mixtapes = mixtapes
-                return .none
-            case .db(.success(.didFetchAllMixtapes(_))):
-                return .none
-            case .db(.success(.didFetchAllChannels(_))):
-                return .none
-            }
-        }
+        Reduce(core)
         Scope(state: \.appDelegate, action: /Action.appDelegate, {
             AppDelegateReducer()
         })
@@ -136,5 +70,75 @@ public struct AppReducer: ReducerProtocol {
             PlaybackReducer()
         })
     }
+
+    private func core(_ state: inout State, action: Action) -> EffectTask<Action> {
+        switch action {
+        case .loadInitialData:
+            return .merge(
+                dbClient
+                    .startRealtimeUpdates()
+                    .receive(on: mainQueue)
+                    .catchToEffect(Action.db),
+
+                    .concatenate(
+                        try! api.live()
+                            .receive(on: mainQueue)
+                            .catchToEffect(Action.channelsResponse),
+                        try! api.mixtapes()
+                            .receive(on: mainQueue)
+                            .catchToEffect(Action.mixtapesResponse)
+                    )
+            )
+        case .loadChannels:
+            return try! api.live()
+                .receive(on: mainQueue)
+                .catchToEffect(Action.channelsResponse)
+        case let .channelsResponse(.success(channels)):
+            return .concatenate(
+                dbClient.writeChannels(channels.results).catchToEffect(Action.db),
+                .init(value: .loadChannels)
+                .deferred(for: .seconds(channels.nextUpdateInterval),
+                          scheduler: mainQueue,
+                          options: nil)
+            )
+        case let .channelsResponse(.failure(error)):
+            // Do something with the error here
+            print("unable to load channels: \(error)")
+            return .none
+        case .loadMixtapes:
+            return try! api.mixtapes()
+                .receive(on: mainQueue)
+                .catchToEffect(Action.mixtapesResponse)
+        case let .mixtapesResponse(.success(mixtapes)):
+            return .concatenate(
+                dbClient.writeMixtapes(mixtapes.results).catchToEffect(Action.db)
+            )
+        case let .mixtapesResponse(.failure(error)):
+            // Do something with the error here
+            print("unable to load mixtapes: \(error)")
+            return .none
+        case .playback:
+            return .none
+        case let .appDelegate(.continueActivity(activity)):
+            if let mediaPlayable = activity.playable() {
+                return Effect(value: .playback(.loadPlayable(mediaPlayable)))
+            }
+            return .none
+        case .appDelegate:
+            return .none
+        case .db(.failure(_)):
+            return .none
+        case let .db(.success(.realTimeUpdate(channels, mixtapes))):
+            state.channels = channels
+            state.mixtapes = mixtapes
+            return .none
+        case .db(.success(.didFetchAllMixtapes(_))):
+            return .none
+        case .db(.success(.didFetchAllChannels(_))):
+            return .none
+        }
+
+    }
+
 }
 
