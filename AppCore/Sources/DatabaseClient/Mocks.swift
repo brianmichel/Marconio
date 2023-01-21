@@ -11,7 +11,6 @@ import Models
 import GRDB
 
 public extension DatabaseClient {
-    #if DEBUG
     static var failing: Self {
         let dbQueue = DatabaseQueue()
         return Self(dbWriter: dbQueue,
@@ -24,7 +23,6 @@ public extension DatabaseClient {
                     startRealtimeUpdates: { .failing("\(Self.self).startRealtimeUpdates is unimplemented") },
                     stopRealtimeUpdates: { .failing("\(Self.self).stopRealtimeUpdates is unimplemented") })
     }
-    #endif
 
     static var noop: Self {
         let dbQueue = DatabaseQueue()

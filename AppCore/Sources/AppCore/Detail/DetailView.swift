@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Inject
 import LaceKit
 import Models
 import PlaybackCore
@@ -17,6 +18,8 @@ struct DetailView: View {
     var playable: MediaPlayable
     @State private var shareSheetPresented = false
     @State private var popoverPresented = false
+
+    @ObserveInjection var inject
 
     init(playable: MediaPlayable, store: StoreOf<PlaybackReducer>) {
         self.playable = playable
@@ -64,7 +67,6 @@ struct DetailView: View {
                         Spacer()
                     }.frame(width: detailWidth(proxy: reader))
                 }
-                Spacer()
             }
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
@@ -99,8 +101,9 @@ struct DetailView: View {
         #endif
 
         #if os(macOS)
-        .frame(width: 350, height: 410)
+        .frame(width: 350)
         #endif
+        .enableInjection()
     }
 
     var isPlayingBackCurrentPlayable: Bool {

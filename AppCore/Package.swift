@@ -19,7 +19,8 @@ let package = Package(
         .library(name: "AppDelegate", targets: ["AppDelegate"]),
         .library(name: "AppDelegate_iOS", targets: ["AppDelegate_iOS"]),
         .library(name: "AppDelegate_macOS", targets: ["AppDelegate_macOS"]),
-        .library(name: "AppTileClient", targets: ["AppTileClient"])
+        .library(name: "AppTileClient", targets: ["AppTileClient"]),
+        .library(name: "Utilities", targets: ["Utilities"])
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.41.2"),

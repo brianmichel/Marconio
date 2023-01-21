@@ -9,7 +9,7 @@ import Foundation
 import LaceKit
 import Models
 
-extension Mixtape {
+public extension Mixtape {
     var systemIcon: String {
         switch mixtapeAlias {
         case "poolside":

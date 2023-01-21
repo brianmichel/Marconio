@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720C84CA297C565100587AA4 /* SpeakerGrilleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */; };
+		720C84CB297C565100587AA4 /* SpeakerGrilleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */; };
 		72276FC927B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247B64127D2513800D4D3D7 /* LiveView.swift */; };
@@ -47,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerGrilleView.swift; sourceTree = "<group>"; };
 		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		72276FC827B965E800AD4062 /* FloatingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerView.swift; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 			children = (
 				72D5928B27A5A21E00D3CE52 /* AppView.swift */,
 				727AD85027A6D75100F224CF /* MarconioCommands.swift */,
+				720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -356,6 +360,7 @@
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
 				7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
+				720C84CA297C565100587AA4 /* SpeakerGrilleView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
@@ -369,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7259A9B227BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
+				720C84CB297C565100587AA4 /* SpeakerGrilleView.swift in Sources */,
 				7247B64627D254E800D4D3D7 /* View+Helpers.swift in Sources */,
 				7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */,
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
