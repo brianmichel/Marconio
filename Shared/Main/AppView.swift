@@ -54,78 +54,36 @@ struct AppView: View {
     @ViewBuilder
     var new: some View {
         VStack(spacing: 0) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 4)
-                    .padding([.horizontal], 8)
-                    .padding([.vertical], 5)
-                    .foregroundColor(Color(rgb: 0xB0B0B0))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .foregroundColor(Color(rgb: 0xBF5B1F).opacity(0.8))
-                            .padding([.horizontal], 8)
-                            .padding([.vertical], 5)
-                    )
-                    .shadow(color: .primary.opacity(0.2), radius: 0.4, x: 0, y: 1)
-                    .shadow(color: .primary.opacity(0.2), radius: 0.4, x: 0, y: -1)
-                VStack(alignment: .leading) {
-                    ZStack {
-                        Text(viewStore.playback.currentlyPlaying?.title.uppercased() ?? "Nothing Playing")
-                            .font(.title.bold().monospaced())
-                            .foregroundColor(Color(rgb: 0x262626))
-                        Text(viewStore.playback.currentlyPlaying?.title.uppercased() ?? "Nothing Playing")
-                            .font(.title.bold().monospaced())
-                            .foregroundColor(Color(rgb: 0x262626).opacity(0.2))
-                            .offset(x: 2, y: 2)
-                    }
-                    ZStack {
-                        Text(viewStore.playback.currentlyPlaying?.subtitle ?? "")
-                            .font(.body.bold().monospaced())
-                            .foregroundColor(Color(rgb: 0x262626))
-                        Text(viewStore.playback.currentlyPlaying?.subtitle ?? "")
-                            .font(.body.bold().monospaced())
-                            .foregroundColor(Color(rgb: 0x262626).opacity(0.2))
-                            .offset(x: 2, y: 2)
-                    }
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Image(systemName: "antenna.radiowaves.left.and.right")
-                            .font(.system(size: 20).bold())
-                            .foregroundColor(Color(rgb: 0x262626).opacity(0.2))
-                    }
-                }
-                .padding(.horizontal)
-                .frame(height: 120)
-            }
+            LCDPanelView(store: store)
             VStack {
                 Picker(selection: $favoriteColor) {
-                    Text("L1").tag(0).keyboardShortcut(.init(.init("1"), modifiers: .command))
-                    Text("L2").tag(1).keyboardShortcut(.init(.init("2"), modifiers: .command))
+                    Text("L1").tag(0)
+                    Text("L2").tag(1)
                     Text("♾️").tag(2)
                 } label: {
                     EmptyView()
                 }
                 .pickerStyle(.segmented)
-                .padding(5)
+                .padding(.horizontal, 8)
+                .padding(.bottom, 5)
             }
             ZStack {
                 // Well
                 VStack {
                     List {
                         ForEach(viewStore.mixtapes) { mixtape in
-                            let playable = MediaPlayable(mixtape: mixtape)
                             Label("\(mixtape.title)", systemImage: mixtape.systemIcon).onTapGesture {
                                 viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
                             }
                         }
                     }
-                    .frame(height: 500 - 120 - 80)
+                    .frame(height: 500 - 120 - 60)
                     Spacer()
                 }
                 // Cover
-                SpeakerGrilleView()
+                SpeakerGrillView()
                     .offset(y: favoriteColor == 2 ? 300 : 0)
-                    .animation(.easeIn(duration: 0.2))
+                    .animation(.easeIn(duration: 0.2), value: favoriteColor)
                     .shadow(color: favoriteColor == 2 ? .black.opacity(0.3) : .clear, radius: 3, x: 0, y: -5)
             }
         }

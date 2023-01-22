@@ -1,5 +1,5 @@
 //
-//  SpeakerGrilleView.swift
+//  SpeakerGrillView.swift
 //  Marconio
 //
 //  Created by Brian Michel on 1/21/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Inject
 
-struct SpeakerGrilleView: View {
+struct SpeakerGrillView: View {
     @ObserveInjection var inject
     @State var scaling: Bool = false
     var body: some View {
@@ -17,22 +17,23 @@ struct SpeakerGrilleView: View {
             mediumFineMesh
                 .mask {
                     Circle()
-                        .scaleEffect(scaling ? 0.5 : 1)
+                        .scaleEffect(scaling ? 0.98 : 1)
                         .padding()
                 }
                 .shadow(color: .secondary.opacity(0.2), radius: 0.4, x: 0, y: 0.3)
                 .foregroundColor(.black)
             mediumFineMesh
-                .onTapGesture {
-                    withAnimation(.easeInOut(duration: 0.4).repeatForever()) {
-                        scaling.toggle()
-                    }
-                }
                 .foregroundColor(.black.opacity(0.7))
                 .shadow(color: .primary.opacity(0.2), radius: 0.4, x: 0, y: 0.3)
 
                 .opacity(0.8)
-        }.enableInjection()
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.4).repeatForever()) {
+                scaling.toggle()
+            }
+        }
+        .enableInjection()
     }
 
     @ViewBuilder
@@ -68,6 +69,6 @@ struct SpeakerGrilleView: View {
 
 struct SpeakerGrilleView_Previews: PreviewProvider {
     static var previews: some View {
-        SpeakerGrilleView().frame(width: 320)
+        SpeakerGrillView().frame(width: 320)
     }
 }

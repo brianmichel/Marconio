@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		720C84CA297C565100587AA4 /* SpeakerGrilleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */; };
-		720C84CB297C565100587AA4 /* SpeakerGrilleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */; };
+		720C84CA297C565100587AA4 /* SpeakerGrillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrillView.swift */; };
+		720C84CB297C565100587AA4 /* SpeakerGrillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrillView.swift */; };
 		72276FC927B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247B64127D2513800D4D3D7 /* LiveView.swift */; };
@@ -24,6 +24,22 @@
 		7259A9B427C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */; };
 		7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */; };
 		7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */; };
+		72645B44297CAC760089C4A3 /* DSEG14Classic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B3E297CAC760089C4A3 /* DSEG14Classic-Bold.ttf */; };
+		72645B45297CAC760089C4A3 /* DSEG14Classic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B3E297CAC760089C4A3 /* DSEG14Classic-Bold.ttf */; };
+		72645B46297CAC760089C4A3 /* DSEG14Classic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B3F297CAC760089C4A3 /* DSEG14Classic-Light.ttf */; };
+		72645B47297CAC760089C4A3 /* DSEG14Classic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B3F297CAC760089C4A3 /* DSEG14Classic-Light.ttf */; };
+		72645B48297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B40297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf */; };
+		72645B49297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B40297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf */; };
+		72645B4A297CAC760089C4A3 /* DSEG14Classic-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B41297CAC760089C4A3 /* DSEG14Classic-Italic.ttf */; };
+		72645B4B297CAC760089C4A3 /* DSEG14Classic-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B41297CAC760089C4A3 /* DSEG14Classic-Italic.ttf */; };
+		72645B4C297CAC760089C4A3 /* DSEG14Classic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B42297CAC760089C4A3 /* DSEG14Classic-Regular.ttf */; };
+		72645B4D297CAC760089C4A3 /* DSEG14Classic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B42297CAC760089C4A3 /* DSEG14Classic-Regular.ttf */; };
+		72645B4E297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B43297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf */; };
+		72645B4F297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72645B43297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf */; };
+		72645B51297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B50297CDDBE0089C4A3 /* Font+DSEG.swift */; };
+		72645B52297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B50297CDDBE0089C4A3 /* Font+DSEG.swift */; };
+		72645B54297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B53297CDF3A0089C4A3 /* LCDPanelView.swift */; };
+		72645B55297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B53297CDF3A0089C4A3 /* LCDPanelView.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */; };
@@ -49,7 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerGrilleView.swift; sourceTree = "<group>"; };
+		720C84C9297C565100587AA4 /* SpeakerGrillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerGrillView.swift; sourceTree = "<group>"; };
 		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		72276FC827B965E800AD4062 /* FloatingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerView.swift; sourceTree = "<group>"; };
@@ -58,6 +74,14 @@
 		7259A9B027BE7B7600B66981 /* FloatingPlayerOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerOverlayView.swift; sourceTree = "<group>"; };
 		7259A9B327C2CD5E00B66981 /* NowPlayingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingDetailView.swift; sourceTree = "<group>"; };
 		7259A9B627C2E19600B66981 /* NSView+SplitViewFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+SplitViewFinder.swift"; sourceTree = "<group>"; };
+		72645B3E297CAC760089C4A3 /* DSEG14Classic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-Bold.ttf"; sourceTree = "<group>"; };
+		72645B3F297CAC760089C4A3 /* DSEG14Classic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-Light.ttf"; sourceTree = "<group>"; };
+		72645B40297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-LightItalic.ttf"; sourceTree = "<group>"; };
+		72645B41297CAC760089C4A3 /* DSEG14Classic-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-Italic.ttf"; sourceTree = "<group>"; };
+		72645B42297CAC760089C4A3 /* DSEG14Classic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-Regular.ttf"; sourceTree = "<group>"; };
+		72645B43297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DSEG14Classic-BoldItalic.ttf"; sourceTree = "<group>"; };
+		72645B50297CDDBE0089C4A3 /* Font+DSEG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+DSEG.swift"; sourceTree = "<group>"; };
+		72645B53297CDF3A0089C4A3 /* LCDPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDPanelView.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
@@ -114,6 +138,28 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		72645B2A297CA8F20089C4A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				72645B2B297CA8F80089C4A3 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		72645B2B297CA8F80089C4A3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				72645B3E297CAC760089C4A3 /* DSEG14Classic-Bold.ttf */,
+				72645B43297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf */,
+				72645B41297CAC760089C4A3 /* DSEG14Classic-Italic.ttf */,
+				72645B3F297CAC760089C4A3 /* DSEG14Classic-Light.ttf */,
+				72645B40297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf */,
+				72645B42297CAC760089C4A3 /* DSEG14Classic-Regular.ttf */,
+				72645B50297CDDBE0089C4A3 /* Font+DSEG.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		72A6B3DF27A5F420002AF923 /* Donation */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +211,8 @@
 			children = (
 				72D5928B27A5A21E00D3CE52 /* AppView.swift */,
 				727AD85027A6D75100F224CF /* MarconioCommands.swift */,
-				720C84C9297C565100587AA4 /* SpeakerGrilleView.swift */,
+				720C84C9297C565100587AA4 /* SpeakerGrillView.swift */,
+				72645B53297CDF3A0089C4A3 /* LCDPanelView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -185,6 +232,7 @@
 		72E1792B27A2E48C009A20ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				72645B2A297CA8F20089C4A3 /* Resources */,
 				72A6B3E627A5FECE002AF923 /* Now Playing */,
 				72A6B3DF27A5F420002AF923 /* Donation */,
 				72D5928627A5986200D3CE52 /* Main */,
@@ -334,7 +382,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72645B46297CAC760089C4A3 /* DSEG14Classic-Light.ttf in Resources */,
+				72645B4C297CAC760089C4A3 /* DSEG14Classic-Regular.ttf in Resources */,
+				72645B44297CAC760089C4A3 /* DSEG14Classic-Bold.ttf in Resources */,
+				72645B4E297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf in Resources */,
 				72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */,
+				72645B48297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf in Resources */,
+				72645B4A297CAC760089C4A3 /* DSEG14Classic-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +396,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72645B47297CAC760089C4A3 /* DSEG14Classic-Light.ttf in Resources */,
+				72645B4D297CAC760089C4A3 /* DSEG14Classic-Regular.ttf in Resources */,
+				72645B45297CAC760089C4A3 /* DSEG14Classic-Bold.ttf in Resources */,
+				72645B4F297CAC760089C4A3 /* DSEG14Classic-BoldItalic.ttf in Resources */,
 				72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */,
+				72645B49297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf in Resources */,
+				72645B4B297CAC760089C4A3 /* DSEG14Classic-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,10 +418,12 @@
 				72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */,
 				7247B64527D254E800D4D3D7 /* View+Helpers.swift in Sources */,
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
+				72645B51297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
 				7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
-				720C84CA297C565100587AA4 /* SpeakerGrilleView.swift in Sources */,
+				720C84CA297C565100587AA4 /* SpeakerGrillView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
+				72645B54297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
@@ -374,7 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7259A9B227BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
-				720C84CB297C565100587AA4 /* SpeakerGrilleView.swift in Sources */,
+				720C84CB297C565100587AA4 /* SpeakerGrillView.swift in Sources */,
 				7247B64627D254E800D4D3D7 /* View+Helpers.swift in Sources */,
 				7259A9B727C2E19600B66981 /* NSView+SplitViewFinder.swift in Sources */,
 				727AD85727A6D9EC00F224CF /* NowPlayingView.swift in Sources */,
@@ -386,7 +448,9 @@
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
 				7247B64327D2513800D4D3D7 /* LiveView.swift in Sources */,
+				72645B52297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */,
 				72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
+				72645B55297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
 				7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
 				727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
