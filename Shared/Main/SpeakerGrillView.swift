@@ -28,11 +28,6 @@ struct SpeakerGrillView: View {
 
                 .opacity(0.8)
         }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 0.4).repeatForever()) {
-                scaling.toggle()
-            }
-        }
         .enableInjection()
     }
 
@@ -63,7 +58,7 @@ struct SpeakerGrillView: View {
     @ViewBuilder
     var grillMeshForground: some View {
         Rectangle()
-            .foregroundColor(Color(nsColor: .darkGray))
+            .foregroundColor(Color(rgb: 0x434343))
     }
 }
 

@@ -41,7 +41,7 @@ struct AppView: View {
         }
     }
 
-    @State var favoriteColor: Int = 0
+    @State var radioBand: RadioBand = .off
 
     var body: some View {
         new
@@ -53,47 +53,43 @@ struct AppView: View {
 
     @ViewBuilder
     var new: some View {
-        VStack(spacing: 0) {
-            LCDPanelView(store: store)
-            VStack {
-                Picker(selection: $favoriteColor) {
-                    Text("L1").tag(0)
-                    Text("L2").tag(1)
-                    Text("♾️").tag(2)
-                } label: {
-                    EmptyView()
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 8)
-                .padding(.bottom, 5)
-            }
-            ZStack {
-                // Well
-                VStack {
-                    List {
-                        ForEach(viewStore.mixtapes) { mixtape in
-                            Label("\(mixtape.title)", systemImage: mixtape.systemIcon).onTapGesture {
-                                viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
+        ZStack {
+            Rectangle().foregroundColor(Color(rgb: 0x262626))
+            VStack(spacing: 0) {
+                LCDPanelView(store: store)
+                BandSelectorView($radioBand)
+                    .padding(.horizontal, 8)
+                    .padding(.bottom, 5)
+                ZStack {
+                    // Well
+                    VStack {
+                        List {
+                            ForEach(viewStore.mixtapes) { mixtape in
+                                Label("\(mixtape.title)", systemImage: mixtape.systemIcon).onTapGesture {
+                                    viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
+                                }
                             }
                         }
+                        .frame(height: 500 - 120 - 60)
+                        Spacer()
                     }
-                    .frame(height: 500 - 120 - 60)
-                    Spacer()
+                    // Cover
+                    SpeakerGrillView()
+                        .offset(y: radioBand == .mixtapes ? 300 : 0)
+                        .animation(.easeIn(duration: 0.2), value: radioBand)
+                        .shadow(color: radioBand == .mixtapes ? .black.opacity(0.3) : .clear, radius: 3, x: 0, y: -5)
                 }
-                // Cover
-                SpeakerGrillView()
-                    .offset(y: favoriteColor == 2 ? 300 : 0)
-                    .animation(.easeIn(duration: 0.2), value: favoriteColor)
-                    .shadow(color: favoriteColor == 2 ? .black.opacity(0.3) : .clear, radius: 3, x: 0, y: -5)
             }
         }
-        .onChange(of: favoriteColor, perform: { newValue in
+        .onChange(of: radioBand, perform: { newValue in
             switch newValue {
-            case 0:
+            case .off:
+                viewStore.send(.playback(.stopPlayback))
+            case .channelOne:
                 // play channel 1
                 let playable = MediaPlayable(channel: viewStore.channels[0])
                 viewStore.send(.playback(.loadPlayable(playable)))
-            case 1:
+            case .channelTwo:
                 // play channel 2
                 let playable = MediaPlayable(channel: viewStore.channels[1])
                 viewStore.send(.playback(.loadPlayable(playable)))
@@ -102,7 +98,7 @@ struct AppView: View {
                 break
             }
         })
-        .frame(minWidth: 320, maxWidth: 320, minHeight: 500, maxHeight: 500)
+        .frame(minWidth: 320, maxWidth: 320, minHeight: 510, maxHeight: 510)
     }
 
     @ViewBuilder
