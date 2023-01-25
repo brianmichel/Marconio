@@ -120,11 +120,13 @@ struct BandSelectorSliderView: View {
             Capsule(style: .continuous)
                 .foregroundColor(Color(rgb: 0x1FB3BF).opacity(0.9))
                 .shadow(radius: 0.2)
+            // Draw the grabber texture
             HStack(spacing: 2) {
                 Rectangle().frame(width: 1)
                 Rectangle().frame(width: 1)
                 Rectangle().frame(width: 1)
             }
+            //TODO: This color should be synced with the display color
             .foregroundColor(Color(rgb: 0x1FB3BF))
             .padding(.vertical, 2)
             .shadow(radius: 0.8, x: 0.2, y: 0.2)

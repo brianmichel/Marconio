@@ -28,6 +28,11 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
         removeDuplicates: ==
     )
     private let dockMenu = NSMenu()
+    private let mainWindow: RadioWindow
+
+    override init() {
+        mainWindow = RadioWindow(store: store)
+    }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
         viewStore.send(.appDelegate(.willFinishLaunching))
@@ -37,10 +42,12 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
         viewStore.send(.appDelegate(.didFinishLaunching))
 
         // HACK: Disable resizing of the split since that's our desired design.
-        NSApp.windows.first?.contentView?.disableSplitViewCollapsingIfPossible()
+        // NSApp.windows.first?.contentView?.disableSplitViewCollapsingIfPossible()
 
         // HACK: Disable the zoom button so you can't expand the app to fill the screen.
-        NSApp.windows.first?.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isEnabled = false
+        // NSApp.windows.first?.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isEnabled = false
+
+        mainWindow.makeKeyAndOrderFront(nil)
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

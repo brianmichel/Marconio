@@ -10,23 +10,24 @@ import Inject
 
 struct SpeakerGrillView: View {
     @ObserveInjection var inject
-    @State var scaling: Bool = false
+
     var body: some View {
         ZStack {
             grillMeshForground
             mediumFineMesh
                 .mask {
                     Circle()
-                        .scaleEffect(scaling ? 0.98 : 1)
                         .padding()
                 }
                 .shadow(color: .secondary.opacity(0.2), radius: 0.4, x: 0, y: 0.3)
                 .foregroundColor(.black)
+                .padding(4)
             mediumFineMesh
                 .foregroundColor(.black.opacity(0.7))
                 .shadow(color: .primary.opacity(0.2), radius: 0.4, x: 0, y: 0.3)
-
                 .opacity(0.8)
+                .padding(4)
+                .clipShape(RoundedRectangle(cornerRadius: 30))
         }
         .enableInjection()
     }

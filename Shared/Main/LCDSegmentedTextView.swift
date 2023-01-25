@@ -36,9 +36,11 @@ struct LCDSegmentedTextView: View {
                 .font(font)
                 .foregroundColor(foregroundColor.opacity(0.7))
                 .shadow(color: .black.opacity(0.4), radius: 0.9, x: 0, y: -0.5)
+                .accessibilityLabel(text)
             Text(trimmed.1)
                 .font(font)
                 .foregroundColor(foregroundColor.opacity(0.1))
+                .accessibilityHidden(true)
         }
         .enableInjection()
     }

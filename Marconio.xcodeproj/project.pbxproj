@@ -46,6 +46,8 @@
 		72645B5B297DEA770089C4A3 /* LCDSegmentedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B59297DEA770089C4A3 /* LCDSegmentedTextView.swift */; };
 		72645B5D297E30990089C4A3 /* BandSelectorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */; };
 		72645B5E297E30990089C4A3 /* BandSelectorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */; };
+		72645B612980BD430089C4A3 /* RadioWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B602980BD430089C4A3 /* RadioWindow.swift */; };
+		72645B622980BD430089C4A3 /* RadioWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B602980BD430089C4A3 /* RadioWindow.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */; };
@@ -91,6 +93,7 @@
 		72645B56297DD5890089C4A3 /* BandSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandSelectorView.swift; sourceTree = "<group>"; };
 		72645B59297DEA770089C4A3 /* LCDSegmentedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDSegmentedTextView.swift; sourceTree = "<group>"; };
 		72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandSelectorSliderView.swift; sourceTree = "<group>"; };
+		72645B602980BD430089C4A3 /* RadioWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWindow.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
@@ -167,6 +170,14 @@
 				72645B50297CDDBE0089C4A3 /* Font+DSEG.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		72645B5F2980BD310089C4A3 /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				72645B602980BD430089C4A3 /* RadioWindow.swift */,
+			);
+			path = "Main Window";
 			sourceTree = "<group>";
 		};
 		72A6B3DF27A5F420002AF923 /* Donation */ = {
@@ -267,6 +278,7 @@
 		72E1793A27A2E48D009A20ED /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				72645B5F2980BD310089C4A3 /* Main Window */,
 				72ED676B28564FC8002D6D77 /* macOS-Debug.entitlements */,
 				72C4D06827AE1E5600E85491 /* Settings */,
 				72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */,
@@ -443,6 +455,7 @@
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 				7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */,
+				72645B612980BD430089C4A3 /* RadioWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +474,7 @@
 				72645B58297DD5890089C4A3 /* BandSelectorView.swift in Sources */,
 				72C4D06A27AE1E7F00E85491 /* SettingsView.swift in Sources */,
 				72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */,
+				72645B622980BD430089C4A3 /* RadioWindow.swift in Sources */,
 				72C4D07327AEC7C800E85491 /* AboutSettingsView.swift in Sources */,
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
 				72645B5E297E30990089C4A3 /* BandSelectorSliderView.swift in Sources */,

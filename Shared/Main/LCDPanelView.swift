@@ -104,6 +104,7 @@ struct LCDPanelView: View {
             )
             .shadow(color: .primary.opacity(0.2), radius: 0.4, x: 0, y: 1)
             .shadow(color: .primary.opacity(0.2), radius: 0.4, x: 0, y: -1)
+            .accessibilityHidden(true)
     }
 
     private func location(for playable: MediaPlayable?) -> String? {

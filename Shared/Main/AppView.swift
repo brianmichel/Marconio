@@ -56,10 +56,22 @@ struct AppView: View {
         ZStack {
             Rectangle().foregroundColor(Color(rgb: 0x262626))
             VStack(spacing: 0) {
+                HStack {
+                    Spacer()
+                    Image("logo")
+                        .foregroundColor(Color(rgb: 0xCECECE))
+                        .accessibilityLabel("Marconio")
+                        .shadow(color: .white.opacity(0.3), radius: 0.4, x: 0, y: 0.3)
+                }
+                .frame(height: 20)
+                .padding(.top, 3)
+                .padding(.horizontal, 8)
                 LCDPanelView(store: store)
+                    .frame(height: 140)
                 BandSelectorView($radioBand)
                     .padding(.horizontal, 8)
                     .padding(.bottom, 5)
+                horizontalDivider
                 ZStack {
                     // Well
                     VStack {
@@ -70,8 +82,6 @@ struct AppView: View {
                                 }
                             }
                         }
-                        .frame(height: 500 - 120 - 60)
-                        Spacer()
                     }
                     // Cover
                     SpeakerGrillView()
@@ -98,7 +108,7 @@ struct AppView: View {
                 break
             }
         })
-        .frame(minWidth: 320, maxWidth: 320, minHeight: 510, maxHeight: 510)
+        .ignoresSafeArea()
     }
 
     @ViewBuilder
@@ -117,6 +127,16 @@ struct AppView: View {
                     .padding()
             }
         }
+    }
+
+    @ViewBuilder
+    var horizontalDivider: some View {
+        VStack(spacing: 0) {
+            Rectangle().frame(height: 0.5)
+                .foregroundColor(.black)
+            Rectangle().frame(height: 0.5)
+                .foregroundColor(.white)
+        }.opacity(0.3)
     }
 }
 
