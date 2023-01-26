@@ -46,8 +46,10 @@
 		72645B5B297DEA770089C4A3 /* LCDSegmentedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B59297DEA770089C4A3 /* LCDSegmentedTextView.swift */; };
 		72645B5D297E30990089C4A3 /* BandSelectorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */; };
 		72645B5E297E30990089C4A3 /* BandSelectorSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */; };
-		72645B612980BD430089C4A3 /* RadioWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B602980BD430089C4A3 /* RadioWindow.swift */; };
 		72645B622980BD430089C4A3 /* RadioWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B602980BD430089C4A3 /* RadioWindow.swift */; };
+		72645B9C298223AE0089C4A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B9A298223940089C4A3 /* main.swift */; };
+		72645B9D2982253C0089C4A3 /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
+		72645BA02982260B0089C4A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72645B9E298225F90089C4A3 /* MainMenu.xib */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */; };
@@ -66,8 +68,6 @@
 		72D5928227A591A100D3CE52 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72D5928127A591A100D3CE52 /* ComposableArchitecture */; };
 		72D5928C27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
 		72D5928D27A5A21E00D3CE52 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D5928B27A5A21E00D3CE52 /* AppView.swift */; };
-		72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
-		72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
 		72E1794027A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 		72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E1792E27A2E48D009A20ED /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -94,6 +94,8 @@
 		72645B59297DEA770089C4A3 /* LCDSegmentedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDSegmentedTextView.swift; sourceTree = "<group>"; };
 		72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandSelectorSliderView.swift; sourceTree = "<group>"; };
 		72645B602980BD430089C4A3 /* RadioWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWindow.swift; sourceTree = "<group>"; };
+		72645B9A298223940089C4A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		72645B9E298225F90089C4A3 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
@@ -176,8 +178,18 @@
 			isa = PBXGroup;
 			children = (
 				72645B602980BD430089C4A3 /* RadioWindow.swift */,
+				72645B9E298225F90089C4A3 /* MainMenu.xib */,
 			);
 			path = "Main Window";
+			sourceTree = "<group>";
+		};
+		72645BA1298227210089C4A3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */,
+				72645B9A298223940089C4A3 /* main.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		72A6B3DF27A5F420002AF923 /* Donation */ = {
@@ -278,12 +290,12 @@
 		72E1793A27A2E48D009A20ED /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				72645BA1298227210089C4A3 /* Base */,
 				72645B5F2980BD310089C4A3 /* Main Window */,
-				72ED676B28564FC8002D6D77 /* macOS-Debug.entitlements */,
 				72C4D06827AE1E5600E85491 /* Settings */,
+				72ED676B28564FC8002D6D77 /* macOS-Debug.entitlements */,
 				72EB166027ADBCA100B7952B /* Marconio--macOS--Info.plist */,
 				72E1793B27A2E48D009A20ED /* macOS.entitlements */,
-				727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -427,6 +439,7 @@
 				72E1794127A2E48D009A20ED /* Assets.xcassets in Resources */,
 				72645B49297CAC760089C4A3 /* DSEG14Classic-LightItalic.ttf in Resources */,
 				72645B4B297CAC760089C4A3 /* DSEG14Classic-Italic.ttf in Resources */,
+				72645BA02982260B0089C4A3 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +459,7 @@
 				72A6B3E827A5FEDE002AF923 /* NowPlayingView.swift in Sources */,
 				72645B51297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */,
 				72974A6427AF102A00B33ED8 /* MarconioiOSAppDelegate.swift in Sources */,
+				72645B9D2982253C0089C4A3 /* MarconioApp.swift in Sources */,
 				7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
 				720C84CA297C565100587AA4 /* SpeakerGrillView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
@@ -453,9 +467,7 @@
 				72645B54297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
-				72E1793C27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 				7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */,
-				72645B612980BD430089C4A3 /* RadioWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +491,7 @@
 				72C4D06D27AE1E9C00E85491 /* SettingsGridView.swift in Sources */,
 				72645B5E297E30990089C4A3 /* BandSelectorSliderView.swift in Sources */,
 				7247B64327D2513800D4D3D7 /* LiveView.swift in Sources */,
+				72645B9C298223AE0089C4A3 /* main.swift in Sources */,
 				72645B52297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */,
 				72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
 				72645B55297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
@@ -486,7 +499,6 @@
 				7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
 				727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72645B5B297DEA770089C4A3 /* LCDSegmentedTextView.swift in Sources */,
-				72E1793D27A2E48D009A20ED /* MarconioApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

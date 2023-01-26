@@ -33,11 +33,13 @@ struct AppView: View {
         var channels: [Channel]
         var mixtapes: [Mixtape]
         var playback: PlaybackReducer.State
+        var settings: SettingsReducer.State
 
         init(state: AppReducer.State) {
             channels = state.channels
             mixtapes = state.mixtapes
             playback = state.playback
+            settings = state.settings
         }
     }
 
@@ -68,7 +70,7 @@ struct AppView: View {
                 .padding(.horizontal, 8)
                 LCDPanelView(store: store)
                     .frame(height: 140)
-                BandSelectorView($radioBand)
+                BandSelectorView($radioBand, accentColor: Color(rgb: viewStore.settings.accentColor.rawValue))
                     .padding(.horizontal, 8)
                     .padding(.bottom, 5)
                 horizontalDivider

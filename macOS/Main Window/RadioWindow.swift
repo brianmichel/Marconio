@@ -11,13 +11,16 @@ import ComposableArchitecture
 import SwiftUI
 
 final class RadioWindow: NSWindow {
+    private enum Constants {
+        static let windowRect = NSRect(x: 0, y: 0, width: 320, height: 500)
+    }
     private let store: StoreOf<AppReducer>
 
     init(store: StoreOf<AppReducer>) {
         self.store = store
 
         super.init(
-            contentRect: NSRect(x: 0, y: 0, width: 320, height: 500),
+            contentRect: Constants.windowRect,
             styleMask: [.closable, .miniaturizable, .titled, .fullSizeContentView, .borderless],
             backing: .buffered,
             defer: false)

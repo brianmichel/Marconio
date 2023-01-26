@@ -13,10 +13,12 @@ import SwiftUI
 
 struct LCDPanelView: View {
     private struct ViewState: Equatable {
-        var playbackState: PlaybackReducer.State
+        var playback: PlaybackReducer.State
+        var settings: SettingsReducer.State
 
         init(state: AppReducer.State) {
-            self.playbackState = state.playback
+            self.playback = state.playback
+            self.settings = state.settings
         }
     }
 
@@ -31,21 +33,21 @@ struct LCDPanelView: View {
             background
             VStack(alignment: .leading) {
                 LCDSegmentedTextView(
-                    text: title(for: viewStore.playbackState.currentlyPlaying),
+                    text: title(for: viewStore.playback.currentlyPlaying),
                     maximumCharacters: 16,
                     fontSize: 22,
                     fontWeight: .bold
                 )
                 Spacer().frame(height: 8)
                 LCDSegmentedTextView(
-                    text: subtitle(for: viewStore.playbackState.currentlyPlaying),
+                    text: subtitle(for: viewStore.playback.currentlyPlaying),
                     maximumCharacters: 27,
                     fontSize: 13
                 )
                 Spacer()
                 HStack {
                     HStack(spacing: 2) {
-                        let location = location(for: viewStore.playbackState.currentlyPlaying)
+                        let location = location(for: viewStore.playback.currentlyPlaying)
                         ZStack {
                             Image(systemName: "mappin.and.ellipse")
                                 .font(.system(size: 15).bold())
@@ -74,6 +76,9 @@ struct LCDPanelView: View {
             .padding(.horizontal)
             .frame(height: 120)
         }
+        .onTapGesture {
+            viewStore.send(.settings(.nextAccentColor), animation: .easeInOut(duration: 0.5))
+        }
     }
 
     @ViewBuilder
@@ -83,15 +88,9 @@ struct LCDPanelView: View {
             .padding([.vertical], 5)
             .foregroundColor(Color(rgb: 0xB0B0B0))
             .overlay(
-                // Green: 0x64BF1F
-                // Orange: 0xBF5B1F
-                // Yellow: 0xBEBF1F
-                // Blue: 0x1FB3BF
-                // Purple: 0xBF1FB4
-                // Red: 0xBF1F2B
                 ZStack {
                     RoundedRectangle(cornerRadius: 4)
-                        .foregroundColor(Color(rgb: 0x1FB3BF).opacity(0.8))
+                        .foregroundColor(Color(rgb: viewStore.settings.accentColor.rawValue).opacity(0.8))
                         .padding([.horizontal], 8)
                         .padding([.vertical], 5)
                         .background {
@@ -136,11 +135,11 @@ struct LCDPanelView: View {
 
     @ViewBuilder
     private var playPauseButton: some View {
-        let isPlaying = viewStore.playbackState.playerState == .playing
+        let isPlaying = viewStore.playback.playerState == .playing
         let icon = isPlaying ? "pause.circle" : "play.circle"
         let action: AppReducer.Action = isPlaying ? .playback(.pausePlayback) : .playback(.resumePlayback)
 
-        let isStopped = viewStore.playbackState.playerState == .stopped
+        let isStopped = viewStore.playback.playerState == .stopped
         Button {
             viewStore.send(action)
         } label: {

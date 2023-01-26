@@ -31,6 +31,7 @@ public struct AppReducer: ReducerProtocol {
         case playback(PlaybackReducer.Action)
         case appDelegate(AppDelegateReducer.Action)
         case db(Result<DatabaseClient.Action, DatabaseClient.Error>)
+        case settings(SettingsReducer.Action)
     }
 
     public struct State: Equatable {
@@ -38,15 +39,18 @@ public struct AppReducer: ReducerProtocol {
         public var mixtapes: [Mixtape] = []
         public var playback: PlaybackReducer.State
         public var appDelegate: AppDelegateReducer.State
+        public var settings: SettingsReducer.State
 
         public init(channels: [Channel] = [],
                     mixtapes: [Mixtape] = [],
                     playback: PlaybackReducer.State = .init(),
-                    appDelegate: AppDelegateReducer.State = .init()) {
+                    appDelegate: AppDelegateReducer.State = .init(),
+                    settings: SettingsReducer.State = .init()) {
             self.channels = channels
             self.mixtapes = mixtapes
             self.playback = playback
             self.appDelegate = appDelegate
+            self.settings = settings
         }
     }
 
@@ -68,6 +72,9 @@ public struct AppReducer: ReducerProtocol {
         })
         Scope(state: \.playback, action: /Action.playback, {
             PlaybackReducer()
+        })
+        Scope(state: \.settings, action: /Action.settings, {
+            SettingsReducer()
         })
     }
 
@@ -136,9 +143,9 @@ public struct AppReducer: ReducerProtocol {
             return .none
         case .db(.success(.didFetchAllChannels(_))):
             return .none
+        case .settings:
+            return .none
         }
-
     }
-
 }
 

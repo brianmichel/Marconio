@@ -25,6 +25,7 @@ extension Strideable where Stride: SignedInteger {
 struct BandSelectorSliderView: View {
     private let range: ClosedRange<Int>
     private let showDetents = false
+    private let accentColor: Color
 
     @State private var location: CGFloat = 0
     @Binding private var binding: Int
@@ -33,9 +34,10 @@ struct BandSelectorSliderView: View {
         .system(.callout).uppercaseSmallCaps()
     }
 
-    init(_ binding: Binding<Int>, range: ClosedRange<Int> = 0...3) {
+    init(_ binding: Binding<Int>, range: ClosedRange<Int> = 0...3, accentColor: Color = .white) {
         _binding = binding
         self.range = range
+        self.accentColor = accentColor
     }
 
     var body: some View {
@@ -118,7 +120,7 @@ struct BandSelectorSliderView: View {
     private var slider: some View {
         ZStack {
             Capsule(style: .continuous)
-                .foregroundColor(Color(rgb: 0x1FB3BF).opacity(0.9))
+                .foregroundColor(accentColor.opacity(0.9))
                 .shadow(radius: 0.2)
             // Draw the grabber texture
             HStack(spacing: 2) {
@@ -127,7 +129,7 @@ struct BandSelectorSliderView: View {
                 Rectangle().frame(width: 1)
             }
             //TODO: This color should be synced with the display color
-            .foregroundColor(Color(rgb: 0x1FB3BF))
+            .foregroundColor(accentColor)
             .padding(.vertical, 2)
             .shadow(radius: 0.8, x: 0.2, y: 0.2)
             .shadow(color: .white.opacity(0.3), radius: 0.2, x: -0.2)

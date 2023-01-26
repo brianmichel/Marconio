@@ -19,14 +19,16 @@ struct BandSelectorView: View {
     @ObserveInjection var inject
 
     private var binding: Binding<RadioBand>
+    private var accentColor: Color
     @State private var value: Int = 0
 
-    init(_ binding: Binding<RadioBand>) {
+    init(_ binding: Binding<RadioBand>, accentColor: Color = .white) {
         self.binding = binding
+        self.accentColor = accentColor
     }
 
     var body: some View {
-        BandSelectorSliderView($value)
+        BandSelectorSliderView($value, accentColor: accentColor)
         .onChange(of: value, perform: { newValue in
             self.binding.wrappedValue = RadioBand(rawValue: newValue)!
         })
