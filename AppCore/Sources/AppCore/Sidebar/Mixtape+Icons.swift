@@ -40,6 +40,12 @@ public extension Mixtape {
             return "quote.bubble"
         case "field-recordings":
             return "recordingtape"
+        case "otaku":
+            return "gamecontroller"
+        case "sheet-music":
+            return "music.quarternote.3"
+        case "the-pit":
+            return "guitars"
         default:
             return "radio"
         }

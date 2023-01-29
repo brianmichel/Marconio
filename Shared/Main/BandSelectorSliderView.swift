@@ -40,25 +40,30 @@ struct BandSelectorSliderView: View {
         self.accentColor = accentColor
     }
 
+    @ViewBuilder
+    private var labels: some View {
+        HStack {
+            Text("OFF")
+                .font(labelFont)
+            Spacer()
+            Text("C1")
+                .font(labelFont)
+                .offset(x: -12)
+            Spacer()
+            Text("C2")
+                .font(labelFont)
+                .offset(x: -6)
+            Spacer()
+            Image(systemName: "infinity")
+                .font(labelFont)
+        }
+        .opacity(0.7)
+        .padding(.horizontal, 5)
+    }
+
     var body: some View {
         VStack(spacing: 5) {
-            HStack {
-                Text("OFF")
-                    .font(labelFont)
-                Spacer()
-                Text("C1")
-                    .font(labelFont)
-                    .offset(x: -12)
-                Spacer()
-                Text("C2")
-                    .font(labelFont)
-                    .offset(x: -6)
-                Spacer()
-                Image(systemName: "infinity")
-                    .font(labelFont)
-            }
-            .opacity(0.7)
-            .padding(.horizontal, 5)
+            labels
             GeometryReader { gr in
                 let thumbWidth = gr.size.height * 1.8
                 let thumbHeight = gr.size.height * 0.75
@@ -99,10 +104,10 @@ struct BandSelectorSliderView: View {
                             .frame(width: thumbWidth, height: thumbHeight)
                             .offset(x: sliderOffset)
                             .gesture(
-                                DragGesture(minimumDistance: 0)
+                                DragGesture(minimumDistance: 10)
                                     .onChanged { value in
                                         self.location = value.location.x
-                                        self.binding = Int(self.location / offsets)
+                                        self.binding = Int(self.location / offsets).clamped(to: 0...3)
                                     }
                                     .onEnded({ value in
                                         self.location = 0

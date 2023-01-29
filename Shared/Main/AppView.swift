@@ -46,7 +46,7 @@ struct AppView: View {
     @State var radioBand: RadioBand = .off
 
     var body: some View {
-        new
+        core
         .onAppear {
             viewStore.send(.loadInitialData)
         }
@@ -54,7 +54,7 @@ struct AppView: View {
     }
 
     @ViewBuilder
-    var new: some View {
+    var core: some View {
         ZStack {
             Rectangle().foregroundColor(Color(rgb: 0x262626))
             VStack(spacing: 0) {
@@ -75,19 +75,45 @@ struct AppView: View {
                     .padding(.bottom, 5)
                 horizontalDivider
                 ZStack {
-                    // Well
-                    VStack {
+                    VStack(spacing: 0) {
+                        HStack {
+                            Text("INFINITE MIXTAPES")
+                                .font(.system(.headline).uppercaseSmallCaps())
+                                .accessibilityHeading(.h3)
+                            Spacer()
+                            Button {
+                                //fire a new action to closer the drawer
+                            } label: {
+                                Image(systemName: "xmark.square.fill")
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 5)
+                        horizontalDivider
                         List {
                             ForEach(viewStore.mixtapes) { mixtape in
-                                Label("\(mixtape.title)", systemImage: mixtape.systemIcon).onTapGesture {
+                                VStack(alignment: .leading, spacing: 3) {
+                                    HStack(spacing: 5) {
+                                        Image(systemName: mixtape.systemIcon)
+                                        Text("\(mixtape.title)")
+                                    }
+                                    .font(.body.bold())
+                                    .foregroundColor(Color(rgb: viewStore.settings.accentColor.rawValue))
+                                    Text(mixtape.description)
+                                        .foregroundColor(.secondary)
+                                        .font(.caption)
+                                }
+                                .accessibilityHint("Tunes the radio to this mixtape.")
+                                .onTapGesture {
                                     viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
                                 }
                             }
                         }
+                        Spacer().frame(height: 25)
                     }
-                    // Cover
                     SpeakerGrillView()
-                        .offset(y: radioBand == .mixtapes ? 300 : 0)
+                        .offset(y: radioBand == .mixtapes ? 270 : 0)
                         .animation(.easeIn(duration: 0.2), value: radioBand)
                         .shadow(color: radioBand == .mixtapes ? .black.opacity(0.3) : .clear, radius: 3, x: 0, y: -5)
                 }
@@ -98,11 +124,9 @@ struct AppView: View {
             case .off:
                 viewStore.send(.playback(.stopPlayback))
             case .channelOne:
-                // play channel 1
                 let playable = MediaPlayable(channel: viewStore.channels[0])
                 viewStore.send(.playback(.loadPlayable(playable)))
             case .channelTwo:
-                // play channel 2
                 let playable = MediaPlayable(channel: viewStore.channels[1])
                 viewStore.send(.playback(.loadPlayable(playable)))
             default:
@@ -110,25 +134,8 @@ struct AppView: View {
                 break
             }
         })
+        .enableInjection()
         .ignoresSafeArea()
-    }
-
-    @ViewBuilder
-    var basic: some View {
-        FloatingPlayerOverlayView(store: store) {
-            NavigationView {
-                SidebarView(store: store).background(
-                    // Read the width of the channels view that can be used to inset the
-                    // floating mini player by knowning how wide the sidebar is.
-                    GeometryReader { proxy in
-                        Color.clear
-                            .preference(key: SidebarWidthPreferenceKey.self, value: proxy.size.width)
-                    }
-                )
-                DonationView()
-                    .padding()
-            }
-        }
     }
 
     @ViewBuilder
@@ -138,7 +145,9 @@ struct AppView: View {
                 .foregroundColor(.black)
             Rectangle().frame(height: 0.5)
                 .foregroundColor(.white)
-        }.opacity(0.3)
+        }
+        .padding(.horizontal, 1)
+        .opacity(0.3)
     }
 }
 

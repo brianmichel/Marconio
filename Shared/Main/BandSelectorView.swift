@@ -5,6 +5,8 @@
 //  Created by Brian Michel on 1/22/23.
 //
 
+import Dependencies
+import HapticsClient
 import SwiftUI
 import Inject
 
@@ -17,6 +19,8 @@ enum RadioBand: Int {
 
 struct BandSelectorView: View {
     @ObserveInjection var inject
+
+    @Dependency(\.hapticsClient) var hapticsClient
 
     private var binding: Binding<RadioBand>
     private var accentColor: Color
@@ -31,6 +35,7 @@ struct BandSelectorView: View {
         BandSelectorSliderView($value, accentColor: accentColor)
         .onChange(of: value, perform: { newValue in
             self.binding.wrappedValue = RadioBand(rawValue: newValue)!
+            hapticsClient.play()
         })
         .enableInjection()
     }
