@@ -107,7 +107,7 @@ struct BandSelectorSliderView: View {
                                 DragGesture(minimumDistance: 10)
                                     .onChanged { value in
                                         self.location = value.location.x
-                                        self.binding = Int(self.location / offsets).clamped(to: 0...3)
+                                        self.binding = Int(self.location / offsets).clamped(to: range)
                                     }
                                     .onEnded({ value in
                                         self.location = 0

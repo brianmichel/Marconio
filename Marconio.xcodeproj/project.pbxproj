@@ -50,6 +50,7 @@
 		72645B9C298223AE0089C4A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645B9A298223940089C4A3 /* main.swift */; };
 		72645B9D2982253C0089C4A3 /* MarconioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E1792C27A2E48C009A20ED /* MarconioApp.swift */; };
 		72645BA02982260B0089C4A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72645B9E298225F90089C4A3 /* MainMenu.xib */; };
+		72645BC2298A07280089C4A3 /* CDChildWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72645BC1298A07280089C4A3 /* CDChildWindow.swift */; };
 		727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85227A6D75100F224CF /* MarconioCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85027A6D75100F224CF /* MarconioCommands.swift */; };
 		727AD85627A6D86700F224CF /* MarconioMacAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */; };
@@ -96,6 +97,7 @@
 		72645B602980BD430089C4A3 /* RadioWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioWindow.swift; sourceTree = "<group>"; };
 		72645B9A298223940089C4A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		72645B9E298225F90089C4A3 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		72645BC1298A07280089C4A3 /* CDChildWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDChildWindow.swift; sourceTree = "<group>"; };
 		727AD85027A6D75100F224CF /* MarconioCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioCommands.swift; sourceTree = "<group>"; };
 		727AD85327A6D85F00F224CF /* MarconioMacAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarconioMacAppDelegate.swift; sourceTree = "<group>"; };
 		727CC0F727A76F0B00CABE53 /* MarconioVersionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarconioVersionInformation.swift; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 				72645B9A298223940089C4A3 /* main.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		72645BC0298A070A0089C4A3 /* CD Window */ = {
+			isa = PBXGroup;
+			children = (
+				72645BC1298A07280089C4A3 /* CDChildWindow.swift */,
+			);
+			path = "CD Window";
 			sourceTree = "<group>";
 		};
 		72A6B3DF27A5F420002AF923 /* Donation */ = {
@@ -290,6 +300,7 @@
 		72E1793A27A2E48D009A20ED /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				72645BC0298A070A0089C4A3 /* CD Window */,
 				72645BA1298227210089C4A3 /* Base */,
 				72645B5F2980BD310089C4A3 /* Main Window */,
 				72C4D06827AE1E5600E85491 /* Settings */,
@@ -494,6 +505,7 @@
 				72645B9C298223AE0089C4A3 /* main.swift in Sources */,
 				72645B52297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */,
 				72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
+				72645BC2298A07280089C4A3 /* CDChildWindow.swift in Sources */,
 				72645B55297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
 				72B2A3E427ACDEB300B539CE /* Marquee.swift in Sources */,
 				7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
