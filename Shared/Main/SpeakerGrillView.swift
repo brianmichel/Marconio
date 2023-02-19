@@ -9,7 +9,7 @@ import SwiftUI
 import Inject
 
 struct SpeakerGrillView: View {
-    @ObserveInjection var inject
+    @ObserveInjection private var inject
 
     var body: some View {
         ZStack {

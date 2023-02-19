@@ -75,42 +75,38 @@ struct AppView: View {
                     .padding(.bottom, 5)
                 horizontalDivider
                 ZStack {
-                    VStack(spacing: 0) {
-                        HStack {
-                            Text("INFINITE MIXTAPES")
-                                .font(.system(.headline).uppercaseSmallCaps())
-                                .accessibilityHeading(.h3)
-                            Spacer()
-                            Button {
-                                //fire a new action to closer the drawer
-                            } label: {
-                                Image(systemName: "xmark.square.fill")
+                    if radioBand == .mixtapes {
+                        VStack(spacing: 0) {
+                            HStack {
+                                Text("INFINITE MIXTAPES")
+                                    .font(.system(.headline).uppercaseSmallCaps())
+                                    .accessibilityHeading(.h3)
+                                Spacer()
                             }
-                            .buttonStyle(.plain)
-                        }
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 5)
-                        horizontalDivider
-                        List {
-                            ForEach(viewStore.mixtapes) { mixtape in
-                                VStack(alignment: .leading, spacing: 3) {
-                                    HStack(spacing: 5) {
-                                        Image(systemName: mixtape.systemIcon)
-                                        Text("\(mixtape.title)")
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 5)
+                            horizontalDivider
+                            List {
+                                ForEach(viewStore.mixtapes) { mixtape in
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        HStack(spacing: 5) {
+                                            Image(systemName: mixtape.systemIcon)
+                                            Text("\(mixtape.title)")
+                                        }
+                                        .font(.body.bold())
+                                        .foregroundColor(Color(rgb: viewStore.settings.accentColor.rawValue))
+                                        Text(mixtape.description)
+                                            .foregroundColor(.secondary)
+                                            .font(.caption)
                                     }
-                                    .font(.body.bold())
-                                    .foregroundColor(Color(rgb: viewStore.settings.accentColor.rawValue))
-                                    Text(mixtape.description)
-                                        .foregroundColor(.secondary)
-                                        .font(.caption)
-                                }
-                                .accessibilityHint("Tunes the radio to this mixtape.")
-                                .onTapGesture {
-                                    viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
+                                    .accessibilityHint("Tunes the radio to this mixtape.")
+                                    .onTapGesture {
+                                        viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
+                                    }
                                 }
                             }
+                            Spacer().frame(height: 25)
                         }
-                        Spacer().frame(height: 25)
                     }
                     SpeakerGrillView()
                         .offset(y: radioBand == .mixtapes ? 270 : 0)
