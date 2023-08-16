@@ -23,7 +23,7 @@ struct DetailView: View {
 
     init(playable: MediaPlayable, store: StoreOf<PlaybackReducer>) {
         self.playable = playable
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 
     var body: some View {
@@ -132,22 +132,21 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
-                store: Store(
-                    initialState: PlaybackReducer.State(),
-                    reducer: PlaybackReducer()
-                )
+                store: Store(initialState: PlaybackReducer.State()) {
+                    PlaybackReducer()
+                }
             )
                 .padding()
                 .preferredColorScheme(.dark)
 
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
-                store: Store(
-                    initialState: PlaybackReducer.State(),
-                    reducer: PlaybackReducer()
-                )
+                store: Store(initialState: PlaybackReducer.State()) {
+                    PlaybackReducer()
+                }
             )
                 .padding()
                 .preferredColorScheme(.light)

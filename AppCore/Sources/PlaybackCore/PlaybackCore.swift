@@ -70,8 +70,8 @@ public struct PlaybackReducer: ReducerProtocol {
 
                 state.currentlyPlaying = playable
                 return .merge(
-                    .init(value: .updateNowPlaying),
-                    .init(value: .startMonitoringRemoteCommands),
+                    .send(.updateNowPlaying),
+                    .send(.startMonitoringRemoteCommands),
                     userActivityClient.becomeCurrent(playable).catchToEffect(Action.userActivity),
                     player.play(playable.streamURL).catchToEffect(Action.playbackClient),
                     player.retreiveRoutes().catchToEffect(Action.playbackClient)
@@ -90,14 +90,14 @@ public struct PlaybackReducer: ReducerProtocol {
                 state.currentlyPlaying = nil
                 return .merge(
                     player.stop().fireAndForget(),
-                    Effect(value: .updateNowPlaying)
+                    .send(.updateNowPlaying)
                 )
             case .togglePlayback, .externalCommand(.success(.externalToggleTap)):
                 switch state.playerState {
                 case .paused:
-                    return Effect(value: .resumePlayback)
+                    return .send(.resumePlayback)
                 case .playing:
-                    return Effect(value: .pausePlayback)
+                    return .send(.pausePlayback)
                 case .stopped:
                     return .none
                 }

@@ -103,7 +103,7 @@ public struct AppReducer: ReducerProtocol {
         case let .channelsResponse(.success(channels)):
             return .concatenate(
                 dbClient.writeChannels(channels.results).catchToEffect(Action.db),
-                .init(value: .loadChannels)
+                .send(.loadChannels)
                 .deferred(for: .seconds(channels.nextUpdateInterval),
                           scheduler: mainQueue,
                           options: nil)
@@ -128,7 +128,7 @@ public struct AppReducer: ReducerProtocol {
             return .none
         case let .appDelegate(.continueActivity(activity)):
             if let mediaPlayable = activity.playable() {
-                return Effect(value: .playback(.loadPlayable(mediaPlayable)))
+                return .send(.playback(.loadPlayable(mediaPlayable)))
             }
             return .none
         case .appDelegate:

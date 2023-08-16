@@ -30,7 +30,7 @@ public struct SidebarView: View {
 
     public init(store: StoreOf<AppReducer>) {
         self.store = store
-        self.viewStore = ViewStore(store.scope(state: { $0.sidebarState }))
+        self.viewStore = ViewStore(store, observe: { $0.sidebarState })
     }
 
     public var body: some View {
@@ -122,7 +122,9 @@ struct SidebarView_Previews: PreviewProvider {
                     playback: PlaybackReducer.State(currentlyPlaying: nil, playerState: .playing),
                     appDelegate: .init()
                 ),
-                reducer: AppReducer()
+                reducer: {
+                    AppReducer()
+                }
             )
         )
     }
