@@ -67,7 +67,7 @@ public struct AppReducer: ReducerProtocol {
 
     public var body: some ReducerProtocol<State, Action> {
         Reduce(core)
-        Scope(state: \.appDelegate, action: /Action.appDelegate, {
+        Scope(state: \.appDelegate, action: /Action.appDelegate) {
             AppDelegateReducer()
         })
         Scope(state: \.playback, action: /Action.playback, {

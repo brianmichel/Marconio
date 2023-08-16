@@ -21,7 +21,8 @@ let package = Package(
         .library(name: "AppDelegate_macOS", targets: ["AppDelegate_macOS"]),
         .library(name: "AppTileClient", targets: ["AppTileClient"]),
         .library(name: "Utilities", targets: ["Utilities"]),
-        .library(name: "HapticsClient", targets: ["HapticsClient"])
+        .library(name: "HapticsClient", targets: ["HapticsClient"]),
+        .library(name: "AudioTap", targets: ["AudioTap"])
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.41.2"),
@@ -54,16 +55,26 @@ let package = Package(
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             "Models"
         ]),
+        .target(
+            name: "AudioTap",
+            dependencies: []
+        ),
         .target(name: "AppTileClient", dependencies: [
             "Models",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         ]),
         .target(name:"PlaybackCore", dependencies: [
             "AppTileClient",
+            "AudioTap",
+            .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             "Models",
+            "StreamingAudioPlayer",
             "UserActivityClient",
-            .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
         ]),
+        .target(
+            name: "StreamingAudioPlayer",
+            dependencies: []
+        ),
         .target(name: "AppCore", dependencies: [
             "Models",
             "LaceKit",
