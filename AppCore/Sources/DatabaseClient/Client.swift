@@ -13,14 +13,14 @@ import Models
 public struct DatabaseClient {
     let dbWriter: DatabaseWriter
 
-    public var writeChannel: (Channel) -> Effect<Action, DatabaseClient.Error>
-    public var writeChannels: ([Channel]) -> Effect<Action, DatabaseClient.Error>
-    public var writeMixtape: (Mixtape) -> Effect<Action, DatabaseClient.Error>
-    public var writeMixtapes: ([Mixtape]) -> Effect<Action, DatabaseClient.Error>
-    public var fetchAllChannels: () -> Effect<Action, DatabaseClient.Error>
-    public var fetchAllMixtapes: () -> Effect<Action, DatabaseClient.Error>
-    public var startRealtimeUpdates: () -> Effect<Action, DatabaseClient.Error>
-    public var stopRealtimeUpdates: () -> Effect<Void, DatabaseClient.Error>
+    public var writeChannel: (Channel) -> EffectPublisher<Action, DatabaseClient.Error>
+    public var writeChannels: ([Channel]) -> EffectPublisher<Action, DatabaseClient.Error>
+    public var writeMixtape: (Mixtape) -> EffectPublisher<Action, DatabaseClient.Error>
+    public var writeMixtapes: ([Mixtape]) -> EffectPublisher<Action, DatabaseClient.Error>
+    public var fetchAllChannels: () -> EffectPublisher<Action, DatabaseClient.Error>
+    public var fetchAllMixtapes: () -> EffectPublisher<Action, DatabaseClient.Error>
+    public var startRealtimeUpdates: () -> EffectPublisher<Action, DatabaseClient.Error>
+    public var stopRealtimeUpdates: () -> EffectPublisher<Void, DatabaseClient.Error>
 
     public enum Action: Equatable {
         case didFetchAllMixtapes([Mixtape])
@@ -66,7 +66,17 @@ public struct DatabaseClient {
         return migrator
     }
 
-    init(dbWriter: DatabaseWriter, writeChannel: @escaping (Channel) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeChannels: @escaping ([Channel]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtape: @escaping (Mixtape) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtapes: @escaping ([Mixtape]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllChannels: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllMixtapes: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, startRealtimeUpdates: @escaping () -> Effect<Action, DatabaseClient.Error>, stopRealtimeUpdates: @escaping () -> Effect<Void, DatabaseClient.Error>) {
+    init(
+        dbWriter: DatabaseWriter,
+        writeChannel: @escaping (Channel) -> EffectPublisher<DatabaseClient.Action, DatabaseClient.Error>,
+        writeChannels: @escaping ([Channel]) -> EffectPublisher<DatabaseClient.Action, DatabaseClient.Error>,
+        writeMixtape: @escaping (Mixtape) -> EffectPublisher<DatabaseClient.Action, DatabaseClient.Error>,
+        writeMixtapes: @escaping ([Mixtape]) -> EffectPublisher<DatabaseClient.Action, DatabaseClient.Error>,
+        fetchAllChannels: @escaping () -> EffectPublisher<DatabaseClient.Action, DatabaseClient.Error>,
+        fetchAllMixtapes: @escaping () -> EffectPublisher<DatabaseClient.Action, DatabaseClient.Error>,
+        startRealtimeUpdates: @escaping () -> EffectPublisher<Action, DatabaseClient.Error>,
+        stopRealtimeUpdates: @escaping () -> EffectPublisher<Void, DatabaseClient.Error>
+    ) {
         self.dbWriter = dbWriter
         self.writeChannel = writeChannel
         self.writeChannels = writeChannels

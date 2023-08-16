@@ -44,12 +44,12 @@ public struct UserActivityClient {
     ///
     /// - Parameters:
     ///     - MediaPlayable: this should be the playable that has been loaded by the playback system.
-    public var becomeCurrent: (MediaPlayable) -> Effect<Action, Never>
+    public var becomeCurrent: (MediaPlayable) -> EffectPublisher<Action, Never>
     /// A function to be called for handling a given activity
     ///
     /// - Parameters:
     ///     - NSUserActivity: an activity that was handed to the application by the system.
-    public var handleActivity: (NSUserActivity) -> Effect<Action, Never>
+    public var handleActivity: (NSUserActivity) -> EffectPublisher<Action, Never>
 
     /// A set of actions that the client can issue.
     public enum Action: Equatable {

@@ -11,7 +11,7 @@ import ComposableArchitecture
 import MediaPlayer
 
 public struct ExternalCommandsClient {
-    var startMonitoringCommands: () -> Effect<Action, Never>
+    var startMonitoringCommands: () -> EffectPublisher<Action, Never>
 
     public enum Action: Equatable {
         case externalResumeTap

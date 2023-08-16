@@ -9,12 +9,12 @@ import ComposableArchitecture
 import Combine
 
 public struct PlaybackClient {
-    var play: (URL) -> Effect<Action, Never>
-    var resume: () -> Effect<Action, Never>
-    var pause: () -> Effect<Action, Never>
-    var stop: () -> Effect<Action, Never>
+    var play: (URL) -> EffectPublisher<Action, Never>
+    var resume: () -> EffectPublisher<Action, Never>
+    var pause: () -> EffectPublisher<Action, Never>
+    var stop: () -> EffectPublisher<Action, Never>
 
-    var retreiveRoutes: () -> Effect<Action, Never>
+    var retreiveRoutes: () -> EffectPublisher<Action, Never>
 
     public enum Action: Equatable {
         case receivedRoutes(RoutePickerView?)

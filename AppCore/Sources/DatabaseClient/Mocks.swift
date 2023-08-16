@@ -14,14 +14,14 @@ public extension DatabaseClient {
     static var failing: Self {
         let dbQueue = DatabaseQueue()
         return Self(dbWriter: dbQueue,
-                    writeChannel: { _ in .failing("\(Self.self).writeChannel is unimplemented") },
-                    writeChannels: { _ in .failing("\(Self.self).writeChannels is unimplemented") },
-                    writeMixtape: { _ in .failing("\(Self.self).writeMixtape is unimplemented") },
-                    writeMixtapes: { _ in .failing("\(Self.self).writeMixtapes is unimplemented") },
-                    fetchAllChannels: { .failing("\(Self.self).fetchAllChannels is unimplemented") },
-                    fetchAllMixtapes: { .failing("\(Self.self).fetchAllMixtapes is unimplemented") },
-                    startRealtimeUpdates: { .failing("\(Self.self).startRealtimeUpdates is unimplemented") },
-                    stopRealtimeUpdates: { .failing("\(Self.self).stopRealtimeUpdates is unimplemented") })
+                    writeChannel: { _ in .unimplemented("\(Self.self).writeChannel is unimplemented") },
+                    writeChannels: { _ in .unimplemented("\(Self.self).writeChannels is unimplemented") },
+                    writeMixtape: { _ in .unimplemented("\(Self.self).writeMixtape is unimplemented") },
+                    writeMixtapes: { _ in .unimplemented("\(Self.self).writeMixtapes is unimplemented") },
+                    fetchAllChannels: { .unimplemented("\(Self.self).fetchAllChannels is unimplemented") },
+                    fetchAllMixtapes: { .unimplemented("\(Self.self).fetchAllMixtapes is unimplemented") },
+                    startRealtimeUpdates: { .unimplemented("\(Self.self).startRealtimeUpdates is unimplemented") },
+                    stopRealtimeUpdates: { .unimplemented("\(Self.self).stopRealtimeUpdates is unimplemented") })
     }
 
     static var noop: Self {
