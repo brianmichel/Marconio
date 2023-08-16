@@ -30,7 +30,7 @@ public struct AppReducer: ReducerProtocol {
         case mixtapesResponse(Result<MixtapesResponse, RunnerError>)
         case playback(PlaybackReducer.Action)
         case appDelegate(AppDelegateReducer.Action)
-        case db(Result<DatabaseClient.Action, DatabaseClient.Error>)
+        case db(DatabaseClient.Action)
         case settings(SettingsReducer.Action)
     }
 
@@ -82,27 +82,33 @@ public struct AppReducer: ReducerProtocol {
         switch action {
         case .loadInitialData:
             return .merge(
-                dbClient
-                    .startRealtimeUpdates()
-                    .receive(on: mainQueue)
-                    .catchToEffect(Action.db),
-
-                    .concatenate(
-                        try! api.live()
-                            .receive(on: mainQueue)
-                            .catchToEffect(Action.channelsResponse),
-                        try! api.mixtapes()
-                            .receive(on: mainQueue)
-                            .catchToEffect(Action.mixtapesResponse)
-                    )
+                .run(operation: { send in
+                    for await result in await dbClient.startRealtimeUpdates() {
+                        await send(.db(.realTimeUpdate(.success(result))))
+                    }
+                })
+                .cancellable(id: DatabaseClient.RealTimeUpdatesId()),
+                .concatenate(
+                    try! api.live()
+                        .receive(on: mainQueue)
+                        .catchToEffect(Action.channelsResponse),
+                    try! api.mixtapes()
+                        .receive(on: mainQueue)
+                        .catchToEffect(Action.mixtapesResponse)
+                )
             )
         case .loadChannels:
             return try! api.live()
                 .receive(on: mainQueue)
                 .catchToEffect(Action.channelsResponse)
         case let .channelsResponse(.success(channels)):
+            
             return .concatenate(
-                dbClient.writeChannels(channels.results).catchToEffect(Action.db),
+                .run(operation: { send in
+                    try await dbClient.writeChannels(channels.results)
+                }, catch: { error, send in
+                    await send(.db(.writeFailure(error.localizedDescription)))
+                }),
                 .send(.loadChannels)
                 .deferred(for: .seconds(channels.nextUpdateInterval),
                           scheduler: mainQueue,
@@ -118,7 +124,11 @@ public struct AppReducer: ReducerProtocol {
                 .catchToEffect(Action.mixtapesResponse)
         case let .mixtapesResponse(.success(mixtapes)):
             return .concatenate(
-                dbClient.writeMixtapes(mixtapes.results).catchToEffect(Action.db)
+                .run(operation: { send in
+                    try await dbClient.writeMixtapes(mixtapes.results)
+                }, catch: { error, send in
+                    await send(.db(.writeFailure(error.localizedDescription)))
+                })
             )
         case let .mixtapesResponse(.failure(error)):
             // Do something with the error here
@@ -133,15 +143,11 @@ public struct AppReducer: ReducerProtocol {
             return .none
         case .appDelegate:
             return .none
-        case .db(.failure(_)):
+        case let .db(.realTimeUpdate(.success(result))):
+            state.channels = result.channels
+            state.mixtapes = result.mixtapes
             return .none
-        case let .db(.success(.realTimeUpdate(channels, mixtapes))):
-            state.channels = channels
-            state.mixtapes = mixtapes
-            return .none
-        case .db(.success(.didFetchAllMixtapes(_))):
-            return .none
-        case .db(.success(.didFetchAllChannels(_))):
+        case .db(_):
             return .none
         case .settings:
             return .none
