@@ -23,7 +23,7 @@ struct NowPlayingView: View {
     @ObservedObject var viewStore: ViewStoreOf<PlaybackReducer>
 
     init(store: StoreOf<PlaybackReducer>) {
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 
     var body: some View {
@@ -98,7 +98,7 @@ struct NowPlayingView_Previews: PreviewProvider {
             NowPlayingView(
                 store: Store(
                     initialState: .init(),
-                    reducer: PlaybackReducer()
+                    reducer: { PlaybackReducer() }
                 )
             )
                 .preferredColorScheme(.dark)
@@ -110,7 +110,7 @@ struct NowPlayingView_Previews: PreviewProvider {
                         playerState: .playing,
                         routePickerView: routePicker
                     ),
-                    reducer: PlaybackReducer()
+                    reducer: { PlaybackReducer() }
                 )
             )
                 .frame(width: 200)

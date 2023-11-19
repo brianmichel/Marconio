@@ -53,7 +53,7 @@ struct CDChildContentView: View {
     let store: Store<PlaybackReducer.State, AppReducer.Action>
 
     var body: some View {
-        WithViewStore(store) { viewStore in
+        WithViewStore(store, observe: { $0 }) { viewStore in
             ZStack {
                 background()
                 if let playing = viewStore.currentlyPlaying {

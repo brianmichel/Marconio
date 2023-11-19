@@ -24,7 +24,6 @@ public struct PlaybackReducer: ReducerProtocol {
         case startMonitoringRemoteCommands
         case externalCommand(Result<ExternalCommandsClient.ExternalCommand, Never>)
         case userActivity(Result<UserActivityClient.Action, Never>)
-        case playbackClient(Result<PlaybackClient.Action, Never>)
     }
 
     public struct State: Equatable {
@@ -69,12 +68,13 @@ public struct PlaybackReducer: ReducerProtocol {
                 appTileClient.updateAppTile(playable)
 
                 state.currentlyPlaying = playable
+                state.update(activity: userActivityClient.becomeCurrent(playable))
+                player.play(playable.streamURL)
+                state.routePickerView = player.retreiveRoutes()
+
                 return .merge(
                     .send(.updateNowPlaying),
-                    .send(.startMonitoringRemoteCommands),
-                    userActivityClient.becomeCurrent(playable).catchToEffect(Action.userActivity),
-                    player.play(playable.streamURL).catchToEffect(Action.playbackClient),
-                    player.retreiveRoutes().catchToEffect(Action.playbackClient)
+                    .send(.startMonitoringRemoteCommands)
                 )
             case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
                 state.playerState = .paused
@@ -140,9 +140,6 @@ public struct PlaybackReducer: ReducerProtocol {
                 return .none
             case .userActivity(.success(.willHandleActivity(_))):
                 return .none
-            case let .playbackClient(.success(.receivedRoutes(routeView))):
-                state.routePickerView = routeView
-                return .none
             }
         }
     }
@@ -156,5 +153,14 @@ extension DependencyValues {
     var infoCenter: MPNowPlayingInfoCenter {
         get { self[MPNowPlayingInfoCenter.self] }
         set { self[MPNowPlayingInfoCenter.self] = newValue }
+    }
+}
+
+extension PlaybackReducer.State {
+    mutating func update(activity: NSUserActivity, becomeCurrent: Bool = true) {
+        currentActivity = activity
+        if becomeCurrent {
+            currentActivity?.becomeCurrent()
+        }
     }
 }

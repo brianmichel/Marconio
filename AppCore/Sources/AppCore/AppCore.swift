@@ -120,10 +120,11 @@ public struct AppReducer: ReducerProtocol {
                 }, catch: { error, send in
                     await send(.db(.writeFailure(error.localizedDescription)))
                 }),
-                .send(.loadChannels)
-                .deferred(for: .seconds(channels.nextUpdateInterval),
-                          scheduler: mainQueue,
-                          options: nil)
+                .run(operation: { send in
+                    try await mainQueue.sleep(for: .seconds(channels.nextUpdateInterval))
+                    await send(.loadChannels)
+                })
+
             )
         case let .channelsResponse(.failure(error)):
             // Do something with the error here

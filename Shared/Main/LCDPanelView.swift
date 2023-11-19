@@ -25,7 +25,7 @@ struct LCDPanelView: View {
     private let viewStore: ViewStore<ViewState, AppReducer.Action>
 
     init(store: StoreOf<AppReducer>) {
-        self.viewStore = ViewStore(store.scope(state: ViewState.init(state:)))
+        self.viewStore = ViewStore(store, observe: { .init(state: $0) })
     }
 
     var body: some View {

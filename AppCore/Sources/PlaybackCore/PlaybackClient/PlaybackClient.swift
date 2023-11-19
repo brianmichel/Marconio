@@ -9,16 +9,12 @@ import ComposableArchitecture
 import Combine
 
 public struct PlaybackClient {
-    var play: (URL) -> EffectPublisher<Action, Never>
+    var play: (URL) -> Void
     var resume: () -> Void
     var pause: () -> Void
     var stop: () -> Void
 
-    var retreiveRoutes: () -> EffectPublisher<Action, Never>
-
-    public enum Action: Equatable {
-        case receivedRoutes(RoutePickerView?)
-    }
+    var retreiveRoutes: () -> RoutePickerView?
 }
 
 public extension PlaybackClient {
@@ -29,10 +25,8 @@ public extension PlaybackClient {
             play: { url in
                 delegate = PlaybackClientDelegate()
 
-                return .run(operation: { [delegate] send in
-                    delegate?.load(url: url)
-                    delegate?.resume()
-                })
+                delegate?.load(url: url)
+                delegate?.resume()
             },
             resume: {
                 delegate?.resume()
@@ -46,17 +40,13 @@ public extension PlaybackClient {
                 delegate = nil
             },
             retreiveRoutes: {
-                .run { subscriber in
-                    subscriber.send(.receivedRoutes(delegate?.routeView))
-
-                    return AnyCancellable {}
-                }
+                return delegate?.routeView
             }
         )
     }
 
     static var noop: Self {
-        return .init(play: { _ in .none },
+        return .init(play: { _ in },
                      resume: { },
                      pause: { },
                      stop: { },

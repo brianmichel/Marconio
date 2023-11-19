@@ -44,7 +44,7 @@ public struct UserActivityClient {
     ///
     /// - Parameters:
     ///     - MediaPlayable: this should be the playable that has been loaded by the playback system.
-    public var becomeCurrent: (MediaPlayable) -> EffectPublisher<Action, Never>
+    public var becomeCurrent: (MediaPlayable) -> NSUserActivity
     /// A function to be called for handling a given activity
     ///
     /// - Parameters:

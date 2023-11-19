@@ -26,7 +26,7 @@ struct AppView: View {
 
     init(store: StoreOf<AppReducer>) {
         self.store = store
-        self.viewStore = ViewStore(self.store.scope(state: ViewState.init(state:)))
+        self.viewStore = ViewStore(self.store, observe: { .init(state: $0) })
     }
 
     struct ViewState: Equatable {
@@ -152,12 +152,12 @@ struct AppView_Previews: PreviewProvider {
         AppView(
             store: Store(
                 initialState: .init(
-                    channels: [],
-                    mixtapes: [],
+                    channels: [Channel](),
+                    mixtapes: [Mixtape](),
                     playback: .init(currentlyPlaying: nil, playerState: .playing),
                     appDelegate: .init()
                 ),
-                reducer: AppReducer(api: NoopAPI())
+                reducer: { AppReducer(api: NoopAPI()) }
             )
         )
     }

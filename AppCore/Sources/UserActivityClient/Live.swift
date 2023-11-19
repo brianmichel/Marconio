@@ -10,29 +10,25 @@ import Foundation
 import ComposableArchitecture
 import Models
 
+extension NSUserActivity: @unchecked Sendable {}
+
 public extension UserActivityClient {
     /// A live implementation of the `UserActivityClient` which can be used to create and handle activity items.
     static var live: Self {
         return Self(
             becomeCurrent: { playable in
-                Effect.run { subscriber in
-                    let activity = NSUserActivity(activityType: Identifiers.playbackActiveIdentifier.rawValue)
-                    activity.title = playable.title
-                    activity.webpageURL = playable.streamURL
-                    activity.isEligibleForHandoff = true
+                let activity = NSUserActivity(activityType: Identifiers.playbackActiveIdentifier.rawValue)
+                activity.title = playable.title
+                activity.webpageURL = playable.streamURL
+                activity.isEligibleForHandoff = true
 
-                    activity.userInfo = playable.handoffUserInfo()
+                activity.userInfo = playable.handoffUserInfo()
 
-                    subscriber.send(.becomeCurrentActivity(activity))
-
-                    return AnyCancellable {}
-                }
+                return activity
             },
             handleActivity: { activity in
-                Effect.run { subscriber in
-                    subscriber.send(.willHandleActivity(activity))
-
-                    return AnyCancellable {}
+                Effect.run { send in
+                    await send(.willHandleActivity(activity))
                 }
             }
         )
