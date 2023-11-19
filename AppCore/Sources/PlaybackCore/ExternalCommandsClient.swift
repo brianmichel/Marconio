@@ -11,9 +11,9 @@ import ComposableArchitecture
 import MediaPlayer
 
 public struct ExternalCommandsClient {
-    var startMonitoringCommands: () -> EffectPublisher<Action, Never>
+    var startMonitoringCommands: () async -> AsyncStream<ExternalCommand>
 
-    public enum Action: Equatable {
+    public enum ExternalCommand: Equatable {
         case externalResumeTap
         case externalPauseTap
         case externalToggleTap
@@ -26,34 +26,36 @@ public extension ExternalCommandsClient {
 
         return Self(
             startMonitoringCommands: {
-                Effect.run { subscriber in
+                let stream = AsyncStream<ExternalCommand> { continuation in
                     let play = commandCenter.playCommand.addTarget { event in
-                        subscriber.send(.externalResumeTap)
+                        continuation.yield(ExternalCommand.externalResumeTap)
                         return .success
                     }
 
                     let pause = commandCenter.pauseCommand.addTarget { event in
-                        subscriber.send(.externalPauseTap)
+                        continuation.yield(ExternalCommand.externalPauseTap)
                         return .success
                     }
 
                     let toggle = commandCenter.togglePlayPauseCommand.addTarget { event in
-                        subscriber.send(.externalToggleTap)
+                        continuation.yield(ExternalCommand.externalToggleTap)
                         return .success
                     }
 
-                    return AnyCancellable {
+                    continuation.onTermination = { _ in
                         commandCenter.playCommand.removeTarget(play)
                         commandCenter.pauseCommand.removeTarget(pause)
                         commandCenter.togglePlayPauseCommand.removeTarget(toggle)
                     }
                 }
+
+            return stream
         })
     }
 
     static var noop: Self {
         return .init(startMonitoringCommands: {
-            .none
+            AsyncStream {_ in }
         })
     }
 }

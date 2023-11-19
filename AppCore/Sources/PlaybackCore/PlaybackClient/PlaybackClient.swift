@@ -10,9 +10,9 @@ import Combine
 
 public struct PlaybackClient {
     var play: (URL) -> EffectPublisher<Action, Never>
-    var resume: () -> EffectPublisher<Action, Never>
-    var pause: () -> EffectPublisher<Action, Never>
-    var stop: () -> EffectPublisher<Action, Never>
+    var resume: () -> Void
+    var pause: () -> Void
+    var stop: () -> Void
 
     var retreiveRoutes: () -> EffectPublisher<Action, Never>
 
@@ -27,28 +27,23 @@ public extension PlaybackClient {
 
         return .init(
             play: { url in
-                .future { callback in
-                    delegate = PlaybackClientDelegate()
+                delegate = PlaybackClientDelegate()
 
+                return .run(operation: { [delegate] send in
                     delegate?.load(url: url)
-                    delegate?.resume()
-                }
-        },
-            resume: {
-                .fireAndForget({
                     delegate?.resume()
                 })
             },
+            resume: {
+                delegate?.resume()
+            },
             pause: {
-                .fireAndForget({
-                    delegate?.pause()
-                })
-        },
+                delegate?.pause()
+
+            },
             stop: {
-                .fireAndForget({
-                    delegate?.stop()
-                    delegate = nil
-                })
+                delegate?.stop()
+                delegate = nil
             },
             retreiveRoutes: {
                 .run { subscriber in
@@ -62,9 +57,9 @@ public extension PlaybackClient {
 
     static var noop: Self {
         return .init(play: { _ in .none },
-                     resume: { .none },
-                     pause: { .none },
-                     stop: { .none },
+                     resume: { },
+                     pause: { },
+                     stop: { },
                      retreiveRoutes: { .none })
     }
 }

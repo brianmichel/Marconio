@@ -14,8 +14,16 @@ public final class NoopAPI: NTSAPI {
         return Just(LiveBroadcastsResponse(results: [], links: [])).setFailureType(to: RunnerError.self).eraseToAnyPublisher()
     }
 
+    public func live() async throws -> LiveBroadcastsResponse {
+        return LiveBroadcastsResponse(results: [], links: [])
+    }
+
     public func mixtapes() throws -> AnyPublisher<MixtapesResponse, RunnerError> {
         return Just(MixtapesResponse(results: [], links: [])).setFailureType(to: RunnerError.self).eraseToAnyPublisher()
+    }
+
+    public func mixtapes() async throws -> MixtapesResponse {
+        return MixtapesResponse(results: [], links: [])
     }
 
     public init() {}
@@ -27,8 +35,16 @@ public final class FailingAPI: NTSAPI {
         return Fail(error: RunnerError.network(error: "Unimplemented in Mock")).eraseToAnyPublisher()
     }
 
+    public func live() async throws -> LiveBroadcastsResponse {
+        fatalError("unimplemented")
+    }
+
     public func mixtapes() throws -> AnyPublisher<MixtapesResponse, RunnerError> {
         return Fail(error: RunnerError.network(error: "Unimplemented in Mock")).eraseToAnyPublisher()
+    }
+
+    public func mixtapes() async throws -> MixtapesResponse {
+        fatalError("unimplemented")
     }
 
     public init() {}

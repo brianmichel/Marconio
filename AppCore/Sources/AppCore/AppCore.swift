@@ -89,20 +89,31 @@ public struct AppReducer: ReducerProtocol {
                 })
                 .cancellable(id: DatabaseClient.RealTimeUpdatesId()),
                 .concatenate(
-                    try! api.live()
-                        .receive(on: mainQueue)
-                        .catchToEffect(Action.channelsResponse),
-                    try! api.mixtapes()
-                        .receive(on: mainQueue)
-                        .catchToEffect(Action.mixtapesResponse)
+                    .run(operation: { send in
+                        let response = try await api.live()
+                        await send(.channelsResponse(.success(response)))
+                    }, catch: { error, send in
+                        guard let runnerError = error as? RunnerError else { return }
+                        await send(.channelsResponse(.failure(runnerError)))
+                    }),
+                    .run(operation: { send in
+                        let response = try await api.mixtapes()
+                        await send(.mixtapesResponse(.success(response)))
+                    }, catch: { error, send in
+                        guard let runnerError = error as? RunnerError else { return }
+                        await send(.mixtapesResponse(.failure(runnerError)))
+                    })
                 )
             )
         case .loadChannels:
-            return try! api.live()
-                .receive(on: mainQueue)
-                .catchToEffect(Action.channelsResponse)
+            return .run(operation: { send in
+                let response = try await api.live()
+                await send(.channelsResponse(.success(response)))
+            }, catch: { error, send in
+                guard let runnerError = error as? RunnerError else { return }
+                await send(.channelsResponse(.failure(runnerError)))
+            })
         case let .channelsResponse(.success(channels)):
-            
             return .concatenate(
                 .run(operation: { send in
                     try await dbClient.writeChannels(channels.results)
@@ -119,9 +130,13 @@ public struct AppReducer: ReducerProtocol {
             print("unable to load channels: \(error)")
             return .none
         case .loadMixtapes:
-            return try! api.mixtapes()
-                .receive(on: mainQueue)
-                .catchToEffect(Action.mixtapesResponse)
+            return .run(operation: { send in
+                let response = try await api.mixtapes()
+                await send(.mixtapesResponse(.success(response)))
+            }, catch: { error, send in
+                guard let runnerError = error as? RunnerError else { return }
+                await send(.mixtapesResponse(.failure(runnerError)))
+            })
         case let .mixtapesResponse(.success(mixtapes)):
             return .concatenate(
                 .run(operation: { send in

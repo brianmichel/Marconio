@@ -22,7 +22,7 @@ public struct PlaybackReducer: ReducerProtocol {
         case togglePlayback
         case updateNowPlaying
         case startMonitoringRemoteCommands
-        case externalCommand(Result<ExternalCommandsClient.Action, Never>)
+        case externalCommand(Result<ExternalCommandsClient.ExternalCommand, Never>)
         case userActivity(Result<UserActivityClient.Action, Never>)
         case playbackClient(Result<PlaybackClient.Action, Never>)
     }
@@ -79,17 +79,21 @@ public struct PlaybackReducer: ReducerProtocol {
             case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
                 state.playerState = .paused
                 infoCenter.playbackState = .paused
-                return player.pause().fireAndForget()
+                player.pause()
+
+                return .none
             case .resumePlayback, .externalCommand(.success(.externalResumeTap)):
                 state.playerState = .playing
                 infoCenter.playbackState = .playing
-                return player.resume().fireAndForget()
+                player.resume()
+                return .none
             case .stopPlayback:
                 state.playerState = .stopped
                 infoCenter.playbackState = .stopped
                 state.currentlyPlaying = nil
+                player.stop()
+
                 return .merge(
-                    player.stop().fireAndForget(),
                     .send(.updateNowPlaying)
                 )
             case .togglePlayback, .externalCommand(.success(.externalToggleTap)):
@@ -123,9 +127,11 @@ public struct PlaybackReducer: ReducerProtocol {
 
                 state.monitoringRemoteCommands = true
 
-                return externalCommandsClient
-                    .startMonitoringCommands()
-                    .catchToEffect(Action.externalCommand)
+                return .run { send in
+                    for await command in await externalCommandsClient.startMonitoringCommands() {
+                        await send(.externalCommand(.success(command)))
+                    }
+                }
             case .externalCommand:
                 return .none
             case let .userActivity(.success(.becomeCurrentActivity(activity))):
