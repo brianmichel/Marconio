@@ -26,7 +26,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.58.0"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.2.1"),
-        .package(url: "https://github.com/groue/GRDB.swift.git", from: "5.21.0"),
+        .package(url: "https://github.com/groue/GRDB.swift.git", from: "7.2.0"),
         .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0"),
         .package(
             name: "Inject",

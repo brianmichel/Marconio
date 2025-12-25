@@ -12,7 +12,7 @@ import GRDB
 
 public extension DatabaseClient {
     static var failing: Self {
-        let dbQueue = DatabaseQueue()
+        let dbQueue = try! DatabaseQueue()
         return Self(dbWriter: dbQueue,
                     writeChannel: { _ in unimplemented("\(Self.self).writeChannel is unimplemented") },
                     writeChannels: { _ in unimplemented("\(Self.self).writeChannels is unimplemented") },
@@ -25,7 +25,7 @@ public extension DatabaseClient {
     }
 
     static var noop: Self {
-        let dbQueue = DatabaseQueue()
+        let dbQueue = try! DatabaseQueue()
         return Self(dbWriter: dbQueue,
                     writeChannel: { _ in },
                     writeChannels: { _ in },
