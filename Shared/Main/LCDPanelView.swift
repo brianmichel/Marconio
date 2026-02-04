@@ -7,6 +7,7 @@
 
 import AppCore
 import ComposableArchitecture
+import LaceKit
 import Models
 import PlaybackCore
 import SwiftUI
@@ -56,7 +57,7 @@ struct LCDPanelView: View {
                     fontSize: 13
                 )
 
-                Spacer()
+//                Spacer()
 
                 // Bottom bar: location
                 HStack {
@@ -68,7 +69,7 @@ struct LCDPanelView: View {
             .padding(.vertical, 6)
         }
         .overlay(insetBorder)
-        .frame(height: 120)
+//        .frame(height: 120)
         .onTapGesture {
             viewStore.send(.settings(.nextAccentColor), animation: .easeInOut(duration: 0.5))
         }
@@ -265,5 +266,84 @@ private struct CountdownTicker: ViewModifier {
     }
 }
 
+// MARK: - Previews
+
+private func previewStore(playback: PlaybackReducer.State = .init(), settings: SettingsReducer.State = .init()) -> StoreOf<AppReducer> {
+    Store(
+        initialState: .init(playback: playback, settings: settings),
+        reducer: { AppReducer(api: NoopAPI()) }
+    )
+}
+
+#Preview("Idle") {
+    ZStack {
+        Color(rgb: 0x262626)
+        LCDPanelView(store: previewStore())
+        .frame(width: 320, height: 140)
+        .padding(.horizontal)
+    }
+}
+#Preview("Mixtape playing") {
+    let mixtape = Mixtape.placeholder
+    ZStack {
+        Color(rgb: 0x262626)
+        LCDPanelView(store: previewStore(
+            playback: .init(
+                currentlyPlaying: MediaPlayable(mixtape: mixtape),
+                playerState: .playing
+            )
+        ))
+        .frame(width: 320, height: 100)
+        .padding(.horizontal)
+    }
+}
+
+// Channel previews use MediaPlayable's public init directly because
+// Broadcast.Embed's memberwise init isn't available across the module boundary.
+// source: .left(Channel.mock) gives us the channel code-path; source: .right(Mixtape.placeholder)
+// gives us the "MIX" location badge.
+
+#Preview("Channel playing") {
+    let playable = MediaPlayable(
+        id: "channel-1",
+        title: "Channel 1",
+        subtitle: "Boiler Room",
+        description: "A live set from Berlin",
+        artwork: Media.placeholder.pictureLarge,
+        url: URL(string: "https://nts.live")!,
+        streamURL: URL(string: "https://stream-relay-geo.ntslive.net/stream")!,
+        source: .left(Channel.mock)
+    )
+    ZStack {
+        Color(rgb: 0x262626)
+        LCDPanelView(store: previewStore(
+            playback: .init(currentlyPlaying: playable, playerState: .playing)
+        ))
+        .frame(width: 320, height: 140)
+        .padding(.horizontal)
+    }
+}
+
+#Preview("Mixtape playing (blue accent, MIX location)") {
+    let playable = MediaPlayable(
+        id: "mixtape-poolside",
+        title: "Poolside",
+        subtitle: "Balearic & boogie",
+        description: "Sun-kissed mixes",
+        artwork: Media.placeholder.pictureLarge,
+        url: URL(string: "https://nts.live")!,
+        streamURL: URL(string: "https://stream-mixtape-geo.ntslive.net/mixtape4")!,
+        source: .right(Mixtape.placeholder)
+    )
+    ZStack {
+        Color(rgb: 0x262626)
+        LCDPanelView(store: previewStore(
+            playback: .init(currentlyPlaying: playable, playerState: .playing),
+            settings: .init(accentColor: .blue)
+        ))
+        .frame(width: 320, height: 140)
+        .padding(.horizontal)
+    }
+}
 
 

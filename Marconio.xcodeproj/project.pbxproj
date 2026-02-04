@@ -13,6 +13,8 @@
 		72213DFA2F32E06F0004C9B9 /* LCDShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72213DF82F32E06F0004C9B9 /* LCDShader.metal */; };
 		72213DFF2F32F2840004C9B9 /* MixtapeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72213DFE2F32F2840004C9B9 /* MixtapeListView.swift */; };
 		72213E002F32F2840004C9B9 /* MixtapeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72213DFE2F32F2840004C9B9 /* MixtapeListView.swift */; };
+		72213E022F32FF080004C9B9 /* StationSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72213E012F32FF080004C9B9 /* StationSelectorView.swift */; };
+		72213E032F32FF080004C9B9 /* StationSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72213E012F32FF080004C9B9 /* StationSelectorView.swift */; };
 		72276FC927B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247B64127D2513800D4D3D7 /* LiveView.swift */; };
@@ -82,6 +84,7 @@
 		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		72213DF82F32E06F0004C9B9 /* LCDShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LCDShader.metal; sourceTree = "<group>"; };
 		72213DFE2F32F2840004C9B9 /* MixtapeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixtapeListView.swift; sourceTree = "<group>"; };
+		72213E012F32FF080004C9B9 /* StationSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectorView.swift; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		72276FC827B965E800AD4062 /* FloatingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerView.swift; sourceTree = "<group>"; };
 		7247B64127D2513800D4D3D7 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
@@ -266,6 +269,7 @@
 				72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */,
 				72213DF82F32E06F0004C9B9 /* LCDShader.metal */,
 				72213DFE2F32F2840004C9B9 /* MixtapeListView.swift */,
+				72213E012F32FF080004C9B9 /* StationSelectorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -481,6 +485,7 @@
 				72645B9D2982253C0089C4A3 /* MarconioApp.swift in Sources */,
 				7259A9B127BE7B7600B66981 /* FloatingPlayerOverlayView.swift in Sources */,
 				720C84CA297C565100587AA4 /* SpeakerGrillView.swift in Sources */,
+				72213E032F32FF080004C9B9 /* StationSelectorView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
 				72645B5A297DEA770089C4A3 /* LCDSegmentedTextView.swift in Sources */,
 				72213DF92F32E06F0004C9B9 /* LCDShader.metal in Sources */,
@@ -522,6 +527,7 @@
 				7259A9B527C2CD5E00B66981 /* NowPlayingDetailView.swift in Sources */,
 				727CC0F927A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
 				72213E002F32F2840004C9B9 /* MixtapeListView.swift in Sources */,
+				72213E022F32FF080004C9B9 /* StationSelectorView.swift in Sources */,
 				72645B5B297DEA770089C4A3 /* LCDSegmentedTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,7 +746,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.foureyes.Lace;
 				PRODUCT_NAME = Marconio;
@@ -773,7 +779,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.foureyes.Lace;
 				PRODUCT_NAME = Marconio;

@@ -15,7 +15,7 @@ import SwiftUI
 
 final class RadioWindow: NSWindow {
     private enum Constants {
-        static let windowRect = NSRect(x: 0, y: 0, width: 320, height: 500)
+        static let windowRect = NSRect(x: 0, y: 0, width: 320, height: 200)
     }
     private let store: StoreOf<AppReducer>
 

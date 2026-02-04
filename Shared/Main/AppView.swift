@@ -47,8 +47,6 @@ struct AppView: View {
         }
     }
 
-    @State var radioBand: RadioBand = .off
-
     var body: some View {
         core
         .onAppear {
@@ -73,56 +71,28 @@ struct AppView: View {
                 .padding(.top, 5)
                 .padding(.horizontal, 8)
                 LCDPanelView(store: store)
-                    .frame(height: 140)
-                BandSelectorView($radioBand, accentColor: Color(rgb: viewStore.settings.accentColor.rawValue))
-                    .padding(.horizontal, 8)
-                    .padding(.bottom, 5)
-                horizontalDivider
-                ZStack {
-                    if radioBand == .mixtapes {
-                        VStack(spacing: 0) {
-                            HStack {
-                                Text("INFINITE MIXTAPES")
-                                    .font(.system(.headline).uppercaseSmallCaps())
-                                    .accessibilityHeading(.h3)
-                                Spacer()
-                            }
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 5)
-                            horizontalDivider
-                            MixtapeListView(
-                                mixtapes: viewStore.mixtapes,
-                                currentlyPlaying: viewStore.playback.currentlyPlaying,
-                                accentColor: Color(rgb: viewStore.settings.accentColor.rawValue),
-                                onSelect: { mixtape in
-                                    viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
-                                }
-                            )
-                            Spacer().frame(height: 25)
+                    .frame(height: 100)
+                StationSelectorView(
+                    mixtapes: viewStore.mixtapes,
+                    accentColor: Color(rgb: viewStore.settings.accentColor.rawValue),
+                    currentlyPlaying: viewStore.playback.currentlyPlaying,
+                    onPlay: { playable in
+                        // Resolve channel sentinel IDs to real channel data
+                        if playable.id == "channel-1", viewStore.channels.count > 0 {
+                            viewStore.send(.playback(.loadPlayable(MediaPlayable(channel: viewStore.channels[0]))))
+                        } else if playable.id == "channel-2", viewStore.channels.count > 1 {
+                            viewStore.send(.playback(.loadPlayable(MediaPlayable(channel: viewStore.channels[1]))))
+                        } else {
+                            viewStore.send(.playback(.loadPlayable(playable)))
                         }
                     }
-                    SpeakerGrillView()
-                        .offset(y: radioBand == .mixtapes ? 270 : 0)
-                        .animation(.easeIn(duration: 0.2), value: radioBand)
-                        .shadow(color: radioBand == .mixtapes ? .black.opacity(0.3) : .clear, radius: 3, x: 0, y: -5)
-                }
+                )
+                .padding(.top, 5)
+                .padding(.bottom, 5)
+                horizontalDivider
+                Spacer()
             }
         }
-        .onChange(of: radioBand, perform: { newValue in
-            switch newValue {
-            case .off:
-                viewStore.send(.playback(.stopPlayback))
-            case .channelOne:
-                let playable = MediaPlayable(channel: viewStore.channels[0])
-                viewStore.send(.playback(.loadPlayable(playable)))
-            case .channelTwo:
-                let playable = MediaPlayable(channel: viewStore.channels[1])
-                viewStore.send(.playback(.loadPlayable(playable)))
-            default:
-                // do nothing, we don't want to stop playback until a mix is selected
-                break
-            }
-        })
         .enableInjection()
         .ignoresSafeArea()
     }
@@ -153,5 +123,6 @@ struct AppView_Previews: PreviewProvider {
                 reducer: { AppReducer(api: NoopAPI()) }
             )
         )
+        .frame(width: 320)
     }
 }
