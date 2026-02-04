@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		720C84CA297C565100587AA4 /* SpeakerGrillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrillView.swift */; };
 		720C84CB297C565100587AA4 /* SpeakerGrillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720C84C9297C565100587AA4 /* SpeakerGrillView.swift */; };
+		72213DF92F32E06F0004C9B9 /* LCDShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72213DF82F32E06F0004C9B9 /* LCDShader.metal */; };
+		72213DFA2F32E06F0004C9B9 /* LCDShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72213DF82F32E06F0004C9B9 /* LCDShader.metal */; };
 		72276FC927B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72276FC827B965E800AD4062 /* FloatingPlayerView.swift */; };
 		7247B64227D2513800D4D3D7 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7247B64127D2513800D4D3D7 /* LiveView.swift */; };
@@ -76,6 +78,7 @@
 /* Begin PBXFileReference section */
 		720C84C9297C565100587AA4 /* SpeakerGrillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerGrillView.swift; sourceTree = "<group>"; };
 		721A6E2127AF3613006FF195 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
+		72213DF82F32E06F0004C9B9 /* LCDShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LCDShader.metal; sourceTree = "<group>"; };
 		7221DB0527A489F400183057 /* Marconio--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Marconio--iOS--Info.plist"; sourceTree = "<group>"; };
 		72276FC827B965E800AD4062 /* FloatingPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPlayerView.swift; sourceTree = "<group>"; };
 		7247B64127D2513800D4D3D7 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 				72645B56297DD5890089C4A3 /* BandSelectorView.swift */,
 				72645B59297DEA770089C4A3 /* LCDSegmentedTextView.swift */,
 				72645B5C297E30990089C4A3 /* BandSelectorSliderView.swift */,
+				72213DF82F32E06F0004C9B9 /* LCDShader.metal */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -475,6 +479,7 @@
 				720C84CA297C565100587AA4 /* SpeakerGrillView.swift in Sources */,
 				72B2A3E327ACDEB300B539CE /* Marquee.swift in Sources */,
 				72645B5A297DEA770089C4A3 /* LCDSegmentedTextView.swift in Sources */,
+				72213DF92F32E06F0004C9B9 /* LCDShader.metal in Sources */,
 				72645B54297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
 				727AD85127A6D75100F224CF /* MarconioCommands.swift in Sources */,
 				727CC0F827A76F0B00CABE53 /* MarconioVersionInformation.swift in Sources */,
@@ -504,6 +509,7 @@
 				7247B64327D2513800D4D3D7 /* LiveView.swift in Sources */,
 				72645B9C298223AE0089C4A3 /* main.swift in Sources */,
 				72645B52297CDDBE0089C4A3 /* Font+DSEG.swift in Sources */,
+				72213DFA2F32E06F0004C9B9 /* LCDShader.metal in Sources */,
 				72276FCA27B965E800AD4062 /* FloatingPlayerView.swift in Sources */,
 				72645BC2298A07280089C4A3 /* CDChildWindow.swift in Sources */,
 				72645B55297CDF3A0089C4A3 /* LCDPanelView.swift in Sources */,
