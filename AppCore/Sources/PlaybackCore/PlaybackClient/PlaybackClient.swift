@@ -9,16 +9,12 @@ import ComposableArchitecture
 import Combine
 
 public struct PlaybackClient {
-    var play: (URL) -> Effect<Action, Never>
-    var resume: () -> Effect<Action, Never>
-    var pause: () -> Effect<Action, Never>
-    var stop: () -> Effect<Action, Never>
+    var play: (URL) -> Void
+    var resume: () -> Void
+    var pause: () -> Void
+    var stop: () -> Void
 
-    var retreiveRoutes: () -> Effect<Action, Never>
-
-    public enum Action: Equatable {
-        case receivedRoutes(RoutePickerView?)
-    }
+    var retreiveRoutes: () -> RoutePickerView?
 }
 
 public extension PlaybackClient {
@@ -27,44 +23,33 @@ public extension PlaybackClient {
 
         return .init(
             play: { url in
-                .future { callback in
-                    delegate = PlaybackClientDelegate()
+                delegate = PlaybackClientDelegate()
 
-                    delegate?.load(url: url)
-                    delegate?.resume()
-                }
-        },
+                delegate?.load(url: url)
+                delegate?.resume()
+            },
             resume: {
-                .fireAndForget({
-                    delegate?.resume()
-                })
+                delegate?.resume()
             },
             pause: {
-                .fireAndForget({
-                    delegate?.pause()
-                })
-        },
+                delegate?.pause()
+
+            },
             stop: {
-                .fireAndForget({
-                    delegate?.stop()
-                    delegate = nil
-                })
+                delegate?.stop()
+                delegate = nil
             },
             retreiveRoutes: {
-                .run { subscriber in
-                    subscriber.send(.receivedRoutes(delegate?.routeView))
-
-                    return AnyCancellable {}
-                }
+                return delegate?.routeView
             }
         )
     }
 
     static var noop: Self {
-        return .init(play: { _ in .none },
-                     resume: { .none },
-                     pause: { .none },
-                     stop: { .none },
+        return .init(play: { _ in },
+                     resume: { },
+                     pause: { },
+                     stop: { },
                      retreiveRoutes: { .none })
     }
 }

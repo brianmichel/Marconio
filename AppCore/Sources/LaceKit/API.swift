@@ -17,7 +17,7 @@ public protocol NTSAPI {
      - Throws: An ``APIError`` descirbing why the request could not have been made.
      - Returns: A publisher with either an `LiveBroadcastsResponse` or an ``RunnerError`` depending on what happened.
      */
-    func live() throws -> AnyPublisher<LiveBroadcastsResponse, RunnerError>
+    func live() async throws -> LiveBroadcastsResponse
 
     /**
      Fetch the data describing what infinite mixtapes are available on https://nts.live
@@ -25,7 +25,8 @@ public protocol NTSAPI {
      - Throws: An ``APIError`` descirbing why the request could not have been made.
      - Returns: A publisher with either an `MixtapesResponse` or an ``RunnerError`` depending on what happened.
      */
-    func mixtapes() throws -> AnyPublisher<MixtapesResponse, RunnerError>
+    func mixtapes() async throws -> MixtapesResponse
+
 }
 
 /// Errors returned by the API construction layer, not to be confused with ``RunnerError`` which returns errors from actually performing a request.
@@ -39,22 +40,14 @@ public final class LiveAPI: NTSAPI {
 
     public init() {}
 
-    public func live() throws -> AnyPublisher<LiveBroadcastsResponse, RunnerError> {
-        do {
-            let request = try request(for: "live")
-            return runner.requestPublisher(for: request)
-        } catch {
-            throw APIError.badPath
-        }
+    public func live() async throws -> LiveBroadcastsResponse {
+        let request = try request(for: "live")
+        return try await runner.request(for: request)
     }
 
-    public func mixtapes() throws -> AnyPublisher<MixtapesResponse, RunnerError> {
-        do {
-            let request = try request(for: "mixtapes")
-            return runner.requestPublisher(for: request)
-        } catch {
-            throw APIError.badPath
-        }
+    public func mixtapes() async throws -> MixtapesResponse {
+        let request = try request(for: "mixtapes")
+        return try await runner.request(for: request)
     }
 
     private func url(for path: String) -> URL? {

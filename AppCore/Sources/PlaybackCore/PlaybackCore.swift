@@ -22,9 +22,8 @@ public struct PlaybackReducer: ReducerProtocol {
         case togglePlayback
         case updateNowPlaying
         case startMonitoringRemoteCommands
-        case externalCommand(Result<ExternalCommandsClient.Action, Never>)
+        case externalCommand(Result<ExternalCommandsClient.ExternalCommand, Never>)
         case userActivity(Result<UserActivityClient.Action, Never>)
-        case playbackClient(Result<PlaybackClient.Action, Never>)
     }
 
     public struct State: Equatable {
@@ -69,35 +68,40 @@ public struct PlaybackReducer: ReducerProtocol {
                 appTileClient.updateAppTile(playable)
 
                 state.currentlyPlaying = playable
+                state.update(activity: userActivityClient.becomeCurrent(playable))
+                player.play(playable.streamURL)
+                state.routePickerView = player.retreiveRoutes()
+
                 return .merge(
-                    .init(value: .updateNowPlaying),
-                    .init(value: .startMonitoringRemoteCommands),
-                    userActivityClient.becomeCurrent(playable).catchToEffect(Action.userActivity),
-                    player.play(playable.streamURL).catchToEffect(Action.playbackClient),
-                    player.retreiveRoutes().catchToEffect(Action.playbackClient)
+                    .send(.updateNowPlaying),
+                    .send(.startMonitoringRemoteCommands)
                 )
             case .pausePlayback, .externalCommand(.success(.externalPauseTap)):
                 state.playerState = .paused
                 infoCenter.playbackState = .paused
-                return player.pause().fireAndForget()
+                player.pause()
+
+                return .none
             case .resumePlayback, .externalCommand(.success(.externalResumeTap)):
                 state.playerState = .playing
                 infoCenter.playbackState = .playing
-                return player.resume().fireAndForget()
+                player.resume()
+                return .none
             case .stopPlayback:
                 state.playerState = .stopped
                 infoCenter.playbackState = .stopped
                 state.currentlyPlaying = nil
+                player.stop()
+
                 return .merge(
-                    player.stop().fireAndForget(),
-                    Effect(value: .updateNowPlaying)
+                    .send(.updateNowPlaying)
                 )
             case .togglePlayback, .externalCommand(.success(.externalToggleTap)):
                 switch state.playerState {
                 case .paused:
-                    return Effect(value: .resumePlayback)
+                    return .send(.resumePlayback)
                 case .playing:
-                    return Effect(value: .pausePlayback)
+                    return .send(.pausePlayback)
                 case .stopped:
                     return .none
                 }
@@ -123,9 +127,11 @@ public struct PlaybackReducer: ReducerProtocol {
 
                 state.monitoringRemoteCommands = true
 
-                return externalCommandsClient
-                    .startMonitoringCommands()
-                    .catchToEffect(Action.externalCommand)
+                return .run { send in
+                    for await command in await externalCommandsClient.startMonitoringCommands() {
+                        await send(.externalCommand(.success(command)))
+                    }
+                }
             case .externalCommand:
                 return .none
             case let .userActivity(.success(.becomeCurrentActivity(activity))):
@@ -133,9 +139,6 @@ public struct PlaybackReducer: ReducerProtocol {
                 state.currentActivity?.becomeCurrent()
                 return .none
             case .userActivity(.success(.willHandleActivity(_))):
-                return .none
-            case let .playbackClient(.success(.receivedRoutes(routeView))):
-                state.routePickerView = routeView
                 return .none
             }
         }
@@ -150,5 +153,14 @@ extension DependencyValues {
     var infoCenter: MPNowPlayingInfoCenter {
         get { self[MPNowPlayingInfoCenter.self] }
         set { self[MPNowPlayingInfoCenter.self] = newValue }
+    }
+}
+
+extension PlaybackReducer.State {
+    mutating func update(activity: NSUserActivity, becomeCurrent: Bool = true) {
+        currentActivity = activity
+        if becomeCurrent {
+            currentActivity?.becomeCurrent()
+        }
     }
 }

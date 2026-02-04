@@ -24,7 +24,7 @@ struct FloatingPlayerView: View {
     init(store: StoreOf<PlaybackReducer>, expanded: Bool = false) {
         self.store = store
         self.expanded = expanded
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 
     var body: some View {
@@ -64,7 +64,7 @@ struct FloatingPlayerView_Previews: PreviewProvider {
         Group {
             FloatingPlayerView(store: Store(
                 initialState: .init(),
-                reducer: PlaybackReducer()
+                reducer: { PlaybackReducer() }
             ))
 
             FloatingPlayerView(store: Store(
@@ -73,7 +73,7 @@ struct FloatingPlayerView_Previews: PreviewProvider {
                                     currentActivity: nil,
                                     routePickerView: nil,
                                     monitoringRemoteCommands: false),
-                reducer: PlaybackReducer()
+                reducer: { PlaybackReducer() }
             ),
                                expanded: true).preferredColorScheme(.light)
         }

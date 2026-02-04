@@ -19,12 +19,14 @@ let package = Package(
         .library(name: "AppDelegate", targets: ["AppDelegate"]),
         .library(name: "AppDelegate_iOS", targets: ["AppDelegate_iOS"]),
         .library(name: "AppDelegate_macOS", targets: ["AppDelegate_macOS"]),
-        .library(name: "AppTileClient", targets: ["AppTileClient"])
+        .library(name: "AppTileClient", targets: ["AppTileClient"]),
+        .library(name: "Utilities", targets: ["Utilities"]),
+        .library(name: "HapticsClient", targets: ["HapticsClient"])
     ],
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.41.2"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.58.0"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "0.2.1"),
-        .package(url: "https://github.com/groue/GRDB.swift.git", from: "5.21.0"),
+        .package(url: "https://github.com/groue/GRDB.swift.git", from: "7.2.0"),
         .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.0.0"),
         .package(
             name: "Inject",
@@ -70,7 +72,8 @@ let package = Package(
             "AppDelegate",
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             "Inject",
-            "Utilities"
+            "Utilities",
+            "HapticsClient"
         ]),
         .target(name: "AppDelegate_iOS", dependencies: [
             "AppDelegate"
@@ -83,5 +86,8 @@ let package = Package(
             .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         ]),
         .target(name: "Utilities", dependencies: []),
+        .target(name: "HapticsClient", dependencies: [
+            .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+        ]),
     ]
 )

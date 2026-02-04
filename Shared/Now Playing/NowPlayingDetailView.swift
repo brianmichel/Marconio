@@ -19,7 +19,7 @@ struct NowPlayingDetailView: View {
 
     init(store: StoreOf<PlaybackReducer>) {
         self.store = store
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 
     var title: some View {
@@ -95,14 +95,14 @@ struct NowPlayingDetailView_Previews: PreviewProvider {
         Group {
             NowPlayingDetailView(store: Store(
                 initialState: .init(currentlyPlaying: MediaPlayable(mixtape: .placeholder)),
-                reducer: PlaybackReducer()
+                reducer: { PlaybackReducer() }
             ))
                 .frame(width: 400)
                 .preferredColorScheme(.light)
 
             NowPlayingDetailView(store: Store(
                 initialState: .init(),
-                reducer: PlaybackReducer()
+                reducer: { PlaybackReducer() }
             ))
                 .frame(width: 400)
                 .preferredColorScheme(.dark)

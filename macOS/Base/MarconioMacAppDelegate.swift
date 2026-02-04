@@ -20,27 +20,30 @@ import AppDelegate_macOS
 final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
     let store = Store(
         initialState: .init(),
-        reducer: AppReducer(api: LiveAPI())
+        reducer: { AppReducer(api: LiveAPI()) }
     )
 
-    lazy var viewStore = ViewStore(
-        self.store.scope(state: { _ in () }),
-        removeDuplicates: ==
-    )
     private let dockMenu = NSMenu()
+    private let mainWindow: RadioWindow
+
+    override init() {
+        mainWindow = RadioWindow(store: store)
+    }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
-        viewStore.send(.appDelegate(.willFinishLaunching))
+        store.send(.appDelegate(.willFinishLaunching))
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        viewStore.send(.appDelegate(.didFinishLaunching))
+        store.send(.appDelegate(.didFinishLaunching))
 
         // HACK: Disable resizing of the split since that's our desired design.
-        NSApp.windows.first?.contentView?.disableSplitViewCollapsingIfPossible()
+        // NSApp.windows.first?.contentView?.disableSplitViewCollapsingIfPossible()
 
         // HACK: Disable the zoom button so you can't expand the app to fill the screen.
-        NSApp.windows.first?.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isEnabled = false
+        // NSApp.windows.first?.standardWindowButton(NSWindow.ButtonType.zoomButton)?.isEnabled = false
+
+        mainWindow.makeKeyAndOrderFront(nil)
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -52,7 +55,7 @@ final class MarconioMacAppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ application: NSApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([NSUserActivityRestoring]) -> Void) -> Bool {
-        viewStore.send(.appDelegate(.continueActivity(userActivity)))
+        store.send(.appDelegate(.continueActivity(userActivity)))
         return true
     }
 }

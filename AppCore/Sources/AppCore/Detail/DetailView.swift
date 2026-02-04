@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Inject
 import LaceKit
 import Models
 import PlaybackCore
@@ -18,9 +19,11 @@ struct DetailView: View {
     @State private var shareSheetPresented = false
     @State private var popoverPresented = false
 
+    @ObserveInjection var inject
+
     init(playable: MediaPlayable, store: StoreOf<PlaybackReducer>) {
         self.playable = playable
-        viewStore = ViewStore(store)
+        viewStore = ViewStore(store, observe: { $0 })
     }
 
     var body: some View {
@@ -64,7 +67,6 @@ struct DetailView: View {
                         Spacer()
                     }.frame(width: detailWidth(proxy: reader))
                 }
-                Spacer()
             }
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
@@ -99,8 +101,9 @@ struct DetailView: View {
         #endif
 
         #if os(macOS)
-        .frame(width: 350, height: 410)
+        .frame(width: 350)
         #endif
+        .enableInjection()
     }
 
     var isPlayingBackCurrentPlayable: Bool {
@@ -129,22 +132,21 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
-                store: Store(
-                    initialState: PlaybackReducer.State(),
-                    reducer: PlaybackReducer()
-                )
+                store: Store(initialState: PlaybackReducer.State()) {
+                    PlaybackReducer()
+                }
             )
                 .padding()
                 .preferredColorScheme(.dark)
 
             DetailView(
                 playable: MediaPlayable(mixtape: Mixtape.placeholder),
-                store: Store(
-                    initialState: PlaybackReducer.State(),
-                    reducer: PlaybackReducer()
-                )
+                store: Store(initialState: PlaybackReducer.State()) {
+                    PlaybackReducer()
+                }
             )
                 .padding()
                 .preferredColorScheme(.light)

@@ -61,7 +61,7 @@ struct SidebarWidthPreferenceKey: PreferenceKey {
 
 struct FloatingPlayerOverlayView_Previews: PreviewProvider {
     static let store: StoreOf<AppReducer> = .init(initialState: .init(appDelegate: .init()),
-                                                  reducer: AppReducer(api: NoopAPI()))
+                                                  reducer: { AppReducer(api: NoopAPI()) })
     static var previews: some View {
         FloatingPlayerOverlayView(store: store) {
             VStack {

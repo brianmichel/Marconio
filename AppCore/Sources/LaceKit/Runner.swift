@@ -59,6 +59,11 @@ public final class Runner {
             })
             .eraseToAnyPublisher()
     }
+
+    public func request<T: Codable>(for request: URLRequest) async throws -> T {
+        let response = try await session.data(for: request)
+        return try self.decoder(for: response.0)
+    }
 }
 
 extension Runner {
@@ -75,5 +80,13 @@ extension Runner {
             .decoder(error: error.localizedDescription)
             })
             .eraseToAnyPublisher()
+    }
+
+    func decoder<T: Codable>(for data: Data) throws -> T {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        return try decoder.decode(T.self, from: data)
     }
 }

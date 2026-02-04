@@ -12,5 +12,14 @@
 	<string>https://brianmichel.github.io/Marconio/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>4wm527bHzKqitFv7rxPfZ584ImtSzV0b4rK6OsI2bVk=</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DSEG14Classic-Bold.ttf</string>
+		<string>DSEG14Classic-BoldItalic.ttf</string>
+		<string>DSEG14Classic-Italic.ttf</string>
+		<string>DSEG14Classic-LightItalic.ttf</string>
+		<string>DSEG14Classic-Light.ttf</string>
+		<string>DSEG14Classic-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

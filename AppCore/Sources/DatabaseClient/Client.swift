@@ -10,22 +10,27 @@ import Foundation
 import GRDB
 import Models
 
+public struct RealtimeUpdateResult: Equatable {
+    public let channels: [Channel]
+    public let mixtapes: [Mixtape]
+}
+
 public struct DatabaseClient {
     let dbWriter: DatabaseWriter
 
-    public var writeChannel: (Channel) -> Effect<Action, DatabaseClient.Error>
-    public var writeChannels: ([Channel]) -> Effect<Action, DatabaseClient.Error>
-    public var writeMixtape: (Mixtape) -> Effect<Action, DatabaseClient.Error>
-    public var writeMixtapes: ([Mixtape]) -> Effect<Action, DatabaseClient.Error>
-    public var fetchAllChannels: () -> Effect<Action, DatabaseClient.Error>
-    public var fetchAllMixtapes: () -> Effect<Action, DatabaseClient.Error>
-    public var startRealtimeUpdates: () -> Effect<Action, DatabaseClient.Error>
-    public var stopRealtimeUpdates: () -> Effect<Void, DatabaseClient.Error>
+    public var writeChannel: @Sendable (Channel) async throws -> Void
+    public var writeChannels: @Sendable ([Channel]) async throws -> Void
+    public var writeMixtape: @Sendable (Mixtape) async throws -> Void
+    public var writeMixtapes: @Sendable ([Mixtape]) async throws -> Void
+    public var fetchAllChannels: () async throws -> [Channel]
+    public var fetchAllMixtapes: () async throws -> [Mixtape]
+    public var startRealtimeUpdates: () async -> AsyncStream<RealtimeUpdateResult>
 
     public enum Action: Equatable {
-        case didFetchAllMixtapes([Mixtape])
-        case didFetchAllChannels([Channel])
-        case realTimeUpdate([Channel], [Mixtape])
+        case didFetchAllMixtapes(TaskResult<[Mixtape]>)
+        case didFetchAllChannels(TaskResult<[Channel]>)
+        case realTimeUpdate(TaskResult<RealtimeUpdateResult>)
+        case writeFailure(String)
     }
 
     public enum Error: Swift.Error, Equatable {
@@ -66,7 +71,16 @@ public struct DatabaseClient {
         return migrator
     }
 
-    init(dbWriter: DatabaseWriter, writeChannel: @escaping (Channel) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeChannels: @escaping ([Channel]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtape: @escaping (Mixtape) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, writeMixtapes: @escaping ([Mixtape]) -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllChannels: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, fetchAllMixtapes: @escaping () -> Effect<DatabaseClient.Action, DatabaseClient.Error>, startRealtimeUpdates: @escaping () -> Effect<Action, DatabaseClient.Error>, stopRealtimeUpdates: @escaping () -> Effect<Void, DatabaseClient.Error>) {
+    internal init(
+        dbWriter: DatabaseWriter,
+        writeChannel: @escaping @Sendable (Channel) throws -> Void,
+        writeChannels: @escaping @Sendable ([Channel]) throws -> Void,
+        writeMixtape: @escaping @Sendable (Mixtape) throws -> Void,
+        writeMixtapes: @escaping @Sendable ([Mixtape]) throws -> Void,
+        fetchAllChannels: @escaping () async throws -> [Channel],
+        fetchAllMixtapes: @escaping () async throws -> [Mixtape],
+        startRealtimeUpdates: @escaping () async -> AsyncStream<RealtimeUpdateResult>
+    ) {
         self.dbWriter = dbWriter
         self.writeChannel = writeChannel
         self.writeChannels = writeChannels
@@ -75,7 +89,6 @@ public struct DatabaseClient {
         self.fetchAllChannels = fetchAllChannels
         self.fetchAllMixtapes = fetchAllMixtapes
         self.startRealtimeUpdates = startRealtimeUpdates
-        self.stopRealtimeUpdates = stopRealtimeUpdates
 
         try? migrator.migrate(dbWriter)
     }

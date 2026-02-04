@@ -25,6 +25,7 @@ struct SidebarRow: View {
     }
 }
 
+
 struct SidebarRow_Previews: PreviewProvider {
     
     static var previews: some View {

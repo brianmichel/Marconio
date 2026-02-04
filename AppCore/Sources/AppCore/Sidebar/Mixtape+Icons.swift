@@ -9,7 +9,7 @@ import Foundation
 import LaceKit
 import Models
 
-extension Mixtape {
+public extension Mixtape {
     var systemIcon: String {
         switch mixtapeAlias {
         case "poolside":
@@ -29,17 +29,23 @@ extension Mixtape {
         case "sweat":
             return "megaphone"
         case "memory-lane":
-            return "hourglass"
+            return "peacesign"
         case "island-time":
-            return "fanblades"
+            return "sun.max"
         case "slow-focus":
             return "bolt.batteryblock"
         case "4-to-the-floor":
-            return "metronome"
+            return "face.smiling.inverse"
         case "rap-house":
             return "quote.bubble"
         case "field-recordings":
             return "recordingtape"
+        case "otaku":
+            return "gamecontroller"
+        case "sheet-music":
+            return "music.quarternote.3"
+        case "the-pit":
+            return "guitars"
         default:
             return "radio"
         }

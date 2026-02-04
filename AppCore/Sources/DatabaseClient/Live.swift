@@ -12,6 +12,10 @@ import GRDB
 import Models
 
 public extension DatabaseClient {
+    struct RealTimeUpdatesId: Hashable {
+        public init() {}
+    }
+
     static var live: Self {
         do {
             let fileManager = FileManager()
@@ -24,121 +28,88 @@ public extension DatabaseClient {
             let dbURL = folderURL.appendingPathComponent("db.sqlite")
             let writer = try DatabasePool(path: dbURL.path)
 
-            struct RealTimeUpdatesId: Hashable {}
-
             return Self(
                 dbWriter: writer,
                 writeChannel: { channel in
-                        .run { subscriber in
-                            do {
-                                try writer.write { db in
-                                    try channel.save(db)
-                                }
-                                subscriber.send(completion: .finished)
-                            } catch {
-                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
-                            }
-
-                            return AnyCancellable {}
+                    do {
+                        try writer.write { db in
+                            try channel.save(db)
                         }
+                    } catch {
+                        throw DatabaseClient.Error.unableToWriteData(error.localizedDescription)
+                    }
                 },
                 writeChannels: { channels in
-                        .run { subscriber in
-                            do {
-                                try writer.write { db in
-                                    try channels.forEach { channel in
-                                        try channel.save(db)
-                                    }
-                                }
-                                subscriber.send(completion: .finished)
-                            } catch {
-                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
+                    do {
+                        try writer.write { db in
+                            try channels.forEach { channel in
+                                try channel.save(db)
                             }
-
-                            return AnyCancellable {}
                         }
+                    } catch {
+                        throw DatabaseClient.Error.unableToWriteData(error.localizedDescription)
+                    }
                 },
                 writeMixtape: { mixtape in
-                        .run { subscriber in
-                            do {
-                                try writer.write { db in
-                                    try mixtape.save(db)
-                                }
-                                subscriber.send(completion: .finished)
-                            } catch {
-                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
-                            }
-
-                            return AnyCancellable {}
+                    do {
+                        try writer.write { db in
+                            try mixtape.save(db)
                         }
+                    } catch {
+                        throw DatabaseClient.Error.unableToWriteData(error.localizedDescription)
+                    }
                 },
                 writeMixtapes: { mixtapes in
-                        .run { subscriber in
-                            do {
-                                try writer.write { db in
-                                    try mixtapes.forEach { mixtape in
-                                        try mixtape.save(db)
-                                    }
-                                }
-                                subscriber.send(completion: .finished)
-                            } catch {
-                                subscriber.send(completion: .failure(.unableToWriteData(error.localizedDescription)))
+                    do {
+                        try writer.write { db in
+                            try mixtapes.forEach { mixtape in
+                                try mixtape.save(db)
                             }
-
-                            return AnyCancellable {}
                         }
+                    } catch {
+                    }
                 },
                 fetchAllChannels: {
-                    .run { subscriber in
-                        do {
-                            try writer.write { db in
-                                let channels = try Channel.allChannels(db: db)
-
-                                subscriber.send(.didFetchAllChannels(channels))
-                            }
-                        } catch {
-                            subscriber.send(completion: .failure(.unableToReadData(error.localizedDescription)))
+                    do {
+                        let channels = try writer.write { db in
+                            try Channel.allChannels(db: db)
                         }
-
-                        return AnyCancellable {}
+                        return channels
+                    } catch {
+                        throw DatabaseClient.Error.unableToReadData(error.localizedDescription)
                     }
                 },
                 fetchAllMixtapes: {
-                    .run { subscriber in
-                        do {
-                            try writer.write { db in
-                                let mixtapes = try Mixtape.allMixtapes(db: db)
-
-                                subscriber.send(.didFetchAllMixtapes(mixtapes))
-                            }
-                        } catch {
-                            subscriber.send(completion: .failure(.unableToReadData(error.localizedDescription)))
+                    do {
+                        let mixtapes = try writer.write { db in
+                            try Mixtape.allMixtapes(db: db)
                         }
-
-                        return AnyCancellable {}
+                        return mixtapes
+                    } catch {
+                        throw DatabaseClient.Error.unableToReadData(error.localizedDescription)
                     }
                 },
                 startRealtimeUpdates: {
-                    .run { subscriber in
-                        let channelsPublisher = ValueObservation.tracking(Channel.allChannels)
-                            .publisher(in: writer, scheduling: .immediate)
+                    AsyncStream { continuation in
+                        Task { @MainActor in
+                            let channelsPublisher = ValueObservation.tracking(Channel.allChannels)
+                                .publisher(in: writer, scheduling: .immediate)
 
-                        let mixtapesPublisher = ValueObservation.tracking(Mixtape.allMixtapes)
-                            .publisher(in: writer, scheduling: .immediate)
+                            let mixtapesPublisher = ValueObservation.tracking(Mixtape.allMixtapes)
+                                .publisher(in: writer, scheduling: .immediate)
 
-                        let latest = Publishers.CombineLatest(channelsPublisher, mixtapesPublisher).sink { failure in
-                            print("RealTimeUpdate failure: \(failure)")
-                        } receiveValue: { (channels, mixtapes) in
-                            subscriber.send(.realTimeUpdate(channels, mixtapes))
+                            let latest = Publishers
+                                .CombineLatest(channelsPublisher, mixtapesPublisher)
+                                .sink { failure in
+                                print("RealTimeUpdate failure: \(failure)")
+                            } receiveValue: { (channels, mixtapes) in
+                                let result = RealtimeUpdateResult(channels: channels, mixtapes: mixtapes)
+                                continuation.yield(result)
+                            }
+
+                            return latest
                         }
-
-                        return AnyCancellable {
-                            _ = (channelsPublisher, mixtapesPublisher, latest)
-                        }
-                    }.cancellable(id: RealTimeUpdatesId())
-                },
-                stopRealtimeUpdates: {
-                    .cancel(id: RealTimeUpdatesId())
+                    }
                 }
             )
         } catch {

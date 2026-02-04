@@ -6,14 +6,15 @@
 //
 
 import ComposableArchitecture
+import Foundation
 
 extension UserActivityClient: TestDependencyKey {
     public static var testValue: UserActivityClient = Self (
-        becomeCurrent: { _ in .failing("\(Self.self).becomeCurrent is unimplemented")},
-        handleActivity: { _ in .failing("\(Self.self).handleActivity is unimplemented")}
+        becomeCurrent: { _ in unimplemented("\(Self.self).becomeCurrent is unimplemented")},
+        handleActivity: { _ in unimplemented("\(Self.self).handleActivity is unimplemented")}
     )
     public static var previewValue: UserActivityClient = Self(
-        becomeCurrent: { _ in .none },
+        becomeCurrent: { _ in NSUserActivity(activityType: "mocked" )},
         handleActivity: { _ in .none }
     )
 }
