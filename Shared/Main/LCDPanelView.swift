@@ -58,11 +58,10 @@ struct LCDPanelView: View {
 
                 Spacer()
 
-                // Bottom bar: location  ····  play/pause
+                // Bottom bar: location
                 HStack {
                     locationView
                     Spacer()
-                    playPauseButton
                 }
             }
             .padding(.horizontal)
@@ -155,35 +154,6 @@ struct LCDPanelView: View {
         }
     }
 
-    // MARK: - Play / Pause
-
-    @ViewBuilder
-    private var playPauseButton: some View {
-        let isPlaying = viewStore.playback.playerState == .playing
-        let icon = isPlaying ? "pause.circle" : "play.circle"
-        let action: AppReducer.Action = isPlaying ? .playback(.pausePlayback) : .playback(.resumePlayback)
-        let isStopped = viewStore.playback.playerState == .stopped
-
-        Button {
-            viewStore.send(action)
-        } label: {
-            ZStack {
-                if !isStopped {
-                    Image(systemName: icon)
-                        .font(.system(size: 20))
-                        .foregroundColor(Color(rgb: 0x262626).opacity(0.8))
-                }
-                Image(systemName: icon)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color(rgb: 0x262626).opacity(0.2))
-                    .offset(x: 0.8, y: 0.8)
-            }
-        }
-        .contentShape(Circle())
-        .disabled(isStopped)
-        .buttonStyle(.plain)
-    }
-
     // MARK: - Data helpers
 
     private func location(for playable: MediaPlayable?) -> String? {
@@ -192,7 +162,7 @@ struct LCDPanelView: View {
         case .left(let channel):
             return channel.now.details?.locationShort
         case .right:
-            return nil
+            return "MIX"
         }
     }
 
@@ -226,8 +196,8 @@ struct LCDPanelView: View {
             .stroke(Color.black.opacity(0.1), lineWidth: 1)   // highlight (bottom-right feel via composite)
             .padding([.horizontal], 8)
             .padding([.vertical], 5)
-            .shadow(color: .black.opacity(0.35), radius: 1, x: 1, y: 1)   // dark cast (top-left)
-            .shadow(color: .white.opacity(0.25), radius: 1, x: -1, y: -1) // light bounce (bottom-right)
+            .shadow(color: .black.opacity(0.35), radius: 1, x: 0, y: 1)   // dark cast (top-left)
+            .shadow(color: .white.opacity(0.25), radius: 2, x: 0, y: -1) // light bounce (bottom-right)
     }
 }
 // MARK: - LCDGlowModifier

@@ -16,6 +16,8 @@ import PlaybackCore
 import LaceKit
 import Inject
 import Utilities
+import Dependencies
+import HapticsClient
 
 
 struct AppView: View {
@@ -23,6 +25,8 @@ struct AppView: View {
     @ObservedObject var viewStore: ViewStore<ViewState, AppReducer.Action>
 
     @ObserveInjection var inject
+
+    @Dependency(\.hapticsClient) var hapticsClient
 
     init(store: StoreOf<AppReducer>) {
         self.store = store
@@ -66,7 +70,7 @@ struct AppView: View {
                         .shadow(color: .white.opacity(0.3), radius: 0.4, x: 0, y: 0.3)
                 }
                 .frame(height: 20)
-                .padding(.top, 3)
+                .padding(.top, 5)
                 .padding(.horizontal, 8)
                 LCDPanelView(store: store)
                     .frame(height: 140)
@@ -86,25 +90,14 @@ struct AppView: View {
                             .padding(.horizontal, 8)
                             .padding(.vertical, 5)
                             horizontalDivider
-                            List {
-                                ForEach(viewStore.mixtapes) { mixtape in
-                                    VStack(alignment: .leading, spacing: 3) {
-                                        HStack(spacing: 5) {
-                                            Image(systemName: mixtape.systemIcon)
-                                            Text("\(mixtape.title)")
-                                        }
-                                        .font(.body.bold())
-                                        .foregroundColor(Color(rgb: viewStore.settings.accentColor.rawValue))
-                                        Text(mixtape.description)
-                                            .foregroundColor(.secondary)
-                                            .font(.caption)
-                                    }
-                                    .accessibilityHint("Tunes the radio to this mixtape.")
-                                    .onTapGesture {
-                                        viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
-                                    }
+                            MixtapeListView(
+                                mixtapes: viewStore.mixtapes,
+                                currentlyPlaying: viewStore.playback.currentlyPlaying,
+                                accentColor: Color(rgb: viewStore.settings.accentColor.rawValue),
+                                onSelect: { mixtape in
+                                    viewStore.send(.playback(.loadPlayable(MediaPlayable(mixtape: mixtape))))
                                 }
-                            }
+                            )
                             Spacer().frame(height: 25)
                         }
                     }
